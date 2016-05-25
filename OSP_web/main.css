@@ -1,0 +1,59 @@
+
+body{
+	background-color: #E4E6F2;
+	font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", "標楷體", DFKai-SB, sans-serif;
+}
+h1,h2,h3,h4,a,p{
+	font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", "標楷體", DFKai-SB, sans-serif;
+
+}
+
+#ospsite:hover {
+	box-shadow: 0px 2px 5px rgba(20,20,20,1);
+}
+
+
+
+#menubtn{
+	font-size: 3em;
+	position: relative;
+	top: 20%;
+	left: 10%;
+	cursor: pointer;
+	color: #E4E6F2;
+}
+#menubtn:hover{
+	opacity: 0.8;
+}
+
+
+
+#menucontent{
+	position: fixed;
+	z-index: 999;
+  	transition:all 0.5s ease;
+}
+
+
+#menubk{
+	background-color: rgba(0,0,0,0.8);
+	float: left;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 900;
+	display: none;
+}
+
+.beslide{
+	left: -300px;
+}
+.slide{
+  left:0px;
+}
+
+
+.jqHeight{
+}
+
+
