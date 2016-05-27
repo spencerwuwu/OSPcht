@@ -1,0 +1,758 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.0 beta" password="">
+<Osejs.Information>
+<Title><![CDATA[Local Coordiantes]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[celestial globe, local coordinates, altitude, azimuth]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Mario Belloni and Todd Timberlake]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./LocalCoordinates/LocalCoordinates.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./LocalCoordinates/local.jpg;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>LocalCoordinates</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>LocalCoordinates</Title>
+  <External>true</External>
+  <![CDATA[
+./LocalCoordinates/LocalCoordinates.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>10</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>modelVars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[lat]]></Name>
+<Value><![CDATA[35.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[latitude of observer on Earth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tilt]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[90 degrees minus the latitude, converted to radians]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lr]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[latitude in radians]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[alt]]></Name>
+<Value><![CDATA[35.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[az]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[axis]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[angD]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>controlVars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[showeq]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to show the equator]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showgrid]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to show the celestial grid]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[horizon]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to show horizon plane]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pole]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to show celestial axis]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ShowStars]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to show stars in Globe frame]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[atPole]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to turn of North arrow if at either pole]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showNorth]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to show North arrow]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[minRatio]]></Name>
+<Value><![CDATA[0.01]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[minimum value for ratio (ratio <= 1 can produce errors in some cases)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[eaxis]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[to show the ecliptic axis]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[visNCP]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[if North Celestial Pole is visible]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[visSCP]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[if South Celestial Pole is visible]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[visNEP]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[if North Ecliptic Pole is visible]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[visSEP]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[if South Ecliptic Pole is visible]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>colorVars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[eqColor]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Color]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[color for equatorial plane]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[eclColor]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Color]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[color for ecliptic plane]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[horColor]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Color]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[color for horizon plane]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[useTrans]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[to use transparent surfaces while running]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[connectTrace]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[to connect the dots in the Time of Year trace (dayTrace)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>colors</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+eqColor = new Color(255,0,255,50);
+eclColor = new Color(255,0,0,50);
+horColor = new Color(0,255,0,100);
+ 
+ 
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>CelGlobeRels</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//find latitude and (90-lat) in radians
+lr = lat*Math.PI/180.0;
+tilt = (90-lat)*Math.PI/180.0;
+//tilt of axis in radians
+theta=axis*Math.PI/180.0;
+ 
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>setColors</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//set opaque colors if not using transparency while running
+public void setColors () {
+  if (useTrans) {
+    eqColor = new Color(255,0,255,50);
+    eclColor = new Color(255,0,0,50);
+    horColor = new Color(0,255,0,100);}
+  else {
+    eqColor = new Color(255,0,255,255);
+    eclColor = new Color(255,0,0,255);
+    horColor = new Color(0,255,0,255);}
+}
+ 
+//set colors to transparent while not running
+public void setTrans () {
+    eqColor = new Color(255,0,255,50);
+    eclColor = new Color(255,0,0,50);
+    horColor = new Color(0,255,0,100);
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">globeFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["本地座標"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["12,22"]]></Property>
+<Property name="size"><![CDATA["600,600"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">globeDrawingPanel3D</Property>
+<Property name="parent">globeFrame</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-1]]></Property>
+<Property name="maximumX"><![CDATA[1]]></Property>
+<Property name="minimumY"><![CDATA[-1]]></Property>
+<Property name="maximumY"><![CDATA[1]]></Property>
+<Property name="minimumZ"><![CDATA[-0.2]]></Property>
+<Property name="maximumZ"><![CDATA[1.8]]></Property>
+<Property name="cameraX"><![CDATA[-3.85]]></Property>
+<Property name="cameraY"><![CDATA[0.0]]></Property>
+<Property name="cameraZ"><![CDATA[1.5]]></Property>
+<Property name="cameraAzimuth"><![CDATA[-2.0]]></Property>
+<Property name="cameraAltitude"><![CDATA[0.4]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusY"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusZ"><![CDATA[0.26]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[8.58]]></Property>
+<Property name="decorationType"><![CDATA[NONE]]></Property>
+<Property name="removeHiddenLines"><![CDATA[true]]></Property>
+<Property name="allowQuickRedraw"><![CDATA[false]]></Property>
+<Property name="squareAspect"><![CDATA[true]]></Property>
+<Property name="background"><![CDATA[0,0,50,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group3D</Type>
+<Property name="name">latGroup</Property>
+<Property name="parent">globeDrawingPanel3D</Property>
+<Property name="transformation"><![CDATA["y:"+(Math.PI/2-lr)]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment3D</Type>
+<Property name="name">axisLine</Property>
+<Property name="parent">latGroup</Property>
+<Property name="x"><![CDATA[0.0]]></Property>
+<Property name="y"><![CDATA[0.0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[1]]></Property>
+<Property name="visible"><![CDATA[pole]]></Property>
+<Property name="lineColor"><![CDATA[CYAN]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group3D</Type>
+<Property name="name">spinGroup</Property>
+<Property name="parent">latGroup</Property>
+<Property name="transformation"><![CDATA["z:"+(-angD)]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">equatorCylinder</Property>
+<Property name="parent">spinGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[2]]></Property>
+<Property name="sizeY"><![CDATA[2]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="minimumAngle"><![CDATA[90]]></Property>
+<Property name="maximumAngle"><![CDATA[270]]></Property>
+<Property name="visible"><![CDATA[showeq]]></Property>
+<Property name="lineColor"><![CDATA[eqColor]]></Property>
+<Property name="fillColor"><![CDATA[eqColor]]></Property>
+<Property name="resolution"><![CDATA["10,24,1"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group3D</Type>
+<Property name="name">observerGroup</Property>
+<Property name="parent">globeDrawingPanel3D</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Sphere3D</Type>
+<Property name="name">localGrid</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="radius"><![CDATA[1]]></Property>
+<Property name="minimumAngleV"><![CDATA[0]]></Property>
+<Property name="maximumAngleV"><![CDATA[90]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="closedBottom"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[DARKGRAY]]></Property>
+<Property name="drawingFill"><![CDATA[false]]></Property>
+<Property name="resolution"><![CDATA["36,36,9"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">northArrow</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="x"><![CDATA[0.5]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0.4]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[(!(atPole) && showNorth)]]></Property>
+<Property name="lineColor"><![CDATA[black]]></Property>
+<Property name="fillColor"><![CDATA[black]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+<Property name="resolution"><![CDATA["10,10,1"]]></Property>
+<Property name="depthFactor"><![CDATA[0.9]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">northText</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="x"><![CDATA[0.4]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[(!(atPole) && showNorth)]]></Property>
+<Property name="text"><![CDATA["N"]]></Property>
+<Property name="lineColor"><![CDATA[black]]></Property>
+<Property name="fillColor"><![CDATA[black]]></Property>
+<Property name="depthFactor"><![CDATA[0.9]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">southArrow</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="x"><![CDATA[-0.5]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[-0.4]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[(!(atPole) && showNorth)]]></Property>
+<Property name="lineColor"><![CDATA[black]]></Property>
+<Property name="fillColor"><![CDATA[black]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+<Property name="resolution"><![CDATA["10,10,1"]]></Property>
+<Property name="depthFactor"><![CDATA[0.9]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">southText</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="x"><![CDATA[-0.4]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[(!(atPole) && showNorth)]]></Property>
+<Property name="text"><![CDATA["S"]]></Property>
+<Property name="lineColor"><![CDATA[black]]></Property>
+<Property name="fillColor"><![CDATA[black]]></Property>
+<Property name="depthFactor"><![CDATA[0.9]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">eastArrow</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-0.5]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[-0.4]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[(!(atPole) && showNorth)]]></Property>
+<Property name="lineColor"><![CDATA[black]]></Property>
+<Property name="fillColor"><![CDATA[black]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+<Property name="resolution"><![CDATA["10,10,1"]]></Property>
+<Property name="depthFactor"><![CDATA[0.9]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">eastText</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-0.4]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[(!(atPole) && showNorth)]]></Property>
+<Property name="text"><![CDATA["E"]]></Property>
+<Property name="lineColor"><![CDATA[black]]></Property>
+<Property name="fillColor"><![CDATA[black]]></Property>
+<Property name="depthFactor"><![CDATA[0.9]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">westArrow</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0.5]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[0.4]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[(!(atPole) && showNorth)]]></Property>
+<Property name="lineColor"><![CDATA[black]]></Property>
+<Property name="fillColor"><![CDATA[black]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+<Property name="resolution"><![CDATA["10,10,1"]]></Property>
+<Property name="depthFactor"><![CDATA[0.9]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">westText</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0.4]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[(!(atPole) && showNorth)]]></Property>
+<Property name="text"><![CDATA["W"]]></Property>
+<Property name="lineColor"><![CDATA[black]]></Property>
+<Property name="fillColor"><![CDATA[black]]></Property>
+<Property name="depthFactor"><![CDATA[0.9]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">horizonCylinder</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[2]]></Property>
+<Property name="sizeY"><![CDATA[2]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[horizon]]></Property>
+<Property name="lineColor"><![CDATA[horColor]]></Property>
+<Property name="fillColor"><![CDATA[horColor]]></Property>
+<Property name="resolution"><![CDATA["10,36,1"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">objectArrow</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[Math.cos(Math.PI*az/180)*Math.cos(Math.PI*alt/180)]]></Property>
+<Property name="sizeY"><![CDATA[-Math.sin(Math.PI*az/180)*Math.cos(Math.PI*alt/180)]]></Property>
+<Property name="sizeZ"><![CDATA[Math.sin(Math.PI*alt/180)]]></Property>
+<Property name="lineColor"><![CDATA[ORANGE]]></Property>
+<Property name="fillColor"><![CDATA[ORANGE]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+<Property name="resolution"><![CDATA["10,10,1"]]></Property>
+<Property name="depthFactor"><![CDATA[0.9]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Circle3D</Type>
+<Property name="name">myStar</Property>
+<Property name="parent">observerGroup</Property>
+<Property name="x"><![CDATA[1.02*Math.cos(Math.PI*az/180)*Math.cos(Math.PI*alt/180)]]></Property>
+<Property name="y"><![CDATA[-1.02*Math.sin(Math.PI*az/180)*Math.cos(Math.PI*alt/180)]]></Property>
+<Property name="z"><![CDATA[1.02*Math.sin(Math.PI*alt/180)]]></Property>
+<Property name="sizeX"><![CDATA[0.03]]></Property>
+<Property name="sizeY"><![CDATA[0.03]]></Property>
+<Property name="sizeZ"><![CDATA[0.03]]></Property>
+<Property name="fillColor"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.MenuBar</Type>
+<Property name="name">globeMenuBar</Property>
+<Property name="parent">globeFrame</Property>
+<Property name="position">north</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Menu</Type>
+<Property name="name">displayOptionsMenu</Property>
+<Property name="parent">globeMenuBar</Property>
+<Property name="text"><![CDATA["顯示選項"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showN</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[showNorth]]></Property>
+<Property name="text"><![CDATA["顯示方位箭頭"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showAxis</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[pole]]></Property>
+<Property name="text"><![CDATA["顯示天球軸"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showEquator</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[showeq]]></Property>
+<Property name="text"><![CDATA["顯示天球赤道"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel</Property>
+<Property name="parent">globeFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[GRID:2,1,0,0]]></Property>
+<Property name="size"><![CDATA["0,60"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">AltitudePanel</Property>
+<Property name="parent">panel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">AltLabel</Property>
+<Property name="parent">AltitudePanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 高度: "]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+<Property name="size"><![CDATA["100,23"]]></Property>
+<Property name="tooltip"><![CDATA["物體高度(角度)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">AltSlider</Property>
+<Property name="parent">AltitudePanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[alt]]></Property>
+<Property name="minimum"><![CDATA[0]]></Property>
+<Property name="maximum"><![CDATA[90]]></Property>
+<Property name="tooltip"><![CDATA["物體高度(角度)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">AltValue</Property>
+<Property name="parent">AltitudePanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[alt]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="tooltip"><![CDATA["物體高度(角度)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">AzimuthPanel</Property>
+<Property name="parent">panel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">AzLabel</Property>
+<Property name="parent">AzimuthPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 方位: "]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+<Property name="size"><![CDATA["100,23"]]></Property>
+<Property name="tooltip"><![CDATA["物體方位 (角度)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">AzSlider</Property>
+<Property name="parent">AzimuthPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[az]]></Property>
+<Property name="minimum"><![CDATA[0]]></Property>
+<Property name="maximum"><![CDATA[360]]></Property>
+<Property name="tooltip"><![CDATA["物體的方位 (角度)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">AzValue</Property>
+<Property name="parent">AzimuthPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[az]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="tooltip"><![CDATA["物體的方位 (角度)."]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

@@ -1,0 +1,476 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.2.7" password="">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Author><![CDATA[]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<EmersionSupport>false</EmersionSupport>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+</Osejs.Information>
+<Osejs.Description>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Var Table</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[offset]]></Name>
+<Value><![CDATA[Math.round(25+45*Math.random())]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x1]]></Name>
+<Value><![CDATA[offset]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[v1]]></Name>
+<Value><![CDATA[Math.round(2+6*Math.random())]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x2]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[v2]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a2]]></Name>
+<Value><![CDATA[Math.round(1+3*Math.random())]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Time]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t1]]></Name>
+<Value><![CDATA[(100-x1)/v1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t2]]></Name>
+<Value><![CDATA[Math.sqrt(200/a2)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[deltaT]]></Name>
+<Value><![CDATA[0.1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[StopTime]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[prediction]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[outputMessage]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[winner]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>EVOLUTION_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+StopTime=Math.min(t1,t2);
+Time=Time+deltaT;
+if (Time >= StopTime) selection();
+]]></Code>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Cons Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+x1=offset+v1*Time;
+x2=0.5*a2*Time*Time;
+v2=a2*Time;
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>selection</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void selection () {
+  Time=StopTime;
+  _pause();
+  winner=1;
+  outputMessage="比賽平手！";
+  if (t1 < t2) {
+    winner=2;
+    outputMessage="藍色車子獲勝！";
+  }
+  if (t1 > t2) {
+    winner=3;
+    outputMessage="紅色車子獲勝！";
+  }
+  if (winner==prediction) outputMessage = outputMessage+" 做得好-你答對了! 試著再做一次吧！";
+  else outputMessage = outputMessage+" 再試一次吧，看你這次能不能正確的預測結果。";
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">Frame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[Frame]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["200,62"]]></Property>
+<Property name="size"><![CDATA["565,336"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">DrawingPanel</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-10]]></Property>
+<Property name="maximumX"><![CDATA[110]]></Property>
+<Property name="minimumY"><![CDATA[-50]]></Property>
+<Property name="maximumY"><![CDATA[50]]></Property>
+<Property name="showCoordinates"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">Road1</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[50]]></Property>
+<Property name="y"><![CDATA[10]]></Property>
+<Property name="sizex"><![CDATA[100]]></Property>
+<Property name="sizey"><![CDATA[18]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="color"><![CDATA[cyan]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">Car1</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[10.0]]></Property>
+<Property name="sizex"><![CDATA[5]]></Property>
+<Property name="sizey"><![CDATA[10]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[EAST]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">Road2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[50]]></Property>
+<Property name="y"><![CDATA[-10]]></Property>
+<Property name="sizex"><![CDATA[100]]></Property>
+<Property name="sizey"><![CDATA[18]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="color"><![CDATA[pink]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">Car2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[-10]]></Property>
+<Property name="sizex"><![CDATA[5]]></Property>
+<Property name="sizey"><![CDATA[10]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[EAST]]></Property>
+<Property name="color"><![CDATA[red]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.SplitPanel</Type>
+<Property name="name">SplitPanel</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">north</Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="expandable"><![CDATA[true]]></Property>
+<Property name="background"><![CDATA[red]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panel_Buttons</Property>
+<Property name="parent">SplitPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Play</Property>
+<Property name="parent">Panel_Buttons</Property>
+<Property name="position">north</Property>
+<Property name="text"><![CDATA[開始]]></Property>
+<Property name="alignment"><![CDATA[CENTER]]></Property>
+<Property name="action"><![CDATA[_play()]]></Property>
+<Property name="background"><![CDATA[200,220,208]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Pause</Property>
+<Property name="parent">Panel_Buttons</Property>
+<Property name="text"><![CDATA[暫停]]></Property>
+<Property name="action"><![CDATA[_pause()]]></Property>
+<Property name="background"><![CDATA[200,220,208]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Reset</Property>
+<Property name="parent">Panel_Buttons</Property>
+<Property name="position">north</Property>
+<Property name="text"><![CDATA[重設]]></Property>
+<Property name="alignment"><![CDATA[CENTER]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="background"><![CDATA[200,220,208]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panel_Information</Property>
+<Property name="parent">SplitPanel</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:0,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">Position1</Property>
+<Property name="parent">Panel_Information</Property>
+<Property name="variable"><![CDATA[x1]]></Property>
+<Property name="format"><![CDATA[藍車 位置 = #.00 m]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="foreground"><![CDATA[blue]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,12]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">Position2</Property>
+<Property name="parent">Panel_Information</Property>
+<Property name="variable"><![CDATA[x2]]></Property>
+<Property name="format"><![CDATA["紅車 位置 = 0.00 m"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="foreground"><![CDATA[red]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,12]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">Velocity1</Property>
+<Property name="parent">Panel_Information</Property>
+<Property name="variable"><![CDATA[v1]]></Property>
+<Property name="format"><![CDATA[藍車 速度 = #.00 m/s]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="foreground"><![CDATA[blue]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,12]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">Velocity2</Property>
+<Property name="parent">Panel_Information</Property>
+<Property name="variable"><![CDATA[v2]]></Property>
+<Property name="format"><![CDATA["紅車 速度 = 0.00 m/s"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="foreground"><![CDATA[red]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,12]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">Time</Property>
+<Property name="parent">Panel_Information</Property>
+<Property name="variable"><![CDATA[Time]]></Property>
+<Property name="format"><![CDATA["經過時間 = 0.00 s"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,12]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">Acceleration2</Property>
+<Property name="parent">Panel_Information</Property>
+<Property name="variable"><![CDATA[a2]]></Property>
+<Property name="format"><![CDATA[紅車 加速度 = #.00 m/s^2]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="foreground"><![CDATA[red]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,12]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PredictionPanel</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:5,1,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Description1</Property>
+<Property name="parent">PredictionPanel</Property>
+<Property name="position">north</Property>
+<Property name="text"><![CDATA[  如上圖所示，目前藍車領先並維持等速度前進。]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Description2</Property>
+<Property name="parent">PredictionPanel</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA[  而紅車則在 x = 0 處從靜止開始以等加速度前進。]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Prediction_Text</Property>
+<Property name="parent">PredictionPanel</Property>
+<Property name="text"><![CDATA[  試著預測: 哪輛車子會先抵達 x = 100 m ?]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panel_Radio</Property>
+<Property name="parent">PredictionPanel</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:0,3,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">RadioButton_Tie</Property>
+<Property name="parent">Panel_Radio</Property>
+<Property name="position">south</Property>
+<Property name="selected"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[兩輛車同時抵達]]></Property>
+<Property name="actionon"><![CDATA[prediction=1;]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">RadioButton_Blue</Property>
+<Property name="parent">Panel_Radio</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[藍車]]></Property>
+<Property name="actionon"><![CDATA[prediction=2;]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">RadioButton_Red</Property>
+<Property name="parent">Panel_Radio</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA[紅車]]></Property>
+<Property name="actionon"><![CDATA[prediction=3;]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">OutputMessage</Property>
+<Property name="parent">PredictionPanel</Property>
+<Property name="variable"><![CDATA[%outputMessage%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[200,220,208]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,12]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

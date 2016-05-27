@@ -1,0 +1,564 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.0 beta" password="">
+<Osejs.Information>
+<Title><![CDATA[埃拉托斯特尼]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[Eratosthenes, shadow, gnomon, diameter of Earth]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Todd Timberlake]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./Eratosthenes/Eratosthenes.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./Eratosthenes/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Eratosthenes</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>埃拉托斯特尼</Title>
+  <External>true</External>
+  <![CDATA[
+./Eratosthenes/Eratosthenes.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>modelVars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[rE]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[地球半徑(任意單位)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[rE]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[可動日規底部的x座標]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[可動日規底部的y座標]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xSB]]></Name>
+<Value><![CDATA[10000*rE]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[太陽的X座標]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ySB]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[太陽的y座標]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xh]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[可動日規影子尖端的X座標]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yh]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[可動日規影子尖端的y座標]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xt]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[可動日規頂端的x座標]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yt]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[可動日規頂端的y座標]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[thrad]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[兩日規所夾弧度]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[日規長度(從地表算至日規頂端)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ls]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[可動日規的影長]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[d]]></Name>
+<Value><![CDATA[804.7]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[兩日規間沿地球表面的距離]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[circE]]></Name>
+<Value><![CDATA[40030]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[地球圓周(公里)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[兩日規所夾角度]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>controlVars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[showEarth]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[顯示地球]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showBeams]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[顯示太陽光線]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showCenter]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[顯示地球中心的點]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showLength]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[以視窗顯示影長]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showAngle]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[以視窗顯示兩日規間之角度]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>eratosthenesFR</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//compute angle between gnomons in radians
+thrad = 2*Math.PI*d/circE;
+//convert angle to degrees for display
+theta = thrad*180/Math.PI;
+//compute coordinates of bottom of moveable gnomon
+x = rE*Math.cos(thrad);
+y = rE*Math.sin(thrad);
+//compute coordinates of top of moveable gnomon
+xt = (rE+L)*Math.cos(thrad);
+yt = (rE+L)*Math.sin(thrad);
+//compute the length of the moveable gnomon's shadow
+ls = L*Math.tan(thrad);
+//compute coordinate of the tip of the gnomon's shadow
+xh = x-ls*Math.sin(thrad);
+yh = y+ls*Math.cos(thrad);
+
+
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">eratosthenesFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Eratosthenes Measures Earth"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["6,22"]]></Property>
+<Property name="size"><![CDATA["591,635"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.MenuBar</Type>
+<Property name="name">eratosthenesMenuBar</Property>
+<Property name="parent">eratosthenesFrame</Property>
+<Property name="position">north</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Menu</Type>
+<Property name="name">displayOptionsMenu</Property>
+<Property name="parent">eratosthenesMenuBar</Property>
+<Property name="text"><![CDATA["顯示選項"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showEarthBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[showEarth]]></Property>
+<Property name="text"><![CDATA["顯示地球"]]></Property>
+<Property name="tooltip"><![CDATA["勾除此選項已從更清楚的幾何角度檢視"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showLengthBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[showLength]]></Property>
+<Property name="text"><![CDATA["顯示影長"]]></Property>
+<Property name="tooltip"><![CDATA["在下方以視窗顯示影長"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showAngleBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[showAngle]]></Property>
+<Property name="text"><![CDATA["顯示兩日規(就是兩紅線)之間的角度"]]></Property>
+<Property name="tooltip"><![CDATA["在下方以視窗顯示兩日規間角度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showBeamsBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[showBeams]]></Property>
+<Property name="text"><![CDATA["顯示陽光"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showCenterBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[showCenter]]></Property>
+<Property name="text"><![CDATA["顯示地心"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">eratosthenesDrawingPanel</Property>
+<Property name="parent">eratosthenesFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[0]]></Property>
+<Property name="maximumX"><![CDATA[1.2*rE]]></Property>
+<Property name="minimumY"><![CDATA[-0.2*rE]]></Property>
+<Property name="maximumY"><![CDATA[rE]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="background"><![CDATA[black]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">fixedSunBeam</Property>
+<Property name="parent">eratosthenesDrawingPanel</Property>
+<Property name="x"><![CDATA[xSB]]></Property>
+<Property name="y"><![CDATA[ySB]]></Property>
+<Property name="sizeX"><![CDATA[-xSB]]></Property>
+<Property name="sizeY"><![CDATA[-ySB]]></Property>
+<Property name="visible"><![CDATA[showBeams]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="lineColor"><![CDATA[yellow]]></Property>
+<Property name="fillColor"><![CDATA[yellow]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">moveableSunBeam</Property>
+<Property name="parent">eratosthenesDrawingPanel</Property>
+<Property name="x"><![CDATA[xSB]]></Property>
+<Property name="y"><![CDATA[ySB]]></Property>
+<Property name="sizeX"><![CDATA[-xSB]]></Property>
+<Property name="sizeY"><![CDATA[yt-ySB]]></Property>
+<Property name="visible"><![CDATA[showBeams]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="lineColor"><![CDATA[yellow]]></Property>
+<Property name="fillColor"><![CDATA[yellow]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">fixedGnomon</Property>
+<Property name="parent">eratosthenesDrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[rE+L]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[red]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">moveableGnomon</Property>
+<Property name="parent">eratosthenesDrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[xt]]></Property>
+<Property name="sizeY"><![CDATA[yt]]></Property>
+<Property name="lineColor"><![CDATA[red]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">earthDisk</Property>
+<Property name="parent">eratosthenesDrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[2*rE]]></Property>
+<Property name="sizeY"><![CDATA[2*rE]]></Property>
+<Property name="visible"><![CDATA[showEarth]]></Property>
+<Property name="lineColor"><![CDATA[blue]]></Property>
+<Property name="fillColor"><![CDATA[blue]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">earthCenter</Property>
+<Property name="parent">eratosthenesDrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0.02*rE]]></Property>
+<Property name="sizeY"><![CDATA[0.02*rE]]></Property>
+<Property name="visible"><![CDATA[showCenter]]></Property>
+<Property name="lineColor"><![CDATA[green]]></Property>
+<Property name="fillColor"><![CDATA[green]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">shadowLine</Property>
+<Property name="parent">eratosthenesDrawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizeX"><![CDATA[xh-x]]></Property>
+<Property name="sizeY"><![CDATA[yh-y]]></Property>
+<Property name="lineColor"><![CDATA[MAGENTA]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">bottomPanel</Property>
+<Property name="parent">eratosthenesFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">distancePanel</Property>
+<Property name="parent">bottomPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="borderType"><![CDATA[ROUNDED_LINE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">distanceLabel</Property>
+<Property name="parent">distancePanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 距離: "]]></Property>
+<Property name="tooltip"><![CDATA["兩日規(紅線)間的距離(公里)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">distanceSlider</Property>
+<Property name="parent">distancePanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[d]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[5000]]></Property>
+<Property name="tooltip"><![CDATA["兩日規(紅線)間的距離(公里)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">aField</Property>
+<Property name="parent">distancePanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[d]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="columns"><![CDATA[5]]></Property>
+<Property name="tooltip"><![CDATA["兩日規(紅線)間的距離(公里)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">shadowLengthPanel</Property>
+<Property name="parent">bottomPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showLength]]></Property>
+<Property name="borderType"><![CDATA[ROUNDED_LINE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">shadowText</Property>
+<Property name="parent">shadowLengthPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 上方日規的影長(粉紅色) "]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">shadowValue</Property>
+<Property name="parent">shadowLengthPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[ls]]></Property>
+<Property name="format"><![CDATA["0.000"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="columns"><![CDATA[4]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">shadowUnits</Property>
+<Property name="parent">shadowLengthPanel</Property>
+<Property name="position">east</Property>
+<Property name="text"><![CDATA[" 乘以上方日規的長度   "]]></Property>
+<Property name="alignment"><![CDATA[LEFT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">anglePanel</Property>
+<Property name="parent">bottomPanel</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showAngle]]></Property>
+<Property name="borderType"><![CDATA[ROUNDED_LINE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">angleText</Property>
+<Property name="parent">anglePanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 上方日規與太陽光所夾角度為 "]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">angleValue</Property>
+<Property name="parent">anglePanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[theta]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="columns"><![CDATA[4]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">angleUnits</Property>
+<Property name="parent">anglePanel</Property>
+<Property name="position">east</Property>
+<Property name="text"><![CDATA[" 角度                              "]]></Property>
+<Property name="alignment"><![CDATA[LEFT]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

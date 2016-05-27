@@ -1,0 +1,1143 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.1">
+<Osejs.Information>
+<Title><![CDATA[Collision]]></Title>
+<Author><![CDATA[Fu-Kwun Hwang]]></Author>
+<Keywords><![CDATA[elastic collison, conservation of momentum]]></Keywords>
+<Level><![CDATA[beginner]]></Level>
+<Language><![CDATA[English]]></Language>
+<Abstract><![CDATA[Adapted for Ejs 4.1 by Wolfgang Christian and Robert Mohr at Davidson College.		]]></Abstract>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<AuxiliaryFiles><![CDATA[./ElasticCollision/;]]></AuxiliaryFiles>
+<DetectedFiles><![CDATA[./ElasticCollision/ElasticCollision.html;]]></DetectedFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>HTML_EXTERNAL_EDITOR</Type>
+<Name>ElasticCollision</Name>
+<Active>true</Active>
+<Content>
+<![CDATA[
+./ElasticCollision/ElasticCollision.html
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>view</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[xmin]]></Name>
+<Value><![CDATA[-150.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boundary]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmax]]></Name>
+<Value><![CDATA[150.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymin]]></Name>
+<Value><![CDATA[-100.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymax]]></Name>
+<Value><![CDATA[100.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[size]]></Name>
+<Value><![CDATA[50.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[size1]]></Name>
+<Value><![CDATA[size]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[diameter of particle1]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[size2]]></Name>
+<Value><![CDATA[size]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[diameter of particle2]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>particle</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[x1]]></Name>
+<Value><![CDATA[xmin/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y1]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx1]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[px1]]></Name>
+<Value><![CDATA[80]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy1]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[py1]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x2]]></Name>
+<Value><![CDATA[xmax/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y2]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx2]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[px2]]></Name>
+<Value><![CDATA[-80]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[py2]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m1]]></Name>
+<Value><![CDATA[1.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m2]]></Name>
+<Value><![CDATA[1.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[v1]]></Name>
+<Value><![CDATA[80.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[v2]]></Name>
+<Value><![CDATA[80.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>center of mass</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[dmin]]></Name>
+<Value><![CDATA[(size1+size2)/2.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xcm]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ycm]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dx]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x separation between particles]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dy]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y separation between particles]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[r12]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[distance between particles]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>collision</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[collisionPause]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[collisionView]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pbx1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pbx2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pby1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pby2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nx1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nx2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ny1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ny2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>initialize</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+x1=xmin/2.;
+y1=0.;
+vx1=v1;
+vy1=0;
+
+x2=xmax/2;
+y2=0.;
+vx2=-v2;
+vy2=0.;
+collisionView=false;
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>ODE Evolution</Name>
+<Active>true</Active>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</PreliminaryCode>
+<IndependentVariable>t</IndependentVariable>
+<Increment>dt</Increment>
+<Increment>dt</Increment>
+<Rate state="x1">vx1</Rate>
+<Rate state="y1">vy1</Rate>
+<Rate state="x2">vx2</Rate>
+<Rate state="y2">vy2</Rate>
+<Method>Euler</Method>
+<Tolerance>0.001</Tolerance>
+<Comment><![CDATA[Euler's method is exact for force-free motion]]></Comment>
+<Events><Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Particle Collision</Name>
+<Active>true</Active>
+<EventContent>
+<Comment><![CDATA[]]></Comment>
+<ZeroCondition><![CDATA[
+double deltax = x2-x1, deltay = y2-y1;
+double deltaVx = vx2-vx1, deltaVy = vy2-vy1;
+if (deltax*deltaVx+deltay*deltaVy>=0) {  // particles are already moving away from each other
+   return 1; 
+}
+return Math.sqrt(deltax*deltax+deltay*deltay)-dmin;  // separation should be larger than contact distance
+]]></ZeroCondition>
+<Tolerance><![CDATA[0.0001]]></Tolerance>
+<Action><![CDATA[
+pbx1=vx1*m1; pby1=vy1*m1;           // momentum before the collision
+pbx2=vx2*m2; pby2=vy2*m2;
+double vcmx = (m2*vx2+m1*vx1)/(m1+m2);  // vcm is center of mass velocity in laboratory
+double vcmy = (m2*vy2+m1*vy1)/(m1+m2);
+double deltax = x2-x1, deltay = y2-y1;
+double r=Math.sqrt(deltax*deltax+deltay*deltay);  // separation
+deltax = deltax/r;  // normalized separation x component
+deltay = deltay/r;  // normalized separation y component
+// transform into CM system
+vx1=vx1-vcmx;
+vy1=vy1-vcmy;
+vx2=vx2-vcmx;
+vy2=vy2-vcmy;
+// compute collisions
+double dot=deltax*vx1+deltay*vy1; // v1 projection along line of centers
+vx1=vx1-2*dot*deltax;
+vy1=vy1-2*dot*deltay;
+dot=deltax*vx2+deltay*vy2;        // v2 projection along line of centers
+vx2=vx2-2*dot*deltax;
+vy2=vy2-2*dot*deltay;
+// transform into laboratory
+vx1=vx1+vcmx;
+vy1=vy1+vcmy;
+vx2=vx2+vcmx;
+vy2=vy2+vcmy;
+v1=Math.sqrt(vx1*vx1+vy1*vy1);
+v2=Math.sqrt(vx2*vx2+vy2*vy2);
+// compute impulse
+nx1=vx1*m1-pbx1; ny1=vy1*m1-pby1;
+nx2=-nx1; ny2=-ny1;
+if(collisionPause) {// show impulse
+  collisionView=true;
+  _pause();
+}
+]]></Action>
+<StopAtEvent>true</StopAtEvent>
+
+</EventContent>
+</Event.Page>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Right Wall P1</Name>
+<Active>true</Active>
+<EventContent>
+<Comment><![CDATA[]]></Comment>
+<ZeroCondition><![CDATA[
+if(vx1<=0)return 1;  // particle is already moving away from wall
+return xmax-size1/2.0-x1;
+]]></ZeroCondition>
+<Tolerance><![CDATA[0.0001]]></Tolerance>
+<Action><![CDATA[
+vx1=-Math.abs(vx1);  // force particle to move to left
+]]></Action>
+<StopAtEvent>true</StopAtEvent>
+
+</EventContent>
+</Event.Page>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Left Wall P1</Name>
+<Active>true</Active>
+<EventContent>
+<Comment><![CDATA[]]></Comment>
+<ZeroCondition><![CDATA[
+if(vx1>=0)return 1;  // particle is already moving away from wall
+return x1-xmin-size1/2.0;
+]]></ZeroCondition>
+<Tolerance><![CDATA[0.0001]]></Tolerance>
+<Action><![CDATA[
+vx1=Math.abs(vx1);  // force particle to move to right
+]]></Action>
+<StopAtEvent>true</StopAtEvent>
+
+</EventContent>
+</Event.Page>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Right Wall P2</Name>
+<Active>true</Active>
+<EventContent>
+<Comment><![CDATA[]]></Comment>
+<ZeroCondition><![CDATA[
+if(vx2<=0)return 1;  // particle is already moving away from wall
+return xmax-size2/2.0-x2;
+]]></ZeroCondition>
+<Tolerance><![CDATA[0.0001]]></Tolerance>
+<Action><![CDATA[
+vx2=-Math.abs(vx2);  // force particle to move to left
+]]></Action>
+<StopAtEvent>true</StopAtEvent>
+
+</EventContent>
+</Event.Page>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Left Wall P2</Name>
+<Active>true</Active>
+<EventContent>
+<Comment><![CDATA[]]></Comment>
+<ZeroCondition><![CDATA[
+if(vx2>=0)return 1;  // particle is already moving away from wall
+return x2-xmin-size2/2.0;
+]]></ZeroCondition>
+<Tolerance><![CDATA[0.0001]]></Tolerance>
+<Action><![CDATA[
+vx2=Math.abs(vx2);  // force particle to move to right
+]]></Action>
+<StopAtEvent>true</StopAtEvent>
+
+</EventContent>
+</Event.Page>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Top Wall P1</Name>
+<Active>true</Active>
+<EventContent>
+<Comment><![CDATA[]]></Comment>
+<ZeroCondition><![CDATA[
+if(vy1<=0)return 1;  // particle is already moving away from wall
+return ymax-size1/2.0-y1;
+]]></ZeroCondition>
+<Tolerance><![CDATA[0.0001]]></Tolerance>
+<Action><![CDATA[
+vy1=-Math.abs(vy1);  // force particle to move down
+]]></Action>
+<StopAtEvent>true</StopAtEvent>
+
+</EventContent>
+</Event.Page>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Bottom Wall P1</Name>
+<Active>true</Active>
+<EventContent>
+<Comment><![CDATA[]]></Comment>
+<ZeroCondition><![CDATA[
+if(vy1>=0)return 1;  // particle is already moving away from wall
+return y1-ymin-size1/2.0;
+]]></ZeroCondition>
+<Tolerance><![CDATA[0.0001]]></Tolerance>
+<Action><![CDATA[
+vy1=Math.abs(vy1);  // force particle to move up
+]]></Action>
+<StopAtEvent>true</StopAtEvent>
+
+</EventContent>
+</Event.Page>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Top Wall P2</Name>
+<Active>true</Active>
+<EventContent>
+<Comment><![CDATA[]]></Comment>
+<ZeroCondition><![CDATA[
+if(vy2<=0)return 1;  // particle is already moving away from wall
+return ymax-size2/2.0-y2;
+]]></ZeroCondition>
+<Tolerance><![CDATA[0.0001]]></Tolerance>
+<Action><![CDATA[
+vy2=-Math.abs(vy2);  // force particle to move down
+]]></Action>
+<StopAtEvent>true</StopAtEvent>
+
+</EventContent>
+</Event.Page>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Bottom Wall P2</Name>
+<Active>true</Active>
+<EventContent>
+<Comment><![CDATA[]]></Comment>
+<ZeroCondition><![CDATA[
+if(vy2>=0)return 1;  // particle is already moving away from wall
+return y2-ymin-size2/2.0;
+]]></ZeroCondition>
+<Tolerance><![CDATA[0.0001]]></Tolerance>
+<Action><![CDATA[
+vy2=Math.abs(vy2);  // force particle to move up
+]]></Action>
+<StopAtEvent>true</StopAtEvent>
+
+</EventContent>
+</Event.Page>
+</Events>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>dynamic and geometric relations</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+ v1=Math.sqrt(vx1*vx1+vy1*vy1);
+ v2=Math.sqrt(vx2*vx2+vy2*vy2);
+ px1=m1*vx1;
+ py1=m1*vy1;
+ px2=m2*vx2;
+ py2=m2*vy2;
+ xcm=(m1*x1+m2*x2)/(m1+m2);
+ ycm=(m1*y1+m2*y2)/(m1+m2);
+ dx=x2-x1;
+ dy=y2-y1;
+ r12=Math.sqrt(dx*dx+dy*dy);
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Update Mass</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[change radius when mass is modified]]></Comment>
+<Code><![CDATA[
+public void changeM1() {
+ size1=Math.sqrt(m1)*size;
+ dmin=(size1+size2)/2.0;
+}
+
+public void updateM1() {
+ double maxSize=2*(r12-size2/2);
+ double maxMass=maxSize*maxSize/size/size;
+ m1=Math.min(m1,maxMass);
+ size1=Math.sqrt(m1)*size;
+ dmin=(size1+size2)/2.0;
+}
+
+public void changeM2() {
+ size2=Math.sqrt(m2)*size;
+ dmin=(size1+size2)/2.0;
+}
+
+public void updateM2() {
+ double maxSize=2*(r12-size1/2);
+ double maxMass=maxSize*maxSize/size/size;
+ m2=Math.min(m2,maxMass);
+ size2=Math.sqrt(m2)*size;
+ dmin=(size1+size2)/2.0;
+}
+
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Drag Events</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void resizeP1() {
+  double pOld=m1*Math.sqrt(vx1*vx1+vy1*vy1);
+  double p=Math.sqrt(px1*px1+py1*py1);
+  double cos=px1/p;
+  double sin=py1/p;
+  px1=pOld*cos;
+  py1=pOld*sin;
+  vx1=px1/m1;
+  vy1=py1/m1;
+}
+
+public void resizeP2() {
+
+}
+
+
+public void dragM1() {
+ if(Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1))-dmin<0){
+   x1=x2-dx*dmin/r12;
+   y1=y2-dy*dmin/r12;
+ }
+ if(xmax-size1/2.0-x1<0){
+   x1=xmax-size1/2.0;
+ }
+ if(x1-xmin-size1/2.0<0){
+   x1=xmin+size1/2.0;
+ }
+ if(ymax-size1/2.0-y1<0){
+   y1=ymax-size1/2.0;
+ }
+ if(y1-ymin-size1/2.0<0){
+   y1=ymin+size1/2.0;
+ }
+}
+public void dragM2() {
+ if(Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1))-dmin<0){
+   x2=x1+dx*dmin/r12;
+   y2=y1+dy*dmin/r12;
+ }
+ if(xmax-size1/2.0-x2<0){
+   x2=xmax-size1/2.0;
+ }
+ if(x2-xmin-size1/2.0<0){
+   x2=xmin+size1/2.0;
+ }
+ if(ymax-size1/2.0-y2<0){
+   y2=ymax-size1/2.0;
+ }
+ if(y2-ymin-size1/2.0<0){
+   y2=ymin+size1/2.0;
+ }
+}
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">Frame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Collision"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["21,77"]]></Property>
+<Property name="size"><![CDATA["741,568"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[hbox]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">playpause</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["play/pause simulation"]]></Property>
+<Property name="imageOn"><![CDATA["/org/opensourcephysics/resources/controls/images/play.gif"]]></Property>
+<Property name="actionOn"><![CDATA[collisionView=false;;
+_play();]]></Property>
+<Property name="imageOff"><![CDATA["/org/opensourcephysics/resources/controls/images/pause.gif"]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">step</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepforward.gif"]]></Property>
+<Property name="action"><![CDATA[collisionView=false;
+_step();]]></Property>
+<Property name="tooltip"><![CDATA["step forward"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">reset</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset.gif"]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="tooltip"><![CDATA["reset simulation"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">checkBoxpPause</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[collisionPause]]></Property>
+<Property name="text"><![CDATA["相撞時暫停動畫"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">drawingPanel</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[xmin]]></Property>
+<Property name="maximumX"><![CDATA[xmax]]></Property>
+<Property name="minimumY"><![CDATA[ymin]]></Property>
+<Property name="maximumY"><![CDATA[ymax]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">particle1</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[y1]]></Property>
+<Property name="sizeX"><![CDATA[size1]]></Property>
+<Property name="sizeY"><![CDATA[size1]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="sensitivity"><![CDATA[15]]></Property>
+<Property name="dragAction"><![CDATA[dragM1()]]></Property>
+<Property name="releaseAction"><![CDATA[dragM1()]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="fillColor"><![CDATA[cyan]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">particle2</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="sizeX"><![CDATA[size2]]></Property>
+<Property name="sizeY"><![CDATA[size2]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="sensitivity"><![CDATA[15]]></Property>
+<Property name="dragAction"><![CDATA[dragM2()]]></Property>
+<Property name="releaseAction"><![CDATA[dragM2()]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="fillColor"><![CDATA[GREEN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">segment</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[xcm-2*dmin*dx/r12]]></Property>
+<Property name="y"><![CDATA[ycm-2*dmin*dy/r12]]></Property>
+<Property name="sizeX"><![CDATA[4*dmin*dx/r12]]></Property>
+<Property name="sizeY"><![CDATA[4*dmin*dy/r12]]></Property>
+<Property name="visible"><![CDATA[collisionView]]></Property>
+<Property name="lineColor"><![CDATA[200,220,208]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">p1</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[y1]]></Property>
+<Property name="sizeX"><![CDATA[px1]]></Property>
+<Property name="sizeY"><![CDATA[py1]]></Property>
+<Property name="scalex"><![CDATA[.5]]></Property>
+<Property name="scaley"><![CDATA[.5]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="enabledSize"><![CDATA[true]]></Property>
+<Property name="sensitivity"><![CDATA[10]]></Property>
+<Property name="dragAction"><![CDATA[resizeP1 ()]]></Property>
+<Property name="releaseAction"><![CDATA[resizeP1 ()]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">p2</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="sizeX"><![CDATA[px2]]></Property>
+<Property name="sizeY"><![CDATA[py2]]></Property>
+<Property name="scalex"><![CDATA[.5]]></Property>
+<Property name="scaley"><![CDATA[.5]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="enabledSize"><![CDATA[true]]></Property>
+<Property name="sensitivity"><![CDATA[10]]></Property>
+<Property name="dragAction"><![CDATA[resizeP2 ()]]></Property>
+<Property name="releaseAction"><![CDATA[resizeP2 ()]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">impulse1</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x1+pbx1/2]]></Property>
+<Property name="y"><![CDATA[y1+pby1/2]]></Property>
+<Property name="sizeX"><![CDATA[nx1]]></Property>
+<Property name="sizeY"><![CDATA[ny1]]></Property>
+<Property name="scalex"><![CDATA[0.5]]></Property>
+<Property name="scaley"><![CDATA[0.5]]></Property>
+<Property name="visible"><![CDATA[collisionView]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[255,0,0,192]]></Property>
+<Property name="fillColor"><![CDATA[255,0,0,192]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">impulse2</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x2+pbx2/2]]></Property>
+<Property name="y"><![CDATA[y2+pby2/2]]></Property>
+<Property name="sizeX"><![CDATA[nx2]]></Property>
+<Property name="sizeY"><![CDATA[ny2]]></Property>
+<Property name="scalex"><![CDATA[0.5]]></Property>
+<Property name="scaley"><![CDATA[0.5]]></Property>
+<Property name="visible"><![CDATA[collisionView]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[255,0,0,192]]></Property>
+<Property name="fillColor"><![CDATA[255,0,0,192]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">p1BeforeCollision</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[y1]]></Property>
+<Property name="sizeX"><![CDATA[pbx1]]></Property>
+<Property name="sizeY"><![CDATA[pby1]]></Property>
+<Property name="scalex"><![CDATA[0.5]]></Property>
+<Property name="scaley"><![CDATA[0.5]]></Property>
+<Property name="visible"><![CDATA[collisionView]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[0,0,255,96]]></Property>
+<Property name="fillColor"><![CDATA[0,0,255,96]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">p2BeforeCollision</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="sizeX"><![CDATA[pbx2]]></Property>
+<Property name="sizeY"><![CDATA[pby2]]></Property>
+<Property name="scalex"><![CDATA[0.5]]></Property>
+<Property name="scaley"><![CDATA[0.5]]></Property>
+<Property name="visible"><![CDATA[collisionView]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[0,0,255,96]]></Property>
+<Property name="fillColor"><![CDATA[0,0,255,96]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">boxShape</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="sizeX"><![CDATA[xmax-xmin]]></Property>
+<Property name="sizeY"><![CDATA[ymax-ymin]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="lineColor"><![CDATA[PINK]]></Property>
+<Property name="fillColor"><![CDATA[null]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">cm</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[xcm]]></Property>
+<Property name="y"><![CDATA[ycm]]></Property>
+<Property name="sizeX"><![CDATA[15]]></Property>
+<Property name="sizeY"><![CDATA[15]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[WHEEL]]></Property>
+<Property name="fillColor"><![CDATA[null]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">cmText</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[xcm]]></Property>
+<Property name="y"><![CDATA[ycm+(ymax-ymin)*0.02]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["質心"]]></Property>
+<Property name="font"><![CDATA[Serif,BOLD,10]]></Property>
+<Property name="elementposition"><![CDATA[SOUTH_WEST]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">p1Text</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x1+px1/2]]></Property>
+<Property name="y"><![CDATA[y1+py1/2+(ymax-ymin)*0.02]]></Property>
+<Property name="sizeX"><![CDATA[15]]></Property>
+<Property name="sizeY"><![CDATA[15]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="visible"><![CDATA[t==0]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["p1"]]></Property>
+<Property name="font"><![CDATA[Serif,BOLD,10]]></Property>
+<Property name="elementposition"><![CDATA[SOUTH_WEST]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">p2Text</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x2+px2/2]]></Property>
+<Property name="y"><![CDATA[y2+py2/2+(ymax-ymin)*0.02]]></Property>
+<Property name="sizeX"><![CDATA[15]]></Property>
+<Property name="sizeY"><![CDATA[15]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="visible"><![CDATA[t==0]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["p2"]]></Property>
+<Property name="font"><![CDATA[Serif,BOLD,10]]></Property>
+<Property name="elementposition"><![CDATA[SOUTH_WEST]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slidery1</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">west</Property>
+<Property name="variable"><![CDATA[y1]]></Property>
+<Property name="minimum"><![CDATA[ymin]]></Property>
+<Property name="maximum"><![CDATA[ymax]]></Property>
+<Property name="orientation"><![CDATA[vertical]]></Property>
+<Property name="pressaction"><![CDATA[collisionView=false;]]></Property>
+<Property name="tooltip"><![CDATA["blue position"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slidery2</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[y2]]></Property>
+<Property name="minimum"><![CDATA[ymin]]></Property>
+<Property name="maximum"><![CDATA[ymax]]></Property>
+<Property name="orientation"><![CDATA[vertical]]></Property>
+<Property name="pressaction"><![CDATA[collisionView=false;]]></Property>
+<Property name="tooltip"><![CDATA["green position"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">upperPanel</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:1,0,0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slider_m1</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="variable"><![CDATA[m1]]></Property>
+<Property name="minimum"><![CDATA[0.5]]></Property>
+<Property name="maximum"><![CDATA[4.]]></Property>
+<Property name="format"><![CDATA[m1=0.0]]></Property>
+<Property name="enabled"><![CDATA[_isPaused()]]></Property>
+<Property name="dragaction"><![CDATA[changeM1()]]></Property>
+<Property name="action"><![CDATA[updateM1()]]></Property>
+<Property name="tooltip"><![CDATA["blue mass"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">sliderV1</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[v1]]></Property>
+<Property name="minimum"><![CDATA[0.]]></Property>
+<Property name="maximum"><![CDATA[200.]]></Property>
+<Property name="format"><![CDATA[v1=0.0]]></Property>
+<Property name="dragaction"><![CDATA[_initialize()]]></Property>
+<Property name="tooltip"><![CDATA["blue velocity"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slider_m2</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[m2]]></Property>
+<Property name="minimum"><![CDATA[0.5]]></Property>
+<Property name="maximum"><![CDATA[4.0]]></Property>
+<Property name="format"><![CDATA[m2=0.0]]></Property>
+<Property name="enabled"><![CDATA[_isPaused()]]></Property>
+<Property name="pressaction"><![CDATA[changeM2()]]></Property>
+<Property name="dragaction"><![CDATA[updateM2()]]></Property>
+<Property name="tooltip"><![CDATA["green mass"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">sliderV2</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="variable"><![CDATA[v2]]></Property>
+<Property name="minimum"><![CDATA[0.]]></Property>
+<Property name="maximum"><![CDATA[200.]]></Property>
+<Property name="format"><![CDATA[v2=0.0]]></Property>
+<Property name="dragaction"><![CDATA[_initialize()]]></Property>
+<Property name="tooltip"><![CDATA["green velocity"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

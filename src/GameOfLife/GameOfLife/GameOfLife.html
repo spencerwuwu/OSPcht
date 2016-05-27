@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../../../_ejs_library/css/ejsPage.css" rel="stylesheet" type="text/css">
+<title>生命遊戲(Game of Life)</title>
+<style>
+<!--
+body.dp {}
+  div.singlecolumnminwidth {
+    min-width: 920px;
+  }
+
+  * html div.singlecolumnminwidth {
+    width: expression((document.body.clientWidth < 920) ? "920px" : "100%" );
+  }
+
+  td.bucket  { padding: 5px 0em; }
+  td.bucket div.content  { margin: 0.5em 0px 0em 25px; }
+  div.buying { padding: 0.25em 0em; font-size: .86em; }
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center">
+<img src="GameOfLife_anim.gif" alt="blinker" style="border-style: solid; border-color: inherit; border-width: 0px;"><br>
+[生命遊戲動畫 gif.]</p>
+<h1>&nbsp;</h1>
+<h1>細胞自動機</h1>
+<p><a href="http://en.wikipedia.org/wiki/Cellular_automata">細胞自動機 (Cellular automata)</a> 最早由
+<a href="http://en.wikipedia.org/wiki/Von_Neumann">John von Neumann</a> 與 <a href="http://en.wikipedia.org/wiki/Stanislaw_Ulam">
+Stanislaw Ulam</a> 在探討自我複製系統時被研究。一個細胞自動機是一個空間中的網格，其狀態可以是有限數量個狀態中的其中一個，並根據周圍的鄰居以離散時間同步的被更新 細胞自動機在二維空間上最有名的例子是
+<a href="http://en.wikipedia.org/wiki/John_Horton_Conway">John Horton Conway</a> 在1970年設計的生命遊戲</p>
+<h1>生命遊戲(Game of Life)</h1><p>摘錄自 <a href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Wikipedia</a>.
+</p>
+<p>
+生命遊戲是不需要玩家參與的遊戲，也就是他的演變只取決於初始狀態，不需要玩家的任何操作。其中一種參與的方式是透過設計一個初始狀態並觀察它如何演變。<b>規則:</b>生命遊戲的範圍是一個無限的二維正方形網格 (細胞)，每一個細胞有兩種狀態，死亡或存活，並和他的鄰居，也就是九宮格除了中央的其他八個細胞，互相影響。在每一個步驟中，每一格會進行下面的轉換:<br>
+</p>
+
+<ul>
+	<li>當前細胞為存活狀態時，周圍低於2個 (不包含2個) 存活細胞時， 該細胞變成死亡狀態。(模擬生命環境貧瘠)</li>
+	<li>當前細胞為存活狀態時，周圍有2個或3個存活細胞時，該細胞保持原樣。(模擬生命環境恰當)</li>
+	<li>當前細胞為存活狀態時，周圍大於3個 (不包含3個)存活細胞時，該細胞變成死亡狀態。(模擬生命環境擁擠)</li>
+	<li>當前細胞為死亡狀態時，周圍有3個存活細胞時，該細胞變成存活狀態。(模擬繁殖)</li>
+</ul>
+
+<p>
+初始狀態構成這個系統的種子 (seed)，下一個世代則是依照上述規則同步的更新每個細胞的狀態 (生與死同時發生)，每一個離散的時刻有時候我們會稱之為一個滴答 (tick)，也就是時鐘滴滴答答的滴答，每個世代都只與它的上一個世代有關係，並按照這個規則持續演化下去。</p><font SIZE="3">
+<h2>相關的 CA 模型</h2>
+<p>以下的EJS模型展示細胞自動機的例子(以它們的程式複雜度排序)</p>
+<ul>
+  <li>Game of Life </li>
+  <li>Automata Rule 90</li>
+  <li>Automata Rules</li>
+</ul>
+    <h2>
+      參考文獻:
+    </h2>
+    	<p>「越簡單的規則往往創造出越複雜的事物」，這個理念如今已成為科學界的中心思想，舉例來說，數以萬計有豐富物理特性的有機化合物可以被碳氫氧三個元素所組成，並以薛丁格方程式 (Schrödinger equation) 描述他們的行為，最早在 Steven Wolfram 的書 <i>A New Kind of Science</i> 中提到一個有趣的猜想認為這樣的簡單原理也許也隱含在複雜的物理定律之中，這本書提供了綜合性的概述以及許多例子展示這個猜想的實用性。</p><ul>
+        <li><i>A New Kind of Science </i>by Steven Wolfram, Wolfram Media (2002) ISBN-10: 
+        0471002607</li>
+    </ul><p>&nbsp;</p><p>細胞自動機模型對於社會科學也是十分重要的，詳細的實例可以參考以下書籍。</p>
+<ul>
+  <li><i>Cities and Complexity: Understanding Cities with Cellular Automata, Agent-Based Models, and Fractals</i> by Michael 
+  Batty, MIT Press (2007) ISBN-10: 0262524791</li>
+  <li><span id="btAsinTitle0"><i>Modeling Nature: Cellular Automata Simulations with Mathematica</i></span><i> </i>by Richard J. 
+  Gaylord and Kazume Nishidate, Springer-Telos(19996) ISBN-10: 0387946209</li>
+</ul>
+<p>&nbsp;</p><p>混沌理論與非線性動力學也時常探討細胞自動機以下書籍將數學引入物理系統</p>
+<ul>
+        <li><i>Chaos and Nonlinear Dynamics</i> (2nd edition) by Robert C. Hilborn, Oxford (2000) ISBN-10: 0198507232</li><li><i>
+        Chaos and Time-Series Analysis</i> by Julien C. Sprott, Oxford (2003) ISBN-10: 0198508409</li><li><i>
+        <span id="btAsinTitle">Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry and Engineering</span></i> by 
+        Steven H. Strogatz, Westview Press (2001) ISBN-10: 0738204536 </li>
+    </ul>
+
+    </font>
+<h3>感謝:</h3>
+<p>這個生命遊戲是由 Wolfgang Christian 和 Francisco Esquembre 用 Easy Java Simulations 
+(EJS) 共同製作。當你執行這個模型 (雙擊 jar 檔案) 你可以自行查看修改編譯好的EJS模型，在 plot 中單擊右鍵，並從跳出的選單選取 "Open Ejs Model" 當然你必須已經安裝好 EJS</p><p>&nbsp;</p><p>有關Ejs的資訊可以在以下連結找到 &lt;<b><a href="http://www.um.es/fem/Ejs/">http://www.um.es/fem/Ejs/</a></b>&gt; 也可以在 OSP ComPADRE collection 找到
+&lt;<b><a href="http://www.compadre.org/OSP/">http://www.compadre.org/OSP/</a></b>&gt;.</p>
+
+</body></html>

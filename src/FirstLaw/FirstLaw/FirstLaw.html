@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../../../../../_ejs_library/css/ejsPage.css"/>
+    <title>第一運動定律</title>
+</head>
+
+<body>
+    <h1>
+    牛頓第一運動定律
+    </h1>
+
+    <p>
+      <i>Lex I: Corpus omne perseverare in statu suo quiescendi vel movendi 
+      uniformiter in directum, nisi quatenus a viribus impressis cogitur 
+      statum illum mutare.</i>&nbsp;
+      <i>(Isaac Newton 1687)</i>
+    </p>
+    <p>
+      在1687年，艾薩克．牛頓在《自然哲學的數學原理》一書中寫到 &quot;一個靜止的物體將會保持靜止，除非它受到外界一個不平衡的力。
+	  一個移動中的物體將會保持移動，除非它受到外界一個不平衡的力。&quot;&#160;  這項定理意味著我們可以找到一個參考系，稱之為慣性參考系，在此系統中的質點將不會改變它們移動的速度。
+	  第一定律經常被簡化成: <i>&#160;</i>一個物體將不會改變其運動狀態，除非受到其他外力。
+    </p>
+    <p>
+      這項Ejs模型有趣的是，透過拉動螢幕上的圓點和箭頭，就會自動改變這項模型的變量。
+	  你可以拉動質點來設定它的位子也可以拉動箭頭來設定質點的速度。</p><p>
+      這項Ejs模型所實行的牛頓第一運動定律十分簡單，
+	  新版的視窗僅僅新增了位置和時間。
+    </p>
+    <blockquote>
+      <pre>x = x + vx*dt;
+y = y + vy*dt;
+t = t + dt;</pre>
+    </blockquote>
+    <p>注意這裡的等號在Java code中並不代表數學上的等號。&nbsp;這裡的等號是一個取代的操作，即是說:&nbsp; &quot;用右手邊所表示的值來改變左手邊的變數值。&quot; </p>
+    <h2>
+      參考資料:
+    </h2>
+	<p>
+      這項模型是設計來教學EJS建模的。&nbsp; 
+	  在模擬動畫中點擊右鍵可以檢視這個模型的建模和創建工具，請見:
+    </p><ul
+      <li>&quot;Modeling Physics with Easy Java Simulations&quot; by Wolfgang Christian and Francisco Esquembre, The Physics Teacher, 
+      November 2007, <b>45</b> (8), pp. 475-480.</li>
+    </ul><p>The Easy Java Simulations (EJS) manual 可以從 ComPADRE Open Source Physics collection 以及 the 
+    Ejs website 下載</p>
+    <h3>
+      注:
+    </h3>
+    <p>
+      這個模擬動畫是由Wolfgang Christian使用Easy Java 
+		Simulations (Ejs) 建模工具所作。如果你有安裝Ejs的話，你可以檢視並修改這個模擬透過在區塊內點擊右鍵並點選"Open Ejs Model"。</p><p>
+		由此網站獲得更多Ejs的相關資訊:&lt;<b>http://www.um.es/fem/Ejs/</b>&gt;.</p>
+
+</body>
+
+</html>

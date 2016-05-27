@@ -1,0 +1,1875 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.1" password="">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Author name]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Vector Addition</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Vector Addition</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        h2.author { text-align: center !important; color: #000090 !important; font-size: 115% !important }
+        h3 { text-align: left; text-indent: 0px; color: navy; font-family: Helvetica, Arial, sans-serif; font-size: 110% !important }
+        h2 { text-align: left; text-indent: 0px; color: #000777; font-family: Helvetica, Arial, sans-serif; font-size: 120% !important }
+        h1 { text-align: left; border-top-width: medium; border-top-style: solid; border-bottom-style: solid; font-size: 135% !important; border-top-color: #000000; padding-top: 0; padding-bottom: 0; padding-right: 0; border-bottom-width: thin; padding-left: 0; margin-right: 0; margin-bottom: 0; text-indent: 0px; border-bottom-color: #000000; margin-top: 0; margin-left: 0; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8 }
+        img { padding-bottom: 1px; padding-right: 0; padding-left: 0; padding-top: 1px }
+        ﻿ body { margin-bottom: 5%; text-align: justify; margin-right: 3%; margin-left: 3%; font-size: medium; margin-top: 2% }
+        p.center { text-align: center !important }
+        body { color: purple; font-family: Georgia, Times New Roman, Times, serif; background-color: #C8DFD0 }
+        p.math { text-align: center !important }
+        table.sourcecode { border-top-width: medium; border-left-width: medium; border-top-style: none; border-right-width: medium; border-bottom-style: none; vertical-align: baseline; padding-top: 0; border-right-style: none; padding-bottom: 0; padding-right: 0; border-bottom-width: medium; padding-left: 0; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; border-left-style: none }
+        p.caption { margin-bottom: 0; text-align: center !important; margin-right: 0; margin-left: 0; font-size: 75% !important; margin-top: 0 }
+        li { margin-bottom: 0; text-align: left; margin-top: 0 }
+        p { text-align: justify; margin-bottom: 10pt; line-height: 1.5em; margin-right: 0; margin-left: 0; font-family: Times New Roman, Palatino, Caecilia, serif; margin-top: 0 }
+        h1.title { text-align: center !important; font-size: 130% !important; padding-top: 0; padding-bottom: 0; padding-right: 0; padding-left: 0; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; color: black }
+        div.coverimage { text-align: center !important }
+        ol.toc li { margin-bottom: 0; padding-bottom: 0; padding-right: 0; padding-left: 0; margin-right: 0; margin-left: 0; padding-top: 0; list-style-type: disc; margin-top: 0 }
+        div.figure { text-align: center !important }
+        p.a { margin-bottom: 0; text-align: center !important; margin-right: 0; margin-left: 0; font-size: 75% !important; margin-top: 0 }
+        td.linenumbers { text-align: right; border-top-width: medium; border-left-width: medium; border-top-style: none; border-right-width: 1px; border-bottom-style: none; vertical-align: baseline; padding-top: 0; border-right-style: solid; padding-right: 5px; padding-bottom: 0; border-bottom-width: medium; padding-left: 5px; border-right-color: #AAAAAA; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; color: #AAAAAA; border-left-style: none }
+        mspace { white-space: pre !important }
+        td.sourcecode { border-top-width: medium; border-left-width: medium; border-top-style: none; border-right-width: medium; border-bottom-style: none; vertical-align: baseline; padding-top: 0; border-right-style: none; padding-bottom: 0; padding-right: 0; border-bottom-width: medium; padding-left: 5px; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; border-left-style: none }
+        code { font-weight: bold; font-family: monospace; font-size: 100% !important }
+        table.sourcecode pre { border-top-width: medium; border-left-width: medium; border-top-style: none; border-right-width: medium; border-bottom-style: none; vertical-align: baseline; padding-top: 0; border-right-style: none; padding-bottom: 0; padding-right: 0; border-bottom-width: medium; padding-left: 0; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; border-left-style: none }
+        a:link { color: blue }
+        ol { list-style-type: lower-alpha }
+        section.footnotes li { list-style-type: disc }
+        div img { margin-bottom: 0 }
+        a:visited { color: purple }
+        div.example { background-color: #D8D8D8 !important }
+        h3.date { text-align: center }
+        p.solution { background-color: #D8D8D8 !important }
+        p.img { margin-bottom: 0; text-align: center !important }
+        p.example { background-color: #F5A9A9 !important }
+        tr.sourcecode { border-top-width: medium; border-left-width: medium; border-top-style: none; border-right-width: medium; border-bottom-style: none; vertical-align: baseline; padding-top: 0; border-right-style: none; padding-bottom: 0; padding-right: 0; border-bottom-width: medium; padding-left: 0; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; border-left-style: none }
+        div.center { text-align: center !important }
+        section.footnotes { margin-bottom: 0; font-size: smaller; margin-top: 0 }
+        ol.toc { padding-bottom: 0; padding-right: 0; padding-left: 0; margin-left: 0; padding-top: 0 }
+        h6 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+        h5 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+        address { border-top-width: thin; border-top-color: border-color; padding-top: 0; border-top-style: dotted; margin-top: 0 }
+        h4 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h1>
+      &#21521;&#37327;&#30456;&#21152;
+    </h1>
+    <p>
+      &#26377;&#20102;&#27492;&#27169;&#25836;&#22120;&#65292;&#20320;&#21487;&#20197;&#22039;&#35430;&#20841;&#20491;&#20108;&#32173;&#21521;&#37327;&#30340;&#30456;&#21152;&#12290;
+    </p>
+    <p>
+      &#24050;&#30693;&#20841;&#21521;&#37327;&#30340;&#22823;&#23567;&#21644;&#26041;&#21521;&#65292;&#20320;&#30340;&#30446;&#27161;&#26159;&#22635;&#19978;&#20061;&#20491;&#34920;&#26684;&#19978;&#21521;&#37327;&#30340;&#20540;(&#26377; x &#20998;&#37327;&#12289; y &#20998;&#37327; 
+      &#21644;&#38263;&#24230;)&#65292;&#36996;&#26377;&#32147;&#30001;&#20841;&#21521;&#37327;&#30456;&#21152;&#25152;&#24471;&#21040;&#30340;&#21521;&#37327;&#12290;&#20320;&#36996;&#38920;&#35373;&#23450;&#32080;&#26524;&#21521;&#37327;&#30340;&#35282;&#24230;&#65292;&#36664;&#20837;&#21491;&#20596; &#30340;&#20540;(&#23601;&#22312;&#34920;&#26684;&#19978;&#26041;)&#12290;
+    </p>
+    <p>
+      &#30070;&#20320;&#36664;&#20837;&#23436;&#20540;&#26178;&#65292;&#40670;&#25802; &quot; &#30906;&#35469;&#31572;&#26696; &quot; &#12290;&#22914;&#26524;&#32080;&#26524;&#26377;&#20219;&#20309;&#37679;&#35492;&#65292;&#21487;&#20197;&#20462;&#25913;&#24460; &#20877;&#27425;&#40670;&#25802; &quot; &#30906;&#35469;&#31572;&#26696; &quot; 
+      (&#20320;&#21487;&#20197;&#25345;&#32396;&#37325;&#35079;&#27492;&#21205;&#20316;)&#12290;&#22914;&#26524;&#26377;&#30097;&#21839;&#65292;&#21487;&#20197;&#40670;&#25802; &quot; &#39023;&#31034;&#31572;&#26696; &quot;&#12290;&#27880;&#24847;&#65292;&#22312;&#40670;&#25802;&quot; &#39023;&#31034;&#31572;&#26696; &quot;&#24460;&#65292;&#22312;&#24471;&#21040;&#26032;&#30340;&#19968;&#23565;&#21521;&#37327;&#21069;&#65292; &#28961;&#27861;&#20877;&#27425;&#40670;&#25802; &quot; 
+      &#30906;&#35469;&#31572;&#26696; &quot; &#12290;
+    </p>
+    <p>
+      &#20320;&#26377;&#19977;&#31278;&#19981;&#21516;&#30340;&#26041;&#24335;&#24471;&#21040;&#20841;&#20491;&#26032;&#30340;&#21521;&#37327; :
+    </p>
+    <ul>
+      <li>
+        &#40670;&#25802; &quot;&#37325;&#35373;&#21521;&#37327;&quot;
+      </li>
+    </ul>
+    <ul>
+      <li>
+        &#40670;&#25802;&#12289;&#25302;&#26355;&#20841;&#21521;&#37327;&#25110;&#20854;&#20013;&#19968;&#20491;&#21521;&#37327;&#30340;&#23574;&#31471;&#29992;&#20197;&#25913;&#35722;&#22823;&#23567;&#21644;/&#25110;&#35282;&#24230;;
+      </li>
+    </ul>
+    <ul>
+      <li>
+        &#28369;&#21205;&#28369;&#27161;&#20197;&#25913;&#35722;&#21521;&#37327;&#30340;&#38263;&#24230;&#21644;/&#25110;&#35282;&#24230;
+      </li>
+    </ul>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Activities</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Activities</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        h2.author { text-align: center !important; color: #000090 !important; font-size: 115% !important }
+        h3 { text-align: left; text-indent: 0px; color: navy; font-family: Helvetica, Arial, sans-serif; font-size: 110% !important }
+        h2 { text-align: left; text-indent: 0px; color: #000777; font-family: Helvetica, Arial, sans-serif; font-size: 120% !important }
+        h1 { text-align: left; border-top-width: medium; border-top-style: solid; border-bottom-style: solid; font-size: 135% !important; border-top-color: #000000; padding-top: 0; padding-bottom: 0; padding-right: 0; border-bottom-width: thin; padding-left: 0; margin-right: 0; margin-bottom: 0; text-indent: 0px; border-bottom-color: #000000; margin-top: 0; margin-left: 0; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8 }
+        img { padding-bottom: 1px; padding-right: 0; padding-left: 0; padding-top: 1px }
+        ﻿ body { margin-bottom: 5%; text-align: justify; margin-right: 3%; margin-left: 3%; font-size: medium; margin-top: 2% }
+        p.center { text-align: center !important }
+        body { color: purple; font-family: Georgia, Times New Roman, Times, serif; background-color: #C8DFD0 }
+        p.math { text-align: center !important }
+        table.sourcecode { border-top-width: medium; border-left-width: medium; border-top-style: none; border-right-width: medium; border-bottom-style: none; vertical-align: baseline; padding-top: 0; border-right-style: none; padding-bottom: 0; padding-right: 0; border-bottom-width: medium; padding-left: 0; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; border-left-style: none }
+        p.caption { margin-bottom: 0; text-align: center !important; margin-right: 0; margin-left: 0; font-size: 75% !important; margin-top: 0 }
+        li { margin-bottom: 0; text-align: left; margin-top: 0 }
+        p { text-align: justify; margin-bottom: 10pt; line-height: 1.5em; margin-right: 0; margin-left: 0; font-family: Times New Roman, Palatino, Caecilia, serif; margin-top: 0 }
+        h1.title { text-align: center !important; font-size: 130% !important; padding-top: 0; padding-bottom: 0; padding-right: 0; padding-left: 0; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; color: black }
+        div.coverimage { text-align: center !important }
+        ol.toc li { margin-bottom: 0; padding-bottom: 0; padding-right: 0; padding-left: 0; margin-right: 0; margin-left: 0; padding-top: 0; list-style-type: disc; margin-top: 0 }
+        div.figure { text-align: center !important }
+        p.a { margin-bottom: 0; text-align: center !important; margin-right: 0; margin-left: 0; font-size: 75% !important; margin-top: 0 }
+        td.linenumbers { text-align: right; border-top-width: medium; border-left-width: medium; border-top-style: none; border-right-width: 1px; border-bottom-style: none; vertical-align: baseline; padding-top: 0; border-right-style: solid; padding-right: 5px; padding-bottom: 0; border-bottom-width: medium; padding-left: 5px; border-right-color: #AAAAAA; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; color: #AAAAAA; border-left-style: none }
+        mspace { white-space: pre !important }
+        td.sourcecode { border-top-width: medium; border-left-width: medium; border-top-style: none; border-right-width: medium; border-bottom-style: none; vertical-align: baseline; padding-top: 0; border-right-style: none; padding-bottom: 0; padding-right: 0; border-bottom-width: medium; padding-left: 5px; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; border-left-style: none }
+        code { font-weight: bold; font-family: monospace; font-size: 100% !important }
+        table.sourcecode pre { border-top-width: medium; border-left-width: medium; border-top-style: none; border-right-width: medium; border-bottom-style: none; vertical-align: baseline; padding-top: 0; border-right-style: none; padding-bottom: 0; padding-right: 0; border-bottom-width: medium; padding-left: 0; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; border-left-style: none }
+        a:link { color: blue }
+        ol { list-style-type: lower-alpha }
+        section.footnotes li { list-style-type: disc }
+        div img { margin-bottom: 0 }
+        a:visited { color: purple }
+        div.example { background-color: #D8D8D8 !important }
+        h3.date { text-align: center }
+        p.solution { background-color: #D8D8D8 !important }
+        p.img { margin-bottom: 0; text-align: center !important }
+        p.example { background-color: #F5A9A9 !important }
+        tr.sourcecode { border-top-width: medium; border-left-width: medium; border-top-style: none; border-right-width: medium; border-bottom-style: none; vertical-align: baseline; padding-top: 0; border-right-style: none; padding-bottom: 0; padding-right: 0; border-bottom-width: medium; padding-left: 0; margin-right: 0; margin-bottom: 0; margin-top: 0; margin-left: 0; border-left-style: none }
+        div.center { text-align: center !important }
+        section.footnotes { margin-bottom: 0; font-size: smaller; margin-top: 0 }
+        ol.toc { padding-bottom: 0; padding-right: 0; padding-left: 0; margin-left: 0; padding-top: 0 }
+        h6 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+        h5 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+        address { border-top-width: thin; border-top-color: border-color; padding-top: 0; border-top-style: dotted; margin-top: 0 }
+        h4 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h1>
+      &#27963;&#21205;
+    </h1>
+    <ol>
+      <li>
+        &#39318;&#20808;&#65292;&#35373;&#23450;&#20841;&#21521;&#37327;&#30340;&#38263;&#24230;&#21644;&#35282;&#24230;&#65292;&#25110;&#20197;&#25353;&quot;&#21109;&#24314;&#21521;&#37327;&quot; &#37397;&#20358;&#21109;&#24314;&#21521;&#37327;&#12290; 
+        &#22635;&#20837;&#38957;&#20841;&#20491;&#21521;&#37327;&#30340;&#38263;&#24230;&#25033;&#35442;&#26159;&#24456;&#31777;&#21934;&#30340;&#12290;&#28982;&#24460;&#65292;&#25214;&#20986;&#21521;&#37327;&#30340;&#20998;&#37327;&#20006;&#36664;&#20837;&#21040;&#27169;&#25836;&#22120;&#24213;&#31471;&#30340;&#34920;&#26684;&#12290; &#21029;&#25812;&#24515;&#22635;&#20837;&quot;&#21512;&#25104;&#21521;&#37327;&quot;&#32218; &#12290;&#20197;&#40670;&#25802;&#24213;&#37096;&#30340;&quot; &#30906;&#35469;&#31572;&#26696; 
+        &quot;&#20358;&#30906;&#35469;&#31572;&#26696;&#12290;
+      </li>
+      <li>
+        &#26377;&#20102;&#38957;&#20841;&#20491;&#21521;&#37327;&#30340;&#27491;&#30906;&#20998;&#37327;&#24460;&#65292;&#27770;&#23450;&#21512;&#25104;&#21521;&#37327;&#30340;&#20998;&#37327;(&#21512;&#25104;&#21521;&#37327;&#28858;&#32005;&#34253;&#21521;&#37327;&#30340;&#21644;)&#12290;&#36664;&#20837;&#20182; &#20497;&#65292;&#20006;&#30906;&#35469;&#31572;&#26696;&#12290;
+      </li>
+      <li>
+        &#26368;&#24460;&#65292;&#24471;&#21040;&#21512;&#25104;&#21521;&#37327;&#30340;&#22823;&#23567;&#21644;&#35282;&#24230;&#12290;&#35282;&#24230;&#21934;&#20301;&#28858;&#24230;(&#24478;&#25351;&#21521;&#21491;&#30340;&#27491; x &#36600;&#21521;&#36870;&#26178;&#37341;&#37327;&#28204;)&#12290; &#30906;&#35469;&#20320;&#30340;&#31572;&#26696;&#65292;&#20006;&#35330;&#27491;&#37679;&#35492;&#12290;
+      </li>
+      <li>
+        &#19968;&#26086;&#20320;&#35299;&#27770;&#20102;&#19968;&#20491;&#21839;&#38988;&#65292;&#21487;&#22810;&#35373;&#24190;&#23565;&#21521;&#37327;&#65292;&#22810;&#22039;&#35430;&#65292;&#22810;&#32244;&#32722;&#12290;
+      </li>
+    </ol>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>variables</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[theta1]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第一個向量的角度]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta2]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第二個向量的角度]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L1]]></Name>
+<Value><![CDATA[2.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第一個向量的長度]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L2]]></Name>
+<Value><![CDATA[2.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第二個向量的長度]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L1x]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第一個向量的 x 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L1y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第一個向量的 y 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L2x]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第二個向量的 x 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L2y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第二個向量的 y 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L3x]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[合成向量的 x 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L3y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[合成向量的 y 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L3]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[合成向量的大小]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[angle1]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第一個向量的角度(度)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[angle2]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第二個向量的角度(度)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showarrows]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[一旗標用來顯示/隱藏向量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showcomp]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[一旗標用來顯示/隱藏向量分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showres]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[一旗標用來顯示/隱藏合成向量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[show3comp]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[一旗標用來顯示/隱藏合成向量的分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta3]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[angle3]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showAnswerFlag]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[helpLabel]]></Name>
+<Value><![CDATA["Show Help"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[helpFlag]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>strings</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[resAngle]]></Name>
+<Value><![CDATA["合成向量的角度(度)"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xcomp]]></Name>
+<Value><![CDATA["x分量"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[checkx]]></Name>
+<Value><![CDATA["x 正確?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ycomp]]></Name>
+<Value><![CDATA["y分量"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[checky]]></Name>
+<Value><![CDATA["y 正確?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[length]]></Name>
+<Value><![CDATA["長度"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[checkL]]></Name>
+<Value><![CDATA["長度正確?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vec1]]></Name>
+<Value><![CDATA["向量1"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vec2]]></Name>
+<Value><![CDATA["向量2"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vec3]]></Name>
+<Value><![CDATA["合成向量"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line1]]></Name>
+<Value><![CDATA["你可以用右上角的選項來顯示/隱藏合成向量。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line2]]></Name>
+<Value><![CDATA["用第二個確認選項來顯示/隱藏向量分量。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line3]]></Name>
+<Value><![CDATA["你可以以重設向量鈕或重設模擬器得到新的向量。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line4]]></Name>
+<Value><![CDATA["你也可以使用長度/角度滑標或點擊/拖曳向量尖端來得到新的向量。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line5]]></Name>
+<Value><![CDATA["在模擬器附近的白色空格輸入10個未知數你可以以重設向量鈕或重設模擬器得到新的向量。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line6]]></Name>
+<Value><![CDATA["空格會變黃-按Enter讓模擬器接受你的值(空格會再次變白)。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line7]]></Name>
+<Value><![CDATA["用確認鈕來確認已輸入的檔案。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line10]]></Name>
+<Value><![CDATA["修正所有不正確答案(紅色標註)並再次確認。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line8]]></Name>
+<Value><![CDATA["如有疑惑，可按顯示答案鈕來看答案。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line9]]></Name>
+<Value><![CDATA["按下確認答案後，需要新的向量來重新開始。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>user-entered variables</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[enterL1x]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第一個向量的 x 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[enterL1y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第一個向量的 y 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[enterL1]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第二個向量的 x 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[enterL2x]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第二個向量的 x 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[enterL2y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[第二個向量的 y 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[enterL2]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[合成向量的 x 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[enterL3x]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[合成向量的 x 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[enterL3y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[合成向量的 y 分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[enterL3]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[合成向量的大小]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[enterangle]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>check variables</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[x1correct]]></Name>
+<Value><![CDATA["  ?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x1correctbackground]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y1correct]]></Name>
+<Value><![CDATA["  ?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y1correctbackground]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L1correct]]></Name>
+<Value><![CDATA["  ?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L1correctbackground]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x2correct]]></Name>
+<Value><![CDATA["  ?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x2correctbackground]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y2correct]]></Name>
+<Value><![CDATA["  ?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y2correctbackground]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L2correct]]></Name>
+<Value><![CDATA["  ?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L2correctbackground]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x3correct]]></Name>
+<Value><![CDATA["  ?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x3correctbackground]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y3correct]]></Name>
+<Value><![CDATA["  ?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y3correctbackground]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L3correct]]></Name>
+<Value><![CDATA["  ?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L3correctbackground]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[anglecorrect]]></Name>
+<Value><![CDATA["  ?"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[anglecorrectbackground]]></Name>
+<Value><![CDATA[null]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[redness]]></Name>
+<Value><![CDATA[200]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[greenness]]></Name>
+<Value><![CDATA[220]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[blueness]]></Name>
+<Value><![CDATA[208]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[backColor]]></Name>
+<Value><![CDATA[null]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// Generate random vectors
+resetVectors();
+
+// Components of the resultant vector, by vector addition
+L3x = L1x + L2x;
+L3y = L1y + L2y;
+
+// Magnitude of the resultant vector, by Pythagorean theorem
+L3 = Math.sqrt(L3x*L3x+L3y*L3y);
+
+//Angle of the resultant vector
+theta3 = Math.atan2(L3y,L3x);
+if (theta3 < 0.0) theta3 = theta3 + 2.0*Math.PI;
+angle3 = theta3*180.0/Math.PI;
+
+// set the background color of the correct messages to light gray
+backColor = new java.awt.Color(redness,greenness,blueness);
+x1correctbackground = backColor;
+y1correctbackground = backColor;
+L1correctbackground = backColor;
+x2correctbackground = backColor;
+y2correctbackground = backColor;
+L2correctbackground = backColor;
+x3correctbackground = backColor;
+y3correctbackground = backColor;
+L3correctbackground = backColor;
+anglecorrectbackground = backColor;
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Cons Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// Components of vector 1
+L1x = L1*Math.cos(theta1);
+L1y = L1*Math.sin(theta1);
+
+// Components of vector 2
+L2x = L2*Math.cos(theta2);
+L2y = L2*Math.sin(theta2);
+
+// Components of the resultant vector, by vector addition
+L3x = L1x + L2x;
+L3y = L1y + L2y;
+
+// Magnitude of the resultant vector, by Pythagorean theorem
+L3 = Math.sqrt(L3x*L3x+L3y*L3y);
+
+//Angle of the resultant vector
+theta3 = Math.atan2(L3y,L3x);
+if (theta3 < 0.0) theta3 = theta3 + 2.0*Math.PI;
+angle3 = theta3*180.0/Math.PI;
+
+// When to show the components of the resultant
+if ((showres) && (showcomp)) 
+{
+show3comp = true;
+}
+else show3comp = false;
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>resetTable</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void resetTable () {
+
+showAnswerFlag = false;
+
+enterL1x = 0.0;
+x1correct = "  ?";
+x1correctbackground = backColor;
+
+enterL1y = 0.0;
+y1correct = "  ?";
+y1correctbackground = backColor;
+
+enterL1 = 0.0;
+L1correct = "  ?";
+L1correctbackground = backColor;
+
+enterL2x = 0.0;
+x2correct = "  ?";
+x2correctbackground = backColor;
+
+enterL2y = 0.0;
+y2correct = "  ?";
+y2correctbackground = backColor;
+
+enterL2 = 0.0;
+L2correct = "  ?";
+L2correctbackground = backColor;
+
+enterL3x = 0.0;
+x3correct = "  ?";
+showAnswerFlag = false;
+
+x3correctbackground = backColor;
+
+enterL3y = 0.0;
+y3correct = "  ?";
+y3correctbackground = backColor;
+
+enterL3 = 0.0;
+L3correct = "  ?";
+L3correctbackground = backColor;
+
+enterangle = 0.0;
+anglecorrect = "  ?";
+anglecorrectbackground = backColor;
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>resetVectors</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void resetVectors () {
+L1x = -10.0 + 20.0*Math.random();
+L2x = -10.0 + 20.0*Math.random();
+L1y = -10.0 + 20.0*Math.random();
+L2y = -10.0 + 20.0*Math.random();
+
+L1 = Math.sqrt(L1x*L1x+L1y*L1y);
+L2 = Math.sqrt(L2x*L2x+L2y*L2y);
+
+theta1 = Math.atan2(L1y,L1x);
+if (theta1 < 0.0) theta1 = theta1 + 2.0*Math.PI; 
+theta2 = Math.atan2(L2y,L2x);
+if (theta2 < 0.0) theta2 = theta2 + 2.0*Math.PI;
+
+angle1 = theta1*180.0/Math.PI;
+angle2 = theta2*180.0/Math.PI;
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">MainWindow</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[向量相加]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["117,376"]]></Property>
+<Property name="size"><![CDATA["855,550"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">RightPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">ButtonsPanel</Property>
+<Property name="parent">RightPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+<Property name="size"><![CDATA["240,405"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showresultant</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[showres]]></Property>
+<Property name="text"><![CDATA[顯示合成向量]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showcomponents</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[showcomp]]></Property>
+<Property name="text"><![CDATA[顯示分量]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Reset</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[重設向量]]></Property>
+<Property name="action"><![CDATA[resetVectors();
+resetTable();]]></Property>
+<Property name="background"><![CDATA[255,192,64]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="font"><![CDATA[Tahoma,BOLD,15]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">length1</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[L1]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[10.0]]></Property>
+<Property name="format"><![CDATA[向量1的長度 = 0.###]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="action"><![CDATA[resetTable();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">length2</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[L2]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[10.0]]></Property>
+<Property name="format"><![CDATA[向量2的長度 = 0.###]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="action"><![CDATA[resetTable();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">angle1</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[angle1]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[360]]></Property>
+<Property name="format"><![CDATA[向量1的角度 = 0.##]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="dragaction"><![CDATA[theta1 = angle1*Math.PI/180.0;]]></Property>
+<Property name="action"><![CDATA[theta1 = angle1*Math.PI/180.0;
+resetTable();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">angle2</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[angle2]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[360]]></Property>
+<Property name="format"><![CDATA[向量2的角度 = 0.##]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="dragaction"><![CDATA[theta2 = angle2*Math.PI/180.0;]]></Property>
+<Property name="action"><![CDATA[theta2 = angle2*Math.PI/180.0;
+resetTable();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Check</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[確認答案]]></Property>
+<Property name="action"><![CDATA[if (showAnswerFlag)
+{ }
+else
+{
+
+if (Math.abs(L1x - enterL1x) < 0.1)
+{
+x1correct = "  Yes";
+x1correctbackground = java.awt.Color.GREEN;
+}
+else
+{
+x1correct = "  No";
+x1correctbackground = java.awt.Color.RED;
+}
+
+if (Math.abs(L2x - enterL2x) < 0.1)
+{
+x2correct = "  Yes";
+x2correctbackground = java.awt.Color.GREEN;
+}
+else
+{
+x2correct = "  No";
+x2correctbackground = java.awt.Color.RED;
+}
+
+if (Math.abs(L3x - enterL3x) < 0.1)
+{
+x3correct = "  Yes";
+x3correctbackground = java.awt.Color.GREEN;
+}
+else
+{
+x3correct = "  No";
+x3correctbackground = java.awt.Color.RED;
+}
+
+if (Math.abs(L1y - enterL1y) < 0.1)
+{
+y1correct = "  Yes";
+y1correctbackground = java.awt.Color.GREEN;
+}
+else
+{
+y1correct = "  No";
+y1correctbackground = java.awt.Color.RED;
+}
+
+if (Math.abs(L2y - enterL2y) < 0.1)
+{
+y2correct = "  Yes";
+y2correctbackground = java.awt.Color.GREEN;
+}
+else
+{
+y2correct = "  No";
+y2correctbackground = java.awt.Color.RED;
+}
+
+if (Math.abs(L3y - enterL3y) < 0.1)
+{
+y3correct = "  Yes";
+y3correctbackground = java.awt.Color.GREEN;
+}
+else
+{
+y3correct = "  No";
+y3correctbackground = java.awt.Color.RED;
+}
+
+if (Math.abs(L1 - enterL1) < 0.1)
+{
+L1correct = "  Yes";
+L1correctbackground = java.awt.Color.GREEN;
+}
+else
+{
+L1correct = "  No";
+L1correctbackground = java.awt.Color.RED;
+}
+
+if (Math.abs(L2 - enterL2) < 0.1)
+{
+L2correct = "  Yes";
+L2correctbackground = java.awt.Color.GREEN;
+}
+else
+{
+L2correct = "  No";
+L2correctbackground = java.awt.Color.RED;
+}
+
+if (Math.abs(L3 - enterL3) < 0.1)
+{
+L3correct = "  Yes";
+L3correctbackground = java.awt.Color.GREEN;
+}
+else
+{
+L3correct = "  No";
+L3correctbackground = java.awt.Color.RED;
+}
+
+if (Math.abs(angle3 - enterangle) < 0.2)
+{
+anglecorrect = "  Yes";
+anglecorrectbackground = java.awt.Color.GREEN;
+}
+else
+{
+anglecorrect = "  No";
+anglecorrectbackground = java.awt.Color.RED;
+}
+
+}]]></Property>
+<Property name="background"><![CDATA[255,192,64]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="font"><![CDATA[Tahoma,BOLD,15]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Show</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[顯示答案]]></Property>
+<Property name="action"><![CDATA[showAnswerFlag = true;
+
+enterL1x = L1x;
+enterL2x = L2x;
+enterL3x = L3x;
+
+enterL1y = L1y;
+enterL2y = L2y;
+enterL3y = L3y;
+
+enterL1 = L1;
+enterL2 = L2;
+enterL3 = L3;
+
+enterangle = angle3;]]></Property>
+<Property name="background"><![CDATA[255,192,64]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="font"><![CDATA[Tahoma,BOLD,15]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">reset</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[重設模擬器]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">instructions</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[%求助標籤%]]></Property>
+<Property name="action"><![CDATA[if (helpFlag)
+{
+helpFlag = false;
+helpLabel = "Show Help";
+}
+else
+{
+helpFlag = true;
+helpLabel = "Hide Help";
+}]]></Property>
+<Property name="background"><![CDATA[BLUE]]></Property>
+<Property name="foreground"><![CDATA[YELLOW]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">resAngle</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[%resAngle%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[MAGENTA]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">resAngleEntry</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[enterangle]]></Property>
+<Property name="format"><![CDATA[theta = 0.##]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">resAnglecheck</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[%anglecorrect%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[anglecorrectbackground]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-L1-L2]]></Property>
+<Property name="maximumX"><![CDATA[L1+L2]]></Property>
+<Property name="minimumY"><![CDATA[-L1-L2]]></Property>
+<Property name="maximumY"><![CDATA[L1+L2]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA[Vector Addition]]></Property>
+<Property name="majorTicksX"><![CDATA[true]]></Property>
+<Property name="majorTicksY"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">vector1x</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[0.0]]></Property>
+<Property name="y"><![CDATA[0.0]]></Property>
+<Property name="sizex"><![CDATA[L1x]]></Property>
+<Property name="sizey"><![CDATA[0.0]]></Property>
+<Property name="scalex"><![CDATA[1.0]]></Property>
+<Property name="scaley"><![CDATA[1.0]]></Property>
+<Property name="visible"><![CDATA[showcomp]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[CYAN]]></Property>
+<Property name="secondaryColor"><![CDATA[CYAN]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">vector1y</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[L1x]]></Property>
+<Property name="y"><![CDATA[0.0]]></Property>
+<Property name="sizex"><![CDATA[0.0]]></Property>
+<Property name="sizey"><![CDATA[L1y]]></Property>
+<Property name="scalex"><![CDATA[1.0]]></Property>
+<Property name="scaley"><![CDATA[1.0]]></Property>
+<Property name="visible"><![CDATA[showcomp]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[CYAN]]></Property>
+<Property name="secondaryColor"><![CDATA[CYAN]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">vector1</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[0.0]]></Property>
+<Property name="y"><![CDATA[0.0]]></Property>
+<Property name="sizex"><![CDATA[L1x]]></Property>
+<Property name="sizey"><![CDATA[L1y]]></Property>
+<Property name="scalex"><![CDATA[1.0]]></Property>
+<Property name="scaley"><![CDATA[1.0]]></Property>
+<Property name="visible"><![CDATA[showarrows]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="dragaction"><![CDATA[theta1 = Math.atan2(L1y,L1x);
+if (theta1 < 0.0) theta1 = theta1 + 2.0*Math.PI;
+angle1 = theta1*180.0/Math.PI;
+
+L1 = Math.sqrt(L1x*L1x+L1y*L1y);
+
+if (L1 > 10.0) L1 = 10.0;]]></Property>
+<Property name="action"><![CDATA[resetTable();]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+<Property name="secondaryColor"><![CDATA[BLUE]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">vector2x</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[L1x]]></Property>
+<Property name="y"><![CDATA[L1y]]></Property>
+<Property name="sizex"><![CDATA[L2x]]></Property>
+<Property name="sizey"><![CDATA[0.0]]></Property>
+<Property name="scalex"><![CDATA[1.0]]></Property>
+<Property name="scaley"><![CDATA[1.0]]></Property>
+<Property name="visible"><![CDATA[showcomp]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[PINK]]></Property>
+<Property name="secondaryColor"><![CDATA[PINK]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">vector2y</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[L1x+L2x]]></Property>
+<Property name="y"><![CDATA[L1y]]></Property>
+<Property name="sizex"><![CDATA[0.0]]></Property>
+<Property name="sizey"><![CDATA[L2y]]></Property>
+<Property name="scalex"><![CDATA[1.0]]></Property>
+<Property name="scaley"><![CDATA[1.0]]></Property>
+<Property name="visible"><![CDATA[showcomp]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[PINK]]></Property>
+<Property name="secondaryColor"><![CDATA[PINK]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">vector2</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[L1x]]></Property>
+<Property name="y"><![CDATA[L1y]]></Property>
+<Property name="sizex"><![CDATA[L2x]]></Property>
+<Property name="sizey"><![CDATA[L2y]]></Property>
+<Property name="scalex"><![CDATA[1.0]]></Property>
+<Property name="scaley"><![CDATA[1.0]]></Property>
+<Property name="visible"><![CDATA[showarrows]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="pressaction"><![CDATA[theta2 = Math.atan2(L2y,L2x);
+if (theta2 < 0.0) theta2 = theta2 + 2.0*Math.PI;
+angle2 = theta2*180.0/Math.PI;
+
+L2 = Math.sqrt(L2x*L2x+L2y*L2y);
+
+if (L2 > 10.0) L2 = 10.0;]]></Property>
+<Property name="dragaction"><![CDATA[theta2 = Math.atan2(L2y,L2x);
+if (theta2 < 0.0) theta2 = theta2 + 2.0*Math.PI;
+angle2 = theta2*180.0/Math.PI;
+
+L2 = Math.sqrt(L2x*L2x+L2y*L2y);
+
+if (L2 > 10.0) L2 = 10.0;]]></Property>
+<Property name="action"><![CDATA[resetTable();]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="secondaryColor"><![CDATA[RED]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">vector3x</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[0.0]]></Property>
+<Property name="y"><![CDATA[L3y]]></Property>
+<Property name="sizex"><![CDATA[L3x]]></Property>
+<Property name="sizey"><![CDATA[0.0]]></Property>
+<Property name="scalex"><![CDATA[1.0]]></Property>
+<Property name="scaley"><![CDATA[1.0]]></Property>
+<Property name="visible"><![CDATA[show3comp]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[255,120,255,255]]></Property>
+<Property name="secondaryColor"><![CDATA[255,120,255,255]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">vector3y</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[0.0]]></Property>
+<Property name="y"><![CDATA[0.0]]></Property>
+<Property name="sizex"><![CDATA[0.0]]></Property>
+<Property name="sizey"><![CDATA[L3y]]></Property>
+<Property name="scalex"><![CDATA[1.0]]></Property>
+<Property name="scaley"><![CDATA[1.0]]></Property>
+<Property name="visible"><![CDATA[show3comp]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[255,120,255,255]]></Property>
+<Property name="secondaryColor"><![CDATA[255,120,255,255]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">vector3</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[0.0]]></Property>
+<Property name="y"><![CDATA[0.0]]></Property>
+<Property name="sizex"><![CDATA[L3x]]></Property>
+<Property name="sizey"><![CDATA[L3y]]></Property>
+<Property name="scalex"><![CDATA[1.0]]></Property>
+<Property name="scaley"><![CDATA[1.0]]></Property>
+<Property name="visible"><![CDATA[showres]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+<Property name="secondaryColor"><![CDATA[MAGENTA]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Table</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:4,7,3,3]]></Property>
+<Property name="size"><![CDATA[300,120]]></Property>
+<Property name="border"><![CDATA[50]]></Property>
+<Property name="borderType"><![CDATA[MATTE]]></Property>
+<Property name="borderColor"><![CDATA[CYAN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">tf1</Property>
+<Property name="parent">Table</Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="size"><![CDATA[200,40]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">xcomp</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%xcomp%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checkx</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%checkx%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">ycomp</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%ycomp%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checky</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%checky%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">length</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%length%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checkL</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%checkL%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">vec1</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%vec1%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[100,100,255]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">x1</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[enterL1x]]></Property>
+<Property name="format"><![CDATA[x1 = 0.##]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checkx1</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[x1correct]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[x1correctbackground]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">y1</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[enterL1y]]></Property>
+<Property name="format"><![CDATA[y1 = 0.##]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checky1</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%y1correct%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[y1correctbackground]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">l1</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[enterL1]]></Property>
+<Property name="format"><![CDATA[L1 = 0.##]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checkL1</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%L1correct%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[L1correctbackground]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">vec2</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%vec2%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[255,100,100]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">x2</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[enterL2x]]></Property>
+<Property name="format"><![CDATA[x2 = 0.##]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checkx2</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%x2correct%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[x2correctbackground]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">y2</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[enterL2y]]></Property>
+<Property name="format"><![CDATA[y2 = 0.##]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checky2</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%y2correct%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[y2correctbackground]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">l2</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[enterL2]]></Property>
+<Property name="format"><![CDATA[L2 = 0.##]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checkL2</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%L2correct%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[L2correctbackground]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">vec3</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%vec3%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[MAGENTA]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">x3</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[enterL3x]]></Property>
+<Property name="format"><![CDATA[x3 = 0.##]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checkx3</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%x3correct%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[x3correctbackground]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">y3</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[enterL3y]]></Property>
+<Property name="format"><![CDATA[y3 = 0.##]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checky3</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%y3correct%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[y3correctbackground]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">l3</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[enterL3]]></Property>
+<Property name="format"><![CDATA[L3 = 0.##]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">checkL3</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[%L3correct%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[L3correctbackground]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">helpBox</Property>
+<Property name="title"><![CDATA[Help]]></Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+<Property name="visible"><![CDATA[helpFlag]]></Property>
+<Property name="onClosing"><![CDATA[helpFlag = false;
+helpLabel = "Show Help";]]></Property>
+<Property name="location"><![CDATA["15,1"]]></Property>
+<Property name="size"><![CDATA["903,244"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line1</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line1%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line2</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line2%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line3</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line3%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line4</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line4%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line5</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line5%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line6</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line6%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line7</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line7%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line10</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line10%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line8</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line8%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line9</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line9%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

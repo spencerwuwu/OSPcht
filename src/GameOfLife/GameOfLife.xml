@@ -1,0 +1,391 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.1" password="">
+<Osejs.Information>
+<Title><![CDATA[John Conway' s Game of Life]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[Life, Cellular automata]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[Beginner]]></Level>
+<Language><![CDATA[English]]></Language>
+<Abstract><![CDATA[This is a simple implementation of Conway's Game of Life cellular automata popularized by Martin Gardner in Scientific American.]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Francisco Esquembre and Wolfgang Christian]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./GameOfLife/GameOfLife.html;./GameOfLife/GameOfLifeConfigurations.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./GameOfLife/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>生命遊戲(Game of Life)</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>生命遊戲(Game of Life)</Title>
+  <External>true</External>
+  <![CDATA[
+./GameOfLife/GameOfLife.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>結構(Configurations)</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>結構(Configurations)</Title>
+  <External>true</External>
+  <![CDATA[
+./GameOfLife/GameOfLifeConfigurations.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>1</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Var Table</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[Variables for the Game of Life]]></PageComment>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[128]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[cells]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[[n][n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tmpCells]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[[n][n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Initial state</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[Selectin the seed]]></Comment>
+<Code><![CDATA[
+n=Math.max(3,n); // insures a 3x3 grid
+cells = new int[n][n];
+tmpCells = new int[n][n];
+for(int i=0; i<n; i++){
+  for(int j=0; j<n; j++){
+    cells[i][j]=(Math.random()<0.5)?0:1;
+  }
+}
+t = 0;  // resets the time
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>EVOLUTION_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[Rules of the Game of Life]]></Comment>
+<Code><![CDATA[
+// Copy current state
+for (int i=0; i<n; i++) 
+  System.arraycopy(cells[i],0,tmpCells[i],0,n);
+for(int i = 0; i<n; i++) {
+   for(int j = 0; j<n; j++) {
+      switch(computeNeighbors(i, j)) {    // apply the rules of Life
+         case 0 :
+         case 1 :
+            cells[i][j] = 0;              //dies
+            break;
+         case 2 :
+            cells[i][j] = tmpCells[i][j]; //life goes on
+            break;
+         case 3 :
+            cells[i][j] = 1;              //condition for birth
+            break;
+         default :
+            cells[i][j] = 0;              // dies of overcrowding if >3
+      }  // end of switch
+   }  // end of j loop
+}  //end of i loop
+t++;  // increment generation
+]]></Code>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Compute Neighbors</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public int computeNeighbors(int row, int col) {
+  int neighbors = -tmpCells[row][col]; // do not count self
+  row += n; // add the size so that the mod operator works for row 0
+  col += n;
+  for(int i = -1; i<=1; i++) {
+    for(int j = -1; j<=1; j++) {
+      neighbors += tmpCells[(row+i)%n][(col+j)%n];
+    }
+  }
+  return neighbors;
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Toggle Life</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void toggleLife() {
+  // gets the mouse pressed coordinates
+  int ix = (int) _view.lifeDrawingPanel.getMouseX();
+  int iy = (int)_view.lifeDrawingPanel.getMouseY();
+  // switches the state of the cell
+  cells[ix][iy] = 1 - cells[ix][iy];
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Clear Life</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void clearLife() {
+for(int i=0; i<n; i++){
+  for(int j=0; j<n; j++){
+    cells[i][j]=0;
+  }
+}
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">lifeDrawingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[生命遊戲(Game of Life)]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["32,4"]]></Property>
+<Property name="size"><![CDATA["431,433"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">lifeDrawingPanel</Property>
+<Property name="parent">lifeDrawingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="square"><![CDATA[false]]></Property>
+<Property name="pressaction"><![CDATA[toggleLife()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Lattice</Type>
+<Property name="name">lifeLattice</Property>
+<Property name="parent">lifeDrawingPanel</Property>
+<Property name="data"><![CDATA[cells]]></Property>
+<Property name="minimumX"><![CDATA[0]]></Property>
+<Property name="maximumX"><![CDATA[n]]></Property>
+<Property name="minimumY"><![CDATA[0]]></Property>
+<Property name="maximumY"><![CDATA[n]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">lifeDrawingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[flow:left,0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startStopButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["開始與暫停"]]></Property>
+<Property name="imageOn"><![CDATA["/org/opensourcephysics/resources/controls/images/play.gif"]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA["/org/opensourcephysics/resources/controls/images/pause.gif"]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepforward.gif"]]></Property>
+<Property name="action"><![CDATA[_step()]]></Property>
+<Property name="tooltip"><![CDATA["往後一步"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset.gif"]]></Property>
+<Property name="action"><![CDATA[_reset();]]></Property>
+<Property name="tooltip"><![CDATA["重置"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">clearButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/erase.gif"]]></Property>
+<Property name="action"><![CDATA[clearLife()]]></Property>
+<Property name="tooltip"><![CDATA["清除"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">paramPanel</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[flow:center,0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">nPanel</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border:0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">nLabel</Property>
+<Property name="parent">nPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[    n =]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+<Property name="tooltip"><![CDATA[地圖邊長]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">nField</Property>
+<Property name="parent">nPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[n]]></Property>
+<Property name="format"><![CDATA[000]]></Property>
+<Property name="editable"><![CDATA[_isPaused()]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="size"><![CDATA["40,23"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">tPanel</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border:0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">tLabel</Property>
+<Property name="parent">tPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[    t =]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+<Property name="tooltip"><![CDATA[時間]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">tField</Property>
+<Property name="parent">tPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[t]]></Property>
+<Property name="format"><![CDATA[000]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="size"><![CDATA["40,23"]]></Property>
+<Property name="tooltip"><![CDATA[目前時間]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

@@ -1,0 +1,90 @@
+<html>
+<head>
+     <link href="ejsPage.css" rel="stylesheet" type="text/css">	 
+     <title>The rotation of Earth effect for ballistics </title>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	 
+</head>
+
+<body>
+
+<p align="center">
+
+<p align="left"><img align="center" alt="screenshot of running simulation." src="screenshot_halfsize.png" width="500" 
+height="295"> <br>
+正在運行的模擬規模的半截圖。 </p>
+<br>
+<br>
+<br>
+
+
+<h1>對彈道的影響地球的旋轉</h1>
+
+<p>模擬顯示接近地球彈道軌跡。左側面板顯示的軌跡和它的相對於跟踪到慣性坐標系中，在右邊的面板表示從一個角度上說是共旋轉與地球上看到的軌跡和它的痕跡。</p><br>
+
+<p>在彈道，兩個不同旋轉的地球效應在作用。
+<ol>
+<li> 發射後的總速度是兩個係數的總和：已有速度因為它是與地球共旋轉，以及由發射賦予的速度。</li>
+<li> 射出後以後的運動是軌道運動。從一個共同旋轉點看有明顯的偏轉。</li>
+</ol><br>
+
+<p>對於旋轉速度和重力加速度“G”的值不預設為匹配地球上的情況。另外變量“G”未匹配萬有引力的法則的標準“G”。包括變量的旋轉速度和發射速度，其目的是使它們可修改。已選擇了默認設置，從而獲得一個展示。</p><br>
+
+<p>空氣阻力的影響不包括在內，所以結果只適用於無大氣天體。</p><br>
+
+
+<h2>輸入</h2>
+
+<p>以下值可調：
+<ul>
+<li><i>旋轉速率</i>行星圍繞它的軸旋轉速度多快。</li>
+<li><i>g</i> 重力加速度</li>
+<li><i>緯度</i> 啟動時的緯度</li>
+<li><i>高度</i> 發射的高度。一地球半徑被設定為高度的一個單位。</li>
+<li><i>發射初速度</i> Nozzle velocity of the gun that fires the projectile.</li>
+<li><i>發射出仰角</i> 角度用 度 為單位</li>
+<li><i>發射方向</i> 角度用 度 為單位  方向向西為180 向東為0</li>
+</ul>
+<ul>
+<li><i>高度</i> </li>
+</ul></p>
+<br>
+
+<h2> 預設 </h2>
+
+<p>Checking the box 'Extra' will open a small separate window containing radio buttons for some presets.點擊下方“更多”會開小會開啟更多選項。 </p><br>
+
+<p>選項“地球靜止軌道'設置'G'，使仿真模型地球的值。地球的（平均）半徑6371公里，和地球靜止衛星沿軌道移動與42164公里半徑。在這個模擬地球半徑為高度的一個單位，所以對地靜止軌道的高度出來作為5.62單位。 </p><br>
+
+<p>選項“低地球軌道'具有關於'旋轉速度”和“G”相同的值，但軌道非常接近的表面上。你看環遊16倍的物體對地球旋轉一周時，就像低地球軌道國際空間站需要大約90分鐘繞地球一圈每一個。</p><br>
+
+<br>
+<br>
+<br>
+
+<h2>旋轉相關模型 </h2>
+<p>下面EJS模型顯示旋轉物理學的各個方面：</p>
+<ul>
+	<li>Inertial Oscillation  慣性振盪</li>
+    <li>Great Circles</li>
+	<li>Circumnavigating Pendulum 環遊擺</li>
+	<li>Foucault Pendulum 傅科擺</li> 
+	<li>Foucault Rod 福柯棒</li>
+	<li>Ballistics and orbits 彈道和軌道</li>
+	<li>Angular acceleration 角加速度</li>
+</ul>
+<p>&nbsp;</p>
+<p>造訪 <a href="http://www.cleonis.nl/index.htm">Physics of Rotation</a> website for additional information about these models.</p>
+<br>
+<br>
+
+
+<h3>Credits:</h3>
+
+<p>The Ballistics and Orbits Model was created by Cleon Teunissen using the Easy Java Simulations (EJS) authoring and modeling tool. You can examine and modify this EJS model by right-click within the running program and select &quot;Open EJS Model&quot; from the pop-up menu to copy the model&#39;s XML description into EJS.&nbsp; You must, of course, have EJS installed on your computer.</p><p>&nbsp;</p>
+<p>Information about EJS is available at: &lt;<a href="http://www.um.es/fem/Ejs/">http://www.um.es/fem/Ejs/</a>&gt; 
+and in the OSP comPADRE collection &lt;<a href="http://www.compadre.org/OSP/">http://www.compadre.org/OSP/</a>&gt;.</p>
+
+</body>
+
+</html>

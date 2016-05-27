@@ -1,0 +1,3551 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.0 beta" password="">
+<Osejs.Information>
+<Title><![CDATA[SolarLunarEclipses]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[moon, phase, eclipse, lunar, solar]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Mario Belloni and Todd Timberlake]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./SolarLunarEclipses/FullMoonIncline.gif;./SolarLunarEclipses/SolarLunarEclipses.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./SolarLunarEclipses/eclipse1.jpg;./SolarLunarEclipses/eclipse2.jpg;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>SolarLunarEclipses</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>SolarLunarEclipses</Title>
+  <External>true</External>
+  <![CDATA[
+./SolarLunarEclipses/SolarLunarEclipses.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>earthVars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time (in years)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rE]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[radial coordinate for earth orbit]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[phiE]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[angle coordinate for earth orbit]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[aE]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[semimajor axis of earth orbit]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[eE]]></Name>
+<Value><![CDATA[0.0167]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[eccentricity of earth orbit]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xE]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-coordinate of earth orbit]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yE]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-coordinate of earth orbit]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lonPE]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[longitude of Earth's perihelion in radians]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lonPEdeg]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[longitude of Earth's perihelion in degrees]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lonS]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[ecliptic longitude of Sun as seen from Earth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[scale]]></Name>
+<Value><![CDATA[2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[variable to set size of viewing area in orbit view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[5.000E-4]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[size of time step]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zoom]]></Name>
+<Value><![CDATA[9.94055]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[zoom factor for orbit frame]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showEarth]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[whether to show Earth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lunarEclipse]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[position of Earth's shadow for a lunar eclipse]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>MoonPhase</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[np]]></Name>
+<Value><![CDATA[100]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[number of points used in polygons]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pv]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[2*np][2]]]></Dimension>
+<Comment><![CDATA[polygon for shadow on moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ShowMoon]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to show moon view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[transp]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[variable for controling transparency of darknessPolygon (to emulate Earthlight)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[color]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Color]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[variable to control color of darknessPolygon (to emulate Earthlight)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[angle for moon phase calculation]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ang]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[intermediate angle variable for Moon phase]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[angle]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[inclination angle for ecliptic view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[posMoon]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[moon position on ecliptic]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rotation]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[rotation rate for precession]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[proximityEM]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[relative position between Earth and Moon on Ecliptic]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>moonVars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[r]]></Name>
+<Value><![CDATA[1.5237]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[radial coordinate of Moon orbit]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[phi]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[angle coordinate of Moon orbit]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a]]></Name>
+<Value><![CDATA[1.5237]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[semimajor axis of Moon's orbit]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[e]]></Name>
+<Value><![CDATA[0.0934]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[eccentricity of Moon's orbit]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-coordinate for Moon before rotations]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-coordinate for Moon before rotations]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[incl]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[inclination of Moon's orbit (relative to ecliptic) in degrees]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lat]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[ecliptic latitude of Moon as seen from Earth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lon]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[ecliptic longitude of Moon as seen from Earth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dist]]></Name>
+<Value><![CDATA[0.5237]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[distance between Earth and Moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[inclDeg]]></Name>
+<Value><![CDATA[5.145]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[inclination of Moon's orbit in degrees]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lonAN]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[longitude of Moon's ascending node in radians]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lonANdeg]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[longitude of Moon's ascending node in degrees]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[arg]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[argument of Moon's perihelion in radians]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[argDeg]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[argument of Moon's perihelion in degrees]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pColor]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Color]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xM]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[actual x-coordinate for Moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yM]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[actual y-coordinate for Moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zM]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[actual z-coordinate for Moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xlos]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-component for line of sight vector]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ylos]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-component for line of sight vector]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zlos]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[z-component for line of sight vector]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[MoonInclineAngle]]></Name>
+<Value><![CDATA[5.145]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[MoonInclineAngleRadians]]></Name>
+<Value><![CDATA[5.145*Math.PI/180]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showMoonSlider]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xMe]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yMe]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zMe]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lonE]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[latE]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>starVars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[nst]]></Name>
+<Value><![CDATA[300]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[number of stars in orbit view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xstar]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nst]]]></Dimension>
+<Comment><![CDATA[x-coordinate for stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ystar]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nst]]]></Dimension>
+<Comment><![CDATA[y-coordinate for stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zstar]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nst]]]></Dimension>
+<Comment><![CDATA[z-coordinate for stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[magstar]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nst]]]></Dimension>
+<Comment><![CDATA[magnitudes of stars (for size)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nES]]></Name>
+<Value><![CDATA[168]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[number of stars in ecliptic view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lonES]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nES]]]></Dimension>
+<Comment><![CDATA[ecliptic longitude of stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[latES]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nES]]]></Dimension>
+<Comment><![CDATA[ecliptic latitude of stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[magES]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nES]]]></Dimension>
+<Comment><![CDATA[magnitudes of ecliptic stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xst]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nst]]]></Dimension>
+<Comment><![CDATA[scaled x-coordinate for stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yst]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nst]]]></Dimension>
+<Comment><![CDATA[scaled y-coordinate for stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zst]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nst]]]></Dimension>
+<Comment><![CDATA[scaled z-coordinate for stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[magst]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nst]]]></Dimension>
+<Comment><![CDATA[REscaled magnitude for stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[evStarsTop]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[[nES]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>controlVars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[traceEV]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[to trace planet's path in ecliptic view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showEcl]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[to show ecliptic plane]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[eTrace]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[trace Earth's path in orbit view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pTrace]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[trace Moon's path in orbit view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lineES]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[show line connecting Earth and Sun]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[los]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[show line of sight vector indicating apparent location of planet on Cel Globe]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[userDef]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[to let the user set the orbital parameters]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[traceon]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[to make Moon trail active in ecliptic view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[globeStars]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[to show stars in orbit frame]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[eparrow]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[to show an arrow pointing to the location of possible eclipses]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[sunFront]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[if Sun is in front of planet]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[useTrans]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showEcliptic]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[evStars]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[show stars in the ecliptic view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[eX]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mode]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[fillMe]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>eclipticStars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//ecliptic longitude, latitude, and magnitude of 146 bright stars
+//that lie near the ecliptic (-0.3 to 0.3 rads in latitude)
+lonES[	0	]=	-0.94016775	;
+lonES[	1	]=	1.670401823	;
+lonES[	2	]=	1.748402281	;
+lonES[	3	]=	-1.50794211	;
+lonES[	4	]=	2.357056449	;
+lonES[	5	]=	0.769569016	;
+lonES[	6	]=	2.081173657	;
+lonES[	7	]=	1.671922877	;
+lonES[	8	]=	3.00217449	;
+lonES[	9	]=	-1.340931847	;
+lonES[	10	]=	2.2077726	;
+lonES[	11	]=	-1.448580866	;
+lonES[	12	]=	2.416646886	;
+lonES[	13	]=	2.423312948	;
+lonES[	14	]=	-1.313813589	;
+lonES[	15	]=	1.062833228	;
+lonES[	16	]=	1.65921017	;
+lonES[	17	]=	2.563386694	;
+lonES[	18	]=	-1.399013748	;
+lonES[	19	]=	2.264585462	;
+lonES[	20	]=	-1.477965891	;
+lonES[	21	]=	2.092260477	;
+lonES[	22	]=	2.181217979	;
+lonES[	23	]=	-0.310994738	;
+lonES[	24	]=	-1.45671375	;
+lonES[	25	]=	2.18524387	;
+lonES[	26	]=	-1.437490806	;
+lonES[	27	]=	0.74317546	;
+lonES[	28	]=	1.48224715	;
+lonES[	29	]=	-2.570504557	;
+lonES[	30	]=	2.403166722	;
+lonES[	31	]=	-2.973447576	;
+lonES[	32	]=	2.117839459	;
+lonES[	33	]=	2.068247426	;
+lonES[	34	]=	0.456221204	;
+lonES[	35	]=	-0.045091986	;
+lonES[	36	]=	1.732364092	;
+lonES[	37	]=	2.937993684	;
+lonES[	38	]=	1.647597144	;
+lonES[	39	]=	2.838467347	;
+lonES[	40	]=	1.993665292	;
+lonES[	41	]=	-1.412784798	;
+lonES[	42	]=	1.614036414	;
+lonES[	43	]=	-0.205382501	;
+lonES[	44	]=	-1.549059255	;
+lonES[	45	]=	-2.020837041	;
+lonES[	46	]=	-0.550157299	;
+lonES[	47	]=	1.632414406	;
+lonES[	48	]=	1.812428005	;
+lonES[	49	]=	-1.255322536	;
+lonES[	50	]=	2.954392898	;
+lonES[	51	]=	1.675297439	;
+lonES[	52	]=	1.665294371	;
+lonES[	53	]=	2.670033265	;
+lonES[	54	]=	1.607135158	;
+lonES[	55	]=	-1.958111393	;
+lonES[	56	]=	1.507481708	;
+lonES[	57	]=	2.467477562	;
+lonES[	58	]=	-0.773534163	;
+lonES[	59	]=	2.906812293	;
+lonES[	60	]=	-0.688231341	;
+lonES[	61	]=	1.826747742	;
+lonES[	62	]=	-2.309858385	;
+lonES[	63	]=	1.482160507	;
+lonES[	64	]=	-2.348785902	;
+lonES[	65	]=	-2.168698489	;
+lonES[	66	]=	-1.766436364	;
+lonES[	67	]=	0.368728278	;
+lonES[	68	]=	-1.058270542	;
+lonES[	69	]=	2.256934671	;
+lonES[	70	]=	1.332763607	;
+lonES[	71	]=	1.548779132	;
+lonES[	72	]=	-1.72970102	;
+lonES[	73	]=	1.490842096	;
+lonES[	74	]=	1.894431635	;
+lonES[	75	]=	-1.18615609	;
+lonES[	76	]=	2.043085339	;
+lonES[	77	]=	-1.218048156	;
+lonES[	78	]=	1.311890453	;
+lonES[	79	]=	1.92401456	;
+lonES[	80	]=	1.958267184	;
+lonES[	81	]=	1.393096974	;
+lonES[	82	]=	-2.517584448	;
+lonES[	83	]=	1.354632443	;
+lonES[	84	]=	0.636304887	;
+lonES[	85	]=	-1.194940593	;
+lonES[	86	]=	-1.479771165	;
+lonES[	87	]=	1.460544953	;
+lonES[	88	]=	2.725481109	;
+lonES[	89	]=	2.049519567	;
+lonES[	90	]=	1.720983386	;
+lonES[	91	]=	-1.630765589	;
+lonES[	92	]=	-1.663329963	;
+lonES[	93	]=	-1.894020329	;
+lonES[	94	]=	2.354752734	;
+lonES[	95	]=	-2.615010762	;
+lonES[	96	]=	2.038719823	;
+lonES[	97	]=	1.287151489	;
+lonES[	98	]=	1.336029808	;
+lonES[	99	]=	-1.744259006	;
+lonES[	100	]=	-1.047066585	;
+lonES[	101	]=	0.976555611	;
+lonES[	102	]=	-2.581432918	;
+lonES[	103	]=	-1.441203478	;
+lonES[	104	]=	-1.9759836	;
+lonES[	105	]=	1.780765842	;
+lonES[	106	]=	-0.592888261	;
+lonES[	107	]=	2.279893728	;
+lonES[	108	]=	2.941563771	;
+lonES[	109	]=	0.638878117	;
+lonES[	110	]=	2.75527811	;
+lonES[	111	]=	-2.611269952	;
+lonES[	112	]=	-2.852270707	;
+lonES[	113	]=	-2.455764991	;
+lonES[	114	]=	-0.657333915	;
+lonES[	115	]=	-1.924062364	;
+lonES[	116	]=	-1.924061502	;
+lonES[	117	]=	-1.337609183	;
+lonES[	118	]=	0.465089293	;
+lonES[	119	]=	-1.101717285	;
+lonES[	120	]=	1.933317545	;
+lonES[	121	]=	-2.575503166	;
+lonES[	122	]=	-2.995293582	;
+lonES[	123	]=	-0.159806733	;
+lonES[	124	]=	1.575102997	;
+lonES[	125	]=	-1.569800262	;
+lonES[	126	]=	-2.815506637	;
+lonES[	127	]=	2.968102168	;
+lonES[	128	]=	2.165272186	;
+lonES[	129	]=	0.404338296	;
+lonES[	130	]=	2.033132576	;
+lonES[	131	]=	-0.643343773	;
+lonES[	132	]=	2.054218924	;
+lonES[	133	]=	1.268292423	;
+lonES[	134	]=	0.241701418	;
+lonES[	135	]=	-2.301084908	;
+lonES[	136	]=	-1.386598511	;
+lonES[	137	]=	0.961438465	;
+lonES[	138	]=	-1.146291813	;
+lonES[	139	]=	0.11369456	;
+lonES[	140	]=	1.471676676	;
+lonES[	141	]=	-0.958375548	;
+lonES[	142	]=	-0.739189153	;
+lonES[	143	]=	-1.376040586	;
+lonES[	144	]=	-1.569230945	;
+lonES[	145	]=	0.490697286	;
+lonES[	146	]=	-0.980307372	;
+lonES[	147	]=	-1.42869263	;
+lonES[	148	]=	-0.380717093	;
+lonES[	149	]=	1.158240215	;
+lonES[	150	]=	2.232707343	;
+lonES[	151	]=	-0.249734127	;
+lonES[	152	]=	-0.530670035	;
+lonES[	153	]=	-2.734120638	;
+lonES[	154	]=	-1.131009662	;
+lonES[	155	]=	-0.771881391	;
+lonES[	156	]=	1.652182391	;
+lonES[	157	]=	2.804105297	;
+lonES[	158	]=	-2.465013388	;
+lonES[	159	]=	1.016193916	;
+lonES[	160	]=	0.097983529	;
+lonES[	161	]=	-2.1432595	;
+lonES[	162	]=	-2.435604893	;
+lonES[	163	]=	-1.083517358	;
+lonES[	164	]=	2.718635127	;
+lonES[	165	]=	0.010918923	;
+lonES[	166	]=	1.030808106	;
+lonES[	167	]=	1.888070874	;
+
+latES[	0	]=	-0.579488438*2	;
+latES[	1	]=	-0.577869587*2	;
+latES[	2	]=	-0.577561011*2	;
+latES[	3	]=	-0.577193051*2	;
+latES[	4	]=	-0.574968629*2	;
+latES[	5	]=	-0.57444681*2	;
+latES[	6	]=	-0.573017521*2	;
+latES[	7	]=	-0.563131662*2	;
+latES[	8	]=	-0.55150219*2	;
+latES[	9	]=	-0.543195873*2	;
+latES[	10	]=	-0.524051173*2	;
+latES[	11	]=	-0.509638115*2	;
+latES[	12	]=	-0.505785375*2	;
+latES[	13	]=	-0.493370373*2	;
+latES[	14	]=	-0.486278851*2	;
+latES[	15	]=	-0.484390587*2	;
+latES[	16	]=	-0.463568781*2	;
+latES[	17	]=	-0.454067667*2	;
+latES[	18	]=	-0.445639518*2	;
+latES[	19	]=	-0.445285599*2	;
+latES[	20	]=	-0.441451536*2	;
+latES[	21	]=	-0.44060702*2	;
+latES[	22	]=	-0.437137053*2	;
+latES[	23	]=	-0.43311927*2	;
+latES[	24	]=	-0.427716515*2	;
+latES[	25	]=	-0.419426599*2	;
+latES[	26	]=	-0.411079549*2	;
+latES[	27	]=	-0.40230503*2	;
+latES[	28	]=	-0.395277086*2	;
+latES[	29	]=	-0.390647182*2	;
+latES[	30	]=	-0.385366879*2	;
+latES[	31	]=	-0.380446803*2	;
+latES[	32	]=	-0.373952246*2	;
+latES[	33	]=	-0.370779451*2	;
+latES[	34	]=	-0.368886855*2	;
+latES[	35	]=	-0.362743558*2	;
+latES[	36	]=	-0.352269448*2	;
+latES[	37	]=	-0.343366968*2	;
+latES[	38	]=	-0.342871491*2	;
+latES[	39	]=	-0.314937875*2	;
+latES[	40	]=	-0.304470653*2	;
+latES[	41	]=	-0.293495339*2	;
+latES[	42	]=	-0.291719705*2	;
+latES[	43	]=	-0.281318044*2	;
+latES[	44	]=	-0.279726756*2	;
+latES[	45	]=	-0.279595032*2	;
+latES[	46	]=	-0.278147035*2	;
+latES[	47	]=	-0.273045519*2	;
+latES[	48	]=	-0.269186873*2	;
+latES[	49	]=	-0.268502175*2	;
+latES[	50	]=	-0.253086999*2	;
+latES[	51	]=	-0.244491194*2	;
+latES[	52	]=	-0.240655482*2	;
+latES[	53	]=	-0.239856943*2	;
+latES[	54	]=	-0.237754712*2	;
+latES[	55	]=	-0.235395221*2	;
+latES[	56	]=	-0.233488306*2	;
+latES[	57	]=	-0.227759771*2	;
+latES[	58	]=	-0.219660821*2	;
+latES[	59	]=	-0.212867317*2	;
+latES[	60	]=	-0.209371179*2	;
+latES[	61	]=	-0.20487728*2	;
+latES[	62	]=	-0.193799618*2	;
+latES[	63	]=	-0.19289182*2	;
+latES[	64	]=	-0.191455149*2	;
+latES[	65	]=	-0.179551467*2	;
+latES[	66	]=	-0.176351322*2	;
+latES[	67	]=	-0.142965227*2	;
+latES[	68	]=	-0.138925216*2	;
+latES[	69	]=	-0.133420405*2	;
+latES[	70	]=	-0.12529896*2	;
+latES[	71	]=	-0.122020811*2	;
+latES[	72	]=	-0.117680694*2	;
+latES[	73	]=	-0.112962008*2	;
+latES[	74	]=	-0.106822458*2	;
+latES[	75	]=	-0.101901499*2	;
+latES[	76	]=	-0.095565209*2	;
+latES[	77	]=	-0.095424071*2	;
+latES[	78	]=	-0.088820442*2	;
+latES[	79	]=	-0.079759495*2	;
+latES[	80	]=	-0.070465712*2	;
+latES[	81	]=	-0.069011052*2	;
+latES[	82	]=	-0.065578097*2	;
+latES[	83	]=	-0.060205134*2	;
+latES[	84	]=	-0.04540537*2	;
+latES[	85	]=	-0.044807597*2	;
+latES[	86	]=	-0.038321464*2	;
+latES[	87	]=	-0.037273617*2	;
+latES[	88	]=	-0.035858634*2	;
+latES[	89	]=	-0.034663342*2	;
+latES[	90	]=	-0.032172983*2	;
+latES[	91	]=	-0.015502575*2	;
+latES[	92	]=	-0.014313509*2	;
+latES[	93	]=	-0.003115357*2	;
+latES[	94	]=	0.005814194*2	;
+latES[	95	]=	0.008112539*2	;
+latES[	96	]=	0.017585872*2	;
+latES[	97	]=	0.025082093*2	;
+latES[	98	]=	0.028993133*2	;
+latES[	99	]=	0.036127357*2	;
+latES[	100	]=	0.070699724*2	;
+latES[	101	]=	0.080086416*2	;
+latES[	102	]=	0.084925946*2	;
+latES[	103	]=	0.093988933*2	;
+latES[	104	]=	0.116659119*2	;
+latES[	105	]=	0.125628864*2	;
+latES[	106	]=	0.148131885*2	;
+latES[	107	]=	0.148278759*2	;
+latES[	108	]=	0.150332809*2	;
+latES[	109	]=	0.150362161*2	;
+latES[	110	]=	0.150736954*2	;
+latES[	111	]=	0.153850446*2	;
+latES[	112	]=	0.168845701*2	;
+latES[	113	]=	0.169565153*2	;
+latES[	114	]=	0.173925759*2	;
+latES[	115	]=	0.176205876*2	;
+latES[	116	]=	0.176211043*2	;
+latES[	117	]=	0.182465686*2	;
+latES[	118	]=	0.186083118*2	;
+latES[	119	]=	0.197806825*2	;
+latES[	120	]=	0.1988138*2	;
+latES[	121	]=	0.207082478*2	;
+latES[	122	]=	0.214095477*2	;
+latES[	123	]=	0.219908766*2	;
+latES[	124	]=	0.238507491*2	;
+latES[	125	]=	0.240388261*2	;
+latES[	126	]=	0.250166471*2	;
+latES[	127	]=	0.282831104*2	;
+latES[	128	]=	0.283408268*2	;
+latES[	129	]=	0.285196177*2	;
+latES[	130	]=	0.286926753*2	;
+latES[	131	]=	0.293225507*2	;
+latES[	132	]=	0.300913571*2	;
+latES[	133	]=	0.306581129*2	;
+latES[	134	]=	0.30856615*2	;
+latES[	135	]=	0.313530089*2	;
+latES[	136	]=	0.319111559*2	;
+latES[	137	]=	0.326861271*2	;
+latES[	138	]=	0.333614092*2	;
+latES[	139	]=	0.338698398*2	;
+latES[	140	]=	0.356665299*2	;
+latES[	141	]=	0.359095191*2	;
+latES[	142	]=	0.359199992*2	;
+latES[	143	]=	0.365548652*2	;
+latES[	144	]=	0.375389878*2	;
+latES[	145	]=	0.38571442*2	;
+latES[	146	]=	0.391451486*2	;
+latES[	147	]=	0.399058612*2	;
+latES[	148	]=	0.424997244*2	;
+latES[	149	]=	0.433138008*2	;
+latES[	150	]=	0.445198687*2	;
+latES[	151	]=	0.448209721*2	;
+latES[	152	]=	0.45279853*2	;
+latES[	153	]=	0.456618542*2	;
+latES[	154	]=	0.47650446*2	;
+latES[	155	]=	0.485308978*2	;
+latES[	156	]=	0.487638471*2	;
+latES[	157	]=	0.490039635*2	;
+latES[	158	]=	0.506109312*2	;
+latES[	159	]=	0.511441481*2	;
+latES[	160	]=	0.512899687*2	;
+latES[	161	]=	0.516183242*2	;
+latES[	162	]=	0.521597787*2	;
+latES[	163	]=	0.525787178*2	;
+latES[	164	]=	0.53645049*2	;
+latES[	165	]=	0.54350313*2	;
+latES[	166	]=	0.545303528*2	;
+latES[	167	]=	0.555645522*2	;
+
+magES[	0	]=	0.007481243	;
+magES[	1	]=	0.006569245	;
+magES[	2	]=	0.007045569	;
+magES[	3	]=	0.010065016	;
+magES[	4	]=	0.008548299	;
+magES[	5	]=	0.011197967	;
+magES[	6	]=	0.006417737	;
+magES[	7	]=	0.00773482	;
+magES[	8	]=	0.006145575	;
+magES[	9	]=	0.019215789	;
+magES[	10	]=	0.00929118	;
+magES[	11	]=	0.007943857	;
+magES[	12	]=	0.007260139	;
+magES[	13	]=	0.006417737	;
+magES[	14	]=	0.007891074	;
+magES[	15	]=	0.007092697	;
+magES[	16	]=	0.007481243	;
+magES[	17	]=	0.007996993	;
+magES[	18	]=	0.006525596	;
+magES[	19	]=	0.009260261	;
+magES[	20	]=	0.010098622	;
+magES[	21	]=	0.00650388	;
+magES[	22	]=	0.008185784	;
+magES[	23	]=	0.006228064	;
+magES[	24	]=	0.011348273	;
+magES[	25	]=	0.007045569	;
+magES[	26	]=	0.009510524	;
+magES[	27	]=	0.007333104	;
+magES[	28	]=	0.006207339	;
+magES[	29	]=	0.010337027	;
+magES[	30	]=	0.010065016	;
+magES[	31	]=	0.007092697	;
+magES[	32	]=	0.006837341	;
+magES[	33	]=	0.007917422	;
+magES[	34	]=	0.01358635	;
+magES[	35	]=	0.01013234	;
+magES[	36	]=	0.006591179	;
+magES[	37	]=	0.007357589	;
+magES[	38	]=	0.010723085	;
+magES[	39	]=	0.008268052	;
+magES[	40	]=	0.006417737	;
+magES[	41	]=	0.011577524	;
+magES[	42	]=	0.00728438	;
+magES[	43	]=	0.006332735	;
+magES[	44	]=	0.016929634	;
+magES[	45	]=	0.017620546	;
+magES[	46	]=	0.007260139	;
+magES[	47	]=	0.008956674	;
+magES[	48	]=	0.007163979	;
+magES[	49	]=	0.006906058	;
+magES[	50	]=	0.008435078	;
+magES[	51	]=	0.008158543	;
+magES[	52	]=	0.01161618	;
+magES[	53	]=	0.007357589	;
+magES[	54	]=	0.00686017	;
+magES[	55	]=	0.007606975	;
+magES[	56	]=	0.007092697	;
+magES[	57	]=	0.00672433	;
+magES[	58	]=	0.008605478	;
+magES[	59	]=	0.007481243	;
+magES[	60	]=	0.006290658	;
+magES[	61	]=	0.009322203	;
+magES[	62	]=	0.006482237	;
+magES[	63	]=	0.010794812	;
+magES[	64	]=	0.007092697	;
+magES[	65	]=	0.006186682	;
+magES[	66	]=	0.006525596	;
+magES[	67	]=	0.00672433	;
+magES[	68	]=	0.006290658	;
+magES[	69	]=	0.00667965	;
+magES[	70	]=	0.008407008	;
+magES[	71	]=	0.007382155	;
+magES[	72	]=	0.010510754	;
+magES[	73	]=	0.008131393	;
+magES[	74	]=	0.007812557	;
+magES[	75	]=	0.006439165	;
+magES[	76	]=	0.007632374	;
+magES[	77	]=	0.015065373	;
+magES[	78	]=	0.006613186	;
+magES[	79	]=	0.014522981	;
+magES[	80	]=	0.007632374	;
+magES[	81	]=	0.006952252	;
+magES[	82	]=	0.006186682	;
+magES[	83	]=	0.010200114	;
+magES[	84	]=	0.007683427	;
+magES[	85	]=	0.006166094	;
+magES[	86	]=	0.007357589	;
+magES[	87	]=	0.007838642	;
+magES[	88	]=	0.014426483	;
+magES[	89	]=	0.009229445	;
+magES[	90	]=	0.00672433	;
+magES[	91	]=	0.006701953	;
+magES[	92	]=	0.007657858	;
+magES[	93	]=	0.006166094	;
+magES[	94	]=	0.007996993	;
+magES[	95	]=	0.012752563	;
+magES[	96	]=	0.008351147	;
+magES[	97	]=	0.007632374	;
+magES[	98	]=	0.006207339	;
+magES[	99	]=	0.007406803	;
+magES[	100	]=	0.007683427	;
+magES[	101	]=	0.007163979	;
+magES[	102	]=	0.006186682	;
+magES[	103	]=	0.011538996	;
+magES[	104	]=	0.013677228	;
+magES[	105	]=	0.008897161	;
+magES[	106	]=	0.008295658	;
+magES[	107	]=	0.008379031	;
+magES[	108	]=	0.006482237	;
+magES[	109	]=	0.007581661	;
+magES[	110	]=	0.00650388	;
+magES[	111	]=	0.008379031	;
+magES[	112	]=	0.006569245	;
+magES[	113	]=	0.007406803	;
+magES[	114	]=	0.010268342	;
+magES[	115	]=	0.010337027	;
+magES[	116	]=	0.007657858	;
+magES[	117	]=	0.008158543	;
+magES[	118	]=	0.007456347	;
+magES[	119	]=	0.00773482	;
+magES[	120	]=	0.008519852	;
+magES[	121	]=	0.00635388	;
+magES[	122	]=	0.009800162	;
+magES[	123	]=	0.007786558	;
+magES[	124	]=	0.006569245	;
+magES[	125	]=	0.008351147	;
+magES[	126	]=	0.008519852	;
+magES[	127	]=	0.007786558	;
+magES[	128	]=	0.006166094	;
+magES[	129	]=	0.006166094	;
+magES[	130	]=	0.006791911	;
+magES[	131	]=	0.006417737	;
+magES[	132	]=	0.008023694	;
+magES[	133	]=	0.00635388	;
+magES[	134	]=	0.006439165	;
+magES[	135	]=	0.007045569	;
+magES[	136	]=	0.006952252	;
+magES[	137	]=	0.006814588	;
+magES[	138	]=	0.007632374	;
+magES[	139	]=	0.008720986	;
+magES[	140	]=	0.006746782	;
+magES[	141	]=	0.006460665	;
+magES[	142	]=	0.007357589	;
+magES[	143	]=	0.007382155	;
+magES[	144	]=	0.010616389	;
+magES[	145	]=	0.009016585	;
+magES[	146	]=	0.009865715	;
+magES[	147	]=	0.019473715	;
+magES[	148	]=	0.00672433	;
+magES[	149	]=	0.006525596	;
+magES[	150	]=	0.008268052	;
+magES[	151	]=	0.010065016	;
+magES[	152	]=	0.010065016	;
+magES[	153	]=	0.006269724	;
+magES[	154	]=	0.007333104	;
+magES[	155	]=	0.009415892	;
+magES[	156	]=	0.007943857	;
+magES[	157	]=	0.008185784	;
+magES[	158	]=	0.007235979	;
+magES[	159	]=	0.015472521	;
+magES[	160	]=	0.006269724	;
+magES[	161	]=	0.007022123	;
+magES[	162	]=	0.006332735	;
+magES[	163	]=	0.011012881	;
+magES[	164	]=	0.020268452	;
+magES[	165	]=	0.008926868	;
+magES[	166	]=	0.008077364	;
+magES[	167	]=	0.006883076	;
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>globeStars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//x,y,z coordinates and magnitudes for 300 brightest stars 
+//from Bright Star Catalog
+//set up for ecliptic coordinate system (J2000)
+xstar[	0	]=	-0.187454337	;
+xstar[	1	]=	-0.063221843	;
+xstar[	2	]=	-0.783785709	;
+xstar[	3	]=	-0.373858453	;
+xstar[	4	]=	0.12509481	;
+xstar[	5	]=	0.130497971	;
+xstar[	6	]=	0.19504975	;
+xstar[	7	]=	-0.418109874	;
+xstar[	8	]=	0.492722346	;
+xstar[	9	]=	0.020890526	;
+xstar[	10	]=	-0.423936973	;
+xstar[	11	]=	0.459220876	;
+xstar[	12	]=	0.34390634	;
+xstar[	13	]=	-0.344819434	;
+xstar[	14	]=	-0.914079596	;
+xstar[	15	]=	-0.391511577	;
+xstar[	16	]=	0.837333183	;
+xstar[	17	]=	-0.49379834	;
+xstar[	18	]=	0.455648619	;
+xstar[	19	]=	-0.449403501	;
+xstar[	20	]=	-0.373850581	;
+xstar[	21	]=	-0.864501546	;
+xstar[	22	]=	-0.221354404	;
+xstar[	23	]=	-0.537967114	;
+xstar[	24	]=	-0.091638267	;
+xstar[	25	]=	0.150626096	;
+xstar[	26	]=	0.128660031	;
+xstar[	27	]=	-0.258825176	;
+xstar[	28	]=	0.10358046	;
+xstar[	29	]=	-0.449398123	;
+xstar[	30	]=	0.602932806	;
+xstar[	31	]=	-0.544293034	;
+xstar[	32	]=	-0.362957021	;
+xstar[	33	]=	0.404979966	;
+xstar[	34	]=	-0.459112098	;
+xstar[	35	]=	-0.263359284	;
+xstar[	36	]=	0.086878117	;
+xstar[	37	]=	-0.29556856	;
+xstar[	38	]=	-0.581459986	;
+xstar[	39	]=	-0.072259401	;
+xstar[	40	]=	0.001456376	;
+xstar[	41	]=	-0.10961393	;
+xstar[	42	]=	-0.157142367	;
+xstar[	43	]=	0.325590699	;
+xstar[	44	]=	-0.380367209	;
+xstar[	45	]=	-0.094069306	;
+xstar[	46	]=	-0.777931129	;
+xstar[	47	]=	-0.340607048	;
+xstar[	48	]=	0.779680815	;
+xstar[	49	]=	-0.451388857	;
+xstar[	50	]=	0.214095771	;
+xstar[	51	]=	0.010125956	;
+xstar[	52	]=	0.933976492	;
+xstar[	53	]=	0.083810515	;
+xstar[	54	]=	0.052637011	;
+xstar[	55	]=	-0.685292393	;
+xstar[	56	]=	0.873266735	;
+xstar[	57	]=	0.775554057	;
+xstar[	58	]=	-0.106535894	;
+xstar[	59	]=	-0.200727226	;
+xstar[	60	]=	0.644928617	;
+xstar[	61	]=	0.514651285	;
+xstar[	62	]=	-0.966730233	;
+xstar[	63	]=	-0.645845888	;
+xstar[	64	]=	0.443786427	;
+xstar[	65	]=	-0.531091038	;
+xstar[	66	]=	0.121838233	;
+xstar[	67	]=	-0.529169862	;
+xstar[	68	]=	0.542804785	;
+xstar[	69	]=	-0.009218628	;
+xstar[	70	]=	-0.387181152	;
+xstar[	71	]=	-0.393332816	;
+xstar[	72	]=	0.633854546	;
+xstar[	73	]=	0.512385575	;
+xstar[	74	]=	-0.536543865	;
+xstar[	75	]=	-0.247871221	;
+xstar[	76	]=	-0.539643868	;
+xstar[	77	]=	-0.514949087	;
+xstar[	78	]=	-0.577100231	;
+xstar[	79	]=	-0.460369603	;
+xstar[	80	]=	-0.535915059	;
+xstar[	81	]=	0.73470143	;
+xstar[	82	]=	0.817203516	;
+xstar[	83	]=	-0.059297842	;
+xstar[	84	]=	0.855851316	;
+xstar[	85	]=	-0.206787461	;
+xstar[	86	]=	-0.591873173	;
+xstar[	87	]=	0.35086394	;
+xstar[	88	]=	-0.312850338	;
+xstar[	89	]=	0.550102154	;
+xstar[	90	]=	0.474231025	;
+xstar[	91	]=	0.937098461	;
+xstar[	92	]=	-0.442646629	;
+xstar[	93	]=	0.69825478	;
+xstar[	94	]=	-0.593921907	;
+xstar[	95	]=	-0.347646996	;
+xstar[	96	]=	-0.917814997	;
+xstar[	97	]=	0.11301059	;
+xstar[	98	]=	-0.951229853	;
+xstar[	99	]=	-0.632655959	;
+xstar[	100	]=	0.233942752	;
+xstar[	101	]=	-0.644003842	;
+xstar[	102	]=	-0.852454638	;
+xstar[	103	]=	-0.450964223	;
+xstar[	104	]=	0.000967424	;
+xstar[	105	]=	0.073458039	;
+xstar[	106	]=	0.820247905	;
+xstar[	107	]=	-0.907466261	;
+xstar[	108	]=	-0.554714881	;
+xstar[	109	]=	-0.519312303	;
+xstar[	110	]=	-0.832542528	;
+xstar[	111	]=	0.462041079	;
+xstar[	112	]=	-0.351480258	;
+xstar[	113	]=	-0.617583211	;
+xstar[	114	]=	-0.10120887	;
+xstar[	115	]=	0.227243486	;
+xstar[	116	]=	-0.263435091	;
+xstar[	117	]=	0.079360031	;
+xstar[	118	]=	-0.669485393	;
+xstar[	119	]=	0.439562158	;
+xstar[	120	]=	-0.443926468	;
+xstar[	121	]=	-0.194005327	;
+xstar[	122	]=	-0.752586535	;
+xstar[	123	]=	-0.706074636	;
+xstar[	124	]=	-0.40798376	;
+xstar[	125	]=	0.10641907	;
+xstar[	126	]=	-0.071820503	;
+xstar[	127	]=	-0.355255223	;
+xstar[	128	]=	-0.444759959	;
+xstar[	129	]=	0.224700392	;
+xstar[	130	]=	-0.078671652	;
+xstar[	131	]=	0.219234664	;
+xstar[	132	]=	-0.517657302	;
+xstar[	133	]=	-0.481412714	;
+xstar[	134	]=	0.109951728	;
+xstar[	135	]=	-0.286799844	;
+xstar[	136	]=	-0.31620252	;
+xstar[	137	]=	0.963482271	;
+xstar[	138	]=	-0.945853861	;
+xstar[	139	]=	0.129148427	;
+xstar[	140	]=	-0.231801372	;
+xstar[	141	]=	-0.08536567	;
+xstar[	142	]=	0.4432497	;
+xstar[	143	]=	0.41357707	;
+xstar[	144	]=	0.448211384	;
+xstar[	145	]=	0.803468035	;
+xstar[	146	]=	0.49886404	;
+xstar[	147	]=	0.31196098	;
+xstar[	148	]=	-0.092392175	;
+xstar[	149	]=	-0.340605939	;
+xstar[	150	]=	-0.235030709	;
+xstar[	151	]=	-0.452850136	;
+xstar[	152	]=	-0.376910277	;
+xstar[	153	]=	0.27976867	;
+xstar[	154	]=	0.389160928	;
+xstar[	155	]=	-0.367287506	;
+xstar[	156	]=	-0.761249519	;
+xstar[	157	]=	0.79370755	;
+xstar[	158	]=	-0.137167075	;
+xstar[	159	]=	0.411646374	;
+xstar[	160	]=	0.815776909	;
+xstar[	161	]=	0.493387577	;
+xstar[	162	]=	-0.07897987	;
+xstar[	163	]=	-0.950613854	;
+xstar[	164	]=	0.878351669	;
+xstar[	165	]=	-0.17248147	;
+xstar[	166	]=	-0.762796125	;
+xstar[	167	]=	0.021851724	;
+xstar[	168	]=	0.180740148	;
+xstar[	169	]=	0.273344666	;
+xstar[	170	]=	-0.922177402	;
+xstar[	171	]=	-0.865357384	;
+xstar[	172	]=	0.090832778	;
+xstar[	173	]=	0.691849897	;
+xstar[	174	]=	-0.352580813	;
+xstar[	175	]=	0.677536266	;
+xstar[	176	]=	0.378319848	;
+xstar[	177	]=	-0.696132663	;
+xstar[	178	]=	-0.076609074	;
+xstar[	179	]=	-0.248388624	;
+xstar[	180	]=	-0.04140032	;
+xstar[	181	]=	-0.618176165	;
+xstar[	182	]=	-0.654814438	;
+xstar[	183	]=	0.819679411	;
+xstar[	184	]=	-0.36527979	;
+xstar[	185	]=	-0.681971363	;
+xstar[	186	]=	-0.199643614	;
+xstar[	187	]=	0.11832482	;
+xstar[	188	]=	-0.230669881	;
+xstar[	189	]=	0.558085264	;
+xstar[	190	]=	0.340583387	;
+xstar[	191	]=	0.430442717	;
+xstar[	192	]=	-0.915404095	;
+xstar[	193	]=	0.061555444	;
+xstar[	194	]=	-0.689024845	;
+xstar[	195	]=	0.031996421	;
+xstar[	196	]=	-0.433451133	;
+xstar[	197	]=	-0.451153059	;
+xstar[	198	]=	-0.148016654	;
+xstar[	199	]=	-0.526537057	;
+xstar[	200	]=	-0.634564777	;
+xstar[	201	]=	-0.471125157	;
+xstar[	202	]=	-0.17691985	;
+xstar[	203	]=	-0.15603582	;
+xstar[	204	]=	-0.119574219	;
+xstar[	205	]=	0.176344866	;
+xstar[	206	]=	0.173911159	;
+xstar[	207	]=	-0.496618578	;
+xstar[	208	]=	-0.091141679	;
+xstar[	209	]=	-0.321050224	;
+xstar[	210	]=	0.217987614	;
+xstar[	211	]=	0.299149844	;
+xstar[	212	]=	-0.265044318	;
+xstar[	213	]=	0.644463643	;
+xstar[	214	]=	-0.03530882	;
+xstar[	215	]=	0.213312198	;
+xstar[	216	]=	-0.484216057	;
+xstar[	217	]=	0.542038286	;
+xstar[	218	]=	0.262843975	;
+xstar[	219	]=	0.148694818	;
+xstar[	220	]=	0.5433252	;
+xstar[	221	]=	-0.427805344	;
+xstar[	222	]=	0.214074013	;
+xstar[	223	]=	-0.276239633	;
+xstar[	224	]=	0.092729675	;
+xstar[	225	]=	-0.098177729	;
+xstar[	226	]=	0.209988053	;
+xstar[	227	]=	-0.761083337	;
+xstar[	228	]=	0.923270054	;
+xstar[	229	]=	-0.149545658	;
+xstar[	230	]=	0.845807968	;
+xstar[	231	]=	-0.059926122	;
+xstar[	232	]=	-0.627923566	;
+xstar[	233	]=	-0.322814594	;
+xstar[	234	]=	0.657278877	;
+xstar[	235	]=	0.195830913	;
+xstar[	236	]=	-0.542930912	;
+xstar[	237	]=	-0.305351154	;
+xstar[	238	]=	-0.439794352	;
+xstar[	239	]=	0.255013817	;
+xstar[	240	]=	-0.150987324	;
+xstar[	241	]=	-0.416485939	;
+xstar[	242	]=	-0.083294488	;
+xstar[	243	]=	-0.944807987	;
+xstar[	244	]=	-0.004184742	;
+xstar[	245	]=	0.205443798	;
+xstar[	246	]=	0.468305276	;
+xstar[	247	]=	0.154244242	;
+xstar[	248	]=	-0.191379416	;
+xstar[	249	]=	0.363925599	;
+xstar[	250	]=	-0.298198254	;
+xstar[	251	]=	-0.450573361	;
+xstar[	252	]=	-0.915800287	;
+xstar[	253	]=	-0.660984978	;
+xstar[	254	]=	-0.969007016	;
+xstar[	255	]=	0.389425851	;
+xstar[	256	]=	0.538183266	;
+xstar[	257	]=	-0.432168021	;
+xstar[	258	]=	0.373279213	;
+xstar[	259	]=	0.925075012	;
+xstar[	260	]=	0.674141342	;
+xstar[	261	]=	-0.410476789	;
+xstar[	262	]=	-0.663144706	;
+xstar[	263	]=	-0.391503357	;
+xstar[	264	]=	0.765943603	;
+xstar[	265	]=	0.265988192	;
+xstar[	266	]=	-0.052274394	;
+xstar[	267	]=	0.311628523	;
+xstar[	268	]=	-0.381556786	;
+xstar[	269	]=	-0.825972556	;
+xstar[	270	]=	0.284020028	;
+xstar[	271	]=	0.520465857	;
+xstar[	272	]=	0.940499572	;
+xstar[	273	]=	-0.659780312	;
+xstar[	274	]=	0.181056088	;
+xstar[	275	]=	-0.293672768	;
+xstar[	276	]=	-0.235054073	;
+xstar[	277	]=	0.755503445	;
+xstar[	278	]=	0.485655438	;
+xstar[	279	]=	0.466908051	;
+xstar[	280	]=	-0.549612383	;
+xstar[	281	]=	-0.824062286	;
+xstar[	282	]=	0.867145927	;
+xstar[	283	]=	-0.190426647	;
+xstar[	284	]=	0.594888286	;
+xstar[	285	]=	0.864120177	;
+xstar[	286	]=	-0.533969864	;
+xstar[	287	]=	0.081614388	;
+xstar[	288	]=	0.232518153	;
+xstar[	289	]=	-0.553860415	;
+xstar[	290	]=	-0.809798627	;
+xstar[	291	]=	-0.844117014	;
+xstar[	292	]=	0.384689046	;
+xstar[	293	]=	0.366700238	;
+xstar[	294	]=	-0.317623716	;
+xstar[	295	]=	-0.537732095	;
+xstar[	296	]=	0.882226613	;
+xstar[	297	]=	-0.256829965	;
+xstar[	298	]=	-0.498054547	;
+xstar[	299	]=	-0.843473984	;
+
+ystar[	0	]=	0.747303079	;
+ystar[	1	]=	0.236599881	;
+ystar[	2	]=	-0.352801217	;
+ystar[	3	]=	-0.634143327	;
+ystar[	4	]=	-0.456764111	;
+ystar[	5	]=	0.912139423	;
+ystar[	6	]=	0.833544454	;
+ystar[	7	]=	0.865463265	;
+ystar[	8	]=	-0.129157608	;
+ystar[	9	]=	0.960903857	;
+ystar[	10	]=	-0.579072103	;
+ystar[	11	]=	-0.741329737	;
+ystar[	12	]=	0.934157524	;
+ystar[	13	]=	-0.935281487	;
+ystar[	14	]=	-0.403947029	;
+ystar[	15	]=	0.91278199	;
+ystar[	16	]=	-0.410922236	;
+ystar[	17	]=	-0.439119581	;
+ystar[	18	]=	-0.209294902	;
+ystar[	19	]=	-0.402802796	;
+ystar[	20	]=	-0.63414644	;
+ystar[	21	]=	0.502564688	;
+ystar[	22	]=	0.583868885	;
+ystar[	23	]=	-0.401565777	;
+ystar[	24	]=	-0.966848913	;
+ystar[	25	]=	0.945313372	;
+ystar[	26	]=	0.987237894	;
+ystar[	27	]=	-0.161536251	;
+ystar[	28	]=	0.904000518	;
+ystar[	29	]=	-0.402821084	;
+ystar[	30	]=	-0.584140872	;
+ystar[	31	]=	0.209659766	;
+ystar[	32	]=	0.23256778	;
+ystar[	33	]=	0.764260182	;
+ystar[	34	]=	0.455954798	;
+ystar[	35	]=	0.608700722	;
+ystar[	36	]=	-0.977601205	;
+ystar[	37	]=	0.035613215	;
+ystar[	38	]=	0.031154771	;
+ystar[	39	]=	-0.93901702	;
+ystar[	40	]=	0.93036361	;
+ystar[	41	]=	-0.684027443	;
+ystar[	42	]=	0.980571946	;
+ystar[	43	]=	-0.737598088	;
+ystar[	44	]=	0.074302619	;
+ystar[	45	]=	0.745890106	;
+ystar[	46	]=	0.499824449	;
+ystar[	47	]=	0.923719837	;
+ystar[	48	]=	0.601790207	;
+ystar[	49	]=	-0.539859642	;
+ystar[	50	]=	-0.974957804	;
+ystar[	51	]=	0.404990346	;
+ystar[	52	]=	0.042143422	;
+ystar[	53	]=	0.900239564	;
+ystar[	54	]=	0.836342854	;
+ystar[	55	]=	-0.623758107	;
+ystar[	56	]=	0.222734307	;
+ystar[	57	]=	0.455108633	;
+ystar[	58	]=	-0.803674067	;
+ystar[	59	]=	0.212863808	;
+ystar[	60	]=	-0.497964744	;
+ystar[	61	]=	0.767833659	;
+ystar[	62	]=	0.142449491	;
+ystar[	63	]=	-0.408553789	;
+ystar[	64	]=	-0.31257546	;
+ystar[	65	]=	0.180924619	;
+ystar[	66	]=	0.908557068	;
+ystar[	67	]=	-0.481439433	;
+ystar[	68	]=	0.420795867	;
+ystar[	69	]=	-0.259966995	;
+ystar[	70	]=	-0.036097568	;
+ystar[	71	]=	0.347366666	;
+ystar[	72	]=	0.61694672	;
+ystar[	73	]=	0.360332518	;
+ystar[	74	]=	0.136762881	;
+ystar[	75	]=	-0.947190146	;
+ystar[	76	]=	-0.550194566	;
+ystar[	77	]=	-0.696014043	;
+ystar[	78	]=	-0.69385831	;
+ystar[	79	]=	-0.887050597	;
+ystar[	80	]=	0.45877261	;
+ystar[	81	]=	-0.190095139	;
+ystar[	82	]=	-0.436618883	;
+ystar[	83	]=	-0.961126605	;
+ystar[	84	]=	-0.009345346	;
+ystar[	85	]=	-0.970329423	;
+ystar[	86	]=	0.335180853	;
+ystar[	87	]=	0.07957411	;
+ystar[	88	]=	0.552139449	;
+ystar[	89	]=	-0.347146323	;
+ystar[	90	]=	0.456857646	;
+ystar[	91	]=	-0.107004458	;
+ystar[	92	]=	0.008560195	;
+ystar[	93	]=	0.681880091	;
+ystar[	94	]=	-0.592898915	;
+ystar[	95	]=	-0.916587527	;
+ystar[	96	]=	0.310366039	;
+ystar[	97	]=	0.745531746	;
+ystar[	98	]=	-0.180179653	;
+ystar[	99	]=	-0.329093401	;
+ystar[	100	]=	-0.964185122	;
+ystar[	101	]=	-0.750621827	;
+ystar[	102	]=	0.499837271	;
+ystar[	103	]=	-0.89236878	;
+ystar[	104	]=	0.971245129	;
+ystar[	105	]=	0.534106763	;
+ystar[	106	]=	0.552639438	;
+ystar[	107	]=	-0.283822722	;
+ystar[	108	]=	-0.711929066	;
+ystar[	109	]=	-0.742355477	;
+ystar[	110	]=	-0.29214944	;
+ystar[	111	]=	0.511891881	;
+ystar[	112	]=	-0.424476483	;
+ystar[	113	]=	-0.114636549	;
+ystar[	114	]=	-0.964967576	;
+ystar[	115	]=	0.956783427	;
+ystar[	116	]=	0.450798578	;
+ystar[	117	]=	-0.990452298	;
+ystar[	118	]=	-0.357566403	;
+ystar[	119	]=	-0.733320281	;
+ystar[	120	]=	-0.845624366	;
+ystar[	121	]=	-0.050126817	;
+ystar[	122	]=	-0.491143491	;
+ystar[	123	]=	-0.708113553	;
+ystar[	124	]=	-0.227914633	;
+ystar[	125	]=	0.86640998	;
+ystar[	126	]=	-0.880517585	;
+ystar[	127	]=	-0.643311761	;
+ystar[	128	]=	-0.819082924	;
+ystar[	129	]=	0.855046005	;
+ystar[	130	]=	-0.241648522	;
+ystar[	131	]=	-0.365278532	;
+ystar[	132	]=	-0.371491818	;
+ystar[	133	]=	0.546275388	;
+ystar[	134	]=	-0.993238107	;
+ystar[	135	]=	-0.52733409	;
+ystar[	136	]=	-0.942681424	;
+ystar[	137	]=	0.155295196	;
+ystar[	138	]=	-0.165763091	;
+ystar[	139	]=	0.708704523	;
+ystar[	140	]=	-0.706733074	;
+ystar[	141	]=	-0.841267413	;
+ystar[	142	]=	0.874591236	;
+ystar[	143	]=	-0.133435475	;
+ystar[	144	]=	-0.540423999	;
+ystar[	145	]=	-0.593615098	;
+ystar[	146	]=	0.863796586	;
+ystar[	147	]=	-0.298642686	;
+ystar[	148	]=	0.995619819	;
+ystar[	149	]=	0.923719281	;
+ystar[	150	]=	-0.62507071	;
+ystar[	151	]=	-0.886465912	;
+ystar[	152	]=	-0.923569943	;
+ystar[	153	]=	-0.959739815	;
+ystar[	154	]=	0.861001584	;
+ystar[	155	]=	0.900391528	;
+ystar[	156	]=	0.072402737	;
+ystar[	157	]=	-0.589567145	;
+ystar[	158	]=	0.26096651	;
+ystar[	159	]=	0.713610363	;
+ystar[	160	]=	-0.061150175	;
+ystar[	161	]=	0.675801273	;
+ystar[	162	]=	-0.890968708	;
+ystar[	163	]=	-0.22737874	;
+ystar[	164	]=	-0.440759859	;
+ystar[	165	]=	0.984350306	;
+ystar[	166	]=	0.62423092	;
+ystar[	167	]=	-0.992324127	;
+ystar[	168	]=	0.916271846	;
+ystar[	169	]=	-0.759413065	;
+ystar[	170	]=	-0.190392418	;
+ystar[	171	]=	-0.441271008	;
+ystar[	172	]=	0.995128932	;
+ystar[	173	]=	0.630692965	;
+ystar[	174	]=	-0.148836944	;
+ystar[	175	]=	-0.622608014	;
+ystar[	176	]=	0.804046374	;
+ystar[	177	]=	0.421377701	;
+ystar[	178	]=	0.591669638	;
+ystar[	179	]=	0.646977421	;
+ystar[	180	]=	-0.956855489	;
+ystar[	181	]=	-0.196851794	;
+ystar[	182	]=	-0.580071551	;
+ystar[	183	]=	0.502727139	;
+ystar[	184	]=	-0.437706359	;
+ystar[	185	]=	0.547636163	;
+ystar[	186	]=	0.158243277	;
+ystar[	187	]=	0.036543739	;
+ystar[	188	]=	-0.935982499	;
+ystar[	189	]=	-0.825918098	;
+ystar[	190	]=	-0.561225968	;
+ystar[	191	]=	-0.773221391	;
+ystar[	192	]=	0.155387875	;
+ystar[	193	]=	-0.970915886	;
+ystar[	194	]=	0.69931064	;
+ystar[	195	]=	0.511350165	;
+ystar[	196	]=	-0.031934605	;
+ystar[	197	]=	-0.310576941	;
+ystar[	198	]=	-0.824617804	;
+ystar[	199	]=	-0.746268651	;
+ystar[	200	]=	0.708664618	;
+ystar[	201	]=	0.731050885	;
+ystar[	202	]=	-0.649534824	;
+ystar[	203	]=	-0.482154242	;
+ystar[	204	]=	0.387522573	;
+ystar[	205	]=	-0.981910138	;
+ystar[	206	]=	0.933452049	;
+ystar[	207	]=	0.652753044	;
+ystar[	208	]=	-0.00538326	;
+ystar[	209	]=	-0.613140688	;
+ystar[	210	]=	0.673125425	;
+ystar[	211	]=	0.916587078	;
+ystar[	212	]=	-0.807157908	;
+ystar[	213	]=	-0.327782908	;
+ystar[	214	]=	-0.971227626	;
+ystar[	215	]=	0.370861525	;
+ystar[	216	]=	-0.795042534	;
+ystar[	217	]=	-0.776599784	;
+ystar[	218	]=	0.187807008	;
+ystar[	219	]=	-0.174266362	;
+ystar[	220	]=	0.23368266	;
+ystar[	221	]=	-0.858423098	;
+ystar[	222	]=	-0.531932354	;
+ystar[	223	]=	0.344922415	;
+ystar[	224	]=	-0.932466914	;
+ystar[	225	]=	0.07102986	;
+ystar[	226	]=	0.163057676	;
+ystar[	227	]=	-0.608085888	;
+ystar[	228	]=	-0.356752329	;
+ystar[	229	]=	-0.988231427	;
+ystar[	230	]=	0.338529946	;
+ystar[	231	]=	0.998082436	;
+ystar[	232	]=	-0.766822251	;
+ystar[	233	]=	-0.027957453	;
+ystar[	234	]=	-0.110712582	;
+ystar[	235	]=	0.751498604	;
+ystar[	236	]=	0.300145816	;
+ystar[	237	]=	-0.2337968	;
+ystar[	238	]=	-0.187206772	;
+ystar[	239	]=	-0.962860118	;
+ystar[	240	]=	-0.92636816	;
+ystar[	241	]=	0.572362361	;
+ystar[	242	]=	-0.833476541	;
+ystar[	243	]=	0.281245247	;
+ystar[	244	]=	-0.971682655	;
+ystar[	245	]=	0.027068744	;
+ystar[	246	]=	0.116436922	;
+ystar[	247	]=	0.889054283	;
+ystar[	248	]=	0.965709685	;
+ystar[	249	]=	-0.831500071	;
+ystar[	250	]=	0.702649055	;
+ystar[	251	]=	-0.784277457	;
+ystar[	252	]=	-0.372504733	;
+ystar[	253	]=	0.725264385	;
+ystar[	254	]=	-0.196456584	;
+ystar[	255	]=	0.55130035	;
+ystar[	256	]=	0.766066341	;
+ystar[	257	]=	-0.157941262	;
+ystar[	258	]=	0.922125049	;
+ystar[	259	]=	-0.2280502	;
+ystar[	260	]=	-0.021853927	;
+ystar[	261	]=	-0.733185141	;
+ystar[	262	]=	-0.579607608	;
+ystar[	263	]=	-0.869972497	;
+ystar[	264	]=	0.574269428	;
+ystar[	265	]=	-0.642334124	;
+ystar[	266	]=	-0.625732029	;
+ystar[	267	]=	0.025498791	;
+ystar[	268	]=	-0.022767862	;
+ystar[	269	]=	0.524876822	;
+ystar[	270	]=	-0.910081759	;
+ystar[	271	]=	0.440552161	;
+ystar[	272	]=	0.195924763	;
+ystar[	273	]=	0.562512968	;
+ystar[	274	]=	-0.52931086	;
+ystar[	275	]=	0.164607516	;
+ystar[	276	]=	0.595019614	;
+ystar[	277	]=	0.621301104	;
+ystar[	278	]=	0.863112059	;
+ystar[	279	]=	-0.618629135	;
+ystar[	280	]=	-0.35907701	;
+ystar[	281	]=	0.355689152	;
+ystar[	282	]=	-0.085238979	;
+ystar[	283	]=	-0.772495411	;
+ystar[	284	]=	-0.486390923	;
+ystar[	285	]=	0.277749537	;
+ystar[	286	]=	-0.240544895	;
+ystar[	287	]=	-0.919274097	;
+ystar[	288	]=	-0.972159936	;
+ystar[	289	]=	0.81323113	;
+ystar[	290	]=	0.583036755	;
+ystar[	291	]=	0.529406623	;
+ystar[	292	]=	0.252126318	;
+ystar[	293	]=	0.929260221	;
+ystar[	294	]=	0.948211722	;
+ystar[	295	]=	-0.795393926	;
+ystar[	296	]=	-0.377519264	;
+ystar[	297	]=	-0.423876365	;
+ystar[	298	]=	-0.051879763	;
+ystar[	299	]=	-0.118363483	;
+
+zstar[	0	]=	-0.637494297	;
+zstar[	1	]=	-0.969548088	;
+zstar[	2	]=	0.511088314	;
+zstar[	3	]=	-0.676825013	;
+zstar[	4	]=	0.880748452	;
+zstar[	5	]=	0.388551094	;
+zstar[	6	]=	-0.516874489	;
+zstar[	7	]=	-0.275966429	;
+zstar[	8	]=	-0.860548082	;
+zstar[	9	]=	-0.276093036	;
+zstar[	10	]=	-0.696385628	;
+zstar[	11	]=	0.489434784	;
+zstar[	12	]=	-0.095279319	;
+zstar[	13	]=	-0.079674956	;
+zstar[	14	]=	-0.03585095	;
+zstar[	15	]=	0.116394689	;
+zstar[	16	]=	-0.360577392	;
+zstar[	17	]=	-0.750557921	;
+zstar[	18	]=	0.865205166	;
+zstar[	19	]=	-0.797362152	;
+zstar[	20	]=	-0.676826444	;
+zstar[	21	]=	0.00811245	;
+zstar[	22	]=	-0.781088569	;
+zstar[	23	]=	-0.741172255	;
+zstar[	24	]=	-0.23833927	;
+zstar[	25	]=	-0.289299859	;
+zstar[	26	]=	0.093850612	;
+zstar[	27	]=	-0.952321148	;
+zstar[	28	]=	-0.414794108	;
+zstar[	29	]=	-0.797355944	;
+zstar[	30	]=	-0.543370475	;
+zstar[	31	]=	0.812273277	;
+zstar[	32	]=	-0.902316147	;
+zstar[	33	]=	0.501894014	;
+zstar[	34	]=	0.762444296	;
+zstar[	35	]=	-0.748415205	;
+zstar[	36	]=	-0.191697881	;
+zstar[	37	]=	-0.954657491	;
+zstar[	38	]=	0.812978269	;
+zstar[	39	]=	-0.336192825	;
+zstar[	40	]=	0.366635286	;
+zstar[	41	]=	-0.721173518	;
+zstar[	42	]=	-0.117409261	;
+zstar[	43	]=	-0.591557061	;
+zstar[	44	]=	-0.921845924	;
+zstar[	45	]=	-0.659392839	;
+zstar[	46	]=	-0.38078692	;
+zstar[	47	]=	0.175295469	;
+zstar[	48	]=	0.173050203	;
+zstar[	49	]=	0.710492552	;
+zstar[	50	]=	-0.06016877	;
+zstar[	51	]=	0.914264888	;
+zstar[	52	]=	-0.354840591	;
+zstar[	53	]=	-0.427252296	;
+zstar[	54	]=	-0.545673873	;
+zstar[	55	]=	-0.375899134	;
+zstar[	56	]=	0.433352787	;
+zstar[	57	]=	0.437483756	;
+zstar[	58	]=	0.585455461	;
+zstar[	59	]=	0.956241382	;
+zstar[	60	]=	-0.579739762	;
+zstar[	61	]=	0.381530507	;
+zstar[	62	]=	0.212463644	;
+zstar[	63	]=	-0.644954952	;
+zstar[	64	]=	0.83985129	;
+zstar[	65	]=	-0.827773273	;
+zstar[	66	]=	-0.399599173	;
+zstar[	67	]=	0.69870976	;
+zstar[	68	]=	0.726838224	;
+zstar[	69	]=	0.965573497	;
+zstar[	70	]=	-0.921296761	;
+zstar[	71	]=	-0.851249491	;
+zstar[	72	]=	0.466481682	;
+zstar[	73	]=	0.779500801	;
+zstar[	74	]=	0.832716395	;
+zstar[	75	]=	-0.203447008	;
+zstar[	76	]=	-0.637236562	;
+zstar[	77	]=	-0.500391737	;
+zstar[	78	]=	-0.430715647	;
+zstar[	79	]=	-0.034656401	;
+zstar[	80	]=	0.708747305	;
+zstar[	81	]=	-0.651212444	;
+zstar[	82	]=	0.376221164	;
+zstar[	83	]=	-0.269665378	;
+zstar[	84	]=	0.517137496	;
+zstar[	85	]=	0.125298666	;
+zstar[	86	]=	0.733034748	;
+zstar[	87	]=	0.933039365	;
+zstar[	88	]=	-0.772830315	;
+zstar[	89	]=	0.759524226	;
+zstar[	90	]=	0.752586225	;
+zstar[	91	]=	0.332259719	;
+zstar[	92	]=	-0.896655277	;
+zstar[	93	]=	-0.217898607	;
+zstar[	94	]=	-0.543808464	;
+zstar[	95	]=	0.197506636	;
+zstar[	96	]=	0.247565251	;
+zstar[	97	]=	-0.656818866	;
+zstar[	98	]=	-0.250393808	;
+zstar[	99	]=	-0.701030649	;
+zstar[	100	]=	-0.124971356	;
+zstar[	101	]=	0.147735998	;
+zstar[	102	]=	0.153244225	;
+zstar[	103	]=	0.017584966	;
+zstar[	104	]=	0.238079741	;
+zstar[	105	]=	-0.842219616	;
+zstar[	106	]=	0.147590735	;
+zstar[	107	]=	-0.309757402	;
+zstar[	108	]=	0.430637209	;
+zstar[	109	]=	-0.423347467	;
+zstar[	110	]=	0.470660859	;
+zstar[	111	]=	0.724213189	;
+zstar[	112	]=	-0.834434745	;
+zstar[	113	]=	-0.778106316	;
+zstar[	114	]=	-0.242062682	;
+zstar[	115	]=	0.181454876	;
+zstar[	116	]=	-0.852867279	;
+zstar[	117	]=	-0.112721921	;
+zstar[	118	]=	0.651103352	;
+zstar[	119	]=	0.518677621	;
+zstar[	120	]=	0.296392851	;
+zstar[	121	]=	0.979718957	;
+zstar[	122	]=	-0.438624645	;
+zstar[	123	]=	0.005814161	;
+zstar[	124	]=	-0.884083804	;
+zstar[	125	]=	-0.487861382	;
+zstar[	126	]=	0.468540923	;
+zstar[	127	]=	0.678191495	;
+zstar[	128	]=	-0.362342025	;
+zstar[	129	]=	-0.467339345	;
+zstar[	130	]=	0.967169459	;
+zstar[	131	]=	-0.904714185	;
+zstar[	132	]=	-0.770730009	;
+zstar[	133	]=	-0.685437816	;
+zstar[	134	]=	-0.037264987	;
+zstar[	135	]=	0.799790352	;
+zstar[	136	]=	-0.106619414	;
+zstar[	137	]=	0.218140587	;
+zstar[	138	]=	0.279075386	;
+zstar[	139	]=	-0.693583869	;
+zstar[	140	]=	-0.668428371	;
+zstar[	141	]=	-0.533836906	;
+zstar[	142	]=	0.196519397	;
+zstar[	143	]=	-0.900638097	;
+zstar[	144	]=	-0.712073351	;
+zstar[	145	]=	-0.04538977	;
+zstar[	146	]=	0.070640841	;
+zstar[	147	]=	0.901938409	;
+zstar[	148	]=	-0.014313021	;
+zstar[	149	]=	0.175300556	;
+zstar[	150	]=	-0.744343451	;
+zstar[	151	]=	-0.095419814	;
+zstar[	152	]=	-0.070407412	;
+zstar[	153	]=	0.025079464	;
+zstar[	154	]=	0.327459988	;
+zstar[	155	]=	-0.233227325	;
+zstar[	156	]=	0.644404387	;
+zstar[	157	]=	0.149796217	;
+zstar[	158	]=	-0.955553072	;
+zstar[	159	]=	0.566839936	;
+zstar[	160	]=	0.575124935	;
+zstar[	161	]=	-0.547595962	;
+zstar[	162	]=	-0.447143089	;
+zstar[	163	]=	-0.211263364	;
+zstar[	164	]=	0.185011061	;
+zstar[	165	]=	0.036119499	;
+zstar[	166	]=	0.168753755	;
+zstar[	167	]=	-0.12171824	;
+zstar[	168	]=	0.357461749	;
+zstar[	169	]=	0.590401973	;
+zstar[	170	]=	-0.336659421	;
+zstar[	171	]=	-0.237563667	;
+zstar[	172	]=	-0.038312085	;
+zstar[	173	]=	0.351525396	;
+zstar[	174	]=	-0.923869219	;
+zstar[	175	]=	-0.391540379	;
+zstar[	176	]=	0.458675834	;
+zstar[	177	]=	0.581240181	;
+zstar[	178	]=	-0.802532298	;
+zstar[	179	]=	-0.720918379	;
+zstar[	180	]=	-0.287599698	;
+zstar[	181	]=	0.760991196	;
+zstar[	182	]=	-0.484494631	;
+zstar[	183	]=	-0.274574373	;
+zstar[	184	]=	-0.821573989	;
+zstar[	185	]=	0.484777984	;
+zstar[	186	]=	0.967006459	;
+zstar[	187	]=	0.992302269	;
+zstar[	188	]=	-0.26594768	;
+zstar[	189	]=	0.080000833	;
+zstar[	190	]=	0.754339691	;
+zstar[	191	]=	-0.46566914	;
+zstar[	192	]=	-0.371335363	;
+zstar[	193	]=	-0.231372576	;
+zstar[	194	]=	-0.190287657	;
+zstar[	195	]=	-0.858776594	;
+zstar[	196	]=	-0.900611068	;
+zstar[	197	]=	-0.836661749	;
+zstar[	198	]=	-0.545982185	;
+zstar[	199	]=	-0.40723682	;
+zstar[	200	]=	0.308418551	;
+zstar[	201	]=	0.493564271	;
+zstar[	202	]=	0.739461885	;
+zstar[	203	]=	0.862078946	;
+zstar[	204	]=	-0.91407235	;
+zstar[	205	]=	-0.068956288	;
+zstar[	206	]=	0.313723097	;
+zstar[	207	]=	0.572086926	;
+zstar[	208	]=	0.995823385	;
+zstar[	209	]=	-0.72179308	;
+zstar[	210	]=	-0.706670759	;
+zstar[	211	]=	-0.265287578	;
+zstar[	212	]=	0.52749182	;
+zstar[	213	]=	0.69081472	;
+zstar[	214	]=	-0.235521095	;
+zstar[	215	]=	0.903858194	;
+zstar[	216	]=	-0.365297385	;
+zstar[	217	]=	0.321072067	;
+zstar[	218	]=	0.946383417	;
+zstar[	219	]=	-0.973406948	;
+zstar[	220	]=	-0.806343687	;
+zstar[	221	]=	0.283005959	;
+zstar[	222	]=	0.819280348	;
+zstar[	223	]=	-0.897061978	;
+zstar[	224	]=	0.349151345	;
+zstar[	225	]=	-0.992630794	;
+zstar[	226	]=	-0.964011002	;
+zstar[	227	]=	-0.225795717	;
+zstar[	228	]=	-0.142478712	;
+zstar[	229	]=	-0.032167433	;
+zstar[	230	]=	0.412318271	;
+zstar[	231	]=	-0.015501954	;
+zstar[	232	]=	-0.133024921	;
+zstar[	233	]=	0.946049216	;
+zstar[	234	]=	-0.745471127	;
+zstar[	235	]=	-0.630000081	;
+zstar[	236	]=	0.784307666	;
+zstar[	237	]=	-0.923092481	;
+zstar[	238	]=	-0.878370396	;
+zstar[	239	]=	-0.088703702	;
+zstar[	240	]=	-0.345028781	;
+zstar[	241	]=	-0.70635741	;
+zstar[	242	]=	-0.546240684	;
+zstar[	243	]=	0.168044577	;
+zstar[	244	]=	0.236252631	;
+zstar[	245	]=	-0.9782945	;
+zstar[	246	]=	0.875861069	;
+zstar[	247	]=	-0.431035028	;
+zstar[	248	]=	-0.175438661	;
+zstar[	249	]=	0.419721087	;
+zstar[	250	]=	0.646035685	;
+zstar[	251	]=	-0.426488589	;
+zstar[	252	]=	0.15016677	;
+zstar[	253	]=	-0.192588763	;
+zstar[	254	]=	0.149767196	;
+zstar[	255	]=	0.737845126	;
+zstar[	256	]=	0.351427281	;
+zstar[	257	]=	-0.887854357	;
+zstar[	258	]=	-0.101725234	;
+zstar[	259	]=	0.30369282	;
+zstar[	260	]=	-0.738278983	;
+zstar[	261	]=	-0.542170042	;
+zstar[	262	]=	-0.473597	;
+zstar[	263	]=	-0.299788217	;
+zstar[	264	]=	0.289041555	;
+zstar[	265	]=	-0.718788672	;
+zstar[	266	]=	0.778284534	;
+zstar[	267	]=	0.949861819	;
+zstar[	268	]=	-0.924064956	;
+zstar[	269	]=	0.20560559	;
+zstar[	270	]=	0.301800955	;
+zstar[	271	]=	0.731456824	;
+zstar[	272	]=	-0.277622122	;
+zstar[	273	]=	0.498266093	;
+zstar[	274	]=	0.828884013	;
+zstar[	275	]=	-0.941626609	;
+zstar[	276	]=	-0.768570909	;
+zstar[	277	]=	-0.207844852	;
+zstar[	278	]=	-0.138478766	;
+zstar[	279	]=	0.631897828	;
+zstar[	280	]=	0.754314211	;
+zstar[	281	]=	0.440915611	;
+zstar[	282	]=	0.490705877	;
+zstar[	283	]=	0.605795784	;
+zstar[	284	]=	-0.639946715	;
+zstar[	285	]=	-0.41970408	;
+zstar[	286	]=	0.810564209	;
+zstar[	287	]=	-0.385063924	;
+zstar[	288	]=	0.028989071	;
+zstar[	289	]=	-0.178588269	;
+zstar[	290	]=	-0.065531105	;
+zstar[	291	]=	0.084823896	;
+zstar[	292	]=	0.887945188	;
+zstar[	293	]=	-0.044792605	;
+zstar[	294	]=	-0.003115352	;
+zstar[	295	]=	0.279629572	;
+zstar[	296	]=	0.281345709	;
+zstar[	297	]=	0.868543146	;
+zstar[	298	]=	-0.865592374	;
+zstar[	299	]=	-0.523967292	;
+
+magstar[	0	] =	0.032537684	;
+magstar[	1	] =	0.025424983	;
+magstar[	2	] =	0.020268452	;
+magstar[	3	] =	0.020066778	;
+magstar[	4	] =	0.019800997	;
+magstar[	5	] =	0.019473715	;
+magstar[	6	] =	0.019215789	;
+magstar[	7	] =	0.017620546	;
+magstar[	8	] =	0.017156875	;
+magstar[	9	] =	0.016929634	;
+magstar[	10	] =	0.016320124	;
+magstar[	11	] =	0.015472521	;
+magstar[	12	] =	0.015065373	;
+magstar[	13	] =	0.014522981	;
+magstar[	14	] =	0.014426483	;
+magstar[	15	] =	0.013677228	;
+magstar[	16	] =	0.01358635	;
+magstar[	17	] =	0.013184813	;
+magstar[	18	] =	0.013184813	;
+magstar[	19	] =	0.012837864	;
+magstar[	20	] =	0.012837864	;
+magstar[	21	] =	0.012752563	;
+magstar[	22	] =	0.012130613	;
+magstar[	23	] =	0.01161618	;
+magstar[	24	] =	0.01161618	;
+magstar[	25	] =	0.011577524	;
+magstar[	26	] =	0.011538996	;
+magstar[	27	] =	0.011424181	;
+magstar[	28	] =	0.011348273	;
+magstar[	29	] =	0.011235356	;
+magstar[	30	] =	0.011197967	;
+magstar[	31	] =	0.011086546	;
+magstar[	32	] =	0.011049652	;
+magstar[	33	] =	0.011012881	;
+magstar[	34	] =	0.011012881	;
+magstar[	35	] =	0.010830854	;
+magstar[	36	] =	0.010794812	;
+magstar[	37	] =	0.010758889	;
+magstar[	38	] =	0.010758889	;
+magstar[	39	] =	0.010723085	;
+magstar[	40	] =	0.010616389	;
+magstar[	41	] =	0.010545848	;
+magstar[	42	] =	0.010510754	;
+magstar[	43	] =	0.010475777	;
+magstar[	44	] =	0.01040617	;
+magstar[	45	] =	0.010337027	;
+magstar[	46	] =	0.010337027	;
+magstar[	47	] =	0.010337027	;
+magstar[	48	] =	0.010268342	;
+magstar[	49	] =	0.010268342	;
+magstar[	50	] =	0.010200114	;
+magstar[	51	] =	0.010200114	;
+magstar[	52	] =	0.01013234	;
+magstar[	53	] =	0.010098622	;
+magstar[	54	] =	0.010065016	;
+magstar[	55	] =	0.010065016	;
+magstar[	56	] =	0.010065016	;
+magstar[	57	] =	0.010065016	;
+magstar[	58	] =	0.009998139	;
+magstar[	59	] =	0.009998139	;
+magstar[	60	] =	0.009931706	;
+magstar[	61	] =	0.009865715	;
+magstar[	62	] =	0.009800162	;
+magstar[	63	] =	0.009702649	;
+magstar[	64	] =	0.009606106	;
+magstar[	65	] =	0.009574139	;
+magstar[	66	] =	0.009510524	;
+magstar[	67	] =	0.009510524	;
+magstar[	68	] =	0.009510524	;
+magstar[	69	] =	0.009510524	;
+magstar[	70	] =	0.009447331	;
+magstar[	71	] =	0.009447331	;
+magstar[	72	] =	0.009415892	;
+magstar[	73	] =	0.009384558	;
+magstar[	74	] =	0.009384558	;
+magstar[	75	] =	0.009322203	;
+magstar[	76	] =	0.00929118	;
+magstar[	77	] =	0.00929118	;
+magstar[	78	] =	0.009260261	;
+magstar[	79	] =	0.009229445	;
+magstar[	80	] =	0.009076896	;
+magstar[	81	] =	0.009016585	;
+magstar[	82	] =	0.009016585	;
+magstar[	83	] =	0.008956674	;
+magstar[	84	] =	0.008926868	;
+magstar[	85	] =	0.008897161	;
+magstar[	86	] =	0.008867553	;
+magstar[	87	] =	0.008867553	;
+magstar[	88	] =	0.008838044	;
+magstar[	89	] =	0.008808633	;
+magstar[	90	] =	0.00877932	;
+magstar[	91	] =	0.008720986	;
+magstar[	92	] =	0.008691964	;
+magstar[	93	] =	0.008605478	;
+magstar[	94	] =	0.008548299	;
+magstar[	95	] =	0.008519852	;
+magstar[	96	] =	0.008519852	;
+magstar[	97	] =	0.008463242	;
+magstar[	98	] =	0.008435078	;
+magstar[	99	] =	0.008407008	;
+magstar[	100	] =	0.008407008	;
+magstar[	101	] =	0.008379031	;
+magstar[	102	] =	0.008379031	;
+magstar[	103	] =	0.008351147	;
+magstar[	104	] =	0.008351147	;
+magstar[	105	] =	0.008295658	;
+magstar[	106	] =	0.008295658	;
+magstar[	107	] =	0.008268052	;
+magstar[	108	] =	0.008268052	;
+magstar[	109	] =	0.008185784	;
+magstar[	110	] =	0.008185784	;
+magstar[	111	] =	0.008185784	;
+magstar[	112	] =	0.008158543	;
+magstar[	113	] =	0.008158543	;
+magstar[	114	] =	0.008158543	;
+magstar[	115	] =	0.008158543	;
+magstar[	116	] =	0.008131393	;
+magstar[	117	] =	0.008131393	;
+magstar[	118	] =	0.008131393	;
+magstar[	119	] =	0.008077364	;
+magstar[	120	] =	0.008023694	;
+magstar[	121	] =	0.008023694	;
+magstar[	122	] =	0.007996993	;
+magstar[	123	] =	0.007996993	;
+magstar[	124	] =	0.007970381	;
+magstar[	125	] =	0.007943857	;
+magstar[	126	] =	0.007943857	;
+magstar[	127	] =	0.007943857	;
+magstar[	128	] =	0.007917422	;
+magstar[	129	] =	0.007891074	;
+magstar[	130	] =	0.007891074	;
+magstar[	131	] =	0.007864814	;
+magstar[	132	] =	0.007864814	;
+magstar[	133	] =	0.007838642	;
+magstar[	134	] =	0.007838642	;
+magstar[	135	] =	0.007838642	;
+magstar[	136	] =	0.007812557	;
+magstar[	137	] =	0.007786558	;
+magstar[	138	] =	0.007786558	;
+magstar[	139	] =	0.007760646	;
+magstar[	140	] =	0.00773482	;
+magstar[	141	] =	0.00773482	;
+magstar[	142	] =	0.00773482	;
+magstar[	143	] =	0.007709081	;
+magstar[	144	] =	0.007709081	;
+magstar[	145	] =	0.007683427	;
+magstar[	146	] =	0.007683427	;
+magstar[	147	] =	0.007683427	;
+magstar[	148	] =	0.007657858	;
+magstar[	149	] =	0.007657858	;
+magstar[	150	] =	0.007632374	;
+magstar[	151	] =	0.007632374	;
+magstar[	152	] =	0.007632374	;
+magstar[	153	] =	0.007632374	;
+magstar[	154	] =	0.007632374	;
+magstar[	155	] =	0.007606975	;
+magstar[	156	] =	0.007606975	;
+magstar[	157	] =	0.007581661	;
+magstar[	158	] =	0.007531284	;
+magstar[	159	] =	0.007531284	;
+magstar[	160	] =	0.007506222	;
+magstar[	161	] =	0.007481243	;
+magstar[	162	] =	0.007481243	;
+magstar[	163	] =	0.007481243	;
+magstar[	164	] =	0.007456347	;
+magstar[	165	] =	0.007406803	;
+magstar[	166	] =	0.007406803	;
+magstar[	167	] =	0.007382155	;
+magstar[	168	] =	0.007382155	;
+magstar[	169	] =	0.007382155	;
+magstar[	170	] =	0.007357589	;
+magstar[	171	] =	0.007357589	;
+magstar[	172	] =	0.007357589	;
+magstar[	173	] =	0.007357589	;
+magstar[	174	] =	0.007333104	;
+magstar[	175	] =	0.007333104	;
+magstar[	176	] =	0.007333104	;
+magstar[	177	] =	0.007333104	;
+magstar[	178	] =	0.007308701	;
+magstar[	179	] =	0.007308701	;
+magstar[	180	] =	0.00728438	;
+magstar[	181	] =	0.00728438	;
+magstar[	182	] =	0.007260139	;
+magstar[	183	] =	0.007260139	;
+magstar[	184	] =	0.007235979	;
+magstar[	185	] =	0.007235979	;
+magstar[	186	] =	0.007235979	;
+magstar[	187	] =	0.007187899	;
+magstar[	188	] =	0.007163979	;
+magstar[	189	] =	0.007163979	;
+magstar[	190	] =	0.007163979	;
+magstar[	191	] =	0.007092697	;
+magstar[	192	] =	0.007092697	;
+magstar[	193	] =	0.007092697	;
+magstar[	194	] =	0.007092697	;
+magstar[	195	] =	0.007069094	;
+magstar[	196	] =	0.007045569	;
+magstar[	197	] =	0.007045569	;
+magstar[	198	] =	0.007045569	;
+magstar[	199	] =	0.007045569	;
+magstar[	200	] =	0.007045569	;
+magstar[	201	] =	0.007022123	;
+magstar[	202	] =	0.007022123	;
+magstar[	203	] =	0.006975465	;
+magstar[	204	] =	0.006952252	;
+magstar[	205	] =	0.006952252	;
+magstar[	206	] =	0.006952252	;
+magstar[	207	] =	0.006952252	;
+magstar[	208	] =	0.006952252	;
+magstar[	209	] =	0.006906058	;
+magstar[	210	] =	0.006906058	;
+magstar[	211	] =	0.006906058	;
+magstar[	212	] =	0.006883076	;
+magstar[	213	] =	0.006883076	;
+magstar[	214	] =	0.00686017	;
+magstar[	215	] =	0.00686017	;
+magstar[	216	] =	0.006837341	;
+magstar[	217	] =	0.006814588	;
+magstar[	218	] =	0.006814588	;
+magstar[	219	] =	0.006791911	;
+magstar[	220	] =	0.006791911	;
+magstar[	221	] =	0.006791911	;
+magstar[	222	] =	0.006791911	;
+magstar[	223	] =	0.006769309	;
+magstar[	224	] =	0.006746782	;
+magstar[	225	] =	0.00672433	;
+magstar[	226	] =	0.00672433	;
+magstar[	227	] =	0.00672433	;
+magstar[	228	] =	0.00672433	;
+magstar[	229	] =	0.00672433	;
+magstar[	230	] =	0.00672433	;
+magstar[	231	] =	0.006701953	;
+magstar[	232	] =	0.00667965	;
+magstar[	233	] =	0.00667965	;
+magstar[	234	] =	0.006635267	;
+magstar[	235	] =	0.006635267	;
+magstar[	236	] =	0.006635267	;
+magstar[	237	] =	0.006613186	;
+magstar[	238	] =	0.006613186	;
+magstar[	239	] =	0.006613186	;
+magstar[	240	] =	0.006591179	;
+magstar[	241	] =	0.006569245	;
+magstar[	242	] =	0.006569245	;
+magstar[	243	] =	0.006569245	;
+magstar[	244	] =	0.006569245	;
+magstar[	245	] =	0.006547384	;
+magstar[	246	] =	0.006547384	;
+magstar[	247	] =	0.006525596	;
+magstar[	248	] =	0.006525596	;
+magstar[	249	] =	0.006525596	;
+magstar[	250	] =	0.006525596	;
+magstar[	251	] =	0.00650388	;
+magstar[	252	] =	0.00650388	;
+magstar[	253	] =	0.006482237	;
+magstar[	254	] =	0.006482237	;
+magstar[	255	] =	0.006482237	;
+magstar[	256	] =	0.006460665	;
+magstar[	257	] =	0.006439165	;
+magstar[	258	] =	0.006439165	;
+magstar[	259	] =	0.006439165	;
+magstar[	260	] =	0.006417737	;
+magstar[	261	] =	0.006417737	;
+magstar[	262	] =	0.006417737	;
+magstar[	263	] =	0.006417737	;
+magstar[	264	] =	0.006417737	;
+magstar[	265	] =	0.00639638	;
+magstar[	266	] =	0.00639638	;
+magstar[	267	] =	0.006375095	;
+magstar[	268	] =	0.00635388	;
+magstar[	269	] =	0.00635388	;
+magstar[	270	] =	0.00635388	;
+magstar[	271	] =	0.00635388	;
+magstar[	272	] =	0.006332735	;
+magstar[	273	] =	0.006332735	;
+magstar[	274	] =	0.006332735	;
+magstar[	275	] =	0.006290658	;
+magstar[	276	] =	0.006290658	;
+magstar[	277	] =	0.006290658	;
+magstar[	278	] =	0.006290658	;
+magstar[	279	] =	0.006290658	;
+magstar[	280	] =	0.006290658	;
+magstar[	281	] =	0.006269724	;
+magstar[	282	] =	0.006269724	;
+magstar[	283	] =	0.006269724	;
+magstar[	284	] =	0.006248859	;
+magstar[	285	] =	0.006228064	;
+magstar[	286	] =	0.006228064	;
+magstar[	287	] =	0.006207339	;
+magstar[	288	] =	0.006207339	;
+magstar[	289	] =	0.006186682	;
+magstar[	290	] =	0.006186682	;
+magstar[	291	] =	0.006186682	;
+magstar[	292	] =	0.006186682	;
+magstar[	293	] =	0.006166094	;
+magstar[	294	] =	0.006166094	;
+magstar[	295	] =	0.006166094	;
+magstar[	296	] =	0.006166094	;
+magstar[	297	] =	0.006166094	;
+magstar[	298	] =	0.006145575	;
+magstar[	299	] =	0.006145575	;
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>otherInit</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//load parameters for Moon
+selectMoon();
+
+
+
+
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>keplerSystemODE</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+<EquationEditor.ErrorEditor.Page>
+<Type>ERROR_EDITOR</Type>
+<Name>Error handling code</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<ErrorHandlingContent>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+<ErrorType>ANY_ERROR</ErrorType>
+</ErrorHandlingContent>
+</EquationEditor.ErrorEditor.Page>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<Discontinuities>
+</Discontinuities>
+<Events>
+</Events>
+<IndependentVariable>t</IndependentVariable>
+<Increment>dt</Increment>
+<Rate state="phiE">Math.PI*(1+eE*Math.cos(phiE))*(1+eE*Math.cos(phiE))/Math.pow(aE*(1-eE*eE),1.5)</Rate>
+<Rate state="phi">Math.pow(0.000003, 0.5)*Math.PI*(1+e*Math.cos(phi))*(1+e*Math.cos(phi))/Math.pow(a*(1-e*e),1.5)</Rate>
+<Rate state=""></Rate>
+<Method>Fehlberg8</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MemoryLength></MemoryLength>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps></MaximumNumberOfSteps>
+<AbsoluteTolerance>0.001</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayMaximum><![CDATA[]]></DelayMaximum>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[equations of motion based on Kepler's Laws]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>orbitFR</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//convert degree values to radians
+lonPE = Math.PI*lonPEdeg/180.0;
+lonAN = Math.PI*lonANdeg/180.0;
+incl = MoonInclineAngleRadians;
+arg = Math.PI*argDeg/180.0;
+
+//compute radial coordinate for Earth
+rE = aE*(1-eE*eE)/(1+eE*Math.cos(phiE));
+
+//compute x and y coordinates for Earth
+xE = rE*Math.cos(phiE+lonPE);
+yE = rE*Math.sin(phiE+lonPE);
+
+//compute radial coordinate for planet
+r = a*(1-e*e)/(1+e*Math.cos(phi));
+
+//compute x and y coordinates for planet in its orbital plane
+x = r*Math.cos(phi+arg);
+y = r*Math.sin(phi+arg);
+
+//compute x,y,z coordinates for moon
+xM = -y*Math.cos(lonAN)-x*Math.cos(incl)*Math.sin(lonAN);
+yM = x*Math.cos(incl)*Math.cos(lonAN)-y*Math.sin(lonAN);
+zM = x*Math.sin(incl);
+
+//compute longitude and latitude of moon
+lon = Math.atan2(yM,xM);
+lat = Math.atan2(zM,Math.sqrt((xM)*(xM)+(yM)*(yM)));
+
+//compute x,y,z coordinates for ecliptic moon
+xMe = -y*Math.cos(lonAN + Math.PI*0.11299435*t)-x*Math.cos(incl)*Math.sin(lonAN + Math.PI*0.11299435*t);
+yMe = x*Math.cos(incl)*Math.cos(lonAN + Math.PI*0.11299435*t)-y*Math.sin(lonAN + Math.PI*0.11299435*t);
+zMe = x*Math.sin(incl);
+
+//compute longitude and latitude of ecliptic moon
+lonE = Math.atan2(yMe,xMe);
+latE = Math.atan2(zMe,Math.sqrt((xMe)*(xMe)+(yMe)*(yMe)));
+
+//compute components of line-of-sight vector
+xlos = scale*Math.cos(latE)*Math.cos(lonE);
+ylos = scale*Math.cos(latE)*Math.sin(lonE);
+zlos = scale*Math.sin(latE);
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>LunarEclipseRelations</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//set the correct position of Earth shadow
+if (lonS >= 0)
+{
+lunarEclipse = lonS - Math.PI;
+proximityEM = (lunarEclipse + lonE)*(lunarEclipse + lonE);
+}
+else
+{
+lunarEclipse = lonS + Math.PI;
+proximityEM =(lunarEclipse + lonE)*(lunarEclipse + lonE);
+
+}
+
+
+//show Earth shadow only when needed
+if (proximityEM < 0.1225 && 36*lat*lat < 0.1)
+{
+ showEarth=true;
+}
+
+else 
+{
+  showEarth=false;
+}
+
+
+
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>eclipticFR</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//compute longitude of Sun (sign reversed)
+lonS = -Math.atan2(-yE,-xE);
+//compute distance from Earth to planet
+dist = Math.sqrt((xM-xE)*(xM-xE)+(yM-yE)*(yM-yE)+zM*zM);
+//check to see if Sun is closer to Earth than planet
+if (rE < dist) {
+  sunFront=true;
+}
+else {
+  sunFront=false;
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>MoonRelations</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//convert incl angle to radians
+MoonInclineAngleRadians = inclDeg*Math.PI/180;
+
+//determine where the Moon is relative to Sun and Earth
+ang = lonS+lonE;
+
+//determine if Moon is C or D shaped reative to Earth and Sun position
+posMoon = ylos*Math.cos(phiE)-xlos*Math.sin(phiE);
+
+//set polygon for shadow in Ecliptic View
+if (posMoon < 0)
+
+{
+  rotation = -5*Math.sin(lat);
+for (int i = 0; i < np; i++)
+{
+  theta = i*Math.PI/(np-1) - Math.PI/2.0;
+  pv[i][0] = Math.cos(ang)*Math.cos(theta);
+  pv[i][1] = Math.sin(theta);
+  }
+for (int i = np; i < 2*np; i++)
+{
+  theta = Math.PI/2.0 - (i-np)*Math.PI/(np-1);
+  pv[i][0] = -Math.cos(theta);
+  pv[i][1] = Math.sin(theta);
+  }
+  }
+else
+{
+  rotation = 5*Math.sin(lat);
+  for (int i = 0; i < np; i++)
+{
+  theta = i*Math.PI/(np-1) + Math.PI/2.0;
+  pv[i][0] = -Math.cos(theta);
+  pv[i][1] = Math.sin(theta);
+
+  }
+for (int i = np; i < 2*np; i++)
+{
+  theta = 3.0*Math.PI/2.0 - (i-np)*Math.PI/(np-1);
+  pv[i][0] = Math.cos(ang)*Math.cos(theta);
+  pv[i][1] = Math.sin(theta);
+  }
+  }
+
+
+
+//change transparency of darknessPolygon to emulate Earthlight
+transp = 200-(int)(20*Math.cos(ang));
+color = new Color(0,0,0,transp);
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>showTopStars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//sets the visibility of the TOP stars that are in Earth's shadow
+
+  for (int i = 0; i < nES; i++) {
+    
+   if (evStars && showEarth && Math.abs(latES[i]) <  0.3 && lonES[i] <  lunarEclipse + 0.3 && lonES[i] >  lunarEclipse - 0.3 && Math.sqrt((lonES[i] + lonE)*(lonES[i] + lonE) + (latES[i] - latE*6)*(latES[i] - latE*6)) > 0.05 ) {
+      evStarsTop[i] = true; 
+    }
+
+else {
+  evStarsTop[i] = false;
+}
+}
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>scaleStars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//sets scale for Orbit Frame and rescales celestial sphere
+public void scaleStars () {
+  for (int i=0; i<nst; i++) {
+    scale = 1.5*Math.max(a/(1-e*e),aE/(1-eE*eE));
+    xst[i] = scale*xstar[i];
+    yst[i] = scale*ystar[i];
+    zst[i] = scale*zstar[i];
+    magst[i] = scale*magstar[i];}
+ // _view.orbitDrawingPanel3D.setScaleFactor(scale,scale,scale);
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>selectMoon</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//custom calls to set parameter values for moon
+public void selectMoon () {
+  userDef=false;
+  a = 0.00257;
+  e = 0.054;
+  inclDeg = MoonInclineAngle;
+  lonANdeg = 90.0;
+  argDeg = 180.0;
+  _view.resetTraces();
+  scaleStars();
+
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">orbitFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Orbit Frame"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["-1,25"]]></Property>
+<Property name="size"><![CDATA["800,440"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">orbitFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[GRID:1,3,0,0]]></Property>
+<Property name="size"><![CDATA["0,30"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[GRID:1,3,0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">playPauseButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["開始或停止模擬"]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepforward.gif"]]></Property>
+<Property name="action"><![CDATA[_step()]]></Property>
+<Property name="tooltip"><![CDATA["模擬下一段時間的狀態"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepBackButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepback.gif"]]></Property>
+<Property name="action"><![CDATA[dt = -dt;
+_step();
+dt = -dt;]]></Property>
+<Property name="tooltip"><![CDATA["模擬上一段時間的狀態"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="tooltip"><![CDATA["重製模擬動畫"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">slidersPanel2</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showMoonSlider]]></Property>
+<Property name="size"><![CDATA["0,30"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">moonInclinationPanel</Property>
+<Property name="parent">slidersPanel2</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="size"><![CDATA["0,30"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">MoonInclineLabel</Property>
+<Property name="parent">moonInclinationPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 月亮軌道面傾角"]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+<Property name="tooltip"><![CDATA["月亮軌道面傾斜角度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">MoonInclineSlider</Property>
+<Property name="parent">moonInclinationPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[inclDeg]]></Property>
+<Property name="minimum"><![CDATA[0.000]]></Property>
+<Property name="maximum"><![CDATA[7.500]]></Property>
+<Property name="dragaction"><![CDATA[_view.resetTraces()]]></Property>
+<Property name="action"><![CDATA[_view.resetTraces()]]></Property>
+<Property name="tooltip"><![CDATA["月亮軌道面傾角"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">MoonInclineValue</Property>
+<Property name="parent">moonInclinationPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[inclDeg]]></Property>
+<Property name="format"><![CDATA["0.000"]]></Property>
+<Property name="size"><![CDATA["60,0"]]></Property>
+<Property name="tooltip"><![CDATA["月亮軌道面傾角"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">slidersPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="size"><![CDATA["0,30"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">timeStepPanel</Property>
+<Property name="parent">slidersPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="size"><![CDATA["0,30"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">timeStepLabel</Property>
+<Property name="parent">timeStepPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 時間設定"]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+<Property name="tooltip"><![CDATA["設定時間大小 增加數值以加快模擬速度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">timeStepSlider</Property>
+<Property name="parent">timeStepPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[dt]]></Property>
+<Property name="minimum"><![CDATA[0.00005]]></Property>
+<Property name="maximum"><![CDATA[0.003]]></Property>
+<Property name="size"><![CDATA["0,30"]]></Property>
+<Property name="tooltip"><![CDATA["設定時間大小 增加數值以加快模擬速度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">timeStepValue</Property>
+<Property name="parent">timeStepPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[dt]]></Property>
+<Property name="format"><![CDATA["0.00000"]]></Property>
+<Property name="size"><![CDATA["60,0"]]></Property>
+<Property name="tooltip"><![CDATA["設定時間大小 增加數值以加快模擬速度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">orbitDrawingPanel3D</Property>
+<Property name="parent">orbitFrame</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-scale]]></Property>
+<Property name="maximumX"><![CDATA[scale]]></Property>
+<Property name="minimumY"><![CDATA[-scale]]></Property>
+<Property name="maximumY"><![CDATA[scale]]></Property>
+<Property name="minimumZ"><![CDATA[-1.0]]></Property>
+<Property name="maximumZ"><![CDATA[1.0]]></Property>
+<Property name="cameraAzimuth"><![CDATA[1.5]]></Property>
+<Property name="cameraAltitude"><![CDATA[0.45]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusY"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusZ"><![CDATA[0.0]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[30.0]]></Property>
+<Property name="implementation"><![CDATA[mode]]></Property>
+<Property name="illumination"><![CDATA[true]]></Property>
+<Property name="decorationType"><![CDATA[NONE]]></Property>
+<Property name="allowQuickRedraw"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Circle3D</Type>
+<Property name="name">sunBall</Property>
+<Property name="parent">orbitDrawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0.09*scale]]></Property>
+<Property name="sizeY"><![CDATA[0.09*scale]]></Property>
+<Property name="sizeZ"><![CDATA[0.09*scale]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="fillColor"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group3D</Type>
+<Property name="name">EarthMoonGroup3D</Property>
+<Property name="parent">orbitDrawingPanel3D</Property>
+<Property name="x"><![CDATA[xE]]></Property>
+<Property name="y"><![CDATA[yE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Sphere3D</Type>
+<Property name="name">earthDay</Property>
+<Property name="parent">EarthMoonGroup3D</Property>
+<Property name="radius"><![CDATA[0.028*scale]]></Property>
+<Property name="minimumAngleU"><![CDATA[90]]></Property>
+<Property name="maximumAngleU"><![CDATA[270]]></Property>
+<Property name="transformation"><![CDATA["z:"+(phiE)]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+<Property name="drawingLines"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Sphere3D</Type>
+<Property name="name">earthNight</Property>
+<Property name="parent">EarthMoonGroup3D</Property>
+<Property name="radius"><![CDATA[0.028*scale]]></Property>
+<Property name="minimumAngleU"><![CDATA[90]]></Property>
+<Property name="maximumAngleU"><![CDATA[270]]></Property>
+<Property name="transformation"><![CDATA["z:"+(phiE+Math.PI)]]></Property>
+<Property name="fillColor"><![CDATA[DARKGRAY]]></Property>
+<Property name="drawingLines"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group3D</Type>
+<Property name="name">MoonGroup3D</Property>
+<Property name="parent">EarthMoonGroup3D</Property>
+<Property name="transformation"><![CDATA["z:"+20.3389831*t+"d"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Sphere3D</Type>
+<Property name="name">moonDay</Property>
+<Property name="parent">MoonGroup3D</Property>
+<Property name="x"><![CDATA[xM*100]]></Property>
+<Property name="y"><![CDATA[yM*100]]></Property>
+<Property name="z"><![CDATA[zM*100]]></Property>
+<Property name="radius"><![CDATA[0.018*scale]]></Property>
+<Property name="minimumAngleU"><![CDATA[90]]></Property>
+<Property name="maximumAngleU"><![CDATA[270]]></Property>
+<Property name="transformation"><![CDATA["z:"+(phiE-Math.PI*t/8.84999997)]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="fillColor"><![CDATA[WHITE]]></Property>
+<Property name="drawingLines"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Sphere3D</Type>
+<Property name="name">moonNight</Property>
+<Property name="parent">MoonGroup3D</Property>
+<Property name="x"><![CDATA[xM*100]]></Property>
+<Property name="y"><![CDATA[yM*100]]></Property>
+<Property name="z"><![CDATA[zM*100]]></Property>
+<Property name="radius"><![CDATA[0.018*scale]]></Property>
+<Property name="minimumAngleU"><![CDATA[90]]></Property>
+<Property name="maximumAngleU"><![CDATA[270]]></Property>
+<Property name="transformation"><![CDATA["z:"+(phiE+Math.PI*(1-t/8.84999997))]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="fillColor"><![CDATA[DARKGRAY]]></Property>
+<Property name="drawingLines"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">moonOrb</Property>
+<Property name="parent">MoonGroup3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0.35*scale]]></Property>
+<Property name="sizeY"><![CDATA[0.35*scale]]></Property>
+<Property name="sizeZ"><![CDATA[0.005]]></Property>
+<Property name="transformation"><![CDATA["x: 0.0d & y:"+(MoonInclineAngleRadians)]]></Property>
+<Property name="visible"><![CDATA[showEcl]]></Property>
+<Property name="lineColor"><![CDATA[GRAY]]></Property>
+<Property name="fillColor"><![CDATA[70,70,70]]></Property>
+<Property name="lineWidth"><![CDATA[1]]></Property>
+<Property name="drawingLines"><![CDATA[true]]></Property>
+<Property name="drawingFill"><![CDATA[false]]></Property>
+<Property name="resolution"><![CDATA["10,18,10"]]></Property>
+<Property name="depthFactor"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment3D</Type>
+<Property name="name">earthSunLine</Property>
+<Property name="parent">orbitDrawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[xE]]></Property>
+<Property name="sizeY"><![CDATA[yE]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[lineES]]></Property>
+<Property name="lineColor"><![CDATA[orange]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">eclipticCylinderNT</Property>
+<Property name="parent">orbitDrawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[1.3*scale]]></Property>
+<Property name="sizeY"><![CDATA[1.3*scale]]></Property>
+<Property name="sizeZ"><![CDATA[0.005]]></Property>
+<Property name="visible"><![CDATA[showEcl]]></Property>
+<Property name="lineColor"><![CDATA[150,150,255]]></Property>
+<Property name="fillColor"><![CDATA[90,90,290]]></Property>
+<Property name="lineWidth"><![CDATA[1]]></Property>
+<Property name="drawingLines"><![CDATA[true]]></Property>
+<Property name="drawingFill"><![CDATA[false]]></Property>
+<Property name="resolution"><![CDATA["10,24,10"]]></Property>
+<Property name="depthFactor"><![CDATA[1]]></Property>
+<Property name="textureTransparency"><![CDATA[100]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group3D</Type>
+<Property name="name">MarkerGroup3D</Property>
+<Property name="parent">orbitDrawingPanel3D</Property>
+<Property name="transformation"><![CDATA["z:"+20.3389831*t+"d"]]></Property>
+<Property name="visible"><![CDATA[!showMoonSlider]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">eclipticCylinderNTeclipse</Property>
+<Property name="parent">MarkerGroup3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[1.3*scale]]></Property>
+<Property name="sizeY"><![CDATA[1.3*scale]]></Property>
+<Property name="sizeZ"><![CDATA[0.005]]></Property>
+<Property name="minimumAngle"><![CDATA[78]]></Property>
+<Property name="maximumAngle"><![CDATA[102]]></Property>
+<Property name="visible"><![CDATA[showEcl]]></Property>
+<Property name="lineColor"><![CDATA[ORANGE]]></Property>
+<Property name="drawingFill"><![CDATA[false]]></Property>
+<Property name="resolution"><![CDATA["10,8,0"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">eclipticCylinderNTeclipse2</Property>
+<Property name="parent">MarkerGroup3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[1.3*scale]]></Property>
+<Property name="sizeY"><![CDATA[1.3*scale]]></Property>
+<Property name="sizeZ"><![CDATA[0.005]]></Property>
+<Property name="minimumAngle"><![CDATA[88]]></Property>
+<Property name="maximumAngle"><![CDATA[92]]></Property>
+<Property name="visible"><![CDATA[showEcl]]></Property>
+<Property name="lineColor"><![CDATA[GREEN]]></Property>
+<Property name="drawingFill"><![CDATA[false]]></Property>
+<Property name="resolution"><![CDATA["10,2,0"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">eclipticCylinderNTeclipse22</Property>
+<Property name="parent">MarkerGroup3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[1.3*scale]]></Property>
+<Property name="sizeY"><![CDATA[1.3*scale]]></Property>
+<Property name="sizeZ"><![CDATA[0.005]]></Property>
+<Property name="minimumAngle"><![CDATA[258]]></Property>
+<Property name="maximumAngle"><![CDATA[282]]></Property>
+<Property name="visible"><![CDATA[showEcl]]></Property>
+<Property name="lineColor"><![CDATA[ORANGE]]></Property>
+<Property name="drawingFill"><![CDATA[false]]></Property>
+<Property name="resolution"><![CDATA["10,8,0"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">eclipticCylinderNTeclipse222</Property>
+<Property name="parent">MarkerGroup3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[1.3*scale]]></Property>
+<Property name="sizeY"><![CDATA[1.3*scale]]></Property>
+<Property name="sizeZ"><![CDATA[0.005]]></Property>
+<Property name="minimumAngle"><![CDATA[268]]></Property>
+<Property name="maximumAngle"><![CDATA[272]]></Property>
+<Property name="visible"><![CDATA[showEcl]]></Property>
+<Property name="lineColor"><![CDATA[GREEN]]></Property>
+<Property name="drawingFill"><![CDATA[false]]></Property>
+<Property name="resolution"><![CDATA["10,2,0"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CircleSet3D</Type>
+<Property name="name">starSet</Property>
+<Property name="parent">orbitDrawingPanel3D</Property>
+<Property name="numberOfElements"><![CDATA[nst]]></Property>
+<Property name="x"><![CDATA[xst]]></Property>
+<Property name="y"><![CDATA[yst]]></Property>
+<Property name="z"><![CDATA[zst]]></Property>
+<Property name="sizeX"><![CDATA[magst]]></Property>
+<Property name="sizeY"><![CDATA[magst]]></Property>
+<Property name="sizeZ"><![CDATA[magst]]></Property>
+<Property name="visible"><![CDATA[globeStars]]></Property>
+<Property name="lineColor"><![CDATA[white]]></Property>
+<Property name="fillColor"><![CDATA[white]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Sphere3D</Type>
+<Property name="name">celestialGrid</Property>
+<Property name="parent">orbitDrawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="radius"><![CDATA[1.5]]></Property>
+<Property name="visible"><![CDATA[globeStars]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="drawingFill"><![CDATA[false]]></Property>
+<Property name="resolution"><![CDATA["24,24,18"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">lineOfSight</Property>
+<Property name="parent">orbitDrawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[xlos]]></Property>
+<Property name="sizeY"><![CDATA[ylos]]></Property>
+<Property name="sizeZ"><![CDATA[zlos]]></Property>
+<Property name="visible"><![CDATA[los]]></Property>
+<Property name="lineColor"><![CDATA[pColor]]></Property>
+<Property name="fillColor"><![CDATA[pColor]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.MenuBar</Type>
+<Property name="name">orbitMenuBar</Property>
+<Property name="parent">orbitFrame</Property>
+<Property name="position">north</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Menu</Type>
+<Property name="name">displayOptionsMenu</Property>
+<Property name="parent">orbitMenuBar</Property>
+<Property name="text"><![CDATA["顯示選擇"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showEclBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[showEcl]]></Property>
+<Property name="text"><![CDATA["軌道面"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showESLineBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[lineES]]></Property>
+<Property name="text"><![CDATA["日-地連線"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showLineOfSight</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[los]]></Property>
+<Property name="text"><![CDATA["亮面方向"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showGlobeStars</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[globeStars]]></Property>
+<Property name="text"><![CDATA["顯示星星"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showMoonSlider</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[showMoonSlider]]></Property>
+<Property name="text"><![CDATA["更改月亮傾斜"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showJava3D</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="text"><![CDATA["切換成Java 3D模式"]]></Property>
+<Property name="actionon"><![CDATA[mode=1;]]></Property>
+<Property name="actionoff"><![CDATA[mode=0;]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">eclipticViewFrame</Property>
+<Property name="title"><![CDATA["黃道面"]]></Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["0,532"]]></Property>
+<Property name="size"><![CDATA["800,220"]]></Property>
+<Property name="resizable"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">eclipticViewDrawingPanel</Property>
+<Property name="parent">eclipticViewFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-Math.PI+0.025]]></Property>
+<Property name="maximumX"><![CDATA[Math.PI-0.025]]></Property>
+<Property name="minimumY"><![CDATA[-0.3]]></Property>
+<Property name="maximumY"><![CDATA[0.3]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">starGroup</Property>
+<Property name="parent">eclipticViewDrawingPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ShapeSet2D</Type>
+<Property name="name">eclipticStars</Property>
+<Property name="parent">starGroup</Property>
+<Property name="numberOfElements"><![CDATA[nES]]></Property>
+<Property name="x"><![CDATA[lonES]]></Property>
+<Property name="y"><![CDATA[latES]]></Property>
+<Property name="sizeX"><![CDATA[magES]]></Property>
+<Property name="sizeY"><![CDATA[magES]]></Property>
+<Property name="scalex"><![CDATA[2]]></Property>
+<Property name="scaley"><![CDATA[2]]></Property>
+<Property name="visible"><![CDATA[evStars]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[white]]></Property>
+<Property name="fillColor"><![CDATA[white]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">eclipticSun</Property>
+<Property name="parent">eclipticViewDrawingPanel</Property>
+<Property name="x"><![CDATA[lonS]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[0.12]]></Property>
+<Property name="sizey"><![CDATA[0.12]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="secondaryColor"><![CDATA[YELLOW]]></Property>
+<Property name="color"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">eclipticMoon</Property>
+<Property name="parent">eclipticViewDrawingPanel</Property>
+<Property name="x"><![CDATA[-lonE]]></Property>
+<Property name="y"><![CDATA[latE*6]]></Property>
+<Property name="sizex"><![CDATA[52*a/(dist*(1-e*e))]]></Property>
+<Property name="sizey"><![CDATA[52*a/(dist*(1-e*e))]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="secondaryColor"><![CDATA[DARKGRAY]]></Property>
+<Property name="color"><![CDATA[GRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image2D</Type>
+<Property name="name">moonPicture</Property>
+<Property name="parent">eclipticViewDrawingPanel</Property>
+<Property name="x"><![CDATA[-lonE]]></Property>
+<Property name="y"><![CDATA[latE*6]]></Property>
+<Property name="sizeX"><![CDATA[52*a/(dist*(1-e*e))]]></Property>
+<Property name="sizeY"><![CDATA[52*a/(dist*(1-e*e))]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="imageFile"><![CDATA["./SolarLunarEclipses/FullMoonIncline.gif"]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Polygon2D</Type>
+<Property name="name">darknessPolygon</Property>
+<Property name="parent">eclipticViewDrawingPanel</Property>
+<Property name="data"><![CDATA[pv]]></Property>
+<Property name="x"><![CDATA[-lonE]]></Property>
+<Property name="y"><![CDATA[latE*6-0.0025]]></Property>
+<Property name="sizeX"><![CDATA[26.5*a/(dist*(1-e*e))]]></Property>
+<Property name="sizeY"><![CDATA[26.5*a/(dist*(1-e*e))]]></Property>
+<Property name="transformation"><![CDATA[rotation]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[none]]></Property>
+<Property name="fillColor"><![CDATA[color]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">shadowEarth</Property>
+<Property name="parent">eclipticViewDrawingPanel</Property>
+<Property name="x"><![CDATA[lunarEclipse]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[0.3375]]></Property>
+<Property name="sizey"><![CDATA[0.3375]]></Property>
+<Property name="visible"><![CDATA[showEarth]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="secondaryColor"><![CDATA[0,0,0,180]]></Property>
+<Property name="color"><![CDATA[0,0,0,180]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">shadowEarth2</Property>
+<Property name="parent">eclipticViewDrawingPanel</Property>
+<Property name="x"><![CDATA[lunarEclipse]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[0.5875]]></Property>
+<Property name="sizey"><![CDATA[0.5875]]></Property>
+<Property name="visible"><![CDATA[showEarth]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="secondaryColor"><![CDATA[0,0,0,100]]></Property>
+<Property name="color"><![CDATA[0,0,0,100]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ShapeSet2D</Type>
+<Property name="name">eclipticStarsTop</Property>
+<Property name="parent">eclipticViewDrawingPanel</Property>
+<Property name="numberOfElements"><![CDATA[nES]]></Property>
+<Property name="x"><![CDATA[lonES]]></Property>
+<Property name="y"><![CDATA[latES]]></Property>
+<Property name="sizeX"><![CDATA[magES]]></Property>
+<Property name="sizeY"><![CDATA[magES]]></Property>
+<Property name="scalex"><![CDATA[2]]></Property>
+<Property name="scaley"><![CDATA[2]]></Property>
+<Property name="visible"><![CDATA[evStarsTop]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[white]]></Property>
+<Property name="fillColor"><![CDATA[white]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticCurve2D</Type>
+<Property name="name">moonTrail</Property>
+<Property name="parent">eclipticViewDrawingPanel</Property>
+<Property name="points"><![CDATA[100]]></Property>
+<Property name="min"><![CDATA[-Math.PI+0.025]]></Property>
+<Property name="max"><![CDATA[-lonE-0.06]]></Property>
+<Property name="variable"><![CDATA["eX"]]></Property>
+<Property name="functionx"><![CDATA["eX"]]></Property>
+<Property name="functiony"><![CDATA["-6*"+MoonInclineAngleRadians+"*Math.cos(eX+0.3545*t)"]]></Property>
+<Property name="javaSyntax"><![CDATA[true]]></Property>
+<Property name="visible"><![CDATA[traceEV]]></Property>
+<Property name="lineColor"><![CDATA[0,255,0,155]]></Property>
+<Property name="lineWidth"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticCurve2D</Type>
+<Property name="name">moonTrail2</Property>
+<Property name="parent">eclipticViewDrawingPanel</Property>
+<Property name="points"><![CDATA[100]]></Property>
+<Property name="min"><![CDATA[-lonE+0.06]]></Property>
+<Property name="max"><![CDATA[Math.PI-0.025]]></Property>
+<Property name="variable"><![CDATA["eX"]]></Property>
+<Property name="functionx"><![CDATA["eX"]]></Property>
+<Property name="functiony"><![CDATA["-6*"+MoonInclineAngleRadians+"*Math.cos(eX+0.3545*t)"]]></Property>
+<Property name="javaSyntax"><![CDATA[true]]></Property>
+<Property name="visible"><![CDATA[traceEV]]></Property>
+<Property name="lineColor"><![CDATA[0,255,0,155]]></Property>
+<Property name="lineWidth"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">ecliptic</Property>
+<Property name="parent">eclipticViewDrawingPanel</Property>
+<Property name="x"><![CDATA[-8]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[12]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[showEcliptic]]></Property>
+<Property name="lineColor"><![CDATA[255,200,0,155]]></Property>
+<Property name="lineWidth"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.MenuBar</Type>
+<Property name="name">eclipticViewMenu</Property>
+<Property name="parent">eclipticViewFrame</Property>
+<Property name="position">north</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Menu</Type>
+<Property name="name">eclipticOptionsMenu</Property>
+<Property name="parent">eclipticViewMenu</Property>
+<Property name="text"><![CDATA["顯示選擇"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showEclipticTraceBox</Property>
+<Property name="parent">eclipticOptionsMenu</Property>
+<Property name="variable"><![CDATA[traceEV]]></Property>
+<Property name="text"><![CDATA["顯示月球運動軌跡"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showEclipticStars</Property>
+<Property name="parent">eclipticOptionsMenu</Property>
+<Property name="variable"><![CDATA[evStars]]></Property>
+<Property name="text"><![CDATA["顯示星星"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showEclipticPath</Property>
+<Property name="parent">eclipticOptionsMenu</Property>
+<Property name="variable"><![CDATA[showEcliptic]]></Property>
+<Property name="text"><![CDATA["顯示太陽運動軌跡"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

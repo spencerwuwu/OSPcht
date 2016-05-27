@@ -1,0 +1,23 @@
+Noon Shadow
+
+The Noon Shadow model shows the geometry of the shadow (magenta) cast by a gnomon (green) at noon.  Users can change the orientation of the gnomon as well as the gnomon's latitude and the day of the year.  The height of the gnomon and its shadow length are displayed in Earth radius units.
+
+Credits:
+
+The Noon Shadow model was created by Wolfgang Christian and Todd Timberlake using the Easy Java Simulations (EJS) version 4.2 authoring and modeling tool. 
+
+ 
+
+You can examine and modify a compiled EJS model if you run the model (double click on the model's jar file), right-click within a plot, and select "Open EJS Model" from the pop-up menu.  You must, of course, have EJS installed on your computer.  Information about EJS is available at: <http://www.um.es/fem/Ejs/> and in the OSP ComPADRE collection <http://www.compadre.org/OSP/>.
+
+
+午時竿影
+
+這個午時竿影的模型展示一個竿子(綠色)及受到正中午日照(?色)所?生的竿影(粉紅)。使用者可以改變桿子立著的方向、竿子所處緯度及一年中的任一天。竿子的長度及?生的影子隨著變化顯示在地球上。
+
+製作者
+
+
+這個午時竿影的模型是由Wolfgang Christian和Todd Timberlake用的Easy Java Simulations (EJS) version 4.2所製作的。
+
+?可以操作及修改這個模型藉由雙?jar?案，右鍵點取並選擇"開? EJS Model"，當然，?必須先擁有EJS安裝在?的電腦。關於EJS的資訊在<http://www.um.es/fem/Ejs/> 以及OSP ComPADRE collection <http://www.compadre.org/OSP/>.

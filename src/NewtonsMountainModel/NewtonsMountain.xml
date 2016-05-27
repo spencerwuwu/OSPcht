@@ -1,0 +1,758 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.1" password="">
+<Osejs.Information>
+<Title><![CDATA[NewtonsMountain]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[Newton, Gravity, Projectile Motion]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Todd Timberlake]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./NewtonsMountain/NewtonsMountain.html;./NewtonsMountain/newtmtn.gif;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./NewtonsMountain/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>NewtonsMountain</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>NewtonsMountain</Title>
+  <External>true</External>
+  <![CDATA[
+./NewtonsMountain/NewtonsMountain.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>modelVars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[0.1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[拋射物的x座標 (以地球半徑為單位)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[1.185]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[拋射物的y座標 (以地球半徑為單位)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vi]]></Name>
+<Value><![CDATA[2.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[拋射物初始速度(km/s)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx]]></Name>
+<Value><![CDATA[vi]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[拋射物速度 x分量(km/s)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[拋射物速度 y分量(km/s)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[時間(奇數單位)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[G]]></Name>
+<Value><![CDATA[1.53e-6]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[G*m*M 牛頓定律重力場的變數(奇數單位)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[fx]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[力在拋射物的 x分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[fy]]></Name>
+<Value><![CDATA[-0.142]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[力在拋射物的 y分量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[發射角度(度)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>controlVars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[pass]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[使拋射體通過地球]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[point]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[將地球視為質點而非圓球]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[center]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[顯示地球中心]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[velocity]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[顯示拋射體的速度向量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[force]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[顯示拋射體的力/加速度向量]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[trace]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[描繪拋射體軌跡]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[diagram]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[在背影顯示牛頓圖表]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>newtonsMountainInit</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//set projectile at top of mountain and compute velocity components
+t = 0;
+x = 0.1;
+y = 1.185;
+vx = vi*Math.cos(theta*Math.PI/180.0)/6.378e3;
+vy = vi*Math.sin(theta*Math.PI/180.0)/6.378e3;
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>newtonsMountainODE</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+<EquationEditor.ErrorEditor.Page>
+<Type>ERROR_EDITOR</Type>
+<Name>Error handling code</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<ErrorHandlingContent>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+<ErrorType>ANY_ERROR</ErrorType>
+</ErrorHandlingContent>
+</EquationEditor.ErrorEditor.Page>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<Discontinuities>
+</Discontinuities>
+<Events>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Event</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<EventContent>
+<EventType>CROSSING_EVENT</EventType>
+<Method>BISECTION</Method>
+<Iterations>100</Iterations>
+<Tolerance><![CDATA[0.001]]></Tolerance>
+<StopAtEvent>true</StopAtEvent>
+<ZeroCondition><![CDATA[
+return hitEarth(x,y);
+
+]]></ZeroCondition>
+<Action><![CDATA[
+_pause();
+]]></Action>
+<Comment><![CDATA[]]></Comment>
+</EventContent>
+</Event.Page>
+</Events>
+<ZenoEffect>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+<StopAfterEffect>true</StopAfterEffect>
+</ZenoEffect>
+<IndependentVariable>t</IndependentVariable>
+<Increment>20</Increment>
+<Rate state="x">vx</Rate>
+<Rate state="vx">getAx(x,y)</Rate>
+<Rate state="y">vy</Rate>
+<Rate state="vy">getAy(x,y)</Rate>
+<Rate state=""></Rate>
+<Method>Fehlberg8</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MemoryLength></MemoryLength>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps></MaximumNumberOfSteps>
+<AbsoluteTolerance>0.001</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayMaximum><![CDATA[]]></DelayMaximum>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>NewtonsMountainRels</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//compute force/acceleration components (scaled to be visible)
+fx = 0.2*getAx(x,y)/G;
+fy = 0.2*getAy(x,y)/G;
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>getAccels</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//computes x-component of projectile's acceleration
+double getAx (double x, double y) {
+  if ((!point) && (x*x+y*y < 1)) {
+    return -G*x;}
+  else {
+    return -G*x/Math.pow(x*x+y*y,1.5);}
+}
+
+//computes y-component of projectile's acceleration
+double getAy (double x, double y) {
+  if ((!point) && (x*x+y*y < 1)) {
+    return -G*y;}
+  else {
+    return -G*y/Math.pow(x*x+y*y,1.5);}
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>hitEarth</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//function to determine if projectile has hit earth
+//(used in ODE event handling)
+double hitEarth (double x, double y) {
+  if (!pass) {
+    return x*x+y*y-1;}
+  else {
+    return 100;}
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>customInit</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//resets particle to mountain top with new values and starts new trace
+public void customInit () {
+  _view.ballTrail.newSegment();
+  t = 0;
+  x = 0.1;
+  y = 1.185;
+  vx = vi*Math.cos(theta*Math.PI/180.0)/6.378e3;
+  vy = vi*Math.sin(theta*Math.PI/180.0)/6.378e3;
+  _view.update();
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">mountainFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Newton's Mountain"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["67,62"]]></Property>
+<Property name="size"><![CDATA["469,551"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">mountainDrawingPanel</Property>
+<Property name="parent">mountainFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-1.7]]></Property>
+<Property name="maximumX"><![CDATA[1.7]]></Property>
+<Property name="minimumY"><![CDATA[-1.6]]></Property>
+<Property name="maximumY"><![CDATA[1.8]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="background"><![CDATA[white]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image2D</Type>
+<Property name="name">mountainDiagram</Property>
+<Property name="parent">mountainDrawingPanel</Property>
+<Property name="y"><![CDATA[0.12]]></Property>
+<Property name="sizeX"><![CDATA[3.35]]></Property>
+<Property name="sizeY"><![CDATA[3.32]]></Property>
+<Property name="visible"><![CDATA[diagram]]></Property>
+<Property name="imageFile"><![CDATA["./NewtonsMountain/newtmtn.gif"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">centerPoint</Property>
+<Property name="parent">mountainDrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0.04]]></Property>
+<Property name="sizeY"><![CDATA[0.04]]></Property>
+<Property name="visible"><![CDATA[center]]></Property>
+<Property name="lineColor"><![CDATA[red]]></Property>
+<Property name="fillColor"><![CDATA[red]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">ballTrail</Property>
+<Property name="parent">mountainDrawingPanel</Property>
+<Property name="inputX"><![CDATA[x]]></Property>
+<Property name="inputY"><![CDATA[y]]></Property>
+<Property name="visible"><![CDATA[trace]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[magenta]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">cannonBall</Property>
+<Property name="parent">mountainDrawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizeX"><![CDATA[0.04]]></Property>
+<Property name="sizeY"><![CDATA[0.04]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="lineColor"><![CDATA[green]]></Property>
+<Property name="fillColor"><![CDATA[green]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">forceArrow</Property>
+<Property name="parent">mountainDrawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizeX"><![CDATA[fx]]></Property>
+<Property name="sizeY"><![CDATA[fy]]></Property>
+<Property name="visible"><![CDATA[force]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="lineColor"><![CDATA[red]]></Property>
+<Property name="fillColor"><![CDATA[red]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">velocityArrow</Property>
+<Property name="parent">mountainDrawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizeX"><![CDATA[vx/Math.sqrt(5*G)]]></Property>
+<Property name="sizeY"><![CDATA[vy/Math.sqrt(5*G)]]></Property>
+<Property name="visible"><![CDATA[velocity]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="lineColor"><![CDATA[blue]]></Property>
+<Property name="fillColor"><![CDATA[blue]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">bottomPanel</Property>
+<Property name="parent">mountainFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">topBottomPanel</Property>
+<Property name="parent">bottomPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">topBottomPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="borderType"><![CDATA[ROUNDED_LINE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">playPauseButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["開始/停止模擬"]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepforward.gif"]]></Property>
+<Property name="action"><![CDATA[_step()]]></Property>
+<Property name="tooltip"><![CDATA["根據時間進階模擬"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset.gif"]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="tooltip"><![CDATA["重設模擬"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">clearTraceButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/erase.gif"]]></Property>
+<Property name="action"><![CDATA[_view.resetTraces()]]></Property>
+<Property name="tooltip"><![CDATA["清除所有軌跡"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">initPanel</Property>
+<Property name="parent">topBottomPanel</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">initButton</Property>
+<Property name="parent">initPanel</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA["初始化"]]></Property>
+<Property name="action"><![CDATA[customInit ()]]></Property>
+<Property name="tooltip"><![CDATA["讀入數值並重設拋射物至山頂"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">bottomBottomPanel</Property>
+<Property name="parent">bottomPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">speedPanel</Property>
+<Property name="parent">bottomBottomPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[ROUNDED_LINE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">viLabel</Property>
+<Property name="parent">speedPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["   初始速度: "]]></Property>
+<Property name="tooltip"><![CDATA["炮彈的初始速度 (公里/秒)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">viSlider</Property>
+<Property name="parent">speedPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[vi]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[10]]></Property>
+<Property name="tooltip"><![CDATA["炮彈的初始速度 (公里/秒)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">viValue</Property>
+<Property name="parent">speedPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[vi]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="tooltip"><![CDATA["炮彈的初始速度 (公里/秒)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">anglePanel</Property>
+<Property name="parent">bottomBottomPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="borderType"><![CDATA[ROUNDED_LINE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">thetaLabel</Property>
+<Property name="parent">anglePanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 發射角度: "]]></Property>
+<Property name="tooltip"><![CDATA["發射角度(度)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">thetaSlider</Property>
+<Property name="parent">anglePanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[theta]]></Property>
+<Property name="minimum"><![CDATA[-180]]></Property>
+<Property name="maximum"><![CDATA[180]]></Property>
+<Property name="tooltip"><![CDATA["發射角度(度)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">thetaValue</Property>
+<Property name="parent">anglePanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[theta]]></Property>
+<Property name="format"><![CDATA["0"]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="tooltip"><![CDATA["發射角度(度)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.MenuBar</Type>
+<Property name="name">mountainMenuBar</Property>
+<Property name="parent">mountainFrame</Property>
+<Property name="position">north</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Menu</Type>
+<Property name="name">displayOptionsMenu</Property>
+<Property name="parent">mountainMenuBar</Property>
+<Property name="text"><![CDATA["顯示選項"]]></Property>
+<Property name="tooltip"><![CDATA["圖形演示選項"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">centerBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[center]]></Property>
+<Property name="text"><![CDATA["顯示地球中心"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">velocityBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[velocity]]></Property>
+<Property name="text"><![CDATA["顯示速度向量"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">forceBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[force]]></Property>
+<Property name="text"><![CDATA["顯示力的向量"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">traceBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[trace]]></Property>
+<Property name="text"><![CDATA["描繪拋射體軌跡"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">diagramBox</Property>
+<Property name="parent">displayOptionsMenu</Property>
+<Property name="variable"><![CDATA[diagram]]></Property>
+<Property name="text"><![CDATA["顯示牛頓圖表"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Menu</Type>
+<Property name="name">modelOptionsMenu</Property>
+<Property name="parent">mountainMenuBar</Property>
+<Property name="text"><![CDATA["模型選項"]]></Property>
+<Property name="enabled"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["系統塑造選項"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">passBox</Property>
+<Property name="parent">modelOptionsMenu</Property>
+<Property name="variable"><![CDATA[pass]]></Property>
+<Property name="text"><![CDATA["使拋射體通過地球"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">pointBox</Property>
+<Property name="parent">modelOptionsMenu</Property>
+<Property name="variable"><![CDATA[point]]></Property>
+<Property name="text"><![CDATA["將地球視為質點"]]></Property>
+<Property name="tooltip"><![CDATA["若未選取，將視地球為均質球體"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

@@ -1,0 +1,688 @@
+﻿<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.2" password="">
+<Osejs.Information>
+<Title><![CDATA[Gnomon Shadow]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[sundial]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[wochristian@davidson.edu]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>false</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<FixedNavigationBar>false</FixedNavigationBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Wolfgang Christian and Todd Timberlake]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./NoonShadow/NoonShadow.gif;./NoonShadow/NoonShadow.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./NoonShadow/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>NoonShadow</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>NoonShadow</Title>
+  <External>true</External>
+  <![CDATA[
+./NoonShadow/NoonShadow.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Display Vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[gnomonColor]]></Name>
+<Value><![CDATA[Color.GREEN]]></Value>
+<Type><![CDATA[Color]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[verticalGnomon]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showEarth]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[latitude]]></Name>
+<Value><![CDATA[0.5349189811267339]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[latitudeDegree]]></Name>
+<Value><![CDATA[Math.toDegrees(latitude)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rEarth]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[gnomonHeight]]></Name>
+<Value><![CDATA[0.1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[gnomonX]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[gnomonY]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[shadowLength]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rayLength]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zoom]]></Name>
+<Value><![CDATA[0.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dec]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[day]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[angle]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[shadowVis]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Shadow calculation</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+dec=Math.toRadians(23.5)*Math.sin(2*Math.PI*day/365.25);
+angle=latitude-dec;
+if(Math.abs(angle)>=Math.PI/2.0){
+  shadowVis=false;
+}else{
+  shadowVis=true;
+}
+if(latitude<0 && !verticalGnomon){
+  gnomonHeight=-Math.abs(gnomonHeight);
+}else{
+  gnomonHeight=Math.abs(gnomonHeight);
+}
+if(verticalGnomon){ // gnomon vertical; dial horizontal
+  shadowLength=gnomonHeight*Math.tan(angle);
+  rayLength=gnomonHeight/Math.cos(angle);
+  gnomonX=(rEarth+gnomonHeight/zoom)*Math.cos(latitude);
+  gnomonY=(rEarth+gnomonHeight/zoom)*Math.sin(latitude);
+}else{  // gnomon axial; dial horizontal
+  shadowLength=gnomonHeight*Math.cos(dec)/Math.cos(angle);
+  rayLength=gnomonHeight*Math.sin(latitude)/Math.cos(angle);
+  gnomonX=rEarth*Math.cos(latitude);
+  gnomonY=rEarth*Math.sin(latitude)+gnomonHeight/zoom;
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">earthFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Noon Shadow"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["13,23"]]></Property>
+<Property name="size"><![CDATA["529,514"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">earthDrawingPanel</Property>
+<Property name="parent">earthFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-rEarth]]></Property>
+<Property name="maximumX"><![CDATA[rEarth]]></Property>
+<Property name="minimumY"><![CDATA[-rEarth]]></Property>
+<Property name="maximumY"><![CDATA[rEarth]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="showCoordinates"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[black]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">sunBeamGroup</Property>
+<Property name="parent">earthDrawingPanel</Property>
+<Property name="x"><![CDATA[-rEarth*Math.cos(latitude)]]></Property>
+<Property name="y"><![CDATA[-rEarth*Math.sin(latitude)]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">moveableSunRay</Property>
+<Property name="parent">sunBeamGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[gnomonY-gnomonX*Math.tan(dec)]]></Property>
+<Property name="sizeX"><![CDATA[2*rEarth*Math.cos(dec)]]></Property>
+<Property name="sizeY"><![CDATA[2*rEarth*Math.sin(dec)]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="elementposition"><![CDATA[SOUTH_WEST]]></Property>
+<Property name="lineColor"><![CDATA[yellow]]></Property>
+<Property name="fillColor"><![CDATA[yellow]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">fixedSunRay</Property>
+<Property name="parent">sunBeamGroup</Property>
+<Property name="x"><![CDATA[rEarth-rEarth*Math.cos(dec)]]></Property>
+<Property name="y"><![CDATA[-rEarth*Math.sin(dec)]]></Property>
+<Property name="sizeX"><![CDATA[2*rEarth*Math.cos(dec)]]></Property>
+<Property name="sizeY"><![CDATA[2*rEarth*Math.sin(dec)]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="elementposition"><![CDATA[SOUTH_WEST]]></Property>
+<Property name="lineColor"><![CDATA[yellow]]></Property>
+<Property name="fillColor"><![CDATA[yellow]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">zoomGroup</Property>
+<Property name="parent">earthDrawingPanel</Property>
+<Property name="x"><![CDATA[-rEarth*Math.cos(latitude)/zoom]]></Property>
+<Property name="y"><![CDATA[-rEarth*Math.sin(latitude)/zoom]]></Property>
+<Property name="sizeX"><![CDATA[1/zoom]]></Property>
+<Property name="sizeY"><![CDATA[1/zoom]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">earthDisk</Property>
+<Property name="parent">zoomGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[2*rEarth]]></Property>
+<Property name="sizeY"><![CDATA[2*rEarth]]></Property>
+<Property name="visible"><![CDATA[showEarth]]></Property>
+<Property name="lineColor"><![CDATA[blue]]></Property>
+<Property name="fillColor"><![CDATA[0,0,255,160]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">earthCenter</Property>
+<Property name="parent">zoomGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0.02*rEarth]]></Property>
+<Property name="sizeY"><![CDATA[0.02*rEarth]]></Property>
+<Property name="lineColor"><![CDATA[green]]></Property>
+<Property name="fillColor"><![CDATA[green]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">earthRadius</Property>
+<Property name="parent">zoomGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[rEarth*Math.cos(latitude)]]></Property>
+<Property name="sizeY"><![CDATA[rEarth*Math.sin(latitude)]]></Property>
+<Property name="lineColor"><![CDATA[DARKGRAY]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">gnomonGroup</Property>
+<Property name="parent">zoomGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="transformation"><![CDATA[latitude]]></Property>
+<Property name="visible"><![CDATA[!verticalGnomon]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">gnomon</Property>
+<Property name="parent">gnomonGroup</Property>
+<Property name="x"><![CDATA[rEarth]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[gnomonHeight*Math.sin(latitude)]]></Property>
+<Property name="sizeY"><![CDATA[gnomonHeight*Math.cos(latitude)]]></Property>
+<Property name="lineColor"><![CDATA[gnomonColor]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">shadowLine</Property>
+<Property name="parent">gnomonGroup</Property>
+<Property name="x"><![CDATA[rEarth]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[shadowLength]]></Property>
+<Property name="visible"><![CDATA[shadowVis]]></Property>
+<Property name="lineColor"><![CDATA[MAGENTA]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">shadowRay</Property>
+<Property name="parent">gnomonGroup</Property>
+<Property name="x"><![CDATA[rEarth+gnomonHeight*Math.sin(latitude)]]></Property>
+<Property name="y"><![CDATA[gnomonHeight*Math.cos(latitude)]]></Property>
+<Property name="sizeX"><![CDATA[-rayLength*Math.cos(angle)]]></Property>
+<Property name="sizeY"><![CDATA[rayLength*Math.sin(angle)]]></Property>
+<Property name="visible"><![CDATA[shadowVis]]></Property>
+<Property name="elementposition"><![CDATA[NORTH_EAST]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">verticalGnomonGroup</Property>
+<Property name="parent">zoomGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="transformation"><![CDATA[latitude]]></Property>
+<Property name="visible"><![CDATA[verticalGnomon]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">verticalGnomon</Property>
+<Property name="parent">verticalGnomonGroup</Property>
+<Property name="x"><![CDATA[rEarth]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[gnomonHeight]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[gnomonColor]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">verticalGnomonShadowLine</Property>
+<Property name="parent">verticalGnomonGroup</Property>
+<Property name="x"><![CDATA[rEarth]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[shadowLength]]></Property>
+<Property name="visible"><![CDATA[shadowVis]]></Property>
+<Property name="lineColor"><![CDATA[MAGENTA]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">verticalGnomonShadowRay</Property>
+<Property name="parent">verticalGnomonGroup</Property>
+<Property name="x"><![CDATA[rEarth+gnomonHeight]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[-rayLength*Math.cos(angle)]]></Property>
+<Property name="sizeY"><![CDATA[rayLength*Math.sin(angle)]]></Property>
+<Property name="visible"><![CDATA[shadowVis]]></Property>
+<Property name="elementposition"><![CDATA[NORTH_EAST]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">titleText</Property>
+<Property name="parent">earthDrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[rEarth*.9]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["Noon Shadow"]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,23]]></Property>
+<Property name="lineColor"><![CDATA[WHITE]]></Property>
+<Property name="fillColor"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">earthFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[GRID:0,1,0,0]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="position">center</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset.gif"]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="tooltip"><![CDATA["重製至初始狀態"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">inputPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">gnomonHeightPanel</Property>
+<Property name="parent">inputPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">heightLabel</Property>
+<Property name="parent">gnomonHeightPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["  高度 = "]]></Property>
+<Property name="tooltip"><![CDATA["竿子的高度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">heightField</Property>
+<Property name="parent">gnomonHeightPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[gnomonHeight]]></Property>
+<Property name="format"><![CDATA["0.000"]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[gnomonHeight=Math.max(gnomonHeight,0.01);
+gnomonHeight=Math.min(gnomonHeight,0.2);]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="size"><![CDATA["0,24"]]></Property>
+<Property name="tooltip"><![CDATA["竿子的高度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">shadowLengthPanel</Property>
+<Property name="parent">inputPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">lengthLabel</Property>
+<Property name="parent">shadowLengthPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 影長 = "]]></Property>
+<Property name="tooltip"><![CDATA["竿影的長度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">lengthField</Property>
+<Property name="parent">shadowLengthPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[Math.abs(shadowLength)]]></Property>
+<Property name="format"><![CDATA["0.000"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="size"><![CDATA["0,24"]]></Property>
+<Property name="tooltip"><![CDATA["竿影的長度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">dayPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">daySlider</Property>
+<Property name="parent">dayPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[day]]></Property>
+<Property name="minimum"><![CDATA[0]]></Property>
+<Property name="maximum"><![CDATA[365]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">dayValue</Property>
+<Property name="parent">dayPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[day]]></Property>
+<Property name="format"><![CDATA["0"]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="tooltip"><![CDATA["春分後的天數"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">dayLabel</Property>
+<Property name="parent">dayPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 春分後的天數: "]]></Property>
+<Property name="tooltip"><![CDATA["Day of the year (0 is Vernal Equinox)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">latitudePanel</Property>
+<Property name="parent">earthFrame</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_BEVEL]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">thetaLabel</Property>
+<Property name="parent">latitudePanel</Property>
+<Property name="position">north</Property>
+<Property name="text"><![CDATA["$\\theta$"]]></Property>
+<Property name="alignment"><![CDATA[CENTER]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">thetaSlider</Property>
+<Property name="parent">latitudePanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[latitude]]></Property>
+<Property name="minimum"><![CDATA[-Math.PI/2]]></Property>
+<Property name="maximum"><![CDATA[Math.PI/2]]></Property>
+<Property name="orientation"><![CDATA[VERTICAL]]></Property>
+<Property name="dragaction"><![CDATA[latitudeDegree=Math.toDegrees(latitude)]]></Property>
+<Property name="tooltip"><![CDATA["設置竿子的緯度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">thetaField</Property>
+<Property name="parent">latitudePanel</Property>
+<Property name="position">south</Property>
+<Property name="variable"><![CDATA[latitudeDegree]]></Property>
+<Property name="format"><![CDATA["0"]]></Property>
+<Property name="action"><![CDATA[latitudeDegree=Math.max(-90,latitudeDegree);
+latitudeDegree=Math.min(90,latitudeDegree);
+latitude=Math.toRadians(latitudeDegree);]]></Property>
+<Property name="columns"><![CDATA[2]]></Property>
+<Property name="tooltip"><![CDATA["Gnomon latitude."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">topPanel</Property>
+<Property name="parent">earthFrame</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">checkBoxPanel</Property>
+<Property name="parent">topPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[FLOW:center,15,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">verticalCheckBox</Property>
+<Property name="parent">checkBoxPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[verticalGnomon]]></Property>
+<Property name="text"><![CDATA["垂直"]]></Property>
+<Property name="tooltip"><![CDATA["將竿子垂直立在地表"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showEarthCheckBox</Property>
+<Property name="parent">checkBoxPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[showEarth]]></Property>
+<Property name="text"><![CDATA["顯示地球"]]></Property>
+<Property name="tooltip"><![CDATA["顯示地球"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">zoomPanel</Property>
+<Property name="parent">topPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">zoomSlider</Property>
+<Property name="parent">zoomPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[zoom]]></Property>
+<Property name="minimum"><![CDATA[0.01]]></Property>
+<Property name="maximum"><![CDATA[1.0]]></Property>
+<Property name="tooltip"><![CDATA["放大或縮小"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">zoomLabel</Property>
+<Property name="parent">zoomPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 放大: "]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

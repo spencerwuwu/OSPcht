@@ -1,0 +1,688 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.0 beta" password="">
+<Osejs.Information>
+<Title><![CDATA[Equipotential Field and Potential Model]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[electric field, equipotential, electrostatic potential]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[introductory]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Anne J Cox, Wolfgang Christian]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./ElectricFieldPotential/ElectricFieldPotential.html;./ElectricFieldPotential/ElectricFieldPotentialLab.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./ElectricFieldPotential/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Electric Field Potential</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Electric Field Potential</Title>
+  <External>true</External>
+  <![CDATA[
+./ElectricFieldPotential/ElectricFieldPotential.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Electric Field Potential Lab</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Electric Field Potential Lab</Title>
+  <External>true</External>
+  <![CDATA[
+./ElectricFieldPotential/ElectricFieldPotentialLab.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Potential vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[msgStr]]></Name>
+<Value><![CDATA[null]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[message string for bottom of potenial plot]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[forceStr]]></Name>
+<Value><![CDATA[null]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[value of the force on test charge]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zPlane]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[position of the plane for contour plot]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[sphere]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[show spherical or cylindrical in the contour plot]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[size]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[scale of the windows]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xq]]></Name>
+<Value><![CDATA[4]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[test charge coordinate]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yq]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[test charge coordinate]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zq]]></Name>
+<Value><![CDATA[4]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[test charge coordinate]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+computeForce();
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Compute Potential Message</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void computeMessage () {
+  double v=0;
+  double r=0;
+  double x=_view.drawingPanel.getMouseX();
+  double y=_view.drawingPanel.getMouseY();
+  if(sphere) {
+    r=Math.sqrt(x*x+y*y+zPlane*zPlane);
+  }
+  else {
+    r=Math.sqrt(x*x+y*y);
+  }
+  if (r<1.0) {
+    v=12;
+  }
+  else if (r>10.0){
+    v=0;
+    }
+  else {
+    if(sphere) {
+      v=13.3*(1/r-.1); //v in Volts, r in cm
+    }
+    else {
+      v=5.2*Math.log(10/r); //v in Volts, r in cm
+    }
+  }
+  msgStr= "V(x,y)="+_view.format(v,"0.00");
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Compute Force</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void computeForce () {
+  double f=0;
+  double r=0;
+  if(sphere) {
+    r=Math.sqrt(xq*xq+yq*yq+zq*zq);
+  }
+  else {
+    r=Math.sqrt(xq*xq+yq*yq);
+  }
+  if (r<1.0) {
+    f=0;
+  }
+  else if (r>10.0){
+    f=0;
+    }
+  else {
+    if(sphere) {
+      f=1330/(r*r); //r in units of cm and F in units of 10-12 N
+    }
+    else {
+      f=520/r;  //r in units of cm and F in units of 10-12 N
+    }
+  }
+  forceStr= "F="+_view.format(f,"0");
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">Potential_Contour</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["等電位圖"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["11,226"]]></Property>
+<Property name="size"><![CDATA["339,389"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">sliderPanel</Property>
+<Property name="parent">Potential_Contour</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">z</Property>
+<Property name="parent">sliderPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" z "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slider</Property>
+<Property name="parent">sliderPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[zPlane]]></Property>
+<Property name="minimum"><![CDATA[-size*.8]]></Property>
+<Property name="maximum"><![CDATA[size*.8]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field</Property>
+<Property name="parent">sliderPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[zPlane]]></Property>
+<Property name="format"><![CDATA["+0.0"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">drawingPanel</Property>
+<Property name="parent">Potential_Contour</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-size]]></Property>
+<Property name="maximumX"><![CDATA[size]]></Property>
+<Property name="minimumY"><![CDATA[-size]]></Property>
+<Property name="maximumY"><![CDATA[size]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="pressaction"><![CDATA[computeMessage ()]]></Property>
+<Property name="dragaction"><![CDATA[computeMessage ()]]></Property>
+<Property name="action"><![CDATA[msgStr=null;]]></Property>
+<Property name="BRmessage"><![CDATA[%msgStr%]]></Property>
+<Property name="background"><![CDATA[GRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticScalarField2D</Type>
+<Property name="name">cylinderContour</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="variable1"><![CDATA["x"]]></Property>
+<Property name="points1"><![CDATA[40]]></Property>
+<Property name="variable2"><![CDATA["y"]]></Property>
+<Property name="points2"><![CDATA[40]]></Property>
+<Property name="z"><![CDATA["5.2*ln(10/(x*x+y*y)^.5)"]]></Property>
+<Property name="autoscaleZ"><![CDATA[false]]></Property>
+<Property name="minimumZ"><![CDATA[0]]></Property>
+<Property name="maximumZ"><![CDATA[12]]></Property>
+<Property name="plotType"><![CDATA[INTERPOLATED]]></Property>
+<Property name="visible"><![CDATA[!sphere]]></Property>
+<Property name="floorcolor"><![CDATA[0]]></Property>
+<Property name="ceilingcolor"><![CDATA[1]]></Property>
+<Property name="showgrid"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticScalarField2D</Type>
+<Property name="name">sphereContour</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="variable1"><![CDATA["x"]]></Property>
+<Property name="points1"><![CDATA[40]]></Property>
+<Property name="variable2"><![CDATA["y"]]></Property>
+<Property name="points2"><![CDATA[40]]></Property>
+<Property name="z"><![CDATA["13.3*(1/(x*x+y*y+zPlane*zPlane)^(1/2)-.1)"]]></Property>
+<Property name="autoscaleZ"><![CDATA[false]]></Property>
+<Property name="minimumZ"><![CDATA[0]]></Property>
+<Property name="maximumZ"><![CDATA[12]]></Property>
+<Property name="plotType"><![CDATA[INTERPOLATED]]></Property>
+<Property name="visible"><![CDATA[sphere]]></Property>
+<Property name="showgrid"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">Potential_Contour</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">radioPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">Point_Charge</Property>
+<Property name="parent">radioPanel</Property>
+<Property name="position">west</Property>
+<Property name="variable"><![CDATA[sphere]]></Property>
+<Property name="text"><![CDATA["球體"]]></Property>
+<Property name="noUnselect"><![CDATA[true]]></Property>
+<Property name="actionon"><![CDATA[sphere=true;
+computeForce();]]></Property>
+<Property name="actionoff"><![CDATA[sphere=false;]]></Property>
+<Property name="tooltip"><![CDATA["Spherical charge distribution."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">Line_Charge</Property>
+<Property name="parent">radioPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[!sphere]]></Property>
+<Property name="text"><![CDATA["直線"]]></Property>
+<Property name="noUnselect"><![CDATA[true]]></Property>
+<Property name="actionon"><![CDATA[sphere=false;
+computeForce();]]></Property>
+<Property name="actionoff"><![CDATA[sphere=true;]]></Property>
+<Property name="tooltip"><![CDATA["Line charge distribution"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">LinearCharge</Property>
+<Property name="title"><![CDATA["Linear Charge"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[!sphere]]></Property>
+<Property name="location"><![CDATA["4,2"]]></Property>
+<Property name="size"><![CDATA["300,300"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">drawingPanelCylinder</Property>
+<Property name="parent">LinearCharge</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-size]]></Property>
+<Property name="maximumX"><![CDATA[size]]></Property>
+<Property name="minimumY"><![CDATA[-size]]></Property>
+<Property name="maximumY"><![CDATA[size]]></Property>
+<Property name="minimumZ"><![CDATA[-size]]></Property>
+<Property name="maximumZ"><![CDATA[size]]></Property>
+<Property name="cameraAzimuth"><![CDATA[-0.5524887337938906]]></Property>
+<Property name="cameraAltitude"><![CDATA[0.5065566468510777]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusY"><![CDATA[1.0000000000000004]]></Property>
+<Property name="cameraFocusZ"><![CDATA[-2.4]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[72.59999999999985]]></Property>
+<Property name="decorationType"><![CDATA[NONE]]></Property>
+<Property name="background"><![CDATA[DARKGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">planePotentialCylinder</Property>
+<Property name="parent">drawingPanelCylinder</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[zPlane]]></Property>
+<Property name="sizeX"><![CDATA[2*size]]></Property>
+<Property name="sizeY"><![CDATA[2*size]]></Property>
+<Property name="sizeZ"><![CDATA[.1]]></Property>
+<Property name="closedTop"><![CDATA[true]]></Property>
+<Property name="closedBottom"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[PINK]]></Property>
+<Property name="fillColor"><![CDATA[PINK]]></Property>
+<Property name="resolution"><![CDATA["20,30,10"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticVectorField3D</Type>
+<Property name="name">EFieldVectorCylinder</Property>
+<Property name="parent">drawingPanelCylinder</Property>
+<Property name="variable1"><![CDATA["n"]]></Property>
+<Property name="points1"><![CDATA[10]]></Property>
+<Property name="minimumX"><![CDATA[-size]]></Property>
+<Property name="maximumX"><![CDATA[size]]></Property>
+<Property name="variable2"><![CDATA["m"]]></Property>
+<Property name="points2"><![CDATA[10]]></Property>
+<Property name="minimumY"><![CDATA[-size]]></Property>
+<Property name="maximumY"><![CDATA[size]]></Property>
+<Property name="xcomponent"><![CDATA["4*n/(n*n+m*m)"]]></Property>
+<Property name="ycomponent"><![CDATA["4*m/(n*n+m*m)"]]></Property>
+<Property name="zcomponent"><![CDATA["0"]]></Property>
+<Property name="levels"><![CDATA[10]]></Property>
+<Property name="invisibleLevel"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">cylinder</Property>
+<Property name="parent">drawingPanelCylinder</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[2*size/10]]></Property>
+<Property name="sizeY"><![CDATA[2*size/10]]></Property>
+<Property name="sizeZ"><![CDATA[4*size]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+<Property name="resolution"><![CDATA["0,10,20"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group3D</Type>
+<Property name="name">TestCharge</Property>
+<Property name="parent">drawingPanelCylinder</Property>
+<Property name="x"><![CDATA[xq]]></Property>
+<Property name="y"><![CDATA[yq]]></Property>
+<Property name="z"><![CDATA[zq]]></Property>
+<Property name="visible"><![CDATA[!sphere]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Circle3D</Type>
+<Property name="name">particle3D</Property>
+<Property name="parent">TestCharge</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[1]]></Property>
+<Property name="sizeY"><![CDATA[1]]></Property>
+<Property name="sizeZ"><![CDATA[1]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="pressAction"><![CDATA[computeForce ()]]></Property>
+<Property name="dragAction"><![CDATA[computeForce ()]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="fillColor"><![CDATA[YELLOW]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">text3D</Property>
+<Property name="parent">TestCharge</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[2]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="text"><![CDATA[%forceStr%]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,12]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">arrow3D</Property>
+<Property name="parent">TestCharge</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[8*xq/(xq*xq+yq*yq)]]></Property>
+<Property name="sizeY"><![CDATA[8*yq/(xq*xq+yq*yq)]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="fillColor"><![CDATA[YELLOW]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">outerCylinder</Property>
+<Property name="parent">drawingPanelCylinder</Property>
+<Property name="sizeX"><![CDATA[2*size]]></Property>
+<Property name="sizeY"><![CDATA[2*size]]></Property>
+<Property name="sizeZ"><![CDATA[4*size]]></Property>
+<Property name="closedTop"><![CDATA[false]]></Property>
+<Property name="closedBottom"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[CYAN]]></Property>
+<Property name="fillColor"><![CDATA[none]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+<Property name="resolution"><![CDATA["10,20,10"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">PointCharge</Property>
+<Property name="title"><![CDATA["PointCharge"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[sphere]]></Property>
+<Property name="location"><![CDATA["256,4"]]></Property>
+<Property name="size"><![CDATA["300,300"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">drawingPanelSphere</Property>
+<Property name="parent">PointCharge</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-size]]></Property>
+<Property name="maximumX"><![CDATA[size]]></Property>
+<Property name="minimumY"><![CDATA[-size]]></Property>
+<Property name="maximumY"><![CDATA[size]]></Property>
+<Property name="minimumZ"><![CDATA[-size]]></Property>
+<Property name="maximumZ"><![CDATA[size]]></Property>
+<Property name="cameraAzimuth"><![CDATA[-7.349999999999999]]></Property>
+<Property name="cameraAltitude"><![CDATA[0.16285534753180037]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusY"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusZ"><![CDATA[0.0]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[84.40000000000005]]></Property>
+<Property name="decorationType"><![CDATA[NONE]]></Property>
+<Property name="background"><![CDATA[DARKGRAY]]></Property>
+<Property name="foreground"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">planePotentialSphere</Property>
+<Property name="parent">drawingPanelSphere</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[zPlane]]></Property>
+<Property name="sizeX"><![CDATA[2*Math.sqrt(size*size-zPlane*zPlane)]]></Property>
+<Property name="sizeY"><![CDATA[2*Math.sqrt(size*size-zPlane*zPlane)]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="closedTop"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[PINK]]></Property>
+<Property name="fillColor"><![CDATA[PINK]]></Property>
+<Property name="resolution"><![CDATA["20,30,10"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticVectorField3D</Type>
+<Property name="name">EFieldVectorSphere</Property>
+<Property name="parent">drawingPanelSphere</Property>
+<Property name="variable1"><![CDATA["p"]]></Property>
+<Property name="points1"><![CDATA[10]]></Property>
+<Property name="minimumX"><![CDATA[-size]]></Property>
+<Property name="maximumX"><![CDATA[size]]></Property>
+<Property name="variable2"><![CDATA["q"]]></Property>
+<Property name="points2"><![CDATA[10]]></Property>
+<Property name="minimumY"><![CDATA[-size]]></Property>
+<Property name="maximumY"><![CDATA[size]]></Property>
+<Property name="variable3"><![CDATA["r"]]></Property>
+<Property name="points3"><![CDATA[10]]></Property>
+<Property name="minimumZ"><![CDATA[-size]]></Property>
+<Property name="maximumZ"><![CDATA[size]]></Property>
+<Property name="xcomponent"><![CDATA["12*p/(p*p+q*q+r*r)^(1.5)"]]></Property>
+<Property name="ycomponent"><![CDATA["12*q/(p*p+q*q+r*r)^(1.5)"]]></Property>
+<Property name="zcomponent"><![CDATA["12*r/(p*p+q*q+r*r)^(1.5)"]]></Property>
+<Property name="javaSyntax"><![CDATA[false]]></Property>
+<Property name="levels"><![CDATA[20]]></Property>
+<Property name="invisibleLevel"><![CDATA[4]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Sphere3D</Type>
+<Property name="name">sphere</Property>
+<Property name="parent">drawingPanelSphere</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="radius"><![CDATA[size/10]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group3D</Type>
+<Property name="name">TestCharge2</Property>
+<Property name="parent">drawingPanelSphere</Property>
+<Property name="x"><![CDATA[xq]]></Property>
+<Property name="y"><![CDATA[yq]]></Property>
+<Property name="z"><![CDATA[zq]]></Property>
+<Property name="visible"><![CDATA[sphere]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Circle3D</Type>
+<Property name="name">particle3D2</Property>
+<Property name="parent">TestCharge2</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[1]]></Property>
+<Property name="sizeY"><![CDATA[1]]></Property>
+<Property name="sizeZ"><![CDATA[1]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="pressAction"><![CDATA[computeForce ()]]></Property>
+<Property name="dragAction"><![CDATA[computeForce ()]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="fillColor"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">text3D2</Property>
+<Property name="parent">TestCharge2</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[2]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="text"><![CDATA[%forceStr%]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,12]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">arrow3D2</Property>
+<Property name="parent">TestCharge2</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[8*xq/Math.pow(xq*xq+yq*yq+zq*zq,1.5)]]></Property>
+<Property name="sizeY"><![CDATA[8*yq/Math.pow(xq*xq+yq*yq+zq*zq,1.5)]]></Property>
+<Property name="sizeZ"><![CDATA[8*zq/Math.pow(xq*xq+yq*yq+zq*zq,1.5)]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="fillColor"><![CDATA[YELLOW]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Sphere3D</Type>
+<Property name="name">outerSphere</Property>
+<Property name="parent">drawingPanelSphere</Property>
+<Property name="radius"><![CDATA[size]]></Property>
+<Property name="lineColor"><![CDATA[CYAN]]></Property>
+<Property name="fillColor"><![CDATA[0,255,255,0]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+<Property name="resolution"><![CDATA["0,12,12"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

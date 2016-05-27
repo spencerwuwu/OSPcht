@@ -1,0 +1,1535 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.2" password="">
+<Osejs.Information>
+<Title><![CDATA[Ballistics and Orbits]]></Title>
+<Author><![CDATA[Cleon Teunissen]]></Author>
+<Keywords><![CDATA[rotation, ballistics, orbits, apparent motion]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[English]]></Language>
+<Abstract><![CDATA[Additional information about the simulation is available at the author's website:
+http://www.cleonis.nl
+]]></Abstract>
+<CaptureTools>false</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<AuxiliaryFiles><![CDATA[./ballistics_and_orbits/ejsPage.css;./ballistics_and_orbits/screenshot_halfsize.png;]]></AuxiliaryFiles>
+<DetectedFiles><![CDATA[./ballistics_and_orbits/ballistics_and_orbits.html;]]></DetectedFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>HTML_EXTERNAL_EDITOR</Type>
+<Name>Ballistics and orbits</Name>
+<Active>true</Active>
+<Content>
+<![CDATA[
+./ballistics_and_orbits/ballistics_and_orbits.html
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>10</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>2</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Variables</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[R]]></Name>
+<Value><![CDATA[0.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[RSquared]]></Name>
+<Value><![CDATA[R*R]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[omegaSystem]]></Name>
+<Value><![CDATA[0.4]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  system rotation rate in radians per unit of time]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[thetaSystem]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  azimuthal position of the system as a whole]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[G]]></Name>
+<Value><![CDATA[0.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  gravitational acceleration factor. Here, 'g' does not represent 'G' as in Newton's law of gravity. Here, 'g' is just a convenient multiplication factor]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[launchLatitude]]></Name>
+<Value><![CDATA[45]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  latitude from which the projectile is launched, in degrees]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[launchHeight]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  height above the surface of the point of release/launch]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[launchSpeed]]></Name>
+<Value><![CDATA[0.2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  the speed of the projectile at the moment of release/launch]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[launchElevation]]></Name>
+<Value><![CDATA[85]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  verticle angle at which the object is launched]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[launchDirection]]></Name>
+<Value><![CDATA[180]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  ]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[cosineLaunchLatitudeRad]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  cosine of the latitude]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[sineLaunchLatitudeRad]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  ]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[cosineLaunchElevationRad]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  ]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[sineLaunchElevationRad]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  ]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[cosineLaunchDirectionRad]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  ]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[sineLaunchDirectionRad]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[input variable  -  ]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vxEquator]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[auxillary variable  -  velociity in x-direction if launch would be at equator]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vzEquator]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[auxillary variable  -  velociity in z-direction if launch would be at equator]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vyRotation]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[auxillary variable  -  velociity component in y-direction due to coroting motion]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vyLaunch]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[auxillary variable  -  velociity component in y-direction due to launch]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[Math.cos(Math.toRadians(launchLatitude)) * (1.0 + launchHeight) * R]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[dynamic variable  -  x-position]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[dynamic variable  -  velocity in x-direction]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[dynamic variable  -  y-position]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[dynamic variable  -  velocity in y-direction]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[z]]></Name>
+<Value><![CDATA[Math.sin(Math.toRadians(launchLatitude)) * (1.0 + launchHeight) * R]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[dynamic variable  -  z-position]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vz]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[dynamic variable  -  velocity in y-direction]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[distanceToCenterUnit]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[output variable  -  The height above the planet's geometrical center]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[altitude]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[output variable  - Height above the surface of the planet]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xGroundtrack]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[output variable]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yGroundtrack]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[output variable]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zGroundtrack]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[output variable]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[cosineTheta]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[auxillary variable  -  the cosine of the current azimuth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[sineTheta]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[auxillary variable  -  the sine of the current azimuth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xCoro]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[output variable  -  x-position with respect to the co-rotating coordinate system]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yCoro]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[output variable  -  y-position with respect to the co-rotating coordinate system]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xGroundtrackCoro]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[output variable]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yGroundtrackCoro]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[output variable]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerPositionIX]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerPositionIY]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerPositionIZ]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerSizeIX]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerSizeIY]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerSizeIZ]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerPositionCX]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerPositionCY]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerPositionCZ]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerSizeCX]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerSizeCY]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerSizeCZ]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Time</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Objects</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[rotation]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The object that rotates the sphere in the inertial view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rotationTangent]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The object that rotates the great circle that is tangent to the launch latitude]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Boolean variables</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[extraVisible]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[instantPlay]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[If   instantPlay == true   then start play of simulation instantly after entering new value in input field]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[impact]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[true if the simulation must halt if the projectile touches the Earth's surface, false if the simulation is to continu playing]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spheresVisible]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tracesVisible]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[groundtrackVisible]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[towerVisible]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tangentVisible]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[axesVisible]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[decoration3D]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[missile]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[geostationary]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[iss]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dropFromTower]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>View parameters</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[drawingPanel3DMinMax]]></Name>
+<Value><![CDATA[0.3]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[radiusSphere]]></Name>
+<Value><![CDATA[0.49]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[particleSize]]></Name>
+<Value><![CDATA[0.02]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Initialization</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+_pause();
+
+t = 0.0;
+thetaSystem = 0.0;
+
+cosineLaunchLatitudeRad = Math.cos(Math.toRadians(launchLatitude));
+sineLaunchLatitudeRad = Math.sin(Math.toRadians(launchLatitude));	
+cosineLaunchElevationRad = Math.cos(Math.toRadians(launchElevation));
+sineLaunchElevationRad = Math.sin(Math.toRadians(launchElevation));
+cosineLaunchDirectionRad = Math.cos(Math.toRadians(launchDirection));
+sineLaunchDirectionRad = Math.sin(Math.toRadians(launchDirection));
+/*
+- The null orientation of 'Elevation' is parallel to the surface: positive elevation 
+     is shooting upward, negative elevation is shooting down.
+- The null orientation of 'Direction' is eastward, parallel to the plane of the equator.
+    Hence a direction around zero degrees is shooting forward, and a direction in 
+    the neighbourhood of 180 or -180 is shooting backward. */
+
+/* Two components contribute to velocity in y-direction:
+    a)  participating in the rotation of the planet prior to launch
+    b)  the launch itself */
+vyRotation = cosineLaunchLatitudeRad * (omegaSystem * (R * (1.0 + launchHeight)));
+vyLaunch =  cosineLaunchDirectionRad * cosineLaunchElevationRad * launchSpeed;
+
+/* The launch can be from any latitude. In this calculation the velocity components are
+first calculated as if the launch is at the Equator, then those velocity components
+are transformed to the actual latitude.
+Velocity components in x- and z-direction at Equator (prior to adjustment for latitude) */
+vxEquator = sineLaunchElevationRad * launchSpeed;
+vzEquator = sineLaunchDirectionRad * cosineLaunchElevationRad * launchSpeed;
+
+x = cosineLaunchLatitudeRad * (1.0 + launchHeight) * R;
+vx =  cosineLaunchLatitudeRad * vxEquator  -  sineLaunchLatitudeRad * vzEquator ;
+y = 0.0;
+vy = vyRotation + vyLaunch;
+z = sineLaunchLatitudeRad * (1.0 + launchHeight) * R;
+vz =  sineLaunchLatitudeRad * vxEquator  +  cosineLaunchLatitudeRad * vzEquator ;
+
+// Java Object for the rotation of the tangent great circle in the co-rotating view
+rotationTangent= org.opensourcephysics.numerics.Matrix3DTransformation.rotationY(-Math.toRadians(launchLatitude));
+
+_view.resetTraces();
+
+
+if (instantPlay == true)
+  {
+  _play();
+  }
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evolution</Name>
+<Active>true</Active>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[ds = 'distance squared'  den = denominator]]></Comment>
+<Code><![CDATA[
+double ds = x*x + y*y + z*z;
+double den = Math.sqrt(ds)*ds;
+]]></Code>
+</PreliminaryCode>
+<ErrorCode>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</ErrorCode>
+<IndependentVariable>t</IndependentVariable>
+<Increment>dt</Increment>
+<Rate state="x">vx</Rate>
+<Rate state="vx">- G*x / den</Rate>
+<Rate state="y">vy</Rate>
+<Rate state="vy">- G*y / den</Rate>
+<Rate state="z">vz</Rate>
+<Rate state="vz">- G*z / den</Rate>
+<Rate state=""></Rate>
+<Method>RungeKuttaFehlberg</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance>0.00001</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[den = denominator  The code for the denominator is in the 'Prelim' panel]]></Comment>
+<Events>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Event</Name>
+<Active>true</Active>
+<EventContent>
+<EventType>POSITIVE_EVENT</EventType>
+<Method>BISECTION</Method>
+<Iterations>100</Iterations>
+<Tolerance><![CDATA[0.001]]></Tolerance>
+<StopAtEvent>true</StopAtEvent>
+<ZeroCondition><![CDATA[
+if (impact == true){
+return (x*x + y*y + z*z) - RSquared;
+}
+else return 1.0;
+]]></ZeroCondition>
+<Action><![CDATA[
+_pause();
+]]></Action>
+<Comment><![CDATA[]]></Comment>
+
+</EventContent>
+</Event.Page>
+</Events>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Fixed relations</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+// Constant rotation rate of the system as a whole
+thetaSystem = omegaSystem * t;
+
+// Java Object for the rotation of the sphere in the inertial view
+rotation = org.opensourcephysics.numerics.Matrix3DTransformation.rotationZ(thetaSystem);
+
+// Preparing the auxillary variable distanceToCenter
+distanceToCenterUnit = Math.sqrt(x*x + y*y + z*z) / R;
+
+// The groundtrack of the object's ballistic/orbital trajectory, inertial coordinate system
+xGroundtrack = x / distanceToCenterUnit;
+yGroundtrack = y / distanceToCenterUnit;
+zGroundtrack = z / distanceToCenterUnit;
+
+
+//preparing cosine and sine for transformation to corotating system
+cosineTheta = Math.cos(thetaSystem);
+sineTheta = Math.sin(thetaSystem);
+
+// transforming particle position to co-rotating coordinate system
+xCoro = cosineTheta * x  +  sineTheta * y;
+yCoro = - sineTheta * x  + cosineTheta * y;
+
+// The groundtrack of the object's ballistic/orbital trajectory, corotating coordinate system
+xGroundtrackCoro = xCoro / distanceToCenterUnit;
+yGroundtrackCoro = yCoro / distanceToCenterUnit;
+
+// Current height above the surface
+altitude = (distanceToCenterUnit - 1.0);
+
+if (towerVisible == true) {
+  towerPositionIX = cosineTheta * cosineLaunchLatitudeRad * R;
+  towerPositionIY = sineTheta * cosineLaunchLatitudeRad * R;
+  towerPositionIZ = sineLaunchLatitudeRad * R;
+  towerSizeIX = cosineTheta * cosineLaunchLatitudeRad * launchHeight * R;
+  towerSizeIY = sineTheta  * cosineLaunchLatitudeRad * launchHeight * R;
+  towerSizeIZ = sineLaunchLatitudeRad * launchHeight * R;
+
+  towerPositionCX = cosineLaunchLatitudeRad * R;
+  towerPositionCY = 0.0;
+  towerPositionCZ = sineLaunchLatitudeRad * R;
+  towerSizeCX = cosineLaunchLatitudeRad * launchHeight * R;
+  towerSizeCY = 0.0;
+  towerSizeCZ = sineLaunchLatitudeRad * launchHeight * R;
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Action</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void heightAction () {
+  if (launchHeight > 2*R) {
+    towerVisible = false;
+  }
+  _initialize();
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Presets</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void missilePresetAction () {
+  tracesVisible = true;
+  groundtrackVisible = true;
+  towerVisible = false;
+
+  omegaSystem = 0.4;
+  G = 0.05;
+  launchLatitude = 45.0;
+  launchHeight = 0.0;
+  launchSpeed = 0.2;
+  launchElevation = 85.0;
+  launchDirection = 180.0;
+  _initialize();
+}
+
+
+public void geostationaryPresetAction () {
+  tracesVisible = false;
+  groundtrackVisible = true;
+  towerVisible = false;
+
+  omegaSystem = 0.2;
+  G = 1.445;
+  launchLatitude = 0.0;
+  launchHeight = 5.62;
+  launchSpeed = 0.0;
+  launchElevation = 0.0;
+  launchDirection = 0.0;
+  _initialize();
+}
+
+public void issPresetAction () {
+  towerVisible = false;
+  
+  omegaSystem = 0.2;
+  G = 1.445;
+  launchLatitude = 0.0;
+  launchHeight = 0.02;
+  launchSpeed = 1.581;
+  launchElevation = 0.0;
+  launchDirection = 0.0;
+  _initialize();
+}
+
+
+public void dropFromTowerPresetAction () {
+  towerVisible = true;
+
+  omegaSystem = 0.2;
+  G = 1;
+  launchLatitude = 0.0;
+  launchHeight = 0.5;
+  launchSpeed = 0;
+  launchElevation = 0.0;
+  launchDirection = 0.0;
+  _initialize();
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">drawingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Ballistics and orbits"]]></Property>
+<Property name="layout"><![CDATA[BORDER:0,2]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["13,3"]]></Property>
+<Property name="size"><![CDATA["1000,590"]]></Property>
+<Property name="resizable"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">displayContainerPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[GRID:1,2,3,0]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">leftContainerPanel</Property>
+<Property name="parent">displayContainerPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LINE]]></Property>
+<Property name="borderColor"><![CDATA[LIGHTGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">inertialCoordinateSystem</Property>
+<Property name="parent">leftContainerPanel</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-drawingPanel3DMinMax]]></Property>
+<Property name="maximumX"><![CDATA[drawingPanel3DMinMax]]></Property>
+<Property name="minimumY"><![CDATA[-drawingPanel3DMinMax]]></Property>
+<Property name="maximumY"><![CDATA[drawingPanel3DMinMax]]></Property>
+<Property name="minimumZ"><![CDATA[-drawingPanel3DMinMax]]></Property>
+<Property name="maximumZ"><![CDATA[drawingPanel3DMinMax]]></Property>
+<Property name="cameraX"><![CDATA[5.0]]></Property>
+<Property name="cameraY"><![CDATA[0.0]]></Property>
+<Property name="cameraZ"><![CDATA[0.0]]></Property>
+<Property name="cameraAzimuth"><![CDATA[0.0]]></Property>
+<Property name="cameraAltitude"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusY"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusZ"><![CDATA[0.0]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[5.0]]></Property>
+<Property name="decorationType"><![CDATA[decoration3D]]></Property>
+<Property name="removeHiddenLines"><![CDATA[true]]></Property>
+<Property name="squareAspect"><![CDATA[true]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Circle3D</Type>
+<Property name="name">geometricalCenter</Property>
+<Property name="parent">inertialCoordinateSystem</Property>
+<Property name="x"><![CDATA[0.0]]></Property>
+<Property name="y"><![CDATA[0.0]]></Property>
+<Property name="z"><![CDATA[0.0]]></Property>
+<Property name="sizeX"><![CDATA[particleSize]]></Property>
+<Property name="sizeY"><![CDATA[particleSize]]></Property>
+<Property name="sizeZ"><![CDATA[particleSize]]></Property>
+<Property name="lineColor"><![CDATA[DARKGRAY]]></Property>
+<Property name="fillColor"><![CDATA[DARKGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Sphere3D</Type>
+<Property name="name">sphere3D_inertial</Property>
+<Property name="parent">inertialCoordinateSystem</Property>
+<Property name="x"><![CDATA[0.0]]></Property>
+<Property name="y"><![CDATA[0.0]]></Property>
+<Property name="z"><![CDATA[0.0]]></Property>
+<Property name="radius"><![CDATA[radiusSphere]]></Property>
+<Property name="transformation"><![CDATA[%rotation%]]></Property>
+<Property name="visible"><![CDATA[spheresVisible]]></Property>
+<Property name="lineColor"><![CDATA[0,127,255]]></Property>
+<Property name="fillColor"><![CDATA[WHITE]]></Property>
+<Property name="resolution"><![CDATA["0,24,12"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment3D</Type>
+<Property name="name">tower_inertial</Property>
+<Property name="parent">inertialCoordinateSystem</Property>
+<Property name="x"><![CDATA[towerPositionIX]]></Property>
+<Property name="y"><![CDATA[towerPositionIY]]></Property>
+<Property name="z"><![CDATA[towerPositionIZ]]></Property>
+<Property name="sizeX"><![CDATA[towerSizeIX]]></Property>
+<Property name="sizeY"><![CDATA[towerSizeIY]]></Property>
+<Property name="sizeZ"><![CDATA[towerSizeIZ]]></Property>
+<Property name="visible"><![CDATA[towerVisible]]></Property>
+<Property name="lineColor"><![CDATA[GRAY]]></Property>
+<Property name="lineWidth"><![CDATA[4]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Circle3D</Type>
+<Property name="name">groundtrack_inertial</Property>
+<Property name="parent">inertialCoordinateSystem</Property>
+<Property name="x"><![CDATA[xGroundtrack]]></Property>
+<Property name="y"><![CDATA[yGroundtrack]]></Property>
+<Property name="z"><![CDATA[zGroundtrack]]></Property>
+<Property name="sizeX"><![CDATA[particleSize]]></Property>
+<Property name="sizeY"><![CDATA[particleSize]]></Property>
+<Property name="sizeZ"><![CDATA[particleSize]]></Property>
+<Property name="visible"><![CDATA[_isPlaying()]]></Property>
+<Property name="lineColor"><![CDATA[GRAY]]></Property>
+<Property name="fillColor"><![CDATA[GRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Circle3D</Type>
+<Property name="name">particle3D_inertial</Property>
+<Property name="parent">inertialCoordinateSystem</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="z"><![CDATA[z]]></Property>
+<Property name="sizeX"><![CDATA[particleSize]]></Property>
+<Property name="sizeY"><![CDATA[particleSize]]></Property>
+<Property name="sizeZ"><![CDATA[particleSize]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[255,63,63]]></Property>
+<Property name="fillColor"><![CDATA[255,63,63]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail3D</Type>
+<Property name="name">trail3D_inertial</Property>
+<Property name="parent">inertialCoordinateSystem</Property>
+<Property name="inputX"><![CDATA[x]]></Property>
+<Property name="inputY"><![CDATA[y]]></Property>
+<Property name="inputZ"><![CDATA[z]]></Property>
+<Property name="visible"><![CDATA[tracesVisible]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail3D</Type>
+<Property name="name">trail3D_groundtrack_inertial</Property>
+<Property name="parent">inertialCoordinateSystem</Property>
+<Property name="inputX"><![CDATA[xGroundtrack]]></Property>
+<Property name="inputY"><![CDATA[yGroundtrack]]></Property>
+<Property name="inputZ"><![CDATA[zGroundtrack]]></Property>
+<Property name="visible"><![CDATA[groundtrackVisible]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">rightContainerPanel</Property>
+<Property name="parent">displayContainerPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LINE]]></Property>
+<Property name="borderColor"><![CDATA[LIGHTGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">corotatingCoordinateSystem</Property>
+<Property name="parent">rightContainerPanel</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-drawingPanel3DMinMax]]></Property>
+<Property name="maximumX"><![CDATA[drawingPanel3DMinMax]]></Property>
+<Property name="minimumY"><![CDATA[-drawingPanel3DMinMax]]></Property>
+<Property name="maximumY"><![CDATA[drawingPanel3DMinMax]]></Property>
+<Property name="minimumZ"><![CDATA[-drawingPanel3DMinMax]]></Property>
+<Property name="maximumZ"><![CDATA[drawingPanel3DMinMax]]></Property>
+<Property name="cameraX"><![CDATA[5.0]]></Property>
+<Property name="cameraY"><![CDATA[0.0]]></Property>
+<Property name="cameraZ"><![CDATA[0.0]]></Property>
+<Property name="cameraAzimuth"><![CDATA[0.0]]></Property>
+<Property name="cameraAltitude"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusY"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusZ"><![CDATA[0.0]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[5.0]]></Property>
+<Property name="decorationType"><![CDATA[decoration3D]]></Property>
+<Property name="removeHiddenLines"><![CDATA[true]]></Property>
+<Property name="squareAspect"><![CDATA[true]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Sphere3D</Type>
+<Property name="name">sphere3D_corotating</Property>
+<Property name="parent">corotatingCoordinateSystem</Property>
+<Property name="x"><![CDATA[0.0]]></Property>
+<Property name="y"><![CDATA[0.0]]></Property>
+<Property name="z"><![CDATA[0.0]]></Property>
+<Property name="radius"><![CDATA[radiusSphere]]></Property>
+<Property name="visible"><![CDATA[spheresVisible]]></Property>
+<Property name="lineColor"><![CDATA[0,127,255]]></Property>
+<Property name="fillColor"><![CDATA[WHITE]]></Property>
+<Property name="resolution"><![CDATA["0,24,12"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment3D</Type>
+<Property name="name">tower_corotating</Property>
+<Property name="parent">corotatingCoordinateSystem</Property>
+<Property name="x"><![CDATA[towerPositionCX]]></Property>
+<Property name="y"><![CDATA[0.0]]></Property>
+<Property name="z"><![CDATA[towerPositionCZ]]></Property>
+<Property name="sizeX"><![CDATA[towerSizeCX]]></Property>
+<Property name="sizeY"><![CDATA[0.0]]></Property>
+<Property name="sizeZ"><![CDATA[towerSizeCZ]]></Property>
+<Property name="visible"><![CDATA[towerVisible]]></Property>
+<Property name="lineColor"><![CDATA[GRAY]]></Property>
+<Property name="lineWidth"><![CDATA[4]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Circle3D</Type>
+<Property name="name">groundtrack_corotating</Property>
+<Property name="parent">corotatingCoordinateSystem</Property>
+<Property name="x"><![CDATA[xGroundtrackCoro]]></Property>
+<Property name="y"><![CDATA[yGroundtrackCoro]]></Property>
+<Property name="z"><![CDATA[zGroundtrack]]></Property>
+<Property name="sizeX"><![CDATA[particleSize]]></Property>
+<Property name="sizeY"><![CDATA[particleSize]]></Property>
+<Property name="sizeZ"><![CDATA[particleSize]]></Property>
+<Property name="visible"><![CDATA[_isPlaying()]]></Property>
+<Property name="lineColor"><![CDATA[GRAY]]></Property>
+<Property name="fillColor"><![CDATA[GRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Circle3D</Type>
+<Property name="name">particle3D_corotating</Property>
+<Property name="parent">corotatingCoordinateSystem</Property>
+<Property name="x"><![CDATA[xCoro]]></Property>
+<Property name="y"><![CDATA[yCoro]]></Property>
+<Property name="z"><![CDATA[z]]></Property>
+<Property name="sizeX"><![CDATA[particleSize]]></Property>
+<Property name="sizeY"><![CDATA[particleSize]]></Property>
+<Property name="sizeZ"><![CDATA[particleSize]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[255,63,63]]></Property>
+<Property name="fillColor"><![CDATA[255,63,63]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail3D</Type>
+<Property name="name">trail3D_corotating</Property>
+<Property name="parent">corotatingCoordinateSystem</Property>
+<Property name="inputX"><![CDATA[xCoro]]></Property>
+<Property name="inputY"><![CDATA[yCoro]]></Property>
+<Property name="inputZ"><![CDATA[z]]></Property>
+<Property name="visible"><![CDATA[tracesVisible]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">tangentRing</Property>
+<Property name="parent">corotatingCoordinateSystem</Property>
+<Property name="x"><![CDATA[0.0]]></Property>
+<Property name="y"><![CDATA[0.0]]></Property>
+<Property name="z"><![CDATA[0.0]]></Property>
+<Property name="sizeX"><![CDATA[1.0]]></Property>
+<Property name="sizeY"><![CDATA[1.0]]></Property>
+<Property name="sizeZ"><![CDATA[0.005]]></Property>
+<Property name="transformation"><![CDATA[%rotationTangent%]]></Property>
+<Property name="visible"><![CDATA[tangentVisible]]></Property>
+<Property name="closedTop"><![CDATA[false]]></Property>
+<Property name="closedBottom"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[GRAY]]></Property>
+<Property name="fillColor"><![CDATA[GRAY]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+<Property name="resolution"><![CDATA["0,64,1"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail3D</Type>
+<Property name="name">trail3D_groundtrack_corotating</Property>
+<Property name="parent">corotatingCoordinateSystem</Property>
+<Property name="inputX"><![CDATA[xGroundtrackCoro]]></Property>
+<Property name="inputY"><![CDATA[yGroundtrackCoro]]></Property>
+<Property name="inputZ"><![CDATA[zGroundtrack]]></Property>
+<Property name="visible"><![CDATA[groundtrackVisible]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[GRID:2,0,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsCheckboxes</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="layout"><![CDATA[BORDER:2,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsLeftPanel</Property>
+<Property name="parent">buttonsCheckboxes</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[GRID:1,0,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startStopButton</Property>
+<Property name="parent">buttonsLeftPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["Toggle between playing and pause"]]></Property>
+<Property name="textOn"><![CDATA["執行"]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="textOff"><![CDATA["Pause"]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">step</Property>
+<Property name="parent">buttonsLeftPanel</Property>
+<Property name="text"><![CDATA["手動執行"]]></Property>
+<Property name="action"><![CDATA[_step()]]></Property>
+<Property name="tooltip"><![CDATA["Run one step of the evolution"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">clearTraces</Property>
+<Property name="parent">buttonsLeftPanel</Property>
+<Property name="text"><![CDATA["清除路徑"]]></Property>
+<Property name="action"><![CDATA[_view.resetTraces()]]></Property>
+<Property name="tooltip"><![CDATA["Clear traces"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetView</Property>
+<Property name="parent">buttonsLeftPanel</Property>
+<Property name="text"><![CDATA["全部重設"]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="tooltip"><![CDATA["Reinitialize view using the current user inputs"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">checkBoxesPanel</Property>
+<Property name="parent">buttonsCheckboxes</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="borderType"><![CDATA[LINE]]></Property>
+<Property name="borderColor"><![CDATA[LIGHTGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">impact</Property>
+<Property name="parent">checkBoxesPanel</Property>
+<Property name="variable"><![CDATA[impact]]></Property>
+<Property name="text"><![CDATA["碰撞"]]></Property>
+<Property name="tooltip"><![CDATA["Halt the simulation when the object crosses the surface"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">spheresVisible</Property>
+<Property name="parent">checkBoxesPanel</Property>
+<Property name="variable"><![CDATA[spheresVisible]]></Property>
+<Property name="text"><![CDATA["球面"]]></Property>
+<Property name="tooltip"><![CDATA["Show the spheres"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">tracesVisible</Property>
+<Property name="parent">checkBoxesPanel</Property>
+<Property name="variable"><![CDATA[tracesVisible]]></Property>
+<Property name="text"><![CDATA["路徑"]]></Property>
+<Property name="tooltip"><![CDATA["Traces visible"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">groundtrackVisible</Property>
+<Property name="parent">checkBoxesPanel</Property>
+<Property name="position">west</Property>
+<Property name="variable"><![CDATA[groundtrackVisible]]></Property>
+<Property name="text"><![CDATA["預測"]]></Property>
+<Property name="tooltip"><![CDATA["Show the object's groundtrack"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">towerVisible</Property>
+<Property name="parent">checkBoxesPanel</Property>
+<Property name="variable"><![CDATA[towerVisible]]></Property>
+<Property name="text"><![CDATA["凌"]]></Property>
+<Property name="tooltip"><![CDATA["Show the tower that the object is released from"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">tangentVisible</Property>
+<Property name="parent">checkBoxesPanel</Property>
+<Property name="variable"><![CDATA[tangentVisible]]></Property>
+<Property name="text"><![CDATA["切線"]]></Property>
+<Property name="tooltip"><![CDATA["Show the great circle that is tangent to the current launch latitude"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">extraVisible</Property>
+<Property name="parent">checkBoxesPanel</Property>
+<Property name="variable"><![CDATA[extraVisible]]></Property>
+<Property name="text"><![CDATA["更多"]]></Property>
+<Property name="tooltip"><![CDATA["Show window with extra settings and presets"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">generalReset</Property>
+<Property name="parent">checkBoxesPanel</Property>
+<Property name="text"><![CDATA["重設"]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="tooltip"><![CDATA["全部重設"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">parsedNumberFields</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">rotationRate</Property>
+<Property name="parent">parsedNumberFields</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[omegaSystem]]></Property>
+<Property name="format"><![CDATA[" 旋轉比率 = 0.000"]]></Property>
+<Property name="action"><![CDATA[_initialize();]]></Property>
+<Property name="tooltip"><![CDATA["系統旋轉比率"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">G</Property>
+<Property name="parent">parsedNumberFields</Property>
+<Property name="variable"><![CDATA[G]]></Property>
+<Property name="format"><![CDATA[" G = 0.000"]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="tooltip"><![CDATA["Gravitational acceleration"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">launchLatitude</Property>
+<Property name="parent">parsedNumberFields</Property>
+<Property name="variable"><![CDATA[launchLatitude]]></Property>
+<Property name="format"><![CDATA[" 緯度 = 0.00"]]></Property>
+<Property name="action"><![CDATA[_initialize();]]></Property>
+<Property name="tooltip"><![CDATA["緯度從哪個對象啟動/釋放"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">launchHeight</Property>
+<Property name="parent">parsedNumberFields</Property>
+<Property name="variable"><![CDATA[launchHeight]]></Property>
+<Property name="format"><![CDATA[" 高度 = 0.00"]]></Property>
+<Property name="action"><![CDATA[heightAction ()]]></Property>
+<Property name="tooltip"><![CDATA["距地表高度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">launchSpeed</Property>
+<Property name="parent">parsedNumberFields</Property>
+<Property name="variable"><![CDATA[launchSpeed]]></Property>
+<Property name="format"><![CDATA[" 發射初速 = 0.000"]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="tooltip"><![CDATA["發射速度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">launchElevation</Property>
+<Property name="parent">parsedNumberFields</Property>
+<Property name="variable"><![CDATA[launchElevation]]></Property>
+<Property name="format"><![CDATA[" 發射仰角 = 0.00"]]></Property>
+<Property name="action"><![CDATA[_initialize();]]></Property>
+<Property name="tooltip"><![CDATA["發射初仰角"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">launchDirection</Property>
+<Property name="parent">parsedNumberFields</Property>
+<Property name="variable"><![CDATA[launchDirection]]></Property>
+<Property name="format"><![CDATA[" 發射方向 = 0.00"]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="tooltip"><![CDATA["發射方向"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">altitude</Property>
+<Property name="parent">parsedNumberFields</Property>
+<Property name="variable"><![CDATA[altitude]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="tooltip"><![CDATA["現在距地表高度"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">extraSettings</Property>
+<Property name="title"><![CDATA["Extra"]]></Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="visible"><![CDATA[extraVisible]]></Property>
+<Property name="location"><![CDATA["33,641"]]></Property>
+<Property name="size"><![CDATA["300,225"]]></Property>
+<Property name="tooltip"><![CDATA["更多設定"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">checkboxContainer</Property>
+<Property name="parent">extraSettings</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[GRID:2,1,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">instantPlay</Property>
+<Property name="parent">checkboxContainer</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[instantPlay]]></Property>
+<Property name="text"><![CDATA["執行"]]></Property>
+<Property name="tooltip"><![CDATA["Instantplay: after changing input value play the simulation instantly"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">axesVisible</Property>
+<Property name="parent">checkboxContainer</Property>
+<Property name="variable"><![CDATA[axesVisible]]></Property>
+<Property name="text"><![CDATA["X Y Z 軸"]]></Property>
+<Property name="actionon"><![CDATA[decoration3D = 1]]></Property>
+<Property name="actionoff"><![CDATA[decoration3D = 0]]></Property>
+<Property name="tooltip"><![CDATA["顯示 X Y Z 軸"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">presetsContainer</Property>
+<Property name="parent">extraSettings</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[GRID:4,1,0,0]]></Property>
+<Property name="borderType"><![CDATA[LINE]]></Property>
+<Property name="borderColor"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="borderTitle"><![CDATA["Presets"]]></Property>
+<Property name="borderPosition"><![CDATA[TOP]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">missile</Property>
+<Property name="parent">presetsContainer</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[missile]]></Property>
+<Property name="text"><![CDATA["彈道式導彈"]]></Property>
+<Property name="noUnselect"><![CDATA[true]]></Property>
+<Property name="actionon"><![CDATA[missilePresetAction ()]]></Property>
+<Property name="tooltip"><![CDATA["發射了彈道導彈幾乎直線上升，在向西方向"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">geostationary</Property>
+<Property name="parent">presetsContainer</Property>
+<Property name="variable"><![CDATA[geostationary]]></Property>
+<Property name="text"><![CDATA["地球靜止軌道"]]></Property>
+<Property name="noUnselect"><![CDATA[true]]></Property>
+<Property name="actionon"><![CDATA[geostationaryPresetAction ()]]></Property>
+<Property name="tooltip"><![CDATA["預設的輸入值，地球靜止軌道"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">iss</Property>
+<Property name="parent">presetsContainer</Property>
+<Property name="variable"><![CDATA[iss]]></Property>
+<Property name="text"><![CDATA["低地球軌道"]]></Property>
+<Property name="noUnselect"><![CDATA[true]]></Property>
+<Property name="actionon"><![CDATA[issPresetAction ()]]></Property>
+<Property name="tooltip"><![CDATA["對於低地球軌道的預設值"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">dropFromTower</Property>
+<Property name="parent">presetsContainer</Property>
+<Property name="variable"><![CDATA[dropFromTower]]></Property>
+<Property name="text"><![CDATA["從高處掉落"]]></Property>
+<Property name="noUnselect"><![CDATA[true]]></Property>
+<Property name="actionon"><![CDATA[dropFromTowerPresetAction ()]]></Property>
+<Property name="tooltip"><![CDATA["從高處丟下東西，看是否落回原點"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

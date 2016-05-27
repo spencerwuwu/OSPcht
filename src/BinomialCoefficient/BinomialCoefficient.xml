@@ -1,0 +1,352 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.1" password="">
+<Osejs.Information>
+<Title><![CDATA[Random Walk in One Dimension template]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[wochristian@davidson.edu
+
+In-class exercise.  Students add a histrogram of walkers.]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Wolfgang Christian - Davidson College]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./BinomialCoefficient/BinomialCoefficient.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./BinomialCoefficient/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Binomial Coefficient</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Binomial Coefficient</Title>
+  <External>true</External>
+  <![CDATA[
+./BinomialCoefficient/BinomialCoefficient.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>2</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Binomial Distribution Vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[showTable]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[maxFactorial]]></Name>
+<Value><![CDATA[170]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[largest factorial without an overflow]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[factorials]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[maxFactorial+1]]]></Dimension>
+<Comment><![CDATA[stores factorials that have been computed]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nTrials]]></Name>
+<Value><![CDATA[8]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[number of trials]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[occurance]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nTrials+1]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[success]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nTrials+1]]]></Dimension>
+<Comment><![CDATA[successful attempts]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[probability]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nTrials+1]]]></Dimension>
+<Comment><![CDATA[probability for success]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tableData]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[2][nTrials+1]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Compute Distribution</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+if(nTrials>maxFactorial){
+  tableData[0]=new double[0];
+  tableData[0]=new double[0];
+  return;
+}
+for(int k=0; k<=nTrials; k++){
+  occurance[k]=k;
+  success[k]=binomialCoef(nTrials,k);
+  probability[k]=binomialCoef(nTrials,k)*Math.pow(0.5,nTrials);
+}
+tableData[0]=success;
+tableData[1]=probability;
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Binomial Coefficient double</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// binomial coefficient using double arithmetic
+public double binomialCoef (int n, int k) {
+  if(k>n) return Double.NaN;  // not a number
+  return (factorial(n)/(factorial(k)*factorial(n-k)));
+}
+
+// recursive factorial using double arithmetic
+public double factorial(int n){  // use double for maximum precision
+  if(n==0){
+    return 1;
+  }else if(n>maxFactorial){
+    return Double.NaN;  // overflow error
+  }else if(factorials[n]!=0){
+    return factorials[n];
+  }else return n*factorial(n-1); // recursive definition
+}
+
+
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Resize Arrays</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// creates new arrays when nTrials changes
+public void resizeArrays () {
+  occurance = new double[nTrials+1];
+  success = new double[nTrials+1];
+  probability = new double[nTrials+1];
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">mainFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Binomial Coefficient"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["4,3"]]></Property>
+<Property name="size"><![CDATA["462,336"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumX"><![CDATA[0]]></Property>
+<Property name="maximumX"><![CDATA[nTrials]]></Property>
+<Property name="xMarginPercentage"><![CDATA[6]]></Property>
+<Property name="yMarginPercentage"><![CDATA[6]]></Property>
+<Property name="titleX"><![CDATA["事件"]]></Property>
+<Property name="titleY"><![CDATA["成功率"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">plotData</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[occurance]]></Property>
+<Property name="y"><![CDATA[probability]]></Property>
+<Property name="visible"><![CDATA[nTrials<=maxFactorial]]></Property>
+<Property name="clearAtInput"><![CDATA[true]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[false]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+<Property name="style"><![CDATA[POST]]></Property>
+<Property name="markersize"><![CDATA[10]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[GRID:1,3,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="tooltip"><![CDATA["重置"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">paramPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">trialsPanel</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">trialsLabel</Property>
+<Property name="parent">trialsPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["  # 試驗數 = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">trialsField</Property>
+<Property name="parent">trialsPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[nTrials]]></Property>
+<Property name="format"><![CDATA["0"]]></Property>
+<Property name="action"><![CDATA[nTrials=Math.max(1,nTrials);
+nTrials=Math.min(170,nTrials);
+resizeArrays ();]]></Property>
+<Property name="size"><![CDATA["50,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showTableCheck</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[showTable]]></Property>
+<Property name="text"><![CDATA["顯示表格"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">tableFrame</Property>
+<Property name="title"><![CDATA["Table of Coefficients and Probabilities"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showTable]]></Property>
+<Property name="location"><![CDATA["2,398"]]></Property>
+<Property name="size"><![CDATA["466,344"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrayPanel</Type>
+<Property name="name">arrayPanel</Property>
+<Property name="parent">tableFrame</Property>
+<Property name="position">center</Property>
+<Property name="data"><![CDATA[tableData]]></Property>
+<Property name="transposed"><![CDATA[true]]></Property>
+<Property name="format"><![CDATA[new String[]{"0" , "0.0", "0.00000","0.00000"}]]></Property>
+<Property name="columnNames"><![CDATA[new String[]{"occurance","coefficient","probability","Gaussian approx."}]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

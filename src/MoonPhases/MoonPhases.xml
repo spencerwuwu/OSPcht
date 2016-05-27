@@ -1,0 +1,825 @@
+﻿<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.0 beta" password="">
+<Osejs.Information>
+<Title><![CDATA[Moon Phases]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[moon, phase, earthlight]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Todd Timberlake]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./MoonPhases/FullMoon.jpg;./MoonPhases/MoonPhases.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./MoonPhases/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Moon Phases</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Moon Phases</Title>
+  <External>true</External>
+  <![CDATA[
+./MoonPhases/MoonPhases.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>10</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Model Variables</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[ang]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[sun-earth-moon angle in radians]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[dummy angle variable]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-coordinate of moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-coordinate of moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[d]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[distance from earth to moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rE]]></Name>
+<Value><![CDATA[0.8]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[radius of earth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rM]]></Name>
+<Value><![CDATA[0.4]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[radius of moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[angle]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[sun-earth-moon angle in degrees]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[time]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time for observer on earth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tang]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[angle for position of observer on earth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xobs]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yobs]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dspot]]></Name>
+<Value><![CDATA[rE/4]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[diameter of spot used to represent observer on Earth]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Drawing Variables</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[np]]></Name>
+<Value><![CDATA[100]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[number of points used in polygons]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pl]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[np][2]]]></Dimension>
+<Comment><![CDATA[polygon for bright side of moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pd]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[np][2]]]></Dimension>
+<Comment><![CDATA[polygon for dark side of moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[el]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[np][2]]]></Dimension>
+<Comment><![CDATA[polygon for bright side of earth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ed]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[np][2]]]></Dimension>
+<Comment><![CDATA[polygon for dark side of earth]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[cone]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[4][2]]]></Dimension>
+<Comment><![CDATA[polygon for light cone]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[h1x]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-coordinate for one side of oberver's horizon line]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[h1y]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-coordinate for one side of oberver's horizon line]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lhx]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-coordinate for one side of oberver's horizon line]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lhy]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-coordinate for one side of oberver's horizon line]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Moon View Variables</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[pv]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[2*np][2]]]></Dimension>
+<Comment><![CDATA[polygon for shadow on moon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ShowMoon]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to show moon view]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[transp]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[variable for controling transparency of darknessPolygon (to emulate Earthlight)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[color]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Color]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[variable to control color of darknessPolygon (to emulate Earthlight)]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Control Variables</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[observer]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to show horizon]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ShowMO]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to show moon's orbit]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ShowLC]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[boolean to show light cone]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Moon Mountain Init</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//set polygons for bright and dark sides of Earth
+for (int i = 0; i < np; i++)
+{
+  theta = i*Math.PI/(np-1) - Math.PI/2.0;
+  el[i][0] = rE*Math.cos(theta);
+  el[i][1] = rE*Math.sin(theta);
+  ed[i][0] = rE*Math.cos(theta + Math.PI);
+  ed[i][1] = rE*Math.sin(theta + Math.PI);
+  }
+  
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>EVOLUTION_EDITOR</Type>
+<Name>MoonPhaseEvol</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//gradually increase earth-moon-sun angle
+//the angular increment is equivalent to one hour of time
+ang += 2*Math.PI/(24*29.5);
+if (ang > 2*Math.PI)
+  {ang -= 2*Math.PI;}
+//increment time by 1 hour
+time += 1;
+if (time > 24)
+  {time -= 24;}
+]]></Code>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>MoonMountainRelations</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//set x and y coordinates of Moon's position in orbit
+x = d*Math.cos(ang);
+y = d*Math.sin(ang);
+//set polygons for bright and dark sides of Moon
+for (int i = 0; i < np; i++)
+{
+  theta = i*Math.PI/(np-1) - Math.PI/2.0;
+  pl[i][0] = x + rM*Math.cos(theta);
+  pl[i][1] = y + rM*Math.sin(theta);
+  pd[i][0] = x + rM*Math.cos(theta + Math.PI);
+  pd[i][1] = y + rM*Math.sin(theta + Math.PI);
+  }
+//set polygon for shadow in Moon View
+if (y > 0)
+{
+for (int i = 0; i < np; i++)
+{
+  theta = i*Math.PI/(np-1) - Math.PI/2.0;
+  pv[i][0] = Math.cos(ang)*Math.cos(theta);
+  pv[i][1] = Math.sin(theta);
+  }
+for (int i = np; i < 2*np; i++)
+{
+  theta = Math.PI/2.0 - (i-np)*Math.PI/(np-1);
+  pv[i][0] = -Math.cos(theta);
+  pv[i][1] = Math.sin(theta);
+  }
+  }
+else
+{
+  for (int i = 0; i < np; i++)
+{
+  theta = i*Math.PI/(np-1) + Math.PI/2.0;
+  pv[i][0] = -Math.cos(theta);
+  pv[i][1] = Math.sin(theta);
+  }
+for (int i = np; i < 2*np; i++)
+{
+  theta = 3.0*Math.PI/2.0 - (i-np)*Math.PI/(np-1);
+  pv[i][0] = Math.cos(ang)*Math.cos(theta);
+  pv[i][1] = Math.sin(theta);
+  }
+  }
+//set polygon for Light Cone
+cone[0][0] = rE*Math.cos(ang-Math.PI/2.0);
+cone[0][1] = rE*Math.sin(ang-Math.PI/2.0);
+cone[1][0] = x + rM*Math.cos(ang-Math.PI/2.0);
+cone[1][1] = y + rM*Math.sin(ang-Math.PI/2.0);
+cone[2][0] = x - rM*Math.cos(ang-Math.PI/2.0);
+cone[2][1] = y - rM*Math.sin(ang-Math.PI/2.0);
+cone[3][0] = -rE*Math.cos(ang-Math.PI/2.0);
+cone[3][1] = -rE*Math.sin(ang-Math.PI/2.0);
+//compute earth-moon-sun angle in degrees
+angle = 180.0*ang/Math.PI;
+//compute angular position of observer on Earth at time
+tang = (time-12.0)*Math.PI/12.0;
+//compute x and y coordinates of observer
+xobs = rE*Math.cos(tang);
+yobs = rE*Math.sin(tang);
+//computer coordinates for horizon line
+h1x = xobs/60 - 12*Math.cos(tang+Math.PI/2.0);
+h1y = yobs/60 - 12*Math.sin(tang+Math.PI/2.0);
+lhx = 24*Math.cos(tang+Math.PI/2.0);
+lhy = 24*Math.sin(tang+Math.PI/2.0);
+//change transparency of darknessPolygon to emulate Earthlight
+transp = 230-(int)(20*Math.cos(ang));
+color = new Color(0,0,0,transp);
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">orbitFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["運行軌道"]]></Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["4,22"]]></Property>
+<Property name="size"><![CDATA["653,602"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">orbitDrawingPanel</Property>
+<Property name="parent">orbitFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-11]]></Property>
+<Property name="maximumX"><![CDATA[17.5]]></Property>
+<Property name="minimumY"><![CDATA[-11]]></Property>
+<Property name="maximumY"><![CDATA[11]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="size"><![CDATA["600,600"]]></Property>
+<Property name="background"><![CDATA[black]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">orbitCircle</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[2*d]]></Property>
+<Property name="sizeY"><![CDATA[2*d]]></Property>
+<Property name="visible"><![CDATA[ShowMO]]></Property>
+<Property name="lineColor"><![CDATA[white]]></Property>
+<Property name="fillColor"><![CDATA[none]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Polygon2D</Type>
+<Property name="name">brightMoon</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="data"><![CDATA[pl]]></Property>
+<Property name="lineColor"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="fillColor"><![CDATA[LIGHTGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Polygon2D</Type>
+<Property name="name">darkMoon</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="data"><![CDATA[pd]]></Property>
+<Property name="lineColor"><![CDATA[darkgray]]></Property>
+<Property name="fillColor"><![CDATA[darkgray]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">earthMoonLine</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[x]]></Property>
+<Property name="sizeY"><![CDATA[y]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[black]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Polygon2D</Type>
+<Property name="name">brightEarth</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="data"><![CDATA[el]]></Property>
+<Property name="lineColor"><![CDATA[blue]]></Property>
+<Property name="fillColor"><![CDATA[blue]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Polygon2D</Type>
+<Property name="name">darkEarth</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="data"><![CDATA[ed]]></Property>
+<Property name="lineColor"><![CDATA[DARKGRAY]]></Property>
+<Property name="fillColor"><![CDATA[DARKGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">sunBeam1</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="x"><![CDATA[17]]></Property>
+<Property name="y"><![CDATA[5]]></Property>
+<Property name="sizeX"><![CDATA[-4]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[orange]]></Property>
+<Property name="fillColor"><![CDATA[orange]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">sunBeam2</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="x"><![CDATA[17]]></Property>
+<Property name="y"><![CDATA[10]]></Property>
+<Property name="sizeX"><![CDATA[-4]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[orange]]></Property>
+<Property name="fillColor"><![CDATA[orange]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">sunBeam3</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="x"><![CDATA[17]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[-4]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[orange]]></Property>
+<Property name="fillColor"><![CDATA[orange]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">sunBeam4</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="x"><![CDATA[17]]></Property>
+<Property name="y"><![CDATA[-5]]></Property>
+<Property name="sizeX"><![CDATA[-4]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[orange]]></Property>
+<Property name="fillColor"><![CDATA[orange]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">sunBeam5</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="x"><![CDATA[17]]></Property>
+<Property name="y"><![CDATA[-10]]></Property>
+<Property name="sizeX"><![CDATA[-4]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[orange]]></Property>
+<Property name="fillColor"><![CDATA[orange]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">sunlightLabel</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="x"><![CDATA[15]]></Property>
+<Property name="y"><![CDATA[2.5]]></Property>
+<Property name="sizeX"><![CDATA[3]]></Property>
+<Property name="sizeY"><![CDATA[1.5]]></Property>
+<Property name="text"><![CDATA["Sunlight"]]></Property>
+<Property name="lineColor"><![CDATA[orange]]></Property>
+<Property name="fillColor"><![CDATA[orange]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">observerSpot</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="x"><![CDATA[xobs]]></Property>
+<Property name="y"><![CDATA[yobs]]></Property>
+<Property name="sizeX"><![CDATA[dspot]]></Property>
+<Property name="sizeY"><![CDATA[dspot]]></Property>
+<Property name="visible"><![CDATA[observer]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="lineColor"><![CDATA[green]]></Property>
+<Property name="fillColor"><![CDATA[green]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Polygon2D</Type>
+<Property name="name">lightCone</Property>
+<Property name="parent">orbitDrawingPanel</Property>
+<Property name="data"><![CDATA[cone]]></Property>
+<Property name="visible"><![CDATA[ShowLC]]></Property>
+<Property name="lineColor"><![CDATA[none]]></Property>
+<Property name="fillColor"><![CDATA[255,255,255,50]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.MenuBar</Type>
+<Property name="name">orbitMenuBar</Property>
+<Property name="parent">orbitFrame</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Menu</Type>
+<Property name="name">optionsMenu</Property>
+<Property name="parent">orbitMenuBar</Property>
+<Property name="text"><![CDATA["選項"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showMoon</Property>
+<Property name="parent">optionsMenu</Property>
+<Property name="variable"><![CDATA[ShowMoon]]></Property>
+<Property name="text"><![CDATA["顯示月相"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showObserver</Property>
+<Property name="parent">optionsMenu</Property>
+<Property name="variable"><![CDATA[observer]]></Property>
+<Property name="text"><![CDATA["顯示地球上的觀察者"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showOrbit</Property>
+<Property name="parent">optionsMenu</Property>
+<Property name="variable"><![CDATA[ShowMO]]></Property>
+<Property name="text"><![CDATA["顯示月球的軌道"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">showCone</Property>
+<Property name="parent">optionsMenu</Property>
+<Property name="variable"><![CDATA[ShowLC]]></Property>
+<Property name="text"><![CDATA["顯示光束"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">orbitFrame</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">sliderPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">angleControl</Property>
+<Property name="parent">sliderPanel</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">angleLabel</Property>
+<Property name="parent">angleControl</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["軌道角度: "]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+<Property name="tooltip"><![CDATA["日-地-月夾角 (度) "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">angleSlider</Property>
+<Property name="parent">angleControl</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[ang]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[2.0*Math.PI]]></Property>
+<Property name="tooltip"><![CDATA["日-地-月夾角 (度) "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">angleValue</Property>
+<Property name="parent">angleControl</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[angle]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="tooltip"><![CDATA["日-地-月夾角 (度) "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">timeControl</Property>
+<Property name="parent">sliderPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[observer]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">timeLabel</Property>
+<Property name="parent">timeControl</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" 時間: "]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+<Property name="tooltip"><![CDATA["觀察者所在時間 (0-24 小時)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">timeSlider</Property>
+<Property name="parent">timeControl</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[time]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[24]]></Property>
+<Property name="tooltip"><![CDATA["觀察者所在時間 (0-24 小時)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">timeValue</Property>
+<Property name="parent">timeControl</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[time]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="tooltip"><![CDATA["觀察者所在時間 (0-24 小時)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[GRID:1,2,0,0]]></Property>
+<Property name="size"><![CDATA["80,23"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">playButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="position">west</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["開始/停止月球在軌道上運行。"]]></Property>
+<Property name="imageOn"><![CDATA["/org/opensourcephysics/resources/controls/images/play.gif"]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA["/org/opensourcephysics/resources/controls/images/pause.gif"]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepforward.gif"]]></Property>
+<Property name="action"><![CDATA[_step();]]></Property>
+<Property name="tooltip"><![CDATA["下一階段"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">moonViewFrame</Property>
+<Property name="title"><![CDATA["月相"]]></Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="visible"><![CDATA[ShowMoon]]></Property>
+<Property name="location"><![CDATA["685,26"]]></Property>
+<Property name="size"><![CDATA["395,412"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">moonViewDrawingPanel</Property>
+<Property name="parent">moonViewFrame</Property>
+<Property name="position">north</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-1.2]]></Property>
+<Property name="maximumX"><![CDATA[1.2]]></Property>
+<Property name="minimumY"><![CDATA[-1.2]]></Property>
+<Property name="maximumY"><![CDATA[1.2]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="background"><![CDATA[black]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image2D</Type>
+<Property name="name">moonPicture</Property>
+<Property name="parent">moonViewDrawingPanel</Property>
+<Property name="x"><![CDATA[-0.003]]></Property>
+<Property name="y"><![CDATA[0.02]]></Property>
+<Property name="sizeX"><![CDATA[2.25]]></Property>
+<Property name="sizeY"><![CDATA[2.25]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="imageFile"><![CDATA["./MoonPhases/FullMoon.jpg"]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Polygon2D</Type>
+<Property name="name">darknessPolygon</Property>
+<Property name="parent">moonViewDrawingPanel</Property>
+<Property name="data"><![CDATA[pv]]></Property>
+<Property name="lineColor"><![CDATA[none]]></Property>
+<Property name="fillColor"><![CDATA[color]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

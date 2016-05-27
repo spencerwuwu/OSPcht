@@ -1,0 +1,234 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.3.7" password="">
+<Osejs.Information>
+<Title><![CDATA[Newton's First Law]]></Title>
+<Author><![CDATA[Wolfgang Christain]]></Author>
+<Keywords><![CDATA[mechanics]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[beginner]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[A very simple Ejs model that shows how properties are connected to variables.]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>false</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<DetectedFiles><![CDATA[./FirstLaw/FirstLaw.html;./FirstLaw/FirstLawModel.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./FirstLaw/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Newton's First Law</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Newton's First Law</Title>
+  <External>true</External>
+  <![CDATA[
+./FirstLaw/FirstLaw.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>First Law Model</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>First Law Model</Title>
+  <External>true</External>
+  <![CDATA[
+./FirstLaw/FirstLawModel.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>10</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Dynamic Vars</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx]]></Name>
+<Value><![CDATA[0.2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy]]></Name>
+<Value><![CDATA[0.3]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>EVOLUTION_EDITOR</Type>
+<Name>Free Particle Evol</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+x = x + vx*dt;
+y = y + vy*dt;
+t = t + dt;
+]]></Code>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">DrawingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[Newton's First Law]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["194,12"]]></Property>
+<Property name="size"><![CDATA["360,384"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">DrawingPanel</Property>
+<Property name="parent">DrawingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-1.0]]></Property>
+<Property name="maximumX"><![CDATA[1.0]]></Property>
+<Property name="minimumY"><![CDATA[-1.0]]></Property>
+<Property name="maximumY"><![CDATA[1.0]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="BRmessage"><![CDATA["時間="+_format(t,"0.00")]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">Particle</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">velocity</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizex"><![CDATA[vx]]></Property>
+<Property name="sizey"><![CDATA[vy]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">DrawingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[grid:1,3,0,0]]></Property>
+<Property name="border"><![CDATA[0,0,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startStopButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA[Starts and stops the simulation.]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/step.gif]]></Property>
+<Property name="action"><![CDATA[_step();]]></Property>
+<Property name="tooltip"><![CDATA[Steps the simulation.]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_reset();]]></Property>
+<Property name="tooltip"><![CDATA[Reseets the simulation.]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

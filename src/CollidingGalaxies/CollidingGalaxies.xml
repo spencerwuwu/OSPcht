@@ -1,0 +1,1115 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.0 beta" password="">
+<Osejs.Information>
+<Title><![CDATA[Colliding Galaxies]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[spiral galaxies, astrophysics]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[intermediate]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Wolfgang Christian and Kyung Taek Lim]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./CollidingGalaxies/CollidingGalaxies.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./CollidingGalaxies/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>CollidingGalaxies</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>碰撞星系</Title>
+  <External>true</External>
+  <![CDATA[
+./CollidingGalaxies/CollidingGalaxies.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>10</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Planet Vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[324]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[number of stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[sx]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[x-position of stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[sy]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[y-position of stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vsx]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[x-velocity of stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vsy]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[y-velocity of stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[asx]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[x-acceleration of stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[asy]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[y-acceleration of stars]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[r]]></Name>
+<Value><![CDATA[12.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Eventual pericenter distance]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Center</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[M1]]></Name>
+<Value><![CDATA[2.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[mass of the center ]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x1]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-position of the center mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y1]]></Name>
+<Value><![CDATA[15.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-position of the center mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx1]]></Name>
+<Value><![CDATA[-0.25]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-velocity of the center]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy1]]></Name>
+<Value><![CDATA[-0.25]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-velocity of the center]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Companion Particle</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[M2]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[mass of the heavy particle]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x2]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-position of the heavy particle]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y2]]></Name>
+<Value><![CDATA[-15.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-position of the heavy particle]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx2]]></Name>
+<Value><![CDATA[0.25]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-velocity of the heavy mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy2]]></Name>
+<Value><![CDATA[0.25]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-velocity of the heavy mass]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Independent vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[tol]]></Name>
+<Value><![CDATA[1.0e-6]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[ODE tolerance]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time step]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[demoStr]]></Name>
+<Value><![CDATA["輕型伴星"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Used in Set_Demo for fuction combo]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[cmFrame]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[whether group the drawings or not]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Editable]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Whether the parameter is edible or not]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Auxiliary Vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[x1Initial]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Initial x-position for the center mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y1Initial]]></Name>
+<Value><![CDATA[15.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Initial y-position for the center mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x2Initial]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Initial x-position for the companion mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y2Initial]]></Name>
+<Value><![CDATA[-15.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Initial x-position for the companion mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx1Initial]]></Name>
+<Value><![CDATA[-0.25]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Initial x-velocity for the center mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy1Initial]]></Name>
+<Value><![CDATA[-0.25]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Initial y-velocity for the center mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx2Initial]]></Name>
+<Value><![CDATA[0.25]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Initial x-velocity for the companion mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy2Initial]]></Name>
+<Value><![CDATA[0.25]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Initial y-velocity for the companion mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Initialization</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[Set the initial conditions for the stars]]></Comment>
+<Code><![CDATA[
+initialize_Planet () ;      // Set the rings and position of the stars
+gravitational_velocity () ; // Set the initial velocity for the stars
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Newton's 2nd law</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[Code to be executed before rate equations are evaluated]]></Comment>
+<Code><![CDATA[
+// acceleration of stars
+for(int i=0; i<n; i++) {
+  // separation between stars and M1
+  double deltaX1 = x1-sx[i];     // x star-core 1 mass separation
+  double deltaY1 = y1-sy[i];     // y star-core 1 mass separation
+  double dr1squared = deltaX1*deltaX1+deltaY1*deltaY1;
+  double dr1cubed = Math.sqrt(dr1squared)*dr1squared;     // r12 cubed
+  // separation between stars and M2
+  double deltaX2 = x2-sx[i];     // x star-core 2 mass separation
+  double deltaY2 = y2-sy[i];     // y star-core 2 mass separation
+  double dr2squared = deltaX2*deltaX2+deltaY2*deltaY2;  // separation squared
+  double dr2cubed = Math.sqrt(dr2squared)*dr2squared;   // separation cubed
+  // acceleration of stars
+  asx[i] = M1*deltaX1/dr1cubed+M2*deltaX2/dr2cubed;  // x-acceleration of stars due to M1 and M2
+  asy[i] = M1*deltaY1/dr1cubed+M2*deltaY2/dr2cubed;  // y-acceleration of stars due to M1 and M2
+}
+
+// acceleration of galactic cores
+double deltaX = x1-x2;  // center core mass x-separation
+double deltaY = y1-y2;  // center core mass y-separation
+double drsquared = (deltaX*deltaX+deltaY*deltaY); // separation squared
+double drcubed = Math.sqrt(drsquared)*drsquared;  // separation cubed
+double ax1 = -M2*deltaX/drcubed;  // x-acceleration of M1 caused by M2
+double ay1 = -M2*(y1-y2)/drcubed; // y-acceleration of M1 caused by M2
+double ax2 = M1*deltaX/drcubed;   // x-acceleration of M2 caused by M1
+double ay2 = M1*deltaY/drcubed;   // y-acceleration of M2 caused by M1
+
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<Discontinuities>
+</Discontinuities>
+<Events>
+</Events>
+<IndependentVariable>t</IndependentVariable>
+<Increment>dt</Increment>
+<Rate state="sx[i]">vsx[i]</Rate>
+<Rate state="vsx[i]">asx[i]</Rate>
+<Rate state="sy[i]">vsy[i]</Rate>
+<Rate state="vsy[i]">asy[i]</Rate>
+<Rate state="x1">vx1</Rate>
+<Rate state="vx1">ax1</Rate>
+<Rate state="y1">vy1</Rate>
+<Rate state="vy1">ay1</Rate>
+<Rate state="x2">vx2</Rate>
+<Rate state="vx2">ax2</Rate>
+<Rate state="y2">vy2</Rate>
+<Rate state="vy2">ay2</Rate>
+<Method>RungeKuttaFehlberg</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MemoryLength></MemoryLength>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance>tol</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayMaximum><![CDATA[]]></DelayMaximum>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[Differential equation for each stars & center mass]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>StopSimulation</Name>
+<Active>false</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[Stop the simulation to describe my result to people during Symposium]]></Comment>
+<Code><![CDATA[
+// Only for the Symposium, pause the simulation to show people
+if (demoStr.equals("輕型伴星")) {
+  if (t>=220.0) _pause();
+}
+else if (demoStr.equals("同質量")) {
+  if (t>=220.0) _pause();
+}
+else if (demoStr.equals("重型伴星")) {
+  if (t>=220.0) _pause();
+}
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Initialize Planet</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[Setting initial position of the stars]]></Comment>
+<Code><![CDATA[
+// Set the initial position of each stars
+public void initialize_Planet () {
+  double pe= 0.2;             // Percentage of the eventual pericenter radius r
+  double dpe= 0.1;            // Percentage increment
+  double theta = 0.0;         // angle
+  double dtheta = 4*Math.PI/(pe*(n-84)); // angle increment
+  
+  for(int i=0; i<n; i++) {
+    // set position of n particles
+    double R = r*pe;               // Set a new pericenter radius R
+    double Sx = R*Math.cos(theta); // x-component of the star-center radius
+    double Sy = R*Math.sin(theta); // y-component of the star-center radius
+    sx[i]=x1+Sx;                   // x position of the star
+    sy[i]=y1+Sy;                   // y position of the star
+    theta += dtheta;               // increase the angle
+    if(theta<=2*Math.PI) continue; // when the angle > 2PI, break out from the loop
+    theta = 0.0;                   // reset the angle to zero
+    pe += dpe;                     // Increase the pericenter radius
+    dtheta= 4*Math.PI/(pe*(n-84)); // reset the angle increment
+    theta += dtheta;               // Increase the angle
+  }
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>gravitational velocity</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// Set the initial velocity for each stars
+public void gravitational_velocity () {
+  double pe= 0.2;              // Percentage of the eventual pericenter radius r
+  double dpe= 0.1;             // Percentage increment
+  double theta = 0.0;          // angle
+  double dtheta = 4*Math.PI/(pe*(n-84));  // angle increment
+  for(int i=0; i<n; i++) {
+    double R = r*pe;               // Set a new pericenter radius R
+    double v = Math.sqrt(M1/R);    // Set the initial velocity
+    vsx[i]=-v*Math.sin(theta)+vx1; // Initial x-velocity 
+    vsy[i]=v*Math.cos(theta)+vy1;  // Initial y-velocity
+    theta += dtheta;               // Increase the angle
+    if(theta<=2*Math.PI) continue; // when the angle > 2PI, break out from the loop
+    theta = 0.0;                   // reset the angle to zero
+    pe += dpe;                     // Increase the pericenter radius
+    dtheta= 4*Math.PI/(pe*(n-84)); // reset the angle increment
+    theta += dtheta;               // Increase the angle
+  }
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Compute CM frame</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// Put the simulation in Center of Mass frame
+public void compute_CM_frame () {
+  // compute CM position 
+  double Xcm = (M1*x1+M2*x2)/(M1+M2);
+  double Ycm = (M1*y1+M2*y2)/(M1+M2);
+  
+  // Compute CM-position frame for the center & heavy mass
+  x1 = x1-Xcm;
+  x2 = x2-Xcm;
+  y1 = y1-Ycm;
+  y2 = y2-Ycm;
+  
+  // compute CM velocity
+  double VXcm = (M1*vx1+M2*vx2)/(M1+M2);
+  double VYcm = (M1*vy1+M2*vy2)/(M1+M2);
+  
+  // Compute CM-velocity frame for the center & heavy mass
+  vx1 = vx1-VXcm;
+  vx2 = vx2-VXcm;
+  vy1 = vy1-VXcm;
+  vy2 = vy2-VYcm;
+  
+  // Compute CM-position & CM-velocity for the stars
+  for(int i=0; i<n; i++) {
+    sx[i] = sx[i]-Xcm;
+    sy[i] = sy[i]-Ycm;
+    vsx[i] = vsx[i]-VXcm;
+    vsy[i] = vsy[i]-VYcm;
+  }  
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Reset Model</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// Set the new position for both center mass and the heavy mass
+public void reset_Model () {
+  _pause();
+  x1 = x1Initial;
+  y1 = y1Initial;
+  x2 = x2Initial;
+  y2 = y2Initial;
+  vx1 = vx1Initial;
+  vy1 = vy1Initial;
+  vx2 = vx2Initial;
+  vy2 = vy2Initial;
+  t = 0;
+  _initialize();
+  _view.clearData();
+}
+
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Set Demo</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// For the purpose of the Symposium:
+// set some demos for small, equal or heavy companion
+public void set_Demo () {
+  // Options: 輕型伴星; 同質量; 重型伴星
+  if (demoStr.equals("自訂")) {
+    Editable = true;
+    M2 = 1.0;
+    x1Initial = 0;
+    y1Initial = 15.0;
+    x2Initial = 0;
+    y2Initial = -15.0;
+    vx1 = -0.25;
+    vy1 = -0.25;
+    vx2 = 0.25;
+    vy2 = 0.25;
+  }
+  else if (demoStr.equals("輕型伴星")) {
+    Editable = false;
+    M2 = 0.5;
+    x1Initial = 0;
+    y1Initial = 12.0;
+    x2Initial = 0;
+    y2Initial = -12.0;
+    vx1Initial = -0.25;
+    vy1Initial = -0.25;
+    vx2Initial = 0.25;
+    vy2Initial = 0.25;
+  }
+  else if (demoStr.equals("同質量")) {
+    M2 = 2.0;
+    x1Initial = 0;
+    y1Initial = 12.0;
+    x2Initial = 0;
+    y2Initial = -12.0;
+    vx1Initial = -0.25;
+    vy1Initial = -0.25;
+    vx2Initial = 0.25;
+    vy2Initial = 0.25;
+    Editable = false;
+  }
+  else if (demoStr.equals("重型伴星")) {
+    M2 = 2.5;
+    x1Initial = 0;
+    y1Initial = 12.0;
+    x2Initial = 0;
+    y2Initial = -12.0;
+    vx1Initial = -0.25;
+    vy1Initial = -0.25;
+    vx2Initial = 0.25;
+    vy2Initial = 0.25;
+    Editable = false;
+  }else{
+    Editable = true;
+  }
+  t=0;
+  _view.clearData();
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">Main_Frame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["碰撞星系"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["2,10"]]></Property>
+<Property name="size"><![CDATA["617,722"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">Main_Frame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumX"><![CDATA[-50]]></Property>
+<Property name="maximumX"><![CDATA[50]]></Property>
+<Property name="minimumY"><![CDATA[-50]]></Property>
+<Property name="maximumY"><![CDATA[50]]></Property>
+<Property name="axesType"><![CDATA[POLAR2]]></Property>
+<Property name="titleX"><![CDATA["x"]]></Property>
+<Property name="majorTicksX"><![CDATA[false]]></Property>
+<Property name="titleY"><![CDATA["y"]]></Property>
+<Property name="majorTicksY"><![CDATA[false]]></Property>
+<Property name="fixedGutters"><![CDATA[false]]></Property>
+<Property name="BRmessage"><![CDATA["時間="+_format(t,"0.00")]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">refFrameGroup</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[cmFrame?0:-x1]]></Property>
+<Property name="y"><![CDATA[cmFrame?0:-y1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ShapeSet2D</Type>
+<Property name="name">shapeSet2D</Property>
+<Property name="parent">refFrameGroup</Property>
+<Property name="x"><![CDATA[sx]]></Property>
+<Property name="y"><![CDATA[sy]]></Property>
+<Property name="sizeX"><![CDATA[0.5]]></Property>
+<Property name="sizeY"><![CDATA[0.5]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">CentermassTrail</Property>
+<Property name="parent">refFrameGroup</Property>
+<Property name="inputX"><![CDATA[x1]]></Property>
+<Property name="inputY"><![CDATA[y1]]></Property>
+<Property name="visible"><![CDATA[cmFrame]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">center</Property>
+<Property name="parent">refFrameGroup</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[y1]]></Property>
+<Property name="sizeX"><![CDATA[1.5]]></Property>
+<Property name="sizeY"><![CDATA[1.5]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">HeavymassTrail</Property>
+<Property name="parent">refFrameGroup</Property>
+<Property name="inputX"><![CDATA[x2]]></Property>
+<Property name="inputY"><![CDATA[y2]]></Property>
+<Property name="visible"><![CDATA[cmFrame]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">Companionmass</Property>
+<Property name="parent">refFrameGroup</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="sizeX"><![CDATA[1.2]]></Property>
+<Property name="sizeY"><![CDATA[1.2]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="fillColor"><![CDATA[DARKGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">LowerControlPanel</Property>
+<Property name="parent">Main_Frame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="border"><![CDATA[0,0,0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">LowerControlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[GRID:1,4,0,0]]></Property>
+<Property name="size"><![CDATA["150,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startStopButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["Starts and stops the simulation."]]></Property>
+<Property name="imageOn"><![CDATA["/org/opensourcephysics/resources/controls/images/play.gif"]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA["/org/opensourcephysics/resources/controls/images/pause.gif"]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepforward.gif"]]></Property>
+<Property name="action"><![CDATA[_step();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetTime</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset1.gif"]]></Property>
+<Property name="action"><![CDATA[set_Demo ();
+reset_Model () ;]]></Property>
+<Property name="tooltip"><![CDATA["Reset the time."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset.gif"]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ComboBox</Type>
+<Property name="name">SimulationComboBox</Property>
+<Property name="parent">LowerControlPanel</Property>
+<Property name="position">east</Property>
+<Property name="options"><![CDATA["自訂;輕型伴星;同質量;重型伴星"]]></Property>
+<Property name="variable"><![CDATA[%demoStr%]]></Property>
+<Property name="value"><![CDATA["自訂"]]></Property>
+<Property name="action"><![CDATA[set_Demo () ;
+reset_Model () ;]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">VelocityPanel</Property>
+<Property name="parent">LowerControlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">CenterVxPanel</Property>
+<Property name="parent">VelocityPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">CenterVxLable</Property>
+<Property name="parent">CenterVxPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["  vx1 = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">CenterVxField</Property>
+<Property name="parent">CenterVxPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[vx1Initial]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="editable"><![CDATA[Editable]]></Property>
+<Property name="action"><![CDATA[reset_Model ()]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">CenterVyPanel</Property>
+<Property name="parent">VelocityPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">CenterVyLable</Property>
+<Property name="parent">CenterVyPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["vy1 = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">CenterVyField</Property>
+<Property name="parent">CenterVyPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[vy1Initial]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="editable"><![CDATA[Editable]]></Property>
+<Property name="action"><![CDATA[reset_Model ()]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">CompanionVxPanel</Property>
+<Property name="parent">VelocityPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">CompanionVxLable</Property>
+<Property name="parent">CompanionVxPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["vx2 = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">CompanionVxField</Property>
+<Property name="parent">CompanionVxPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[vx2Initial]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="editable"><![CDATA[Editable]]></Property>
+<Property name="action"><![CDATA[reset_Model ()]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">CompanionVyPanel</Property>
+<Property name="parent">VelocityPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">CompanionVyLabel</Property>
+<Property name="parent">CompanionVyPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["vy2 = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">CompanionVyField</Property>
+<Property name="parent">CompanionVyPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[vy2Initial]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="editable"><![CDATA[Editable]]></Property>
+<Property name="action"><![CDATA[reset_Model ()]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">UpperControlPanel</Property>
+<Property name="parent">Main_Frame</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PositionPanel</Property>
+<Property name="parent">UpperControlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[FLOW:center,10,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">CenterXPanel</Property>
+<Property name="parent">PositionPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">CenterXLabel</Property>
+<Property name="parent">CenterXPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["M1 X = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">CenterXField</Property>
+<Property name="parent">CenterXPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[x1Initial]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="editable"><![CDATA[Editable]]></Property>
+<Property name="action"><![CDATA[reset_Model ();]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">CenterYPanel</Property>
+<Property name="parent">PositionPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">CenterYLabel</Property>
+<Property name="parent">CenterYPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["M1 Y = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">CenterYField</Property>
+<Property name="parent">CenterYPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[y1Initial]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="editable"><![CDATA[Editable]]></Property>
+<Property name="action"><![CDATA[reset_Model ();]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">CompanionXPanel</Property>
+<Property name="parent">PositionPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">CompanionXLabel</Property>
+<Property name="parent">CompanionXPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["M2 X = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">CompanionXField</Property>
+<Property name="parent">CompanionXPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[x2Initial]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="editable"><![CDATA[Editable]]></Property>
+<Property name="action"><![CDATA[reset_Model ();]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">CompanionYPanel</Property>
+<Property name="parent">PositionPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">CompanionYLabel</Property>
+<Property name="parent">CompanionYPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["M2 Y = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">CompanionYField</Property>
+<Property name="parent">CompanionYPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[y2Initial]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="editable"><![CDATA[Editable]]></Property>
+<Property name="action"><![CDATA[reset_Model ();]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">mass2Panel</Property>
+<Property name="parent">PositionPanel</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">mass2Label</Property>
+<Property name="parent">mass2Panel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["質量 2 = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">mass2Field</Property>
+<Property name="parent">mass2Panel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[M2]]></Property>
+<Property name="editable"><![CDATA[Editable]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">groupPanel</Property>
+<Property name="parent">UpperControlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">groupcheckbox</Property>
+<Property name="parent">groupPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[cmFrame]]></Property>
+<Property name="text"><![CDATA["質心系"]]></Property>
+<Property name="actionon"><![CDATA[_pause();
+compute_CM_frame () ;
+//_view.clearData();]]></Property>
+<Property name="actionoff"><![CDATA[_pause();
+compute_CM_frame () ;
+_view.clearData();]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

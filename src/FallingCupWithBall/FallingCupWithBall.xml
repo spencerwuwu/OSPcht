@@ -1,0 +1,591 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.2">
+<Osejs.Information>
+<Title><![CDATA[Falling Cup with Ball]]></Title>
+<Author><![CDATA[Wolfgang Christian - Davidson College]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[wochristian@davidson.edu]]></Abstract>
+<CaptureTools>true</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<AuxiliaryFiles><![CDATA[./FallingCupWithBall/;]]></AuxiliaryFiles>
+<DetectedFiles><![CDATA[./FallingCupWithBall/FallingCupWithBall.html;./FallingCupWithBall/uppull.gif;]]></DetectedFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>HTML_EXTERNAL_EDITOR</Type>
+<Name>與球同時落地的杯子</Name>
+<Active>true</Active>
+<Content>
+<![CDATA[
+./FallingCupWithBall/FallingCupWithBall.html
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Constant Vars</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[g]]></Name>
+<Value><![CDATA[9.8]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[acceleration of gravity]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[k]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[spring constant]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mCup]]></Name>
+<Value><![CDATA[0.2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[mass of cup]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mBall]]></Name>
+<Value><![CDATA[0.2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[mass of ball]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mRatio]]></Name>
+<Value><![CDATA[mBall/mCup]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[ball to cup mass ratio]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[b]]></Name>
+<Value><![CDATA[0.2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[damping coefficient]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[d]]></Name>
+<Value><![CDATA[6]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[natural length of spring]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Dynamical Vars</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[dynamical variables and ODE solver related constants]]></PageComment>
+<Variable>
+<Name><![CDATA[yBall]]></Name>
+<Value><![CDATA[-d*1.3]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[vertical position of ball]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vBall]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[vertical velocity of ball]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yCup]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[vertical postion of cup]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vCup]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[vertical velocity of cup]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time step]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tol]]></Name>
+<Value><![CDATA[1.0E-6]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[ODE solver tolerance]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Drawing Vars</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[axis]]></Name>
+<Value><![CDATA[{0,-10,-20,-30,-40,-50}]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[6]]]></Dimension>
+<Comment><![CDATA[positions of axis ticks and label]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[axisString]]></Name>
+<Value><![CDATA[{"0","10","20","30","40","50"}]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[[6]]]></Dimension>
+<Comment><![CDATA[labels next to axis ticks]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[msg]]></Name>
+<Value><![CDATA["將球往下拉。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[introductory message]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[hold]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[holds the cup at y=0]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[cupWidth]]></Name>
+<Value><![CDATA[5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[width of cup]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[cupHeight]]></Name>
+<Value><![CDATA[0.7]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[height of cup]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dBall]]></Name>
+<Value><![CDATA[3]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[diameter of the ball]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xBall]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[ball's x postion;  set to zero in the ball's drag action]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>ODE evolution</Name>
+<Active>true</Active>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[Code to be executed before rate equations are evaluated]]></Comment>
+<Code><![CDATA[
+double aBall = -g-k*(yBall-yCup+d)/mBall-b*vBall;
+double aCup  = -g+k*(yBall-yCup+d)/mCup;
+if(hold){
+  aCup=0;
+}
+
+]]></Code>
+</PreliminaryCode>
+<ErrorCode>
+<Comment><![CDATA[possible error when dragging]]></Comment>
+<Code><![CDATA[
+yBall=Math.min(yBall,yCup-dBall/2);
+vBall=-Math.abs(vBall);
+]]></Code>
+</ErrorCode>
+<IndependentVariable>t</IndependentVariable>
+<Increment>dt</Increment>
+<Rate state="yBall">vBall</Rate>
+<Rate state="vBall">aBall</Rate>
+<Rate state="yCup">vCup</Rate>
+<Rate state="vCup">aCup</Rate>
+<Method>RungeKuttaFehlberg</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance>tol</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[]]></Comment>
+<Events>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Ball-Cup Collision</Name>
+<Active>true</Active>
+<EventContent>
+<EventType>STATE_EVENT</EventType>
+<Method>SECANT</Method>
+<Iterations>100</Iterations>
+<Tolerance><![CDATA[tol]]></Tolerance>
+<StopAtEvent>false</StopAtEvent>
+<ZeroCondition><![CDATA[
+if(vCup-vBall>=0) return Double.MAX_VALUE;   // ball is moving away from cup
+return yCup-yBall-dBall/2;
+]]></ZeroCondition>
+<Action><![CDATA[
+yBall=Math.min(yBall,yCup-dBall/2);
+if(hold){
+  vBall=-Math.abs(vBall);  // ball moving down
+}else{
+  double vCM=(mCup*vCup+mBall*vBall)/(mCup+mBall);
+  vCup=-vCup+2*vCM;
+  vBall=-vBall+2*vCM;
+}
+
+]]></Action>
+<Comment><![CDATA[]]></Comment>
+
+</EventContent>
+</Event.Page>
+</Events>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">mainFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Cup with Ball"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["2,-1"]]></Property>
+<Property name="size"><![CDATA["390,637"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumY"><![CDATA[-54]]></Property>
+<Property name="maximumY"><![CDATA[2+cupWidth*0.6]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="pressaction"><![CDATA[msg=null]]></Property>
+<Property name="axesType"><![CDATA[NONE]]></Property>
+<Property name="xFormat"><![CDATA[null]]></Property>
+<Property name="yFormat"><![CDATA[null]]></Property>
+<Property name="TRmessage"><![CDATA["t = "+_view.format(100*t,"0.0")+"ms"]]></Property>
+<Property name="BLmessage"><![CDATA[%msg%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">AxisGroup</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[-10]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">yAxis</Property>
+<Property name="parent">AxisGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[-50]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.SegmentSet2D</Type>
+<Property name="name">yTicks</Property>
+<Property name="parent">AxisGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[axis]]></Property>
+<Property name="sizeX"><![CDATA[.5]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextSet2D</Type>
+<Property name="name">yLabels</Property>
+<Property name="parent">AxisGroup</Property>
+<Property name="numberOfElements"><![CDATA[6]]></Property>
+<Property name="x"><![CDATA[-2.9]]></Property>
+<Property name="y"><![CDATA[axis]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[%axisString%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextSet2D</Type>
+<Property name="name">cm</Property>
+<Property name="parent">AxisGroup</Property>
+<Property name="numberOfElements"><![CDATA[6]]></Property>
+<Property name="x"><![CDATA[-1.2]]></Property>
+<Property name="y"><![CDATA[axis]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["cm"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">cupGroup</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[yCup]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Spring2D</Type>
+<Property name="name">spring</Property>
+<Property name="parent">cupGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[yBall-yCup]]></Property>
+<Property name="radius"><![CDATA[dBall/4]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">topShape</Property>
+<Property name="parent">cupGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[cupWidth]]></Property>
+<Property name="sizeY"><![CDATA[cupHeight]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">leftShape</Property>
+<Property name="parent">cupGroup</Property>
+<Property name="x"><![CDATA[-cupWidth/2]]></Property>
+<Property name="y"><![CDATA[-0]]></Property>
+<Property name="sizeX"><![CDATA[cupHeight]]></Property>
+<Property name="sizeY"><![CDATA[1.25*cupWidth+dBall/2]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[NORTH_WEST]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">rightShape</Property>
+<Property name="parent">cupGroup</Property>
+<Property name="x"><![CDATA[cupWidth/2]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[cupHeight]]></Property>
+<Property name="sizeY"><![CDATA[1.25*cupWidth+dBall/2]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[NORTH_EAST]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">handleShape</Property>
+<Property name="parent">cupGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[cupHeight]]></Property>
+<Property name="sizeY"><![CDATA[cupWidth/2]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[SOUTH]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image2D</Type>
+<Property name="name">handImage</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[cupWidth*0.6]]></Property>
+<Property name="trueSize"><![CDATA[true]]></Property>
+<Property name="visible"><![CDATA[hold]]></Property>
+<Property name="imageFile"><![CDATA["./FallingCupWithBall/uppull.gif"]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">ballShape</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[xBall]]></Property>
+<Property name="y"><![CDATA[yBall]]></Property>
+<Property name="sizeX"><![CDATA[dBall]]></Property>
+<Property name="sizeY"><![CDATA[dBall]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="sensitivity"><![CDATA[0]]></Property>
+<Property name="dragAction"><![CDATA[xBall=0;
+vBall=0;
+msg=null;
+yBall=Math.min(yBall,yCup-dBall/2);]]></Property>
+<Property name="releaseAction"><![CDATA[t=0;]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[GRID:1,4,0,0]]></Property>
+<Property name="size"><![CDATA["160,23"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startStopButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["開始或停止模擬。"]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[msg=null;
+_play()]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/stepforward.gif]]></Property>
+<Property name="action"><![CDATA[_step()]]></Property>
+<Property name="tooltip"><![CDATA["只執行單一步驟的模擬。"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetTime</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset1.gif"]]></Property>
+<Property name="action"><![CDATA[t=0;
+yBall=-d*1.3;
+vBall=0;
+yCup=0;
+vCup=0;]]></Property>
+<Property name="tooltip"><![CDATA["重置時間。"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="tooltip"><![CDATA["重置模擬。"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">holdCheckBox</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[hold]]></Property>
+<Property name="text"><![CDATA["拉住杯子"]]></Property>
+<Property name="actionon"><![CDATA[_reset();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">inputPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">ratioPanel</Property>
+<Property name="parent">inputPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">ratioLabel</Property>
+<Property name="parent">ratioPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["Mb/Mc = "]]></Property>
+<Property name="tooltip"><![CDATA["球和杯子質量的比。"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">ratioField</Property>
+<Property name="parent">ratioPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[mRatio]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="action"><![CDATA[mRatio=Math.max(0.1,mRatio);
+mRatio=Math.min(10.0,mRatio);
+mCup=mBall/mRatio;]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="size"><![CDATA["0,23"]]></Property>
+<Property name="tooltip"><![CDATA["Ratio of ball to cup mass."]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../../../_ejs_library/css/ejsPage.css"/>
+    <title>Binomial Distribution</title>
+    <style type="text/css">
+    .style1 {
+     font-family: "Courier New", Courier, monospace;
+    }
+    .style2 {
+ text-align: center;
+}
+    .style3 {
+	text-align: left;
+}
+    .style4 {
+	font-size: x-small;
+}
+    </style>
+  </head>
+<body>
+<p align="center">
+<img border="1" src="BinominalCoefficient.gif" width="307" height="211"></p>
+<p align="center" class="style4">
+二項式係數圖</p>
+    <h1>二項式係數(Binomial Coefficient)</h1>
+<p>二項式係數模型展現的是從 n 個物品中選出 k 個物品有幾種可能，它被稱作 <a href="http://en.wikipedia.org/wiki/Binomial_coefficient">
+二項式係數</a> 也可以用來計算 n 個硬幣的有幾個正面幾個反面的機率</p>
+<p>&nbsp;</p>
+<p>二項式係數可以用階乘來計算
+<a href="http://en.wikipedia.org/wiki/Factorial">階乘</a></p>
+<p align="center">
+<img border="0" src="binominal_coef_eqn.gif" width="108" height="48"></p>
+<p align="left">n 階乘 (n!) 是所有小於等於 n 的正整數的乘積</p>
+<p align="center"><img border="0" src="factorial_eqn.gif">.</p>
+<p align="left">零階乘被定義為1(0! = 1)。n! 可以用把前一個 (n-1)! 乘上 n 的遞迴定義來計算</p>
+<p align="left">&nbsp;</p>
+<p class="style2">
+<img alt="factorial recursion" height="48" src="factorial_recursion_eqn.gif" width="165"></p>
+<p class="style3">這個計算階乘的演算法不斷的重複遞迴直到它遇到 0! 並返回(return)，因為許多的階乘會一直被重複的計算，為求快速，我們便把已經算過的階乘存到一個陣列 (array) 裡，用EJS來測試這個模型並注意到模型中的
+<span class="style1">factorials</span> 陣列將他們算過的值記起來，
+計算二項式係數不需要花多少時間，因為每一個階乘只會被計算一次</p>
+<h2 align="left">溢位錯誤</h2>
+<p align="left">雖然二項式係數是一個整數，但是這個模型用的是浮點數，以避免溢位，就算如此，最大可計算的階乘也不過 170!，再上去一階 171! 他就會超過 8 位元組 IEEE 754 浮點數標準的最大上限(大約1.79769313486231570E+308)</p>
+<p align="left">&nbsp;</p>
+<h3>練習</h3>
+<h4>整數溢位</h4>
+<p>創建一個用整數做運算的模型，如果用 <span class="style1">int</span> 你的階乘最大可以乘到多少?那用<span class="style1">long</span>呢?
+<h4>斯特靈近似</h4>
+<p>&nbsp;<a href="http://en.wikipedia.org/wiki/Stirling's_approximation">斯特靈近似</a> 可以計算階乘而不會溢位<br></p>
+<div style="margin-left: 40px;">lnN!
+= N ln(N) - N + ln(2&pi;N)<sup>1/2</sup><br></div><p>這個近似有多精準?建立一個可以顯示到170!以下的模型</p>
+<font size="3">
+	<h2>相關模型</h2>
+<p>下列的EJS模型是在
+<i>An Introduction to Computer Simulation Methods</i>的第七章</p>
+<ul>
+	<li>分隔箱(Partitioned Box)</li>
+	<li>二項式係數(Binomial Coefficient)</li>
+	<li>二項式分布(Binomial Distribution)</li>
+	<li>隨意漫步1D(Random Walk 1D)</li>
+	<li>隨意漫步2D(Random Walk 2D)</li>
+	<li>放射性事件(Radioactive Decay Events)</li>
+</ul>
+	<p>&nbsp;</p>
+	<p>額外的模型會加進這章節</p>
+    <h3>感謝:</h3>
+    <p>二項式係數模型(The Binomial Coefficient model)是由 Wolfgang Christian 用 the Easy Java Simulations (EJS) modeling 工具 版本
+      4.2 建立的。你可以自行查看修改這個EJS模型，在程式中單擊右鍵，並從跳出的選單選取 "Open Ejs Model" </p>
+    <p>&nbsp;</p><p>更多有關 EJS 的資訊可以在下面連結找到: &lt;<b><a href="http://www.um.es/fem/Ejs/">http://www.um.es/fem/Ejs/</a></b>&gt; 還有 the OSP 
+      ComPADRE collection &lt;<b><a href="http://www.compadre.org/OSP/">http://www.compadre.org/OSP/</a></b>&gt;.</p>
+  
+</font>
+
+</body>
+</html>

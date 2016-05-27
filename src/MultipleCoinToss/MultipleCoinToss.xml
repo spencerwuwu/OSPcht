@@ -1,0 +1,552 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.1" password="">
+<Osejs.Information>
+<Title><![CDATA[Coin Flip]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[molecular dynamics, gas, hard disk model]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[DiskCollisions models an ideal two dimensional gas using hard disks.  Note the use of periodic boundary conditions.]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>false</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Wolfgang Christian]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+<Import><![CDATA[java.awt.Color]]></Import>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./MultipleCoinToss/advanced_exercises.html;./MultipleCoinToss/author.html;./MultipleCoinToss/intro_exercises.html;./MultipleCoinToss/multiple_coin_toss.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./MultipleCoinToss/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>multiple_coin_toss</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>multiple_coin_toss</Title>
+  <External>true</External>
+  <![CDATA[
+./MultipleCoinToss/multiple_coin_toss.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>intro_exercises</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>intro_exercises</Title>
+  <External>true</External>
+  <![CDATA[
+./MultipleCoinToss/intro_exercises.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>advanced_exercises</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>advanced_exercises</Title>
+  <External>true</External>
+  <![CDATA[
+./MultipleCoinToss/advanced_exercises.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>author</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>author</Title>
+  <External>true</External>
+  <![CDATA[
+./MultipleCoinToss/author.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>1</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Dynamic Vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[N]]></Name>
+<Value><![CDATA[50]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[the number of particles]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[p]]></Name>
+<Value><![CDATA[0.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[probability of heads]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[headsN]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[sumHeads]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[N]]]></Dimension>
+<Comment><![CDATA[array of particle x coordinates]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[N]]]></Dimension>
+<Comment><![CDATA[array of particle y coordinates]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[images]]></Name>
+<Value><![CDATA["./MultipleCoinToss/head.gif"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[[N]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Constants</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[highSpeed]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[diameter]]></Name>
+<Value><![CDATA[0.1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[drawing diameter for particles]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[radius]]></Name>
+<Value><![CDATA[diameter/2.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[radius of potential energy minimum]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Initialize Particles</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+t=0;
+setNumberParticles();
+setHighSpeed();
+_view.resetTraces();
+flip();
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>EVOLUTION_EDITOR</Type>
+<Name>Do Flip</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+flip();
+
+]]></Code>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Flip</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void flip () {
+  //if(N!=x.length) setNumberParticles();
+  t++;
+  headsN=0;
+  // random position orientation
+  for(int i=0; i<N; i++) {
+    x[i]=Math.random();
+    y[i]=Math.random();
+    if(Math.random()<p){
+      images[i]="./MultipleCoinToss/head.gif";
+      headsN++;
+    }else{
+      images[i]="./MultipleCoinToss/tail.gif";
+    }
+  }
+  sumHeads+= headsN;
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Actions</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void setHighSpeed(){
+  if(highSpeed){
+    _setStepsPerDisplay(10);
+    _setFPS(10);
+  }else{
+    _setStepsPerDisplay(1);
+    _setFPS(1);
+  }
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Set Number of Particles</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void setNumberParticles() {
+  N=Math.max(1,N);
+  N=Math.min(100,N);
+  if(N==x.length) return;
+  t=0;
+  sumHeads=0;
+  x=new double[N];
+  y=new double[N];
+  images=new String[N];
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">particleFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["丟硬幣(Multiple Coin Toss)"]]></Property>
+<Property name="layout"><![CDATA[border:0,0]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["10,4"]]></Property>
+<Property name="size"><![CDATA["400,400"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">drawingPanel</Property>
+<Property name="parent">particleFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-radius]]></Property>
+<Property name="maximumX"><![CDATA[1+radius]]></Property>
+<Property name="minimumY"><![CDATA[-radius]]></Property>
+<Property name="maximumY"><![CDATA[1+radius]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="BLmessage"><![CDATA["# 正面 = "+_format(headsN,"0")]]></Property>
+<Property name="BRmessage"><![CDATA["# 已投擲 = "+_format(t,"0")]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">box</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[-radius]]></Property>
+<Property name="y"><![CDATA[-radius]]></Property>
+<Property name="sizex"><![CDATA[1+diameter]]></Property>
+<Property name="sizey"><![CDATA[1+diameter]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[SOUTH_WEST]]></Property>
+<Property name="secondaryColor"><![CDATA[black]]></Property>
+<Property name="color"><![CDATA[pink]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ImageSet</Type>
+<Property name="name">imageSet</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="elementnumber"><![CDATA[N]]></Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="trueSize"><![CDATA[true]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="image"><![CDATA[%images%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">particleFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="border"><![CDATA[8,2,2,2]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[GRID:1,4,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startStopButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["開始/暫停"]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/step.gif]]></Property>
+<Property name="action"><![CDATA[_pause();
+_step();]]></Property>
+<Property name="tooltip"><![CDATA["執行一步"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetTimeButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset1.gif"]]></Property>
+<Property name="action"><![CDATA[setNumberParticles();
+_view.resetTraces();
+t=0;
+sumHeads=0;
+flip();
+_pause();]]></Property>
+<Property name="tooltip"><![CDATA["不改變參數的重置"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_reset();]]></Property>
+<Property name="tooltip"><![CDATA["完全重置"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">parameterPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">nPanel</Property>
+<Property name="parent">parameterPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">nLabel</Property>
+<Property name="parent">nPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" N = "]]></Property>
+<Property name="tooltip"><![CDATA[點的數量]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">nField</Property>
+<Property name="parent">nPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[N]]></Property>
+<Property name="format"><![CDATA["##00"]]></Property>
+<Property name="editable"><![CDATA[_isPaused()]]></Property>
+<Property name="action"><![CDATA[setNumberParticles();
+_view.resetTraces();
+flip();]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+<Property name="tooltip"><![CDATA["硬幣數量"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">pPanel</Property>
+<Property name="parent">parameterPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">pLabel</Property>
+<Property name="parent">pPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" p = "]]></Property>
+<Property name="tooltip"><![CDATA[number of particles]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">pField</Property>
+<Property name="parent">pPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[p]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="editable"><![CDATA[_isPaused()]]></Property>
+<Property name="action"><![CDATA[p=Math.max(0,p);
+p=Math.min(1,p);]]></Property>
+<Property name="size"><![CDATA["40,24"]]></Property>
+<Property name="tooltip"><![CDATA["Heads probability per flip."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">highspeedCheckBox</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[highSpeed]]></Property>
+<Property name="text"><![CDATA[高速執行]]></Property>
+<Property name="action"><![CDATA[setHighSpeed()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">plotFrame</Property>
+<Property name="title"><![CDATA["Cumulative Probability of Heads"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["10,440"]]></Property>
+<Property name="size"><![CDATA["400,250"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plotPanel</Property>
+<Property name="parent">plotFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="maximumX"><![CDATA[10]]></Property>
+<Property name="minimumY"><![CDATA[0.475]]></Property>
+<Property name="maximumY"><![CDATA[0.525]]></Property>
+<Property name="xMarginPercentage"><![CDATA[10]]></Property>
+<Property name="yMarginPercentage"><![CDATA[10]]></Property>
+<Property name="titleX"><![CDATA["Number of Tosses"]]></Property>
+<Property name="titleY"><![CDATA["Cumulative Probability of Heads"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">numHeads</Property>
+<Property name="parent">plotPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[1.0*sumHeads/t/N]]></Property>
+<Property name="maxpoints"><![CDATA[1000]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="stroke"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

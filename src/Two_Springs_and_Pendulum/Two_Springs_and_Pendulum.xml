@@ -1,0 +1,2011 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.1" password="">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Author name]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Two Springs and a Pendulum</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Two Springs and a Pendulum</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        ﻿ body { margin-left: 3%; margin-right: 3%; margin-top: 2%; margin-bottom: 5%; text-align: justify; font-size: medium }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important; border-top-color: #000000; border-bottom-color: #000000; border-top-width: medium; border-bottom-width: thin; border-top-style: solid; border-bottom-style: solid }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { font-family: Times New Roman, Palatino, Caecilia, serif; line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 10pt; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        h2.author { text-align: center !important; color: #000090 !important; font-size: 115% !important }
+        img { padding-top: 1px; padding-bottom: 1px; padding-left: 0; padding-right: 0 }
+        p.center { text-align: center !important }
+        body { color: purple; background-color: #C8DFD0; font-family: Georgia, Times New Roman, Times, serif }
+        table.sourcecode { border-left-width: medium; border-right-style: none; vertical-align: baseline; border-top-width: medium; padding-top: 0; padding-right: 0; margin-left: 0; border-bottom-width: medium; border-top-style: none; border-left-style: none; margin-bottom: 0; border-right-width: medium; margin-top: 0; border-bottom-style: none; padding-bottom: 0; margin-right: 0; padding-left: 0 }
+        p.math { text-align: center !important }
+        p.caption { text-align: center !important; margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0; font-size: 75% !important }
+        h1.title { text-align: center !important; font-size: 130% !important; padding-top: 0; padding-right: 0; margin-left: 0; margin-bottom: 0; margin-top: 0; color: black; padding-bottom: 0; margin-right: 0; padding-left: 0 }
+        div.coverimage { text-align: center !important }
+        ol.toc li { padding-bottom: 0; margin-top: 0; padding-top: 0; list-style-type: disc; margin-bottom: 0; margin-left: 0; padding-left: 0; margin-right: 0; padding-right: 0 }
+        p.a { text-align: center !important; margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0; font-size: 75% !important }
+        div.figure { text-align: center !important }
+        td.linenumbers { padding-right: 5px; padding-bottom: 0; border-bottom-style: none; border-top-style: none; border-right-color: #AAAAAA; margin-top: 0; border-right-width: 1px; margin-bottom: 0; border-top-width: medium; text-align: right; margin-left: 0; color: #AAAAAA; vertical-align: baseline; padding-left: 5px; padding-top: 0; border-left-style: none; border-left-width: medium; border-right-style: solid; border-bottom-width: medium; margin-right: 0 }
+        mspace { white-space: pre !important }
+        td.sourcecode { border-left-width: medium; border-right-style: none; vertical-align: baseline; border-top-width: medium; padding-top: 0; padding-right: 0; margin-left: 0; border-bottom-width: medium; border-top-style: none; border-left-style: none; margin-bottom: 0; border-right-width: medium; margin-top: 0; border-bottom-style: none; padding-bottom: 0; margin-right: 0; padding-left: 5px }
+        code { font-size: 100% !important; font-weight: bold; font-family: monospace }
+        table.sourcecode pre { border-left-width: medium; border-right-style: none; vertical-align: baseline; border-top-width: medium; padding-top: 0; padding-right: 0; margin-left: 0; border-bottom-width: medium; border-top-style: none; border-left-style: none; margin-bottom: 0; border-right-width: medium; margin-top: 0; border-bottom-style: none; padding-bottom: 0; margin-right: 0; padding-left: 0 }
+        section.footnotes li { list-style-type: disc }
+        ol { list-style-type: lower-alpha }
+        div img { margin-bottom: 0 }
+        div.example { background-color: #D8D8D8 !important }
+        p.img { text-align: center !important; margin-bottom: 0 }
+        p.solution { background-color: #D8D8D8 !important }
+        h3.date { text-align: center }
+        tr.sourcecode { border-left-width: medium; border-right-style: none; vertical-align: baseline; border-top-width: medium; padding-top: 0; padding-right: 0; margin-left: 0; border-bottom-width: medium; border-top-style: none; border-left-style: none; margin-bottom: 0; border-right-width: medium; margin-top: 0; border-bottom-style: none; padding-bottom: 0; margin-right: 0; padding-left: 0 }
+        p.example { background-color: #F5A9A9 !important }
+        div.center { text-align: center !important }
+        ol.toc { padding-bottom: 0; padding-top: 0; margin-left: 0; padding-left: 0; padding-right: 0 }
+        section.footnotes { margin-top: 0; margin-bottom: 0; font-size: smaller }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h1>
+      兩個彈簧和一個鐘擺
+    </h1>
+	  在這個模擬中，你可以設置一個障礙的振盪從水平彈簧到第二塊障礙加上另一個彈簧，和/或 將這些運動進行比一個單擺運動的比較。
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Activities</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Activities</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        ﻿ body { margin-left: 3%; margin-right: 3%; margin-top: 2%; margin-bottom: 5%; text-align: justify; font-size: medium }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important; border-top-color: #000000; border-bottom-color: #000000; border-top-width: medium; border-bottom-width: thin; border-top-style: solid; border-bottom-style: solid }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { font-family: Times New Roman, Palatino, Caecilia, serif; line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 10pt; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        h2.author { text-align: center !important; color: #000090 !important; font-size: 115% !important }
+        img { padding-top: 1px; padding-bottom: 1px; padding-left: 0; padding-right: 0 }
+        p.center { text-align: center !important }
+        body { color: purple; background-color: #C8DFD0; font-family: Georgia, Times New Roman, Times, serif }
+        table.sourcecode { border-left-width: medium; border-right-style: none; vertical-align: baseline; border-top-width: medium; padding-top: 0; padding-right: 0; margin-left: 0; border-bottom-width: medium; border-top-style: none; border-left-style: none; margin-bottom: 0; border-right-width: medium; margin-top: 0; border-bottom-style: none; padding-bottom: 0; margin-right: 0; padding-left: 0 }
+        p.math { text-align: center !important }
+        p.caption { text-align: center !important; margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0; font-size: 75% !important }
+        h1.title { text-align: center !important; font-size: 130% !important; padding-top: 0; padding-right: 0; margin-left: 0; margin-bottom: 0; margin-top: 0; color: black; padding-bottom: 0; margin-right: 0; padding-left: 0 }
+        div.coverimage { text-align: center !important }
+        ol.toc li { padding-bottom: 0; margin-top: 0; padding-top: 0; list-style-type: disc; margin-bottom: 0; margin-left: 0; padding-left: 0; margin-right: 0; padding-right: 0 }
+        p.a { text-align: center !important; margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0; font-size: 75% !important }
+        div.figure { text-align: center !important }
+        td.linenumbers { padding-right: 5px; padding-bottom: 0; border-bottom-style: none; border-top-style: none; border-right-color: #AAAAAA; margin-top: 0; border-right-width: 1px; margin-bottom: 0; border-top-width: medium; text-align: right; margin-left: 0; color: #AAAAAA; vertical-align: baseline; padding-left: 5px; padding-top: 0; border-left-style: none; border-left-width: medium; border-right-style: solid; border-bottom-width: medium; margin-right: 0 }
+        mspace { white-space: pre !important }
+        td.sourcecode { border-left-width: medium; border-right-style: none; vertical-align: baseline; border-top-width: medium; padding-top: 0; padding-right: 0; margin-left: 0; border-bottom-width: medium; border-top-style: none; border-left-style: none; margin-bottom: 0; border-right-width: medium; margin-top: 0; border-bottom-style: none; padding-bottom: 0; margin-right: 0; padding-left: 5px }
+        code { font-size: 100% !important; font-weight: bold; font-family: monospace }
+        table.sourcecode pre { border-left-width: medium; border-right-style: none; vertical-align: baseline; border-top-width: medium; padding-top: 0; padding-right: 0; margin-left: 0; border-bottom-width: medium; border-top-style: none; border-left-style: none; margin-bottom: 0; border-right-width: medium; margin-top: 0; border-bottom-style: none; padding-bottom: 0; margin-right: 0; padding-left: 0 }
+        section.footnotes li { list-style-type: disc }
+        ol { list-style-type: lower-alpha }
+        div img { margin-bottom: 0 }
+        div.example { background-color: #D8D8D8 !important }
+        p.img { text-align: center !important; margin-bottom: 0 }
+        p.solution { background-color: #D8D8D8 !important }
+        h3.date { text-align: center }
+        tr.sourcecode { border-left-width: medium; border-right-style: none; vertical-align: baseline; border-top-width: medium; padding-top: 0; padding-right: 0; margin-left: 0; border-bottom-width: medium; border-top-style: none; border-left-style: none; margin-bottom: 0; border-right-width: medium; margin-top: 0; border-bottom-style: none; padding-bottom: 0; margin-right: 0; padding-left: 0 }
+        p.example { background-color: #F5A9A9 !important }
+        div.center { text-align: center !important }
+        ol.toc { padding-bottom: 0; padding-top: 0; margin-left: 0; padding-left: 0; padding-right: 0 }
+        section.footnotes { margin-top: 0; margin-bottom: 0; font-size: smaller }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h1>
+      運動
+    </h1>
+    <ol>
+      <li>
+        對於兩個障礙，使其全部條件相同，除了初始位置之外，並讓其中一個初始位置為另外一個的兩倍。將阻尼設置為零。做出你所預測之振盪週期，並將這兩個區塊進行比較。測量兩個時期，並評論上一個階段要如何進行比較。
+      </li>
+      <li>
+        當你比較兩個障礙和彈簧系統的運動，嘗試改變一個參數的時間，並保持所有其他參數相同。如果希望其中一個障礙的振盪週期為另外一個的兩倍，要如何才能完成這一條件呢?
+      </li>
+      <li>
+       對於兩個障礙，比較在各種阻尼下的運動得到之值與無阻尼下的運動所得到的值。如何比較在無阻尼與阻尼情況下的運動？
+      </li>
+      <li>
+       當你做鐘擺的運動的比較，是否能匹配障礙與彈簧這兩個系統的振盪頻率。 記錄您用來完成這一目標的系統設置。
+      </li>
+      <li>
+        當你的振盪頻率匹配完成，開始增加初始角度鐘擺。請觀察鐘擺的週期與鐘擺的運動幅度是否增加了？
+      </li>
+    </ol>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>basic variables</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[m]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The mass of the pendulum bob]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m2]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Mass of the second block]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m3]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Mass of the pendulum bob]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The length of the string]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Lpendulum]]></Name>
+<Value><![CDATA[1.0999759999999998]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The length of the string]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[g]]></Name>
+<Value><![CDATA[9.7988]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Length of the pendulum string]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[k]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The spring constant]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[k2]]></Name>
+<Value><![CDATA[0.999824]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Spring constant for the second spring]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x0]]></Name>
+<Value><![CDATA[0.5998439999999998]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The initial x-coordinate of the first block]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x02]]></Name>
+<Value><![CDATA[0.49985599999999986]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The initial x-coordinate of the second block]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x03]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x position of the pendulum support]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y0]]></Name>
+<Value><![CDATA[-1.1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The y-coordinate of the first block]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y02]]></Name>
+<Value><![CDATA[-1.4]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The y-coordinate of the second block]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y03]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y position of the pendulum support]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[angle]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Initial angle of the pendulum, in degrees]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta]]></Name>
+<Value><![CDATA[angle*Math.PI/180.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Angle in radians]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[omega]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The angular velocity]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[alpha]]></Name>
+<Value><![CDATA[g*Math.sin(theta)/(Lpendulum*Lpendulum)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a]]></Name>
+<Value><![CDATA[-k*(x0)/m]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[acceleration]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a2]]></Name>
+<Value><![CDATA[-k2*(x02)/m2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[acceleration for the second block]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[x0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x position]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x2]]></Name>
+<Value><![CDATA[x02]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x position for the second block]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x3]]></Name>
+<Value><![CDATA[Lpendulum*Math.sin(theta)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x coordinate of the pendulum bob]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[y0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y position]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y2]]></Name>
+<Value><![CDATA[y02]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y position for the second block]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y3]]></Name>
+<Value><![CDATA[y03-Lpendulum*Math.cos(theta)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y coordinate of the pendulum bob]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[v]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[velocity]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[v2]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[velocity of the second block]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The time]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.02]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The increment of time]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[PE]]></Name>
+<Value><![CDATA[0.5*k*x*x]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Potential Energy]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[PE2]]></Name>
+<Value><![CDATA[0.5*k2*x2*x2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Potential Energy]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[PE3]]></Name>
+<Value><![CDATA[m3*g*(y+Lpendulum-y03)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Potential Energy]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[KE]]></Name>
+<Value><![CDATA[0.5*m*v*v]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Kinetic Energy]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[KE2]]></Name>
+<Value><![CDATA[0.5*m2*v2*v2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Kinetic Energy]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[KE3]]></Name>
+<Value><![CDATA[0.5*m3*Lpendulum*Lpendulum*omega*omega]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Kinetic Energy]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[EMax]]></Name>
+<Value><![CDATA[1.1*(PE+KE)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[EMax2]]></Name>
+<Value><![CDATA[1.1*(PE2+KE2)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[newEMax]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[stopwatchT]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[helpLabel]]></Name>
+<Value><![CDATA["顯示幫助"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[helpFlag]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[numTicks]]></Name>
+<Value><![CDATA[17]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xTicks]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[numTicks]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[i]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[b]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[damping parameter]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[b2]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showEnergyPlot]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showPlot]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Strings</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[pendulumLabel]]></Name>
+<Value><![CDATA["滑塊擺"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spring2Label]]></Name>
+<Value><![CDATA["滑塊：對於第二彈簧"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line1]]></Name>
+<Value><![CDATA["利用滑塊去設置各種變數的值"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line2]]></Name>
+<Value><![CDATA["右邊的滑塊給第一個阻礙。 左邊的則給鐘擺和第二個阻礙"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line3]]></Name>
+<Value><![CDATA["動畫顯示每個障礙與鐘擺之位置、速度和加速度。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line5]]></Name>
+<Value><![CDATA["鐘擺的動畫值為切向分量。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line4]]></Name>
+<Value><![CDATA["你可以利用圖畫去顯示對於時間而產生的動能、位能和總能。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line6]]></Name>
+<Value><![CDATA["它將強迫按鈕疊加到每個物件的自由體圖上。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line6b]]></Name>
+<Value><![CDATA["藍色是法向力或張力。紅色是重力。紫色是彈力。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line6c]]></Name>
+<Value><![CDATA["此減震之滑塊可以造成摩擦力；也就是這個在自由體圖上的黑色指標。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line7]]></Name>
+<Value><![CDATA["當你在測量某個區間時，這個暫停和播放鍵可以幫助你。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line8]]></Name>
+<Value><![CDATA["讀出時間，以秒為單位"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line9]]></Name>
+<Value><![CDATA["使用重置模擬按鍵去回到模擬的初始設定。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Forces</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[Fspring]]></Name>
+<Value><![CDATA[-k*x]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fg]]></Name>
+<Value><![CDATA[-m*g]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[FN]]></Name>
+<Value><![CDATA[m*g]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fr]]></Name>
+<Value><![CDATA[-b*v*Math.abs(v)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Damping force]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fspring2]]></Name>
+<Value><![CDATA[-k2*x2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fg2]]></Name>
+<Value><![CDATA[-m2*g]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[FN2]]></Name>
+<Value><![CDATA[m2*g]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fr2]]></Name>
+<Value><![CDATA[-b2*v2*Math.abs(v2)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fg3]]></Name>
+<Value><![CDATA[-m3*g]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fgrad]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fgtan]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[FT]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showForces]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+EMax = 1.1*(PE + KE);
+
+for (i = 0; i < numTicks; i++)
+{
+  xTicks[i] = -0.8 + i*0.1;
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Equations</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+<EquationEditor.ErrorEditor.Page>
+<Type>ERROR_EDITOR</Type>
+<Name>Error handling code</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<ErrorHandlingContent>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+<ErrorType>ANY_ERROR</ErrorType>
+</ErrorHandlingContent>
+</EquationEditor.ErrorEditor.Page>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<Discontinuities>
+</Discontinuities>
+<IndependentVariable>t</IndependentVariable>
+<Increment>dt</Increment>
+<Rate state="v">(-k*x-b*v*Math.abs(v))/m</Rate>
+<Rate state="x">v</Rate>
+<Rate state="v2">(-k2*x2-b2*v2*Math.abs(v2))/m</Rate>
+<Rate state="x2">v2</Rate>
+<Rate state="omega">-g*Math.sin(theta)/Lpendulum</Rate>
+<Rate state="theta">omega</Rate>
+<Rate state=""></Rate>
+<Method>MidPoint</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MemoryLength></MemoryLength>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance></AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayMaximum><![CDATA[]]></DelayMaximum>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[Block on a frictionless spring]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Cons Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+y = y0;
+a = -k*x/m;
+PE = 0.5*k*x*x;
+KE = 0.5*m*v*v;
+a2 = -k2*x2/m2;
+PE2 = 0.5*k2*x2*x2;
+KE2 = 0.5*m2*v2*v2;
+x3 = Lpendulum*Math.sin(theta);
+y3 = y03-Lpendulum*Math.cos(theta);
+alpha = -g*Math.sin(theta)/Lpendulum;
+PE3 = m3*g*(y3+Lpendulum-y03);
+KE3 = 0.5*m3*Lpendulum*Lpendulum*omega*omega;
+
+
+Fg = -m*g;
+FN = m*g;
+Fspring = -k*x;
+Fr = -b*v*Math.abs(v);
+
+Fg2 = -m2*g;
+FN2 = m2*g;
+Fspring2 = -k2*x2;
+Fr2 = -b2*v2*Math.abs(v2);
+
+Fg3 = -m3*g;
+Fgrad = Fg3*Math.cos(theta);
+Fgtan = Fg3*Math.sin(theta);
+FT = -Fgrad + m3*Lpendulum*omega*omega;
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>restart</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void restart () {
+
+x = x0;
+v = 0.0;
+t = 0.0;
+
+x2 = x02;
+v2 = 0.0;
+
+theta = angle*Math.PI/180.0;
+omega = 0.0;
+x3 = Lpendulum*Math.sin(theta);
+y3 = y03 - Lpendulum*Math.cos(theta);
+
+_view.resetTraces();
+PE = 0.5*k*x*x;
+KE = 0.5*m*v*v;
+newEMax = 1.1*(PE+KE);
+if (newEMax > EMax) EMax = newEMax;
+PE2 = 0.5*k2*x2*x2;
+KE2 = 0.5*m2*v2*v2;
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">MainWindow</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["兩個彈簧和鐘擺"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["768,11"]]></Property>
+<Property name="size"><![CDATA["682,470"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">RightPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="size"><![CDATA["180,320"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">ButtonsPanel</Property>
+<Property name="parent">RightPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+<Property name="size"><![CDATA["140,440"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">PlotMotion</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[showPlot]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["顯示動畫"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">PlotEnergy</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[showEnergyPlot]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["顯示能量圖"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">Forces</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[showForces]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["顯示能量"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">position</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[x0]]></Property>
+<Property name="minimum"><![CDATA[-0.7]]></Property>
+<Property name="maximum"><![CDATA[0.7]]></Property>
+<Property name="format"><![CDATA["初始位置(在m) = 0.#"]]></Property>
+<Property name="ticks"><![CDATA[15]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[x = x0;
+v = 0.0;
+t = 0.0;
+_view.resetTraces();
+PE = 0.5*k*x*x;
+KE = 0.5*m*v*v;
+newEMax = 1.1*(PE+KE);
+if (newEMax > EMax) EMax = newEMax;]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">mass2</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[m]]></Property>
+<Property name="minimum"><![CDATA[0.5]]></Property>
+<Property name="maximum"><![CDATA[4.0]]></Property>
+<Property name="format"><![CDATA[Mass (kg) = 0.#]]></Property>
+<Property name="ticks"><![CDATA[36]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[PE = 0.5*k*x*x;
+KE = 0.5*m*v*v;
+newEMax = 1.1*(PE+KE);
+if (newEMax > EMax) EMax = newEMax;]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">k</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[k]]></Property>
+<Property name="minimum"><![CDATA[0.2]]></Property>
+<Property name="maximum"><![CDATA[4.0]]></Property>
+<Property name="format"><![CDATA["k (N/m) = 0.#"]]></Property>
+<Property name="ticks"><![CDATA[39]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[PE = 0.5*k*x*x;
+KE = 0.5*m*v*v;
+newEMax = 1.1*(PE+KE);
+if (newEMax > EMax) EMax = newEMax;]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">b</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[b]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[1.0]]></Property>
+<Property name="format"><![CDATA["減震強度 = 0.#"]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">timedisplay</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[t]]></Property>
+<Property name="format"><![CDATA[t (s) = 0.##]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">playpause</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+<Property name="textOn"><![CDATA["播放"]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="background"><![CDATA[ORANGE]]></Property>
+<Property name="textOff"><![CDATA["暫停"]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+<Property name="foregroundOff"><![CDATA[BLUE]]></Property>
+<Property name="backgroundOff"><![CDATA[ORANGE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepforward</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA["向前一步"]]></Property>
+<Property name="action"><![CDATA[_step()]]></Property>
+<Property name="background"><![CDATA[ORANGE]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">restart</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA["重新開始"]]></Property>
+<Property name="action"><![CDATA[restart ()]]></Property>
+<Property name="background"><![CDATA[ORANGE]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Reset</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA["模擬重置"]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">instructions</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[%helpLabel%]]></Property>
+<Property name="action"><![CDATA[if (helpFlag)
+{
+helpFlag = false;
+helpLabel = "Show Help";
+}
+else
+{
+helpFlag = true;
+helpLabel = "Hide Help";
+}]]></Property>
+<Property name="background"><![CDATA[BLUE]]></Property>
+<Property name="foreground"><![CDATA[YELLOW]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">DrawingPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-1.1]]></Property>
+<Property name="maximumX"><![CDATA[1.1]]></Property>
+<Property name="minimumY"><![CDATA[-1.0]]></Property>
+<Property name="maximumY"><![CDATA[1.0]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.SegmentSet2D</Type>
+<Property name="name">segmentSet</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="numberOfElements"><![CDATA[numTicks]]></Property>
+<Property name="x"><![CDATA[xTicks]]></Property>
+<Property name="y"><![CDATA[-0.2]]></Property>
+<Property name="sizeX"><![CDATA[0.0]]></Property>
+<Property name="sizeY"><![CDATA[2.4]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="lineColor"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">origin</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-0.2]]></Property>
+<Property name="sizeX"><![CDATA[0.0]]></Property>
+<Property name="sizeY"><![CDATA[2.6]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Spring2D</Type>
+<Property name="name">spring</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[-1]]></Property>
+<Property name="y"><![CDATA[y0]]></Property>
+<Property name="sizeX"><![CDATA[L+x]]></Property>
+<Property name="sizeY"><![CDATA[0.0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">Block</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizex"><![CDATA[0.1*Math.sqrt(m)]]></Property>
+<Property name="sizey"><![CDATA[0.1*Math.sqrt(m)]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="pressaction"><![CDATA[_pause()]]></Property>
+<Property name="dragaction"><![CDATA[y = y0]]></Property>
+<Property name="action"><![CDATA[v = 0.0;
+t = 0.0;
+_view.resetTraces();
+PE = 0.5*k*x*x;
+KE = 0.5*m*v*v;
+newEMax = 1.1*(PE+KE);
+if (newEMax > EMax) EMax = newEMax;]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="color"><![CDATA[192,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">wall</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[-1.0]]></Property>
+<Property name="y"><![CDATA[y0]]></Property>
+<Property name="sizex"><![CDATA[0.05]]></Property>
+<Property name="sizey"><![CDATA[0.25]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[EAST]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">normal</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizex"><![CDATA[0.0]]></Property>
+<Property name="sizey"><![CDATA[FN]]></Property>
+<Property name="scalex"><![CDATA[0.025]]></Property>
+<Property name="scaley"><![CDATA[0.025]]></Property>
+<Property name="visible"><![CDATA[showForces]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+<Property name="secondaryColor"><![CDATA[BLUE]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">gravity</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizex"><![CDATA[0.0]]></Property>
+<Property name="sizey"><![CDATA[Fg]]></Property>
+<Property name="scalex"><![CDATA[0.025]]></Property>
+<Property name="scaley"><![CDATA[0.025]]></Property>
+<Property name="visible"><![CDATA[showForces]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="secondaryColor"><![CDATA[RED]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">springForce</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizex"><![CDATA[Fspring]]></Property>
+<Property name="sizey"><![CDATA[0.0]]></Property>
+<Property name="scalex"><![CDATA[0.025]]></Property>
+<Property name="scaley"><![CDATA[0.025]]></Property>
+<Property name="visible"><![CDATA[showForces]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+<Property name="secondaryColor"><![CDATA[MAGENTA]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">dampingForce</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y-0.05]]></Property>
+<Property name="sizex"><![CDATA[Fr]]></Property>
+<Property name="sizey"><![CDATA[0.0]]></Property>
+<Property name="scalex"><![CDATA[0.025]]></Property>
+<Property name="scaley"><![CDATA[0.025]]></Property>
+<Property name="visible"><![CDATA[showForces]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[BLACK]]></Property>
+<Property name="secondaryColor"><![CDATA[MAGENTA]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Spring2D</Type>
+<Property name="name">spring2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[-1]]></Property>
+<Property name="y"><![CDATA[y02]]></Property>
+<Property name="sizeX"><![CDATA[L+x2]]></Property>
+<Property name="sizeY"><![CDATA[0.0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">Block2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="sizex"><![CDATA[0.1*Math.sqrt(m2)]]></Property>
+<Property name="sizey"><![CDATA[0.1*Math.sqrt(m2)]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="pressaction"><![CDATA[_pause()]]></Property>
+<Property name="dragaction"><![CDATA[y = y02]]></Property>
+<Property name="action"><![CDATA[restart ()]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="color"><![CDATA[0,128,64]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">wall2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[-1.0]]></Property>
+<Property name="y"><![CDATA[y02]]></Property>
+<Property name="sizex"><![CDATA[0.05]]></Property>
+<Property name="sizey"><![CDATA[0.25]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[EAST]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">normal2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="sizex"><![CDATA[0.0]]></Property>
+<Property name="sizey"><![CDATA[FN2]]></Property>
+<Property name="scalex"><![CDATA[0.025]]></Property>
+<Property name="scaley"><![CDATA[0.025]]></Property>
+<Property name="visible"><![CDATA[showForces]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+<Property name="secondaryColor"><![CDATA[BLUE]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">gravity2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="sizex"><![CDATA[0.0]]></Property>
+<Property name="sizey"><![CDATA[Fg2]]></Property>
+<Property name="scalex"><![CDATA[0.025]]></Property>
+<Property name="scaley"><![CDATA[0.025]]></Property>
+<Property name="visible"><![CDATA[showForces]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="secondaryColor"><![CDATA[RED]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">springForce2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="sizex"><![CDATA[Fspring2]]></Property>
+<Property name="sizey"><![CDATA[0.0]]></Property>
+<Property name="scalex"><![CDATA[0.025]]></Property>
+<Property name="scaley"><![CDATA[0.025]]></Property>
+<Property name="visible"><![CDATA[showForces]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+<Property name="secondaryColor"><![CDATA[MAGENTA]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">dampingForce2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2-0.05]]></Property>
+<Property name="sizex"><![CDATA[Fr2]]></Property>
+<Property name="sizey"><![CDATA[0.0]]></Property>
+<Property name="scalex"><![CDATA[0.025]]></Property>
+<Property name="scaley"><![CDATA[0.025]]></Property>
+<Property name="visible"><![CDATA[showForces]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[BLACK]]></Property>
+<Property name="secondaryColor"><![CDATA[MAGENTA]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">pendulumSupport</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x03]]></Property>
+<Property name="y"><![CDATA[y03]]></Property>
+<Property name="sizex"><![CDATA[0.05]]></Property>
+<Property name="sizey"><![CDATA[0.05]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="color"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">string</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x03]]></Property>
+<Property name="y"><![CDATA[y03]]></Property>
+<Property name="sizeX"><![CDATA[x3-x03]]></Property>
+<Property name="sizeY"><![CDATA[y3-y03]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">pendulumBob</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x3]]></Property>
+<Property name="y"><![CDATA[y3]]></Property>
+<Property name="sizex"><![CDATA[0.1*Math.sqrt(m3)]]></Property>
+<Property name="sizey"><![CDATA[0.1*Math.sqrt(m3)]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="color"><![CDATA[0,128,192]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">tension</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x3]]></Property>
+<Property name="y"><![CDATA[y3]]></Property>
+<Property name="sizex"><![CDATA[-FT*Math.sin(theta)]]></Property>
+<Property name="sizey"><![CDATA[FT*Math.cos(theta)]]></Property>
+<Property name="scalex"><![CDATA[0.025]]></Property>
+<Property name="scaley"><![CDATA[0.025]]></Property>
+<Property name="visible"><![CDATA[showForces]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+<Property name="secondaryColor"><![CDATA[BLUE]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">gravityRad</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x3]]></Property>
+<Property name="y"><![CDATA[y3]]></Property>
+<Property name="sizex"><![CDATA[-Fgrad*Math.sin(theta)]]></Property>
+<Property name="sizey"><![CDATA[Fgrad*Math.cos(theta)]]></Property>
+<Property name="scalex"><![CDATA[0.025]]></Property>
+<Property name="scaley"><![CDATA[0.025]]></Property>
+<Property name="visible"><![CDATA[showForces]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="secondaryColor"><![CDATA[RED]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">gravityTan</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[x3]]></Property>
+<Property name="y"><![CDATA[y3]]></Property>
+<Property name="sizex"><![CDATA[Fgtan*Math.cos(theta)]]></Property>
+<Property name="sizey"><![CDATA[Fgtan*Math.sin(theta)]]></Property>
+<Property name="scalex"><![CDATA[0.025]]></Property>
+<Property name="scaley"><![CDATA[0.025]]></Property>
+<Property name="visible"><![CDATA[showForces]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="secondaryColor"><![CDATA[RED]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">LeftPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="size"><![CDATA["180,400"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Buttons2Panel</Property>
+<Property name="parent">LeftPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[GRID:0,1,0,0]]></Property>
+<Property name="size"><![CDATA["140,420"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">pendulumLabel</Property>
+<Property name="parent">Buttons2Panel</Property>
+<Property name="variable"><![CDATA[%pendulumLabel%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Arial,BOLD,12]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">stringLength</Property>
+<Property name="parent">Buttons2Panel</Property>
+<Property name="variable"><![CDATA[Lpendulum]]></Property>
+<Property name="minimum"><![CDATA[0.5]]></Property>
+<Property name="maximum"><![CDATA[1.8]]></Property>
+<Property name="format"><![CDATA["繩子長度 (在 m) = 0.#"]]></Property>
+<Property name="ticks"><![CDATA[14]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[restart ()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">mass3</Property>
+<Property name="parent">Buttons2Panel</Property>
+<Property name="variable"><![CDATA[m3]]></Property>
+<Property name="minimum"><![CDATA[0.5]]></Property>
+<Property name="maximum"><![CDATA[4.0]]></Property>
+<Property name="format"><![CDATA[Mass (kg) = 0.#]]></Property>
+<Property name="ticks"><![CDATA[36]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">g</Property>
+<Property name="parent">Buttons2Panel</Property>
+<Property name="variable"><![CDATA[g]]></Property>
+<Property name="minimum"><![CDATA[5.0]]></Property>
+<Property name="maximum"><![CDATA[20.0]]></Property>
+<Property name="format"><![CDATA["g (N/kg) = 0.#"]]></Property>
+<Property name="ticks"><![CDATA[76]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">angle</Property>
+<Property name="parent">Buttons2Panel</Property>
+<Property name="variable"><![CDATA[angle]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[90.0]]></Property>
+<Property name="format"><![CDATA["初始角度 (度) = 0"]]></Property>
+<Property name="ticks"><![CDATA[19]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[restart ()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Separator</Type>
+<Property name="name">separator</Property>
+<Property name="parent">Buttons2Panel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">spring2Label</Property>
+<Property name="parent">Buttons2Panel</Property>
+<Property name="variable"><![CDATA[%spring2Label%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Arial,BOLD,12]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">position2</Property>
+<Property name="parent">Buttons2Panel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[x02]]></Property>
+<Property name="minimum"><![CDATA[-0.7]]></Property>
+<Property name="maximum"><![CDATA[0.7]]></Property>
+<Property name="format"><![CDATA["初始位置 (在 m) = 0.#"]]></Property>
+<Property name="ticks"><![CDATA[15]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[restart ()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">mass22</Property>
+<Property name="parent">Buttons2Panel</Property>
+<Property name="variable"><![CDATA[m2]]></Property>
+<Property name="minimum"><![CDATA[0.5]]></Property>
+<Property name="maximum"><![CDATA[4.0]]></Property>
+<Property name="format"><![CDATA[Mass (kg) = 0.#]]></Property>
+<Property name="ticks"><![CDATA[36]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">k2</Property>
+<Property name="parent">Buttons2Panel</Property>
+<Property name="variable"><![CDATA[k2]]></Property>
+<Property name="minimum"><![CDATA[0.2]]></Property>
+<Property name="maximum"><![CDATA[4.0]]></Property>
+<Property name="format"><![CDATA["k (N/m) = 0.#"]]></Property>
+<Property name="ticks"><![CDATA[39]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">b2</Property>
+<Property name="parent">Buttons2Panel</Property>
+<Property name="variable"><![CDATA[b2]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[1.0]]></Property>
+<Property name="format"><![CDATA["減震強度 = 0.#"]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Dialog</Type>
+<Property name="name">MotionGraphs</Property>
+<Property name="title"><![CDATA[Plot]]></Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+<Property name="visible"><![CDATA[showPlot]]></Property>
+<Property name="location"><![CDATA["636,0"]]></Property>
+<Property name="size"><![CDATA["388,608"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">PositionGraph</Property>
+<Property name="parent">MotionGraphs</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumY"><![CDATA[-0.5]]></Property>
+<Property name="maximumY"><![CDATA[0.5]]></Property>
+<Property name="title"><![CDATA["位置"]]></Property>
+<Property name="titleX"><![CDATA[Time (s)]]></Property>
+<Property name="titleY"><![CDATA["位置 (m)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Displacement</Property>
+<Property name="parent">PositionGraph</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[x]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[192,0,0]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Displacement2</Property>
+<Property name="parent">PositionGraph</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[x2]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[0,128,64]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Displacement3</Property>
+<Property name="parent">PositionGraph</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[Lpendulum*theta]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[0,128,192]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">VelocityGraph</Property>
+<Property name="parent">MotionGraphs</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumY"><![CDATA[-0.5]]></Property>
+<Property name="maximumY"><![CDATA[0.5]]></Property>
+<Property name="title"><![CDATA["速度"]]></Property>
+<Property name="titleX"><![CDATA[Time (s)]]></Property>
+<Property name="titleY"><![CDATA["v (m/s)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Velocity</Property>
+<Property name="parent">VelocityGraph</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[v]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[192,0,0]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Velocity2</Property>
+<Property name="parent">VelocityGraph</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[v2]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[0,128,64]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Velocity3</Property>
+<Property name="parent">VelocityGraph</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[Lpendulum*omega]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[0,128,192]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">AccelerationGraph</Property>
+<Property name="parent">MotionGraphs</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumY"><![CDATA[-0.5]]></Property>
+<Property name="maximumY"><![CDATA[0.5]]></Property>
+<Property name="title"><![CDATA["加速度"]]></Property>
+<Property name="titleX"><![CDATA[Time (s)]]></Property>
+<Property name="titleY"><![CDATA["a 在 m/s^2"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Acceleration</Property>
+<Property name="parent">AccelerationGraph</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[a]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[192,0,0]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Acceleration2</Property>
+<Property name="parent">AccelerationGraph</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[a2]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[0,128,64]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Acceleration3</Property>
+<Property name="parent">AccelerationGraph</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[Lpendulum*alpha]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[0,128,192]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">plottingFrame</Property>
+<Property name="title"><![CDATA["能量"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showEnergyPlot]]></Property>
+<Property name="location"><![CDATA["550,321"]]></Property>
+<Property name="size"><![CDATA["450,300"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">plottingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA["能量"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">kinetic</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[KE]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">potential</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[PE]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">total</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[KE+PE]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">kinetic2</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[KE2]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">potential2</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[PE2]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">total2</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[KE2+PE2]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">kinetic3</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[KE3]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">potential3</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[PE3]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">total3</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[KE3+PE3]]></Property>
+<Property name="maxpoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">helpBox</Property>
+<Property name="title"><![CDATA[Help]]></Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+<Property name="visible"><![CDATA[helpFlag]]></Property>
+<Property name="onClosing"><![CDATA[helpFlag = false;
+helpLabel = "請求幫助";]]></Property>
+<Property name="location"><![CDATA["3,11"]]></Property>
+<Property name="size"><![CDATA["764,308"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line1</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line1%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line2</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line2%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line3</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line3%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,15]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line5</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line5%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line4</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line4%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line6</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line6%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line6b</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line6b%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line6c</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line6c%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line7</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line7%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line8</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line8%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line9</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line9%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

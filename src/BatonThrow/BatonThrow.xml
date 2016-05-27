@@ -1,0 +1,548 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.3.7" password="">
+<Osejs.Information>
+<Title><![CDATA[Baton Throw]]></Title>
+<Author><![CDATA[Wolfgang Christian and Mario Belloni, Davidson College 翻譯:吳彬睿 交通大學]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[wochristan@davidson.edu]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<DetectedFiles><![CDATA[./BatonThrow/BatonThrow.html;./BatonThrow/author.html;./BatonThrow/exercises.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./BatonThrow/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Baton Throw</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Baton Throw</Title>
+  <External>true</External>
+  <![CDATA[
+./BatonThrow/BatonThrow.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Exercises</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Exercises</Title>
+  <External>true</External>
+  <![CDATA[
+./BatonThrow/exercises.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Credits</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Credits</Title>
+  <External>true</External>
+  <![CDATA[
+./BatonThrow/author.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>dynamical vars</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[xCM]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x position of center of mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vxCM]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x velocity of the center of mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yCM]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y position of center of mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy]]></Name>
+<Value><![CDATA[20]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vyCM]]></Name>
+<Value><![CDATA[20]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y velocity of the center of mass]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[omega]]></Name>
+<Value><![CDATA[8]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.02]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>aux variables</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[done]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showBodyFrame]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[massRatio]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[g]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[acceleration in y direction]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ballPos]]></Name>
+<Value><![CDATA[new double[]{-1,0}]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[2]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>EVOLUTION_EDITOR</Type>
+<Name>Analytic evoluation</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// compute transformed position for trail
+ballPos=_view.redBall.toSpaceFrame(new double[]{0,0});
+// advance time
+t+=dt;
+// translate center of mass
+xCM+= vxCM*dt;
+yCM+= vyCM*dt-0.5*g*dt*dt;
+vyCM+= -g*dt;
+// rotate about center of mass
+theta += omega*dt;
+// stop when baton hits ground
+if(yCM<0){
+  _pause();
+  done=true;
+  _view.updateVariables();// updates the view
+  ballPos=_view.redBall.toSpaceFrame(new double[]{0,0});
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Reset Time</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void resetTime () {
+  _pause();
+  done=false;
+  t=0;
+  xCM=0;
+  vxCM = vx;
+  yCM=0;
+  vyCM = vy;
+  theta=0;
+  _view.updateVariables();// updates the view
+  ballPos=_view.redBall.toSpaceFrame(new double[]{0,0});
+  _view.resetTraces();
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">mainFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Baton Throw"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["33,2"]]></Property>
+<Property name="size"><![CDATA["644,507"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">batonDrawingPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-2]]></Property>
+<Property name="maximumX"><![CDATA[45]]></Property>
+<Property name="maximumY"><![CDATA[25]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="BRmessage"><![CDATA["時間 = "+_format(t,"0.00")]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">ground</Property>
+<Property name="parent">batonDrawingPanel</Property>
+<Property name="x"><![CDATA[-50]]></Property>
+<Property name="y"><![CDATA[-0.5]]></Property>
+<Property name="sizeX"><![CDATA[500]]></Property>
+<Property name="sizeY"><![CDATA[100]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[NORTH_WEST]]></Property>
+<Property name="fillColor"><![CDATA[GREEN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">cmTrail</Property>
+<Property name="parent">batonDrawingPanel</Property>
+<Property name="inputX"><![CDATA[xCM]]></Property>
+<Property name="inputY"><![CDATA[yCM]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">ballTrail</Property>
+<Property name="parent">batonDrawingPanel</Property>
+<Property name="inputX"><![CDATA[ballPos[0]]]></Property>
+<Property name="inputY"><![CDATA[ballPos[1]]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">batonGroup</Property>
+<Property name="parent">batonDrawingPanel</Property>
+<Property name="x"><![CDATA[xCM]]></Property>
+<Property name="y"><![CDATA[yCM]]></Property>
+<Property name="transformation"><![CDATA[theta]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">rod</Property>
+<Property name="parent">batonGroup</Property>
+<Property name="x"><![CDATA[1-2*massRatio/(massRatio+1)]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[2]]></Property>
+<Property name="sizeY"><![CDATA[0.1]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="fillColor"><![CDATA[LIGHTGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">redBall</Property>
+<Property name="parent">batonGroup</Property>
+<Property name="x"><![CDATA[-2*massRatio/(massRatio+1)]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[2/(massRatio+1)]]></Property>
+<Property name="sizeY"><![CDATA[2/(massRatio+1)]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">blueBall</Property>
+<Property name="parent">batonGroup</Property>
+<Property name="x"><![CDATA[2/(massRatio+1)]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[-2*massRatio/(massRatio+1)]]></Property>
+<Property name="sizeY"><![CDATA[-2*massRatio/(massRatio+1)]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">bodyXAxis</Property>
+<Property name="parent">batonGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[4]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[showBodyFrame]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">bodyYAxis</Property>
+<Property name="parent">batonGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[4]]></Property>
+<Property name="visible"><![CDATA[showBodyFrame]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="fillColor"><![CDATA[GREEN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[BORDER:5,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[GRID:1,3,0,0]]></Property>
+<Property name="size"><![CDATA[120,24]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startStopButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="enabled"><![CDATA[!done]]></Property>
+<Property name="tooltip"><![CDATA["Starts and stops the simulation."]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[_play();]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/step.gif]]></Property>
+<Property name="enabled"><![CDATA[!done]]></Property>
+<Property name="action"><![CDATA[_step();]]></Property>
+<Property name="tooltip"><![CDATA["Steps the simulation."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetTimeButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset1.gif"]]></Property>
+<Property name="action"><![CDATA[resetTime () ;]]></Property>
+<Property name="tooltip"><![CDATA["Resets the time."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_reset();]]></Property>
+<Property name="tooltip"><![CDATA["Resets the simulation to its default state."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showBodyFrameCheckBox</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[showBodyFrame]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["顯示向量"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">paramPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">vxLabel</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="text"><![CDATA["  X方向速度(cm) = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">vxField</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="variable"><![CDATA[vx]]></Property>
+<Property name="value"><![CDATA[10.0]]></Property>
+<Property name="format"><![CDATA["00.0"]]></Property>
+<Property name="action"><![CDATA[vx=Math.max(0,vx);
+vxCM=vx;
+resetTime ();]]></Property>
+<Property name="size"><![CDATA["40,23"]]></Property>
+<Property name="tooltip"><![CDATA["Horizontal center of mass velocity."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">vyLabel</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="text"><![CDATA["  Y方向速度(cm) = "]]></Property>
+<Property name="tooltip"><![CDATA["Vertocal center or mass velocity."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">vyField</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="variable"><![CDATA[vy]]></Property>
+<Property name="value"><![CDATA[20.0]]></Property>
+<Property name="format"><![CDATA["00.0"]]></Property>
+<Property name="action"><![CDATA[vy=Math.max(0,vy);
+vyCM = vy;
+resetTime ();]]></Property>
+<Property name="size"><![CDATA["40,23"]]></Property>
+<Property name="tooltip"><![CDATA["Vertical center of mass velocity."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">omegaLabel</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["  角速度 = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">omegaField</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[omega]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="action"><![CDATA[omega=Math.min(omega,40);
+omega=Math.max(omega,-40);
+resetTime ();]]></Property>
+<Property name="size"><![CDATA["40,23"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">upperPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="size"><![CDATA["200,35"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">ratioSlider</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[massRatio]]></Property>
+<Property name="minimum"><![CDATA[0]]></Property>
+<Property name="maximum"><![CDATA[5]]></Property>
+<Property name="format"><![CDATA["質量比 (藍 / 紅) = 0.00"]]></Property>
+<Property name="size"><![CDATA["200,35"]]></Property>
+<Property name="tooltip"><![CDATA["測試藍色球質量/紅色球質量"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>
