@@ -1,0 +1,641 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.1" password="">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Andrew Duffy]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./RC.jpg;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./RC.jpg;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>RC circuit</Name>
+<Active>true</Active>
+<Internal>true</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>RC電路</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        ﻿ body { margin-left: 3%; margin-right: 3%; margin-top: 2%; margin-bottom: 5%; text-align: justify; font-size: medium }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important; border-bottom-width: thin; border-top-style: solid; border-bottom-color: #000000; border-top-width: medium; border-top-color: #000000; border-bottom-style: solid }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { font-family: Times New Roman, Palatino, Caecilia, serif; line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 10pt; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        h2.author { color: #000090 !important; text-align: center !important; font-size: 115% !important }
+        img { padding-left: 0; padding-bottom: 1px; padding-right: 0; padding-top: 1px }
+        嚜?body { text-align: justify; margin-right: 3%; margin-top: 2%; font-size: medium; margin-bottom: 5%; margin-left: 3% }
+        p.center { text-align: center !important }
+        body { font-family: Georgia, Times New Roman, Times, serif; color: purple; background-color: #C8DFD0 }
+        table.sourcecode { padding-left: 0; border-left-style: none; border-left-width: medium; border-right-style: none; padding-right: 0; margin-top: 0; border-bottom-width: medium; vertical-align: baseline; border-top-style: none; border-right-width: medium; margin-right: 0; margin-left: 0; border-top-width: medium; padding-top: 0; padding-bottom: 0; margin-bottom: 0; border-bottom-style: none }
+        p.math { text-align: center !important }
+        p.caption { margin-right: 0; text-align: center !important; font-size: 75% !important; margin-top: 0; margin-bottom: 0; margin-left: 0 }
+        h1.title { padding-left: 0; color: black; text-align: center !important; padding-right: 0; margin-top: 0; margin-right: 0; font-size: 130% !important; margin-left: 0; padding-top: 0; padding-bottom: 0; margin-bottom: 0 }
+        div.coverimage { text-align: center !important }
+        ol.toc li { padding-left: 0; padding-bottom: 0; margin-right: 0; list-style-type: disc; padding-right: 0; margin-top: 0; margin-bottom: 0; padding-top: 0; margin-left: 0 }
+        p.a { margin-right: 0; text-align: center !important; font-size: 75% !important; margin-top: 0; margin-bottom: 0; margin-left: 0 }
+        div.figure { text-align: center !important }
+        td.linenumbers { border-left-style: none; border-right-width: 1px; border-top-width: medium; border-bottom-style: none; border-right-style: solid; padding-right: 5px; padding-left: 5px; margin-right: 0; border-bottom-width: medium; border-right-color: #AAAAAA; vertical-align: baseline; color: #AAAAAA; border-left-width: medium; border-top-style: none; padding-bottom: 0; margin-bottom: 0; padding-top: 0; margin-top: 0; text-align: right; margin-left: 0 }
+        mspace { white-space: pre !important }
+        td.sourcecode { padding-left: 5px; border-left-style: none; border-left-width: medium; border-right-style: none; padding-right: 0; margin-top: 0; border-bottom-width: medium; vertical-align: baseline; border-top-style: none; border-right-width: medium; margin-right: 0; margin-left: 0; border-top-width: medium; padding-top: 0; padding-bottom: 0; margin-bottom: 0; border-bottom-style: none }
+        code { font-family: monospace; font-weight: bold; font-size: 100% !important }
+        table.sourcecode pre { padding-left: 0; border-left-style: none; border-left-width: medium; border-right-style: none; padding-right: 0; margin-top: 0; border-bottom-width: medium; vertical-align: baseline; border-top-style: none; border-right-width: medium; margin-right: 0; margin-left: 0; border-top-width: medium; padding-top: 0; padding-bottom: 0; margin-bottom: 0; border-bottom-style: none }
+        section.footnotes li { list-style-type: disc }
+        ol { list-style-type: lower-alpha }
+        div img { margin-bottom: 0 }
+        div.example { background-color: #D8D8D8 !important }
+        p.img { text-align: center !important; margin-bottom: 0 }
+        p.solution { background-color: #D8D8D8 !important }
+        h3.date { text-align: center }
+        tr.sourcecode { padding-left: 0; border-left-style: none; border-left-width: medium; border-right-style: none; padding-right: 0; margin-top: 0; border-bottom-width: medium; vertical-align: baseline; border-top-style: none; border-right-width: medium; margin-right: 0; margin-left: 0; border-top-width: medium; padding-top: 0; padding-bottom: 0; margin-bottom: 0; border-bottom-style: none }
+        p.example { background-color: #F5A9A9 !important }
+        div.center { text-align: center !important }
+        ol.toc { padding-left: 0; padding-bottom: 0; padding-right: 0; padding-top: 0; margin-left: 0 }
+        section.footnotes { font-size: smaller; margin-top: 0; margin-bottom: 0 }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h2>
+      RC&#38651;&#36335;
+    </h2>
+    <p>
+      RC&#38651;&#36335;&#21253;&#21547;&#38651;&#38459;&#33287;&#38651;&#23481;&#12290; &#22312;&#36889;&#20491;&#27169;&#25836;&#20013;&#65292; &#25105;&#20497;&#20351;&#29992;&#26368;&#31777;&#21934;&#30340;RC&#38651;&#36335;&#65292; &#20063;&#23601;&#26159;&#19968;&#20491;&#38651;&#38459;&#20018;&#32879;&#19968;&#20491;&#38651;&#23481;&#65292; &#20197;&#21450;&#19968;&#20491;&#21487;&#31227;&#38500;&#30340;&#38651;&#27744;&#12290;
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>activity</Name>
+<Active>true</Active>
+<Internal>true</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>活動</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        ﻿ body { margin-left: 3%; margin-right: 3%; margin-top: 2%; margin-bottom: 5%; text-align: justify; font-size: medium }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important; border-bottom-width: thin; border-top-style: solid; border-bottom-color: #000000; border-top-width: medium; border-top-color: #000000; border-bottom-style: solid }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { font-family: Times New Roman, Palatino, Caecilia, serif; line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 10pt; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        h2.author { color: #000090 !important; text-align: center !important; font-size: 115% !important }
+        img { padding-left: 0; padding-bottom: 1px; padding-right: 0; padding-top: 1px }
+        嚜?body { text-align: justify; margin-right: 3%; margin-top: 2%; font-size: medium; margin-bottom: 5%; margin-left: 3% }
+        p.center { text-align: center !important }
+        body { font-family: Georgia, Times New Roman, Times, serif; color: purple; background-color: #C8DFD0 }
+        table.sourcecode { padding-left: 0; border-left-style: none; border-left-width: medium; border-right-style: none; padding-right: 0; margin-top: 0; border-bottom-width: medium; vertical-align: baseline; border-top-style: none; border-right-width: medium; margin-right: 0; margin-left: 0; border-top-width: medium; padding-top: 0; padding-bottom: 0; margin-bottom: 0; border-bottom-style: none }
+        p.math { text-align: center !important }
+        p.caption { margin-right: 0; text-align: center !important; font-size: 75% !important; margin-top: 0; margin-bottom: 0; margin-left: 0 }
+        h1.title { padding-left: 0; color: black; text-align: center !important; padding-right: 0; margin-top: 0; margin-right: 0; font-size: 130% !important; margin-left: 0; padding-top: 0; padding-bottom: 0; margin-bottom: 0 }
+        div.coverimage { text-align: center !important }
+        ol.toc li { padding-left: 0; padding-bottom: 0; margin-right: 0; list-style-type: disc; padding-right: 0; margin-top: 0; margin-bottom: 0; padding-top: 0; margin-left: 0 }
+        p.a { margin-right: 0; text-align: center !important; font-size: 75% !important; margin-top: 0; margin-bottom: 0; margin-left: 0 }
+        div.figure { text-align: center !important }
+        td.linenumbers { border-left-style: none; border-right-width: 1px; border-top-width: medium; border-bottom-style: none; border-right-style: solid; padding-right: 5px; padding-left: 5px; margin-right: 0; border-bottom-width: medium; border-right-color: #AAAAAA; vertical-align: baseline; color: #AAAAAA; border-left-width: medium; border-top-style: none; padding-bottom: 0; margin-bottom: 0; padding-top: 0; margin-top: 0; text-align: right; margin-left: 0 }
+        mspace { white-space: pre !important }
+        td.sourcecode { padding-left: 5px; border-left-style: none; border-left-width: medium; border-right-style: none; padding-right: 0; margin-top: 0; border-bottom-width: medium; vertical-align: baseline; border-top-style: none; border-right-width: medium; margin-right: 0; margin-left: 0; border-top-width: medium; padding-top: 0; padding-bottom: 0; margin-bottom: 0; border-bottom-style: none }
+        code { font-family: monospace; font-weight: bold; font-size: 100% !important }
+        table.sourcecode pre { padding-left: 0; border-left-style: none; border-left-width: medium; border-right-style: none; padding-right: 0; margin-top: 0; border-bottom-width: medium; vertical-align: baseline; border-top-style: none; border-right-width: medium; margin-right: 0; margin-left: 0; border-top-width: medium; padding-top: 0; padding-bottom: 0; margin-bottom: 0; border-bottom-style: none }
+        section.footnotes li { list-style-type: disc }
+        ol { list-style-type: lower-alpha }
+        div img { margin-bottom: 0 }
+        div.example { background-color: #D8D8D8 !important }
+        p.img { text-align: center !important; margin-bottom: 0 }
+        p.solution { background-color: #D8D8D8 !important }
+        h3.date { text-align: center }
+        tr.sourcecode { padding-left: 0; border-left-style: none; border-left-width: medium; border-right-style: none; padding-right: 0; margin-top: 0; border-bottom-width: medium; vertical-align: baseline; border-top-style: none; border-right-width: medium; margin-right: 0; margin-left: 0; border-top-width: medium; padding-top: 0; padding-bottom: 0; margin-bottom: 0; border-bottom-style: none }
+        p.example { background-color: #F5A9A9 !important }
+        div.center { text-align: center !important }
+        ol.toc { padding-left: 0; padding-bottom: 0; padding-right: 0; padding-top: 0; margin-left: 0 }
+        section.footnotes { font-size: smaller; margin-top: 0; margin-bottom: 0 }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h2>
+      &#27963;&#21205;
+    </h2>
+    <ol>
+      <li>
+        &#39318;&#20808;&#65292; &#25353;&#19979;&#38283;&#22987;&#37749;&#65292; &#20006;&#20351;&#29992;&#20805;&#38651;&#33287;&#25918;&#38651;&#25353;&#37397;&#65292; &#35531;&#21839;&#38651;&#27744;&#38651;&#22739;&#28858;&#22810;&#23569;?
+      </li>
+      <li>
+        &#22914;&#26524;&#38651;&#38459;&#28858;&#19968;&#20491;&#29128;&#27873;&#65292; &#30070;&#20320;&#25353;&#19979;&quot;&#20805;&#38651;&quot;&#37749;&#24460;&#65292; &#35531;&#21839;&#29128;&#27873;&#20142;&#24230;&#26371;&#38568;&#33879;&#26178;&#38291;&#32780;&#30332;&#29983;&#20160;&#40636;&#35722;&#21270;? &#30070;&#20320;&#25353;&#19979;&quot;&#25918;&#38651;&quot;&#37749;&#24460;&#65292; 
+        &#35531;&#21839;&#29128;&#27873;&#20142;&#24230;&#26371;&#38568;&#33879;&#26178;&#38291;&#32780;&#30332;&#29983;&#20160;&#40636;&#35722;&#21270;?
+      </li>
+      <li>
+        &#38651;&#22739; vs. &#26178;&#38291;&#30340;&#27874;&#24418;&#22294;&#21576;&#29694;&#20841;&#20491;&#27874;&#24418;&#12290; &#35531;&#21839;&#32005;&#33394;&#33287;&#40657;&#33394;&#30340;&#27874;&#24418;&#20998;&#21029;&#20195;&#34920;&#20160;&#40636;?
+      </li>
+      <li>
+        &#38651;&#27969; vs. &#26178;&#38291;&#27874;&#24418;&#22294;&#20013;&#65292; &#20160;&#40636;&#26178;&#20505;&#38651;&#27969;&#28858;&#27491;? &#20160;&#40636;&#26178;&#20505;&#38651;&#27969;&#28858;&#36000;? &#38651;&#27969;&#30340;&#27491;&#36000;&#26377;&#20160;&#40636;&#29289;&#29702;&#24847;&#32681;?
+      </li>
+      <li>
+        &#35519;&#25972;&#38651;&#38459;&#33287;&#38651;&#23481;&#20540;&#26371;&#26377;&#20160;&#40636;&#24433;&#38911;? &#36889;&#20491;&#38651;&#36335;&#26377;&#19968;&#26178;&#38291;&#24120;&#25976;&#964; = RC&#12290; &#26681;&#25818;&#20320;&#30340;&#35264;&#23519;&#65292; &#36889;&#20491;&#26178;&#38291;&#24120;&#25976;&#30340;&#23450;&#32681;&#21512;&#29702;&#21966;?
+      </li>
+    </ol>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>24</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>variables</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[showPlot]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[R]]></Name>
+<Value><![CDATA[0.9999199999999999]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The mass at the end of the string]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[C]]></Name>
+<Value><![CDATA[0.9999199999999999]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Length of the string]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[I]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[X position of the object]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Q]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Y position of the ball]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[VB]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Velocity of the ball]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[VC]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The time]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[VR]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.005]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The increment of time]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[switchx]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[switchy]]></Name>
+<Value><![CDATA[0.25]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Equations</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+<EquationEditor.ErrorEditor.Page>
+<Type>ERROR_EDITOR</Type>
+<Name>Error handling code</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<ErrorHandlingContent>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+<ErrorType>ANY_ERROR</ErrorType>
+</ErrorHandlingContent>
+</EquationEditor.ErrorEditor.Page>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<Discontinuities>
+</Discontinuities>
+<IndependentVariable>t</IndependentVariable>
+<Increment>dt</Increment>
+<Rate state="Q">(VB-VC)/R</Rate>
+<Method>MidPoint</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MemoryLength></MemoryLength>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance></AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayMaximum><![CDATA[]]></DelayMaximum>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[circuit ODE]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Constraints</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[Computation of the energy]]></Comment>
+<Code><![CDATA[
+I=(VB-VC)/R;
+VC=Q/C;
+VR=I*R;
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>restart</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void restart () {
+
+_view.resetTraces();
+t = 0.0;
+VB = 0.0;
+VC = 0.0;
+VR = 0.0;
+Q = 0.0;
+switchx = 0.0;
+switchy = 0.25;
+
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">MainWindow</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[RC電路]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="size"><![CDATA["463,361"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">RightPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="size"><![CDATA[150,200]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">ButtonsPanel</Property>
+<Property name="parent">RightPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+<Property name="size"><![CDATA[150,300]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">Plot</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[showPlot]]></Property>
+<Property name="selected"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[顯示波形圖]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">playpause</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+<Property name="textOn"><![CDATA[開始]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="background"><![CDATA[ORANGE]]></Property>
+<Property name="textOff"><![CDATA[暫停]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+<Property name="foregroundOff"><![CDATA[BLUE]]></Property>
+<Property name="backgroundOff"><![CDATA[ORANGE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Charge</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[充電]]></Property>
+<Property name="action"><![CDATA[VB = 9.0;
+switchx = -0.25;
+switchy = 0.0;]]></Property>
+<Property name="background"><![CDATA[ORANGE]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Discharge</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[放電]]></Property>
+<Property name="action"><![CDATA[VB = 0.0;
+switchx = 0.0;
+switchy = 0.25;]]></Property>
+<Property name="background"><![CDATA[ORANGE]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">resistance</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[R]]></Property>
+<Property name="minimum"><![CDATA[0.2]]></Property>
+<Property name="maximum"><![CDATA[2.0]]></Property>
+<Property name="format"><![CDATA[電阻(歐姆) = 0.#]]></Property>
+<Property name="ticks"><![CDATA[19]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="background"><![CDATA[YELLOW]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">capacitance</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[C]]></Property>
+<Property name="minimum"><![CDATA[0.2]]></Property>
+<Property name="maximum"><![CDATA[2.0]]></Property>
+<Property name="format"><![CDATA[電容(法拉第) = 0.#]]></Property>
+<Property name="ticks"><![CDATA[19]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="dragaction"><![CDATA[restart ()]]></Property>
+<Property name="action"><![CDATA[restart ()]]></Property>
+<Property name="background"><![CDATA[YELLOW]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Reset</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[重置]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">DrawingPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-1.2]]></Property>
+<Property name="maximumX"><![CDATA[1.2]]></Property>
+<Property name="minimumY"><![CDATA[-1.2]]></Property>
+<Property name="maximumY"><![CDATA[1.2]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image</Type>
+<Property name="name">Image</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[2.33]]></Property>
+<Property name="sizey"><![CDATA[1.07]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="image"><![CDATA["./RC.jpg"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">Switch</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[-0.262]]></Property>
+<Property name="y"><![CDATA[-0.43]]></Property>
+<Property name="sizex"><![CDATA[switchx]]></Property>
+<Property name="sizey"><![CDATA[switchy]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+<Property name="stroke"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Dialog</Type>
+<Property name="name">Dialog</Property>
+<Property name="title"><![CDATA[波形圖]]></Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+<Property name="visible"><![CDATA[showPlot]]></Property>
+<Property name="location"><![CDATA["472,1"]]></Property>
+<Property name="size"><![CDATA["459,600"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">PlottingPanel</Property>
+<Property name="parent">Dialog</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA[電壓 vs. 時間]]></Property>
+<Property name="titleX"><![CDATA["時間(秒)"]]></Property>
+<Property name="titleY"><![CDATA["電壓(伏特)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">VR</Property>
+<Property name="parent">PlottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[VR]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">VC</Property>
+<Property name="parent">PlottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[VC]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[red]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">CurrentPanel</Property>
+<Property name="parent">Dialog</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA[電流 vs. 時間]]></Property>
+<Property name="titleX"><![CDATA["時間(秒)"]]></Property>
+<Property name="titleY"><![CDATA["電流(安培)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Current</Property>
+<Property name="parent">CurrentPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[I]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[blue]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

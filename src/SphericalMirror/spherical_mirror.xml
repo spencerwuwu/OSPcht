@@ -1,0 +1,1126 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<?xml version="1.0" encoding="Big5"?>
+<Osejs version="5.1" password="">
+<Osejs.Information>
+<Title><![CDATA[Spherical Mirror]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[mirrors, ray diagrams]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[introductory]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>false</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Andrew Duffy]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>球面鏡</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>球面鏡</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        嚜? body { margin-left: 3%; margin-right: 3%; margin-top: 2%; margin-bottom: 5%; text-align: justify; font-size: medium }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important; border-bottom-color: #000000; border-top-width: medium; border-top-style: solid; border-top-color: #000000; border-bottom-style: solid; border-bottom-width: thin }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { font-family: Times New Roman, Palatino, Caecilia, serif; line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 10pt; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        嚜? body { margin-left: 3%; margin-right: 3%; margin-top: 2%; margin-bottom: 5%; text-align: justify; font-size: medium }
+        ???? body { margin-left: 3%; margin-right: 3%; margin-top: 2%; margin-bottom: 5%; text-align: justify; font-size: medium }
+        h2.author { text-align: center !important; color: #000090 !important; font-size: 115% !important }
+        img { padding-right: 0; padding-top: 1px; padding-bottom: 1px; padding-left: 0 }
+        ????body { margin-top: 2%; margin-left: 3%; text-align: justify; margin-right: 3%; margin-bottom: 5%; font-size: medium }
+        p.center { text-align: center !important }
+        body { font-family: Georgia, Times New Roman, Times, serif; color: purple; background-color: #C8DFD0 }
+        table.sourcecode { margin-right: 0; padding-right: 0; padding-top: 0; margin-left: 0; vertical-align: baseline; border-top-width: medium; margin-top: 0; border-top-style: none; border-right-style: none; border-right-width: medium; border-left-style: none; border-bottom-style: none; border-left-width: medium; margin-bottom: 0; padding-bottom: 0; padding-left: 0; border-bottom-width: medium }
+        p.math { text-align: center !important }
+        p.caption { margin-top: 0; margin-left: 0; text-align: center !important; margin-right: 0; margin-bottom: 0; font-size: 75% !important }
+        h1.title { text-align: center !important; margin-right: 0; padding-right: 0; padding-top: 0; margin-left: 0; margin-top: 0; font-size: 130% !important; margin-bottom: 0; padding-bottom: 0; color: black; padding-left: 0 }
+        div.coverimage { text-align: center !important }
+        ol.toc li { margin-top: 0; padding-right: 0; margin-left: 0; padding-top: 0; list-style-type: disc; margin-right: 0; padding-bottom: 0; padding-left: 0; margin-bottom: 0 }
+        p.a { margin-top: 0; margin-left: 0; text-align: center !important; margin-right: 0; margin-bottom: 0; font-size: 75% !important }
+        div.figure { text-align: center !important }
+        td.linenumbers { border-left-width: medium; padding-bottom: 0; padding-left: 5px; border-top-style: none; border-bottom-style: none; border-top-width: medium; border-right-color: #AAAAAA; padding-top: 0; margin-left: 0; border-bottom-width: medium; border-left-style: none; margin-bottom: 0; color: #AAAAAA; border-right-style: solid; vertical-align: baseline; padding-right: 5px; margin-top: 0; text-align: right; border-right-width: 1px; margin-right: 0 }
+        mspace { white-space: pre !important }
+        td.sourcecode { margin-right: 0; padding-right: 0; padding-top: 0; margin-left: 0; vertical-align: baseline; border-top-width: medium; margin-top: 0; border-top-style: none; border-right-style: none; border-right-width: medium; border-left-style: none; border-bottom-style: none; border-left-width: medium; margin-bottom: 0; padding-bottom: 0; padding-left: 5px; border-bottom-width: medium }
+        code { font-family: monospace; font-weight: bold; font-size: 100% !important }
+        table.sourcecode pre { margin-right: 0; padding-right: 0; padding-top: 0; margin-left: 0; vertical-align: baseline; border-top-width: medium; margin-top: 0; border-top-style: none; border-right-style: none; border-right-width: medium; border-left-style: none; border-bottom-style: none; border-left-width: medium; margin-bottom: 0; padding-bottom: 0; padding-left: 0; border-bottom-width: medium }
+        section.footnotes li { list-style-type: disc }
+        ol { list-style-type: lower-alpha }
+        div img { margin-bottom: 0 }
+        div.example { background-color: #D8D8D8 !important }
+        p.img { text-align: center !important; margin-bottom: 0 }
+        p.solution { background-color: #D8D8D8 !important }
+        h3.date { text-align: center }
+        tr.sourcecode { margin-right: 0; padding-right: 0; padding-top: 0; margin-left: 0; vertical-align: baseline; border-top-width: medium; margin-top: 0; border-top-style: none; border-right-style: none; border-right-width: medium; border-left-style: none; border-bottom-style: none; border-left-width: medium; margin-bottom: 0; padding-bottom: 0; padding-left: 0; border-bottom-width: medium }
+        p.example { background-color: #F5A9A9 !important }
+        div.center { text-align: center !important }
+        ol.toc { margin-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; padding-left: 0 }
+        section.footnotes { margin-top: 0; margin-bottom: 0; font-size: smaller }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h1>
+      球面鏡成像
+    </h1>
+    <p>
+      光線離開一個物體與球面鏡相互作用，
+	  並得到一個成像。
+	  光線穿過的成像稱為<b>實像</b>，
+	  而光線的延伸線穿過的成像稱為<b>虛像</b>。
+    </p>
+    <p>
+      若球面鏡的焦距 <i>f</i> 
+	  和物體與球面鏡的距離 <i>d<sub>o</sub></i>
+	  皆為已知，
+	  則成像與球面鏡的距離 <i>d<sub>i</sub></i>
+	  可由下列公式求得
+    </p>
+    <p>
+      1/<i>f</i> = 1/<i>d<sub>o</sub></i> + 1/<i>d<sub>i</sub></i>
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>活動</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>活動</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        嚜? body { margin-left: 3%; margin-right: 3%; margin-top: 2%; margin-bottom: 5%; text-align: justify; font-size: medium }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important; border-bottom-color: #000000; border-top-width: medium; border-top-style: solid; border-top-color: #000000; border-bottom-style: solid; border-bottom-width: thin }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Arial, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { font-family: Times New Roman, Palatino, Caecilia, serif; line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 10pt; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        嚜? body { margin-left: 3%; margin-right: 3%; margin-top: 2%; margin-bottom: 5%; text-align: justify; font-size: medium }
+        ???? body { margin-left: 3%; margin-right: 3%; margin-top: 2%; margin-bottom: 5%; text-align: justify; font-size: medium }
+        h2.author { text-align: center !important; color: #000090 !important; font-size: 115% !important }
+        img { padding-right: 0; padding-top: 1px; padding-bottom: 1px; padding-left: 0 }
+        ????body { margin-top: 2%; margin-left: 3%; text-align: justify; margin-right: 3%; margin-bottom: 5%; font-size: medium }
+        p.center { text-align: center !important }
+        body { font-family: Georgia, Times New Roman, Times, serif; color: purple; background-color: #C8DFD0 }
+        table.sourcecode { margin-right: 0; padding-right: 0; padding-top: 0; margin-left: 0; vertical-align: baseline; border-top-width: medium; margin-top: 0; border-top-style: none; border-right-style: none; border-right-width: medium; border-left-style: none; border-bottom-style: none; border-left-width: medium; margin-bottom: 0; padding-bottom: 0; padding-left: 0; border-bottom-width: medium }
+        p.math { text-align: center !important }
+        p.caption { margin-top: 0; margin-left: 0; text-align: center !important; margin-right: 0; margin-bottom: 0; font-size: 75% !important }
+        h1.title { text-align: center !important; margin-right: 0; padding-right: 0; padding-top: 0; margin-left: 0; margin-top: 0; font-size: 130% !important; margin-bottom: 0; padding-bottom: 0; color: black; padding-left: 0 }
+        div.coverimage { text-align: center !important }
+        ol.toc li { margin-top: 0; padding-right: 0; margin-left: 0; padding-top: 0; list-style-type: disc; margin-right: 0; padding-bottom: 0; padding-left: 0; margin-bottom: 0 }
+        p.a { margin-top: 0; margin-left: 0; text-align: center !important; margin-right: 0; margin-bottom: 0; font-size: 75% !important }
+        div.figure { text-align: center !important }
+        td.linenumbers { border-left-width: medium; padding-bottom: 0; padding-left: 5px; border-top-style: none; border-bottom-style: none; border-top-width: medium; border-right-color: #AAAAAA; padding-top: 0; margin-left: 0; border-bottom-width: medium; border-left-style: none; margin-bottom: 0; color: #AAAAAA; border-right-style: solid; vertical-align: baseline; padding-right: 5px; margin-top: 0; text-align: right; border-right-width: 1px; margin-right: 0 }
+        mspace { white-space: pre !important }
+        td.sourcecode { margin-right: 0; padding-right: 0; padding-top: 0; margin-left: 0; vertical-align: baseline; border-top-width: medium; margin-top: 0; border-top-style: none; border-right-style: none; border-right-width: medium; border-left-style: none; border-bottom-style: none; border-left-width: medium; margin-bottom: 0; padding-bottom: 0; padding-left: 5px; border-bottom-width: medium }
+        code { font-family: monospace; font-weight: bold; font-size: 100% !important }
+        table.sourcecode pre { margin-right: 0; padding-right: 0; padding-top: 0; margin-left: 0; vertical-align: baseline; border-top-width: medium; margin-top: 0; border-top-style: none; border-right-style: none; border-right-width: medium; border-left-style: none; border-bottom-style: none; border-left-width: medium; margin-bottom: 0; padding-bottom: 0; padding-left: 0; border-bottom-width: medium }
+        section.footnotes li { list-style-type: disc }
+        ol { list-style-type: lower-alpha }
+        div img { margin-bottom: 0 }
+        div.example { background-color: #D8D8D8 !important }
+        p.img { text-align: center !important; margin-bottom: 0 }
+        p.solution { background-color: #D8D8D8 !important }
+        h3.date { text-align: center }
+        tr.sourcecode { margin-right: 0; padding-right: 0; padding-top: 0; margin-left: 0; vertical-align: baseline; border-top-width: medium; margin-top: 0; border-top-style: none; border-right-style: none; border-right-width: medium; border-left-style: none; border-bottom-style: none; border-left-width: medium; margin-bottom: 0; padding-bottom: 0; padding-left: 0; border-bottom-width: medium }
+        p.example { background-color: #F5A9A9 !important }
+        div.center { text-align: center !important }
+        ol.toc { margin-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; padding-left: 0 }
+        section.footnotes { margin-top: 0; margin-bottom: 0; font-size: smaller }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h1>
+      活動
+    </h1>
+    <ol>
+      <li>
+        描述產生實像與虛像的必要條件。
+      </li>
+      <li>
+        描述在什麼情況下產生的影像會比原本的物體大。
+      </li>
+      <li>
+        球面鏡公式可求出成像的大約位置。		
+        在什麼情況下公式能得出最精確的位置?
+      </li>
+    </ol>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Concave mirror</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[xobject]]></Name>
+<Value><![CDATA[12.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The object distance]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dobject]]></Name>
+<Value><![CDATA[12.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The object distance]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[displayxobject]]></Name>
+<Value><![CDATA[-xobject]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ximage]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The image distance]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dimage]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The image distance]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[minf]]></Name>
+<Value><![CDATA[5.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[f]]></Name>
+<Value><![CDATA[6.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The focal length]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[displayf]]></Name>
+<Value><![CDATA[-f]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ho]]></Name>
+<Value><![CDATA[3.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The object height]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[hi]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The image height]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmirror]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Mirror location]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zero]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[R]]></Name>
+<Value><![CDATA[2*f]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[mirrorradius]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Rsq]]></Name>
+<Value><![CDATA[R*R]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[R squared]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[inversedelayTime]]></Name>
+<Value><![CDATA[100]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mirrorheight]]></Name>
+<Value><![CDATA[4.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[idealFlag]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dispalyimage]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Rays</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[virtual]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ray1]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ray1cColor]]></Name>
+<Value><![CDATA[java.awt.Color.blue]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ray1bColor]]></Name>
+<Value><![CDATA[java.awt.Color.blue]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ray2]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ray2x]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ray2slope]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ray2cColor]]></Name>
+<Value><![CDATA[java.awt.Color.red]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ray2bColor]]></Name>
+<Value><![CDATA[java.awt.Color.red]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Spray</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[11]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mirrorpointsx[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mirrorpointsy[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx2]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy2]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[maxindex]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[thetamax]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mirrorslopex[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mirrorslopey[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[alpha]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[sintheta]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[costheta]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line1x[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line1y[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line2x[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line2y[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line3x[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line3y[i]]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rayline2Color]]></Name>
+<Value><![CDATA[java.awt.Color.green]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rayline3Color]]></Name>
+<Value><![CDATA[java.awt.Color.black]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[multirays]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+rays();
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>rays</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void rays () {
+
+f = -displayf+xmirror;
+R = 2*f;
+Rsq = R*R;
+xobject = -displayxobject;
+dobject = xobject + xmirror;
+dimage = dobject*f/(dobject-f);
+hi = -ho*dimage/dobject;
+ximage = dimage-xmirror;
+
+if (idealFlag)
+{
+  ray2x = Math.sqrt(Rsq-ho*ho)-R+xmirror;
+  ray2slope = (ho-hi)/(ray2x-(xmirror-0.5*R)+(displayf+ximage));
+}
+else
+{
+  ray2x = Math.sqrt(Rsq-ho*ho)-R+xmirror;
+  ray2slope = Math.tan(2*Math.atan(ho/(ray2x-(xmirror-R))));
+}
+
+if (dimage < 0) 
+{
+  virtual = true;
+}
+else
+{
+  virtual = false;
+}
+
+if ((displayxobject > displayf) && (displayxobject < xmirror))
+{
+  ray2cColor = ray1cColor = java.awt.Color.black;
+}
+else
+{
+  ray1cColor = java.awt.Color.blue;
+  ray2cColor = java.awt.Color.red;
+}
+
+if (displayxobject < xmirror)
+{
+  ray1bColor = java.awt.Color.blue;
+  ray2bColor = java.awt.Color.red;
+}
+else
+{
+  ray2bColor = ray1bColor = java.awt.Color.black;
+}
+
+if (displayxobject < xmirror)
+{
+  rayline2Color = java.awt.Color.green;
+  rayline3Color = java.awt.Color.black;
+}
+else
+{
+  rayline2Color = java.awt.Color.black;
+  rayline3Color = java.awt.Color.green;
+}
+
+for (int i = 0; i < n; i++)
+{
+x[i] = displayxobject;
+y[i] = ho;
+}
+
+mirrorpointsx[0] = xmirror;
+mirrorpointsy[0] = 0.0;
+mirrorslopex[0] = 1.0;
+mirrorslopey[0] = 0.0;
+
+thetamax = Math.atan(mirrorheight/Math.sqrt(Rsq-mirrorheight*mirrorheight));
+maxindex = (n-1)/2;
+
+for (int i = 1; i <= maxindex; i++)
+{
+mirrorslopex[i] = Math.cos(thetamax*i/maxindex);
+mirrorslopex[i+maxindex] = mirrorslopex[i];
+mirrorslopey[i] = Math.sin(thetamax*i/maxindex);
+mirrorslopey[i+maxindex] = -mirrorslopey[i];
+mirrorpointsx[i] = xmirror-R+R*mirrorslopex[i];
+mirrorpointsx[i+maxindex] = mirrorpointsx[i];
+mirrorpointsy[i] = R*mirrorslopey[i];
+mirrorpointsy[i+maxindex] = -mirrorpointsy[i];
+
+}
+
+for (int i = 0; i < n; i++)
+{
+vx[i] = mirrorpointsx[i]-x[i];
+vy[i] = mirrorpointsy[i]-y[i];
+line1x[i] = vx[i];
+line1y[i] = vy[i];
+if (idealFlag)
+{
+  vx2[i] = mirrorpointsx[i]+ximage;
+  vy2[i] = mirrorpointsy[i]-hi;
+  double amp = Math.sqrt(vx2[i]*vx2[i]+vy2[i]*vy2[i]);
+  vx2[i] = vx2[i]/amp;
+  vy2[i] = vy2[i]/amp;
+  alpha = Math.atan(vy2[i]/vx2[i]);
+}
+else
+{
+  double amp = Math.sqrt(vx[i]*vx[i]+vy[i]*vy[i]);
+  vx[i] = vx[i]/amp;
+  vy[i] = vy[i]/amp;
+  sintheta = vx[i]*mirrorslopex[i] + vy[i]*mirrorslopey[i];
+  costheta = vx[i]*mirrorslopey[i] - vy[i]*mirrorslopex[i];
+  alpha = Math.atan(vy[i]/vx[i]);
+  theta = Math.atan(sintheta/costheta);
+  alpha = alpha + 2*Math.PI - 2*theta;
+}
+line2x[i] = -20.0 - xmirror;
+line3x[i] = 20.0 - xmirror;
+line2y[i] = line2x[i]*Math.sin(alpha)/Math.cos(alpha);
+line3y[i] = line3x[i]*Math.sin(alpha)/Math.cos(alpha);
+}
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">MainWindow</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[球面鏡]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="size"><![CDATA["876,236"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">RightPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">ButtonsPanel</Property>
+<Property name="parent">RightPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">ideal</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="selected"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["理想情況"]]></Property>
+<Property name="actionon"><![CDATA[idealFlag = true;
+rays();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">actual</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[true]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["實際情況"]]></Property>
+<Property name="actionon"><![CDATA[idealFlag = false;
+rays();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Reset</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[重置]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="background"><![CDATA[255,192,64]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="font"><![CDATA[微軟正黑體,BOLD,15]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">imagedisplay</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[displayimage]]></Property>
+<Property name="selected"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["顯示成像"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">ray1</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[ray1]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["中心光源"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">ray2</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[ray2]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["平行光源"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">multiplerays</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[multirays]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["複數光源"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">DrawingPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-20]]></Property>
+<Property name="maximumX"><![CDATA[20]]></Property>
+<Property name="minimumY"><![CDATA[-4]]></Property>
+<Property name="maximumY"><![CDATA[4]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">principalaxis</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[-20]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[40]]></Property>
+<Property name="sizey"><![CDATA[0]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrowSet</Type>
+<Property name="name">spraytrace1</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="elementnumber"><![CDATA[n]]></Property>
+<Property name="x"><![CDATA[displayxobject]]></Property>
+<Property name="y"><![CDATA[ho]]></Property>
+<Property name="sizex"><![CDATA[line1x]]></Property>
+<Property name="sizey"><![CDATA[line1y]]></Property>
+<Property name="visible"><![CDATA[multirays]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[GREEN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrowSet</Type>
+<Property name="name">spraytrace2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="elementnumber"><![CDATA[n]]></Property>
+<Property name="x"><![CDATA[mirrorpointsx]]></Property>
+<Property name="y"><![CDATA[mirrorpointsy]]></Property>
+<Property name="sizex"><![CDATA[line2x]]></Property>
+<Property name="sizey"><![CDATA[line2y]]></Property>
+<Property name="visible"><![CDATA[multirays]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[rayline2Color]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrowSet</Type>
+<Property name="name">spraytrace3</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="elementnumber"><![CDATA[n]]></Property>
+<Property name="x"><![CDATA[mirrorpointsx]]></Property>
+<Property name="y"><![CDATA[mirrorpointsy]]></Property>
+<Property name="sizex"><![CDATA[line3x]]></Property>
+<Property name="sizey"><![CDATA[line3y]]></Property>
+<Property name="visible"><![CDATA[multirays && (displayxobject > displayf)]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[rayline3Color]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">object</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[displayxobject]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizex"><![CDATA[zero]]></Property>
+<Property name="sizey"><![CDATA[ho]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">objecthandle</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[displayxobject]]></Property>
+<Property name="y"><![CDATA[ho]]></Property>
+<Property name="sizex"><![CDATA[0.2]]></Property>
+<Property name="sizey"><![CDATA[0.2]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="dragaction"><![CDATA[if (ho > mirrorheight) ho = mirrorheight;
+if (ho < -mirrorheight) ho = -mirrorheight;
+rays();]]></Property>
+<Property name="color"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">image</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[-ximage]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[0]]></Property>
+<Property name="sizey"><![CDATA[hi]]></Property>
+<Property name="visible"><![CDATA[displayimage]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[CYAN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">focalpoint</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[displayf]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizex"><![CDATA[0.2]]></Property>
+<Property name="sizey"><![CDATA[0.2]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="dragaction"><![CDATA[zero=0.0;
+if ((xmirror - displayf) < minf) displayf = xmirror - minf;
+rays();]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticCurve</Type>
+<Property name="name">mirror</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="points"><![CDATA[50]]></Property>
+<Property name="min"><![CDATA[-mirrorheight]]></Property>
+<Property name="max"><![CDATA[mirrorheight]]></Property>
+<Property name="variable"><![CDATA[q]]></Property>
+<Property name="functionx"><![CDATA[Math.sqrt(Rsq-q*q)-R+xmirror]]></Property>
+<Property name="functiony"><![CDATA[q]]></Property>
+<Property name="color"><![CDATA[BLACK]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">mirrorhandle</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[xmirror]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizex"><![CDATA[0.2]]></Property>
+<Property name="sizey"><![CDATA[0.2]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="dragaction"><![CDATA[zero = 0.0;
+displayf = -f + xmirror;
+rays();]]></Property>
+<Property name="color"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">ray1a</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[displayxobject]]></Property>
+<Property name="y"><![CDATA[ho]]></Property>
+<Property name="sizex"><![CDATA[xmirror-displayxobject]]></Property>
+<Property name="sizey"><![CDATA[-ho]]></Property>
+<Property name="visible"><![CDATA[ray1]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">ray1b</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[xmirror]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[-20-xmirror]]></Property>
+<Property name="sizey"><![CDATA[-ho*(-20-xmirror)/(displayxobject-xmirror)]]></Property>
+<Property name="visible"><![CDATA[ray1]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[ray1bColor]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">ray1c</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[xmirror]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[20-xmirror]]></Property>
+<Property name="sizey"><![CDATA[ho*(-20+xmirror)/(displayxobject-xmirror)]]></Property>
+<Property name="visible"><![CDATA[ray1 && (displayxobject > displayf)]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[ray1cColor]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">ray2a</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[displayxobject]]></Property>
+<Property name="y"><![CDATA[ho]]></Property>
+<Property name="sizex"><![CDATA[ray2x-displayxobject]]></Property>
+<Property name="sizey"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[ray2]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">ray2b</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[ray2x]]></Property>
+<Property name="y"><![CDATA[ho]]></Property>
+<Property name="sizex"><![CDATA[-20-ray2x]]></Property>
+<Property name="sizey"><![CDATA[ray2slope*(-20-ray2x)]]></Property>
+<Property name="visible"><![CDATA[ray2]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[ray2bColor]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">ray2c</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[ray2x]]></Property>
+<Property name="y"><![CDATA[ho]]></Property>
+<Property name="sizex"><![CDATA[20-ray2x]]></Property>
+<Property name="sizey"><![CDATA[ray2slope*(20-ray2x)]]></Property>
+<Property name="visible"><![CDATA[ray2 && (displayxobject > displayf)]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[ray2cColor]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

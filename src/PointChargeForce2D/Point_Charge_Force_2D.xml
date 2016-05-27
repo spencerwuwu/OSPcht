@@ -1,0 +1,806 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<?xml version="1.0" encoding="Big5"?>
+<Osejs version="5.0 beta" password="">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[aduffy@bu.edu]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Andrew Duffy - Boston University]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>電力(二維)</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>電力(二維)</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        h2.author { text-align: center !important; color: #000090 !important; font-size: 115% !important }
+        h3 { text-align: left; color: navy; text-indent: 0px; font-size: 110% !important; font-family: Helvetica, Arial, sans-serif }
+        h2 { text-align: left; color: #000777; text-indent: 0px; font-size: 120% !important; font-family: Helvetica, Arial, sans-serif }
+        h1 { margin-left: 0; border-top-style: solid; padding-bottom: 0; padding-top: 0; border-top-color: #000000; font-size: 135% !important; padding-left: 0; border-bottom-color: #000000; color: #0000C8; padding-right: 0; margin-top: 0; border-bottom-width: thin; margin-bottom: 0; text-indent: 0px; text-align: left; margin-right: 0; border-top-width: medium; border-bottom-style: solid; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        img { padding-bottom: 1px; padding-right: 0; padding-left: 0; padding-top: 1px }
+        嚜?body { margin-left: 3%; text-align: justify; margin-right: 3%; font-size: medium; margin-top: 2%; margin-bottom: 5% }
+        p.center { text-align: center !important }
+        body { color: purple; background-color: #C8DFD0; font-family: Georgia, Times New Roman, Times, serif }
+        table.sourcecode { border-right-color: border-color; margin-left: 0; border-top-style: none; vertical-align: baseline; padding-bottom: 0; padding-top: 0; border-top-color: border-color; border-left-style: none; padding-left: 0; border-bottom-color: border-color; padding-right: 0; margin-top: 0; border-left-width: medium; border-right-style: none; border-bottom-width: medium; margin-bottom: 0; border-right-width: medium; border-left-color: border-color; margin-right: 0; border-top-width: medium; border-bottom-style: none }
+        p.math { text-align: center !important }
+        p.caption { margin-left: 0; text-align: center !important; margin-right: 0; font-size: 75% !important; margin-top: 0; margin-bottom: 0 }
+        li { margin-top: 0; margin-bottom: 0 }
+        p { margin-left: 0; text-align: justify; margin-right: 0; line-height: 1.5em; margin-top: 0; margin-bottom: 10pt; font-family: Times New Roman, Palatino, Caecilia, serif }
+        h1.title { margin-left: 0; padding-bottom: 0; padding-top: 0; font-size: 130% !important; padding-left: 0; color: black; padding-right: 0; margin-top: 0; margin-bottom: 0; text-align: center !important; margin-right: 0 }
+        div.coverimage { text-align: center !important }
+        ol.toc li { padding-bottom: 0; margin-left: 0; margin-right: 0; padding-right: 0; padding-left: 0; list-style-type: disc; margin-top: 0; margin-bottom: 0; padding-top: 0 }
+        p.a { margin-left: 0; text-align: center !important; margin-right: 0; font-size: 75% !important; margin-top: 0; margin-bottom: 0 }
+        div.figure { text-align: center !important }
+        td.linenumbers { margin-bottom: 0; border-top-color: border-color; vertical-align: baseline; margin-top: 0; padding-left: 5px; border-top-width: medium; border-right-width: 1px; border-left-style: none; border-bottom-color: border-color; text-align: right; border-top-style: none; color: #AAAAAA; margin-right: 0; border-bottom-width: medium; margin-left: 0; border-left-width: medium; border-right-style: solid; border-left-color: border-color; padding-right: 5px; padding-top: 0; border-right-color: #AAAAAA; padding-bottom: 0; border-bottom-style: none }
+        mspace { white-space: pre !important }
+        td.sourcecode { border-right-color: border-color; margin-left: 0; border-top-style: none; vertical-align: baseline; padding-bottom: 0; padding-top: 0; border-top-color: border-color; border-left-style: none; padding-left: 5px; border-bottom-color: border-color; padding-right: 0; margin-top: 0; border-left-width: medium; border-right-style: none; border-bottom-width: medium; margin-bottom: 0; border-right-width: medium; border-left-color: border-color; margin-right: 0; border-top-width: medium; border-bottom-style: none }
+        code { font-weight: bold; font-size: 100% !important; font-family: monospace }
+        a:link { color: blue }
+        table.sourcecode pre { border-right-color: border-color; margin-left: 0; border-top-style: none; vertical-align: baseline; padding-bottom: 0; padding-top: 0; border-top-color: border-color; border-left-style: none; padding-left: 0; border-bottom-color: border-color; padding-right: 0; margin-top: 0; border-left-width: medium; border-right-style: none; border-bottom-width: medium; margin-bottom: 0; border-right-width: medium; border-left-color: border-color; margin-right: 0; border-top-width: medium; border-bottom-style: none }
+        section.footnotes li { list-style-type: disc }
+        ol { list-style-type: lower-alpha }
+        div img { margin-bottom: 0 }
+        a:visited { color: purple }
+        div.example { background-color: #D8D8D8 !important }
+        p.img { text-align: center !important; margin-bottom: 0 }
+        p.solution { background-color: #D8D8D8 !important }
+        h3.date { text-align: center }
+        tr.sourcecode { border-right-color: border-color; margin-left: 0; border-top-style: none; vertical-align: baseline; padding-bottom: 0; padding-top: 0; border-top-color: border-color; border-left-style: none; padding-left: 0; border-bottom-color: border-color; padding-right: 0; margin-top: 0; border-left-width: medium; border-right-style: none; border-bottom-width: medium; margin-bottom: 0; border-right-width: medium; border-left-color: border-color; margin-right: 0; border-top-width: medium; border-bottom-style: none }
+        p.example { background-color: #F5A9A9 !important }
+        div.center { text-align: center !important }
+        ol.toc { padding-bottom: 0; margin-left: 0; padding-right: 0; padding-left: 0; padding-top: 0 }
+        section.footnotes { font-size: smaller; margin-top: 0; margin-bottom: 0 }
+        h6 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+        h5 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+        address { margin-top: 0; border-top-style: dotted; border-top-width: thin; padding-top: 0 }
+        h4 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h1>
+      二維空間中的電力
+    </h1>
+    <p>
+      在這個模擬中，
+	  你可以探討一個帶電粒子在二維空間中與其他四個帶電粒子的電力交互作用。
+    </p>
+    <p>
+      粒子上的箭頭代表其所受的電力。
+	  每個粒子可以被拖拉至圖中任意處。
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>活動</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>活動</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        h2.author { text-align: center !important; color: #000090 !important; font-size: 115% !important }
+        h3 { text-align: left; color: navy; text-indent: 0px; font-size: 110% !important; font-family: Helvetica, Arial, sans-serif }
+        h2 { text-align: left; color: #000777; text-indent: 0px; font-size: 120% !important; font-family: Helvetica, Arial, sans-serif }
+        h1 { margin-left: 0; border-top-style: solid; padding-bottom: 0; padding-top: 0; border-top-color: #000000; font-size: 135% !important; padding-left: 0; border-bottom-color: #000000; color: #0000C8; padding-right: 0; margin-top: 0; border-bottom-width: thin; margin-bottom: 0; text-indent: 0px; text-align: left; margin-right: 0; border-top-width: medium; border-bottom-style: solid; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        img { padding-bottom: 1px; padding-right: 0; padding-left: 0; padding-top: 1px }
+        嚜?body { margin-left: 3%; text-align: justify; margin-right: 3%; font-size: medium; margin-top: 2%; margin-bottom: 5% }
+        p.center { text-align: center !important }
+        body { color: purple; background-color: #C8DFD0; font-family: Georgia, Times New Roman, Times, serif }
+        table.sourcecode { border-right-color: border-color; margin-left: 0; border-top-style: none; vertical-align: baseline; padding-bottom: 0; padding-top: 0; border-top-color: border-color; border-left-style: none; padding-left: 0; border-bottom-color: border-color; padding-right: 0; margin-top: 0; border-left-width: medium; border-right-style: none; border-bottom-width: medium; margin-bottom: 0; border-right-width: medium; border-left-color: border-color; margin-right: 0; border-top-width: medium; border-bottom-style: none }
+        p.math { text-align: center !important }
+        p.caption { margin-left: 0; text-align: center !important; margin-right: 0; font-size: 75% !important; margin-top: 0; margin-bottom: 0 }
+        li { margin-top: 0; margin-bottom: 0 }
+        p { margin-left: 0; text-align: justify; margin-right: 0; line-height: 1.5em; margin-top: 0; margin-bottom: 10pt; font-family: Times New Roman, Palatino, Caecilia, serif }
+        h1.title { margin-left: 0; padding-bottom: 0; padding-top: 0; font-size: 130% !important; padding-left: 0; color: black; padding-right: 0; margin-top: 0; margin-bottom: 0; text-align: center !important; margin-right: 0 }
+        div.coverimage { text-align: center !important }
+        ol.toc li { padding-bottom: 0; margin-left: 0; margin-right: 0; padding-right: 0; padding-left: 0; list-style-type: disc; margin-top: 0; margin-bottom: 0; padding-top: 0 }
+        p.a { margin-left: 0; text-align: center !important; margin-right: 0; font-size: 75% !important; margin-top: 0; margin-bottom: 0 }
+        div.figure { text-align: center !important }
+        td.linenumbers { margin-bottom: 0; border-top-color: border-color; vertical-align: baseline; margin-top: 0; padding-left: 5px; border-top-width: medium; border-right-width: 1px; border-left-style: none; border-bottom-color: border-color; text-align: right; border-top-style: none; color: #AAAAAA; margin-right: 0; border-bottom-width: medium; margin-left: 0; border-left-width: medium; border-right-style: solid; border-left-color: border-color; padding-right: 5px; padding-top: 0; border-right-color: #AAAAAA; padding-bottom: 0; border-bottom-style: none }
+        mspace { white-space: pre !important }
+        td.sourcecode { border-right-color: border-color; margin-left: 0; border-top-style: none; vertical-align: baseline; padding-bottom: 0; padding-top: 0; border-top-color: border-color; border-left-style: none; padding-left: 5px; border-bottom-color: border-color; padding-right: 0; margin-top: 0; border-left-width: medium; border-right-style: none; border-bottom-width: medium; margin-bottom: 0; border-right-width: medium; border-left-color: border-color; margin-right: 0; border-top-width: medium; border-bottom-style: none }
+        code { font-weight: bold; font-size: 100% !important; font-family: monospace }
+        a:link { color: blue }
+        table.sourcecode pre { border-right-color: border-color; margin-left: 0; border-top-style: none; vertical-align: baseline; padding-bottom: 0; padding-top: 0; border-top-color: border-color; border-left-style: none; padding-left: 0; border-bottom-color: border-color; padding-right: 0; margin-top: 0; border-left-width: medium; border-right-style: none; border-bottom-width: medium; margin-bottom: 0; border-right-width: medium; border-left-color: border-color; margin-right: 0; border-top-width: medium; border-bottom-style: none }
+        section.footnotes li { list-style-type: disc }
+        ol { list-style-type: lower-alpha }
+        div img { margin-bottom: 0 }
+        a:visited { color: purple }
+        div.example { background-color: #D8D8D8 !important }
+        p.img { text-align: center !important; margin-bottom: 0 }
+        p.solution { background-color: #D8D8D8 !important }
+        h3.date { text-align: center }
+        tr.sourcecode { border-right-color: border-color; margin-left: 0; border-top-style: none; vertical-align: baseline; padding-bottom: 0; padding-top: 0; border-top-color: border-color; border-left-style: none; padding-left: 0; border-bottom-color: border-color; padding-right: 0; margin-top: 0; border-left-width: medium; border-right-style: none; border-bottom-width: medium; margin-bottom: 0; border-right-width: medium; border-left-color: border-color; margin-right: 0; border-top-width: medium; border-bottom-style: none }
+        p.example { background-color: #F5A9A9 !important }
+        div.center { text-align: center !important }
+        ol.toc { padding-bottom: 0; margin-left: 0; padding-right: 0; padding-left: 0; padding-top: 0 }
+        section.footnotes { font-size: smaller; margin-top: 0; margin-bottom: 0 }
+        h6 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+        h5 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+        address { margin-top: 0; border-top-style: dotted; border-top-width: thin; padding-top: 0 }
+        h4 { text-align: left; text-indent: 0px; font-family: Helvetica, Arial, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h1>
+      活動
+    </h1>
+    <ol>
+      <li>
+        持續按重設模擬鍵直到出現至少兩個帶正電的粒子(紅色)與至少兩個帶負電的粒子(藍色)。
+		此外，
+		所有帶電粒子必須帶有不同的電量。
+		從右側的拖動條中觀察各個粒子的帶電量，
+		但不要做任何調整。
+		你可以拖拉粒子以改變其位置，
+		並試著分辨出哪個粒子是粒子1，
+		哪個粒子是粒子2等等。
+		等到五個粒子都分辨出來後，
+		你可以利用拖動條改變粒子的帶電量來確認答案，
+		改變粒子的正負將會有很大的幫助。
+      </li>
+    </ol>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>variables</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[k]]></Name>
+<Value><![CDATA[9.0e-3]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Constant in Coulomb's Law]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[5]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The number of charged particles]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[An array for the x-ccordinate of the particles]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[An array for the y-coordinate of the particles]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q]]></Name>
+<Value><![CDATA[20.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[An array for the charges, in microCoulombs]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fx]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n][n]]]></Dimension>
+<Comment><![CDATA[Force on particle 1]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fy]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n][n]]]></Dimension>
+<Comment><![CDATA[Force on particle 2]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[FxNet]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[An array for the x-component of the net force]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[FyNet]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[An array for the y-component of the net force]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[helpLabel]]></Name>
+<Value><![CDATA["顯示幫助"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[helpFlag]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q0]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q3]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q4]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>color variables</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[redness]]></Name>
+<Value><![CDATA[250]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[greenness]]></Name>
+<Value><![CDATA[250]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[blueness]]></Name>
+<Value><![CDATA[250]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[colorball]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>help vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[line1]]></Name>
+<Value><![CDATA["拖拉粒子以改變其位置。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line2]]></Name>
+<Value><![CDATA["紅色代表粒子帶正電，藍色代表粒子帶負電。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line2a]]></Name>
+<Value><![CDATA["粒子上的箭頭代表此粒子與其他粒子的電作用力。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line3]]></Name>
+<Value><![CDATA["使用右側的拖動條以調整每個粒子的帶電量。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line4]]></Name>
+<Value><![CDATA["使用右上角的核取框以顯示或隱藏圖。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line5]]></Name>
+<Value><![CDATA["你可以使用重置鍵重設模擬。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[line6]]></Name>
+<Value><![CDATA["若你點擊圖中任意處，可以在左下角黃色方塊處讀取該點座標。"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+for (int index=0; index<n; index++)
+{
+  x[index] = -10.0 + 20.0*Math.random();
+  y[index] = -10.0 + 20.0*Math.random();
+  q[index] = Math.round(-30.0 + 60.0*Math.random());
+}
+// Math.random() gives a random number between 0 and 1
+// Multiplying Math.random() by 20 gives a random number between
+// 0 and 20
+// Subtracting 10 then gives a random number between -10 and 10
+// In the "for" loop, the value of index starts at 0, and then
+// increases by 1 at the end of each loop (index++ increments it).
+// Keep looping as long as index is less than n
+// The loop is the set of statements between the braces
+// { at the beginning, and } at the end
+
+q0 = q[0];
+q1 = q[1];
+q2 = q[2];
+q3 = q[3];
+q4 = q[4];
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Cons Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+int i;   // declare an integer we will use as a loop index
+
+// Calculating force components
+
+// First, set the components of all the net forces to zero
+for (i=0; i<n; i++)
+{
+  FxNet[i] = 0.0;
+  FyNet[i] = 0.0;
+}
+
+// Now, we'll find the components of all the individual forces.
+// The first loop runs from 0 to n-2
+// The second loop just runs from i+1 to n-1
+// Each calculation takes some time, so we're minimizing that
+// time by doing as few calculations as we can
+// We declare a new variable, dSq, here, too (distance squared)
+
+for (i=0; i<(n-1); i++)
+{
+  for (int j=i+1; j<n; j++)
+  {
+    double dSq = (x[j]-x[i])*(x[j]-x[i]) + (y[j]-y[i])*(y[j]-y[i]);
+    // The force particle i feels because of particle j
+    Fx[i][j] = -(k*q[i]*q[j]/dSq)*(x[j]-x[i])/Math.sqrt(dSq);
+    Fy[i][j] = -(k*q[i]*q[j]/dSq)*(y[j]-y[i])/Math.sqrt(dSq);
+    FxNet[i] = FxNet[i] + Fx[i][j];      // add to i's net force
+    FyNet[i] = FyNet[i] + Fy[i][j];
+        // The force particle j feels because of particle i
+    Fx[j][i] = -Fx[i][j];
+    Fy[j][i] = -Fy[i][j];
+    FxNet[j] = FxNet[j] + Fx[j][i];      // add to j's net force
+    FyNet[j] = FyNet[j] + Fy[j][i];
+  }   // end of the j loop
+}  // end of the i loop
+
+// This part sets the color of each particle
+// depending on its charge
+for (i=0; i<n; i++)
+{
+  if (q[i] > 0.0)
+ {
+  redness = 250;  // if it gets here the charge is positive
+  greenness = 0;  // so we color the particle red
+  blueness = 0;
+  colorball[i] = new java.awt.Color(redness,greenness,blueness);
+  }
+  else
+  {
+    if (q[i] < 0.0)
+    {
+    redness = 0;    // if it gets here the charge is negative
+    greenness = 0;  // so we color the particle blue
+    blueness = 250;
+    colorball[i] = new java.awt.Color(redness,greenness,blueness);
+    }
+    else
+    {
+    redness = 200;     // if it gets here the charge is zero
+    greenness = 200;   // so we color the particle gray
+    blueness = 200;
+    colorball[i] = new java.awt.Color(redness,greenness,blueness);
+    }  
+  }
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">MainWindow</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["二維空間中的電力"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["0,0"]]></Property>
+<Property name="size"><![CDATA["743,500"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">RightPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">ButtonsPanel</Property>
+<Property name="parent">RightPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+<Property name="size"><![CDATA[200,420]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">charge1</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[q0]]></Property>
+<Property name="minimum"><![CDATA[-30.0]]></Property>
+<Property name="maximum"><![CDATA[30.0]]></Property>
+<Property name="format"><![CDATA["粒子1帶電量(單位為$\mu$C) = 0.0"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="dragaction"><![CDATA[q[0] = q0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">charge2</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[q1]]></Property>
+<Property name="minimum"><![CDATA[-30.0]]></Property>
+<Property name="maximum"><![CDATA[30.0]]></Property>
+<Property name="format"><![CDATA["粒子2帶電量(單位為$\mu$C) = 0.#"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="dragaction"><![CDATA[q[1] = q1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">charge3</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[q2]]></Property>
+<Property name="minimum"><![CDATA[-30.0]]></Property>
+<Property name="maximum"><![CDATA[30.0]]></Property>
+<Property name="format"><![CDATA["粒子3帶電量(單位為$\mu$C) = 0.#"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="dragaction"><![CDATA[q[2] = q2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">charge4</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[q3]]></Property>
+<Property name="minimum"><![CDATA[-30.0]]></Property>
+<Property name="maximum"><![CDATA[30.0]]></Property>
+<Property name="format"><![CDATA["粒子4帶電量(單位為$\mu$C) = 0.#"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="dragaction"><![CDATA[q[3] = q3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">charge5</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[q4]]></Property>
+<Property name="minimum"><![CDATA[-30.0]]></Property>
+<Property name="maximum"><![CDATA[30.0]]></Property>
+<Property name="format"><![CDATA["粒子5帶電量(單位為$\mu$C) = 0.#"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="dragaction"><![CDATA[q[4] = q4]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">reset</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[重設模擬]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">instructions</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[%helpLabel%]]></Property>
+<Property name="action"><![CDATA[if (helpFlag)
+{
+helpFlag = false;
+helpLabel = "顯示幫助";
+}
+else
+{
+helpFlag = true;
+helpLabel = "隱藏幫助";
+}]]></Property>
+<Property name="background"><![CDATA[BLUE]]></Property>
+<Property name="foreground"><![CDATA[YELLOW]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-10.0]]></Property>
+<Property name="maximumX"><![CDATA[10.0]]></Property>
+<Property name="minimumY"><![CDATA[-10.0]]></Property>
+<Property name="maximumY"><![CDATA[10.0]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA["二維空間中的電力"]]></Property>
+<Property name="titleX"><![CDATA["X-位置(公尺)"]]></Property>
+<Property name="majorTicksX"><![CDATA[true]]></Property>
+<Property name="titleY"><![CDATA["Y-位置(公尺)"]]></Property>
+<Property name="majorTicksY"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ShapeSet2D</Type>
+<Property name="name">shapeSet</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="numberOfElements"><![CDATA[n]]></Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizeX"><![CDATA[1.0]]></Property>
+<Property name="sizeY"><![CDATA[1.0]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="fillColor"><![CDATA[colorball]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrowSet2D</Type>
+<Property name="name">arrowSet</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="numberOfElements"><![CDATA[n]]></Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizeX"><![CDATA[FxNet]]></Property>
+<Property name="sizeY"><![CDATA[FyNet]]></Property>
+<Property name="scalex"><![CDATA[20]]></Property>
+<Property name="scaley"><![CDATA[20]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[0,128,0]]></Property>
+<Property name="fillColor"><![CDATA[0,128,0]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">helpBox</Property>
+<Property name="title"><![CDATA[Help]]></Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+<Property name="visible"><![CDATA[helpFlag]]></Property>
+<Property name="onClosing"><![CDATA[helpFlag = false;
+helpLabel = "Show Help";]]></Property>
+<Property name="location"><![CDATA["0,0"]]></Property>
+<Property name="size"><![CDATA["729,210"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line1</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line1%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line2</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line2%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line2a</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line2a%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line3</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line3%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line4</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line4%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line5</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line5%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line6</Property>
+<Property name="parent">helpBox</Property>
+<Property name="variable"><![CDATA[%line6%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>
