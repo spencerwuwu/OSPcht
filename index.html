@@ -3,6 +3,10 @@
 <head>
 	<title>OSP 正體中文站</title>
 
+
+
+
+
 	
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -133,37 +137,46 @@
   ;
   </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script type="text/javascript" src="OSP_web/search.js"></script>
+
 </head>
 <body class="pushable" data-pinterest-extension-installed="cr1.39.1" >
+
+
    <div class="ui vertical menu beslide" id="menucontent">
 
-    <div class="jqHeight" style="overflow:auto">
-<div class="item">
-    <div class="ui input"><input type="text" placeholder="Search..."></div>
-  </div>
+    <div ng-app="instantSearch" ng-controller="InstantSearchController" class="jqHeight" style="overflow:auto">
+
+
+ 
+
+
+
   <div style="font-size:1.5em;">
 
-  <div class="item">
+  <a class="item" href="main.html">
     <p>首頁</p>
-  </div>
+  </a>
 
   <div class="item">
     資源
+
     <div class="menu">
-      <a class="item"><p>天文</p></a>
-      <a class="item"><p>古典力學</p></a>
-      <a class="item"><p>教育</p></a>
-      <a class="item"><p>電磁學</p></a>
-      <a class="item"><p>流體力學</p></a>
-      <a class="item"><p>普通物理</p></a>
-      <a class="item"><p>數學</p></a>
-      <a class="item"><p>近代物理</p></a>
-      <a class="item"><p>光學</p></a>
-      <a class="item"><p>振盪與波動</p></a>
-      <a class="item"><p>量子物理</p></a>
-      <a class="item"><p>相對論</p></a>
-      <a class="item"><p>熱力學與統計力學</p></a>
-      <a class="item"><p>其他科學</p></a>
+
+      <div class="item" >
+    <div class="ui input" style="font-size:1em"><input type="text" ng-model="searchString" placeholder="搜尋資源"></div>
+  </div>
+      <div>
+    <!-- Render a li element for every entry in the items array. Notice
+       the custom search filter "searchFor". It takes the value of the
+       searchString model as an argument.
+     -->
+    <div ng-repeat="i in items | searchFor:searchString">
+      <a class="item" href="{{i.url}}">
+      <p>{{i.title}}</p></a>
+    </div>
+  </div>
     </div>
   </div>
 
@@ -191,13 +204,12 @@
 
 <div class="pusher">
     <div class="ui inverted vertical masthead center aligned segment">
-
     <div class="ui container" id="menubar">
       <div class="ui large secondary inverted pointing menu">
         <div class="left item">
            <a class="ui inverted " id="menubtn">&equiv;</a>
         </div>
-        <div class="right item">
+        <div class="right item" style="float:right">
           <a class="ui inverted button" target="_blank">前往WeKey</a>
         </div>
       </div>
@@ -209,6 +221,8 @@
       </h1>
       <h2>OpenSource Physics</h2>
       <a href="#content" class="ui huge primary button" id="start">Get Started <i class="right arrow icon"></i></a>
+
+      <iframe class="vertical aligned " src="OSP_web/swing.html" style="width:100%; border:none; height:100%; display:block; z-index: -10;"></iframe>
     </div>
 
   </div>
@@ -220,7 +234,7 @@
           <p>隨著科技的演進，電腦也在教育機構中扮演著不可或缺的角色，許多與實驗和理論相關的物理也都必須仰賴電腦的幫助。</p><p>然而，即使科技在教育和研究領域進步得如此快速，計算物理學在傳統大學物理中仍然是很重要的一環，計算和物理模型建構在這方面則明顯的不足。</p><p>儘管學生的生活中到處充斥著各種物理現象的模擬，不論是課堂上教師、教科書的出版商或是電影導演所提供的，但是只有很小一部份的學生能夠真正的體會這些，而 Open Source Physics 則希望能夠彌補這樣的缺失。</p>
         </div>
         <div class="six wide right floated column">
-          <img src="./Homepage - Semantic_files/white-image.png" class="ui large bordered rounded image">
+          <iframe src="OSP_web/swing.html" class="ui large bordered rounded image"></iframe>
         </div>
       </div>
 
