@@ -1,0 +1,1 @@
+transifex_settings({"production": {"picker": "", "autocollect": true, "dynamic": true, "domain": "semantic-ui.com", "detectlang": false}, "staging": {"picker": "", "autocollect": true, "dynamic": true, "domain": "", "detectlang": true}, "filters": [{"action": "ignore", "path": ".php", "match": "contains", "output": ""}]});

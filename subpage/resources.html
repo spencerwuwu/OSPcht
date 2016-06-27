@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>資源 | OSP正體中文站</title>
+
+
+<!-- search content
+Copyright (c) 2016 by Davilious (http://codepen.io/davilious/pen/YqdoyP)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<script src="OSP_web/searchjs/prefixfree.min.js"></script>
+
+
+
+
+
+
+	
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--link css and js files-->
+	
+
+
+
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/reset.css">
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/site.css">
+
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/container.css">
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/grid.css">
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/header.css">
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/image.css">
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/divider.css">
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/list.css">
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/segment.css">
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/icon.css">
+  <link rel="stylesheet" type="text/css" href="./Sticky Example - Semantic_files/transition.css">
+<link rel="stylesheet" type="text/css" href="OSP_web/Semantic-UI-CSS-master/Semantic-UI-CSS-master/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="OSP_web/main.css">
+
+
+
+
+  <script src="./Sticky Example - Semantic_files/jquery.min.js"></script>
+  <script src="./Sticky Example - Semantic_files/transition.js"></script>
+  <script src="./Sticky Example - Semantic_files/dropdown.js"></script>
+  <script src="./Sticky Example - Semantic_files/visibility.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix main menu to page on passing
+      $('.main.menu').visibility({
+        type: 'fixed'
+      });
+      $('.overlay').visibility({
+        type: 'fixed',
+        offset: 80
+      });
+
+      // lazy load images
+      $('.image').visibility({
+        type: 'image',
+        transition: 'vertical flip in',
+        duration: 500
+      });
+
+      // show dropdown on hover
+      $('.main.menu  .ui.dropdown').dropdown({
+        on: 'hover'
+      });
+    })
+  ;
+  </script>
+
+
+
+	<script type="text/javascript" src="OSP_web/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="OSP_web/Semantic-UI-CSS-master/Semantic-UI-CSS-master/semantic.min.js"></script>
+	<script type="text/javascript" src="OSP_web/main.js"></script>
+
+  <style type="text/css">
+
+  body{
+    background-color: white;
+  }
+
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+
+  </style>
+
+  <script src="OSP_web/Semantic-UI-CSS-master/Semantic-UI-CSS-master/components/visibility.js"></script>
+  <script src="OSP_web/Semantic-UI-CSS-master/Semantic-UI-CSS-master/components/sidebar.js"></script>
+  <script src="OSP_web/Semantic-UI-CSS-master/Semantic-UI-CSS-master/components/transition.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(window).scroll(function() {
+      var end = $("#BottomThing").offset().top; 
+      var viewEnd = $(window).scrollTop() + $(window).height(); 
+      var distance = end - viewEnd;
+
+    if (distance < 300){
+           // ajax call get data from server and append to the div
+    }
+})
+
+  });
+  </script>
+
+
+</head>
+<body class="pushable" data-pinterest-extension-installed="cr1.39.1" >
+<div  style="background-color: white;">
+
+
+
+<div class="article">
+
+<div class="ui borderless main menu container">
+    <div class="ui container">
+      <div href="#" class="header item">
+       <p style="font-size:1.5em;"> 資源 | OSP正體中文站</p>
+      </div>
+
+      <div class="ui right floated dropdown item" tabindex="0">
+        Dropdown <i class="dropdown icon"></i>
+        <div class="menu" tabindex="-1">
+          <div class="item">Link Item</div>
+          <div class="item">Link Item</div>
+          <div class="divider"></div>
+          <div class="header">Header Item</div>
+          <div class="item">
+            <i class="dropdown icon"></i>
+            Sub Menu
+            <div class="menu">
+              <div class="item">Link Item</div>
+              <div class="item">Link Item</div>
+            </div>
+          </div>
+          <div class="item">Link Item</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<div class="ui main header container">
+  <div class="ui container">
+
+      <h1 class="ui header huge dividing">
+        <p>資源</p>
+        
+      </h1>
+    
+  </div>
+        <p>Resources</p>
+</div>
+
+
+
+
+
+<div class="ui container header"></div>
+
+
+<div class="ui main intro container">
+  <h2 class="ui header dividing" id="astronomical"><p>天文</p></h2>
+  <p>Astronomical</p>
+  <div class="ui three stackable doubling cards">
+    <a class="ui card" href="http://semantic-ui.com/examples/theming.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/theming.png">
+      </div>
+      <div class="content">
+        <div class="header">Theming</div>
+        <div class="description">
+          Examples of many common UI components, useful for testing custom themes.
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/responsive.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/responsive.png">
+      </div>
+      <div class="content">
+        <div class="header">Responsive</div>
+        <div class="description">
+          Patterns for adjusting display for different devices.
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/grid.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/grid.png">
+      </div>
+      <div class="content">
+        <div class="header">Grid</div>
+        <div class="description">
+          An introduction to using Semantic UI grids
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/bootstrap.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/bootstrap.png">
+      </div>
+      <div class="content">
+        <div class="header">Bootstrap Migration</div>
+        <div class="description">
+          Examples of replacements for components found in Bootstrap
+        </div>
+      </div>
+    </a>
+  </div>
+
+  
+  <h2 class="ui header dividing" id="Mechanics"><p>古典力學</p></h2>
+  <p>Mechanics</p>
+  <div class="ui three doubling stackable cards">
+    <a class="ui card" href="http://semantic-ui.com/examples/homepage.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/homepage.png">
+      </div>
+      <div class="content">
+        <div class="header">Homepage</div>
+        <div class="description">
+          A simple, responsive homepage design with sidebar
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/sticky.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/sticky.png">
+      </div>
+      <div class="content">
+        <div class="header">Sticky Menus</div>
+        <div class="description">
+         Using visibility APIs to fix content after passing position in page
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/fixed.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/fixed.png">
+      </div>
+      <div class="content">
+        <div class="header">Fixed Menu</div>
+        <div class="description">
+          Using a fixed menu with page content
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/login.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/login.png">
+      </div>
+      <div class="content">
+        <div class="header">Login Form</div>
+        <div class="description">
+          A full-screen login form.
+        </div>
+      </div>
+    </a>
+  </div>
+
+
+
+  <h2 class="ui header dividing" id="educate"><p>教育</p></h2>
+  <p>Educate</p>
+  <div class="ui three stackable doubling cards">
+    <a class="ui card" href="http://semantic-ui.com/examples/theming.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/theming.png">
+      </div>
+      <div class="content">
+        <div class="header">Theming</div>
+        <div class="description">
+          Examples of many common UI components, useful for testing custom themes.
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/responsive.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/responsive.png">
+      </div>
+      <div class="content">
+        <div class="header">Responsive</div>
+        <div class="description">
+          Patterns for adjusting display for different devices.
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/grid.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/grid.png">
+      </div>
+      <div class="content">
+        <div class="header">Grid</div>
+        <div class="description">
+          An introduction to using Semantic UI grids
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/bootstrap.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/bootstrap.png">
+      </div>
+      <div class="content">
+        <div class="header">Bootstrap Migration</div>
+        <div class="description">
+          Examples of replacements for components found in Bootstrap
+        </div>
+      </div>
+    </a>
+  </div>
+
+
+
+<h2 class="ui dividing header">電磁學<a class="anchor" id="starter"></a></h2>
+  <p>Examples to introduce components and their function</p>
+  <div class="ui three stackable doubling cards">
+    <a class="ui card" href="http://semantic-ui.com/examples/theming.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/theming.png">
+      </div>
+      <div class="content">
+        <div class="header">Theming</div>
+        <div class="description">
+          Examples of many common UI components, useful for testing custom themes.
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/responsive.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/responsive.png">
+      </div>
+      <div class="content">
+        <div class="header">Responsive</div>
+        <div class="description">
+          Patterns for adjusting display for different devices.
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/grid.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/grid.png">
+      </div>
+      <div class="content">
+        <div class="header">Grid</div>
+        <div class="description">
+          An introduction to using Semantic UI grids
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/bootstrap.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/bootstrap.png">
+      </div>
+      <div class="content">
+        <div class="header">Bootstrap Migration</div>
+        <div class="description">
+          Examples of replacements for components found in Bootstrap
+        </div>
+      </div>
+    </a>
+  </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable  divided grid container">
+    </div>
+
+
+
+  </div>
+
+
+   <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        
+        <div class="five wide column">
+          <h4 class="ui inverted header">聯絡我們</h4>
+          <div class="ui inverted link list">
+            <div class="item"><p>周冠言</p></div>
+            <div class="item"><p>forendef2846@gmail.com</p></div>
+          </div>
+        </div>
+
+        <div class="five wide column">
+          <h4 class="ui inverted header"><p>網頁設計</p></h4>
+          <div class="ui inverted link list">
+            
+            <div class="item"><p>吳威正 <a href="http://iiia.github.io/profile.html" class="item">->個人網站</a></p></div>
+            <div class="item">spencerwu85@gmail.com</div>
+            <div class="item"><p>Using <a href="" class="item">Semantic UI</a></p></div>
+            
+          </div>
+        </div>
+
+        <div class="three wide column">
+          <h4 class="ui inverted header">Footer Header</h4>
+          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
