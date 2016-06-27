@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>zzz</title>
+		<style type="text/css">
+			body{
+				background: #333;
+			}
+		</style>
+		<script src="dist/snap.svg-min.js"></script>
+	</head>
+	<body>
+		<script>
+			var s = Snap(800, 600);
+			var bigCricle = s.circle(100, 150, 50);
+			bigCricle.attr({
+				fill: "#bada55",
+				stroke: "#000",
+				strokeWidth: 5
+			});
+			var smallCircle = s.circle(50, 150, 40);
+			var discs = s.group(smallCircle, s.circle(150, 150, 40));
+			discs.attr({
+				fill: "#fff"
+			});
+
+			bigCricle.attr({
+				mask: discs
+			});
+
+			smallCircle.animate({r: 70}, 1000);
+			discs.select("circle:nth-child(2)").animate({r:30}, 1000);
+
+			var p = s.path("M10-5-10,15M15,0,0,15M0-5-20,15").attr({
+				fill: "none",
+				stroke: "#bada55",
+				strokeWidth: 5
+			});
+			p = p.pattern(0, 0, 10, 10);
+			bigCricle.attr({
+				fill:p
+			});
+			// Lets change fill of circles to gradient
+			// This string means relative radial gradient
+			// from white to black
+			discs.attr({fill: "r()#fff-#000"});
+			// Note that you have two gradients for each circle
+			// If we want them to share one gradient,
+			// we need to use absolute gradient with capital R
+			discs.attr({fill: "R(150, 150, 100)#fff-#000"});
+			p.select("path").animate({stroke: "#f00"}, 1000);
+			
+
+			Snap.load("mascot.svg", function (f) {
+    		// Note that we traversre and change attr before SVG
+   			// is even added to the page
+    		//f.selectAll("polygon[fill='#09B39C']").attr({fill: "#bada55"});
+    		g = f.select("g");
+    		s.append(g);
+    		// Making croc draggable. Go ahead drag it around!
+    		g.drag();
+    		// Obviously drag could take event handlers too
+    		// Looks like our croc is made from more than one polygon...
+});
+		</script>
+	</body>
+
+</html>

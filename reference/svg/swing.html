@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+	<title>swing</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="dist/snap.svg-min.js"></script>
+    <script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+    <style type="text/css">
+    body{
+    	background-color: #111;
+    	width: 1200;
+    	height: 800;
+    }
+    .my-svg-container{
+	 display: inline-block;
+	 position: relative;
+	 width: 50%;
+	 padding-bottom: 60%; /* depends on svg ratio, for my zebra height/width = 1.2 so padding-bottom = 50% * 1.2 = 60% */
+ 
+	 vertical-align: middle; /* top | middle | bottom ... do what you want */
+	}
+
+
+	.my-svg{ /* svg into : object, img or inline */
+  	display: block;
+ 	 position: absolute;
+ 	 top: 0;
+ 	 left: 0;
+ 	 width: 100%; /* only required for <img /> */
+ 	 height: 100%;
+	}
+
+    </style>
+</head>
+<body>
+	<svg class="my-svg" id="swingLarge"></svg>
+    <script type="text/javascript" src="swing.js">
+
+
+
+    </script>
+
+
+</body>
+
+
+</html>
