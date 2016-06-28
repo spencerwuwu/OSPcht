@@ -15,12 +15,8 @@ h1,h2,h3,h4,a,p{
 
 
 #menubtn{
-	font-size: 3em;
-	position: relative;
-	top: 20%;
-	left: 10%;
 	cursor: pointer;
-	color: #E4E6F2;
+	color: black;
 }
 #menubtn:hover{
 	opacity: 0.8;
