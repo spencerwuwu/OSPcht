@@ -28,6 +28,7 @@ h1,h2,h3,h4,a,p{
 	position: fixed;
 	z-index: 999;
   	transition:all 0.5s ease;
+  	top: 0;
 }
 
 
@@ -35,6 +36,7 @@ h1,h2,h3,h4,a,p{
 	background-color: rgba(0,0,0,0.8);
 	float: left;
 	position: fixed;
+	top: 0;
 	width: 100%;
 	height: 100%;
 	z-index: 900;
