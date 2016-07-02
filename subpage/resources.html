@@ -206,7 +206,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <script type="text/javascript" src="OSP_web/search.js"></script>
 
-
+<script type="text/javascript" src="OSP_web/jquery.lazyload.js"></script>
 
 </head>
 <body class="" data-pinterest-extension-installed="cr1.39.1" >
@@ -302,14 +302,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 <div class="ui main header container">
-  <div class="ui container">
 
       <h1 class="ui header huge dividing">
         <p>資源</p>
         
       </h1>
     
-  </div>
         <p>Resources</p>
 </div>
 
@@ -326,12 +324,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <div class="ui three stackable doubling cards">
     <a class="ui card" href="http://semantic-ui.com/examples/theming.html">
       <div class="image">
-        <img src="./Layouts _ Semantic UI_files/theming.png">
+        <img src="pic/Eratosthenes.jpg">
       </div>
       <div class="content">
-        <div class="header">Theming</div>
+        <div class="header"><p>日晷模型</p><p>Eratosthenes Model</p></div>
         <div class="description">
-          Examples of many common UI components, useful for testing custom themes.
+          <p>這個日晷模型顯示了地球上不同地點的兩個指針的陰影。</p>
+          <p>翻譯:盧廷一</p>
         </div>
       </div>
     </a>
@@ -340,9 +339,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <img src="./Layouts _ Semantic UI_files/responsive.png">
       </div>
       <div class="content">
-        <div class="header">Responsive</div>
+        <div class="header"><p>區域座標模型</p><p>Local Coordinates Model</p></div>
         <div class="description">
-          Patterns for adjusting display for different devices.
+          <p>這個區域座標模型顯示了一個星星在區域座標(高度/方位)的座標。</p>
+          <p>翻譯:張祐維</p>
         </div>
       </div>
     </a>
@@ -351,9 +351,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <img src="./Layouts _ Semantic UI_files/grid.png">
       </div>
       <div class="content">
-        <div class="header">Grid</div>
+        <div class="header"><p>牛頓山模型</p><p>Newton's Mountain Model</p></div>
         <div class="description">
-          An introduction to using Semantic UI grids
+          <p>模擬一個拋射物從一個地球相當高的山上射出的運動情形。</p>
+          <p>翻譯:吳威正</p>
         </div>
       </div>
     </a>
@@ -379,9 +380,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <img src="./Layouts _ Semantic UI_files/homepage.png">
       </div>
       <div class="content">
-        <div class="header">Homepage</div>
+        <div class="header"><p>賽車模型</p><p>Car Race Model</p></div>
         <div class="description">
-          A simple, responsive homepage design with sidebar
+          <p>模擬一台領先、有著固定速度的車和一台有著等加速度的車相比賽的古典物理運動情形。</p>
+          <p>翻譯:周冠言</p>
         </div>
       </div>
     </a>
@@ -390,9 +392,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <img src="./Layouts _ Semantic UI_files/sticky.png">
       </div>
       <div class="content">
-        <div class="header">Sticky Menus</div>
+        <div class="header"><p>牛頓山模型</p><p>Newton's Mountain Model</p></div>
         <div class="description">
-         Using visibility APIs to fix content after passing position in page
+        <p>模擬一個拋射物從一個地球相當高的山上射出的運動情形。</p>
+        <p>翻譯:吳威正</p>
         </div>
       </div>
     </a>
@@ -401,9 +404,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <img src="./Layouts _ Semantic UI_files/fixed.png">
       </div>
       <div class="content">
-        <div class="header">Fixed Menu</div>
+        <div class="header"><p>電梯裡的相對運動</p><p>Relative Motion on an Elevator</p></div>
         <div class="description">
-          Using a fixed menu with page content
+          <p>電梯裡的相對運動模型展示了古典物理學中兩個觀察者所看到的相對運動。</p>
+          <p>翻譯:周柏毅</p>
         </div>
       </div>
     </a>
@@ -412,9 +416,34 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <img src="./Layouts _ Semantic UI_files/login.png">
       </div>
       <div class="content">
-        <div class="header">Login Form</div>
+        <div class="header"><p>斜面下滑模型</p><p>Sliding Down an Inclined Plane</p></div>
         <div class="description">
-          A full-screen login form.
+          <p>斜面下滑模型模擬了一個石塊在斜面上的下滑情形。</p>
+          <p>翻譯:盧廷一</p>
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/login.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/login.png">
+      </div>
+      <div class="content">
+        <div class="header"><p>二維空投模型</p><p>Two Dimensional Air Drop Model</p></div>
+        <div class="description">
+          <p>二維空投模型中，一架紅十字會的飛機計畫要空投補給物資到一座小島上。作為該架飛機的機長，你必須要在適當的時刻空投物資以避免掉落到海中。</p>
+          <p>翻譯:張祐維</p>
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="http://semantic-ui.com/examples/login.html">
+      <div class="image">
+        <img src="./Layouts _ Semantic UI_files/login.png">
+      </div>
+      <div class="content">
+        <div class="header"><p>向量相加模型</p><p>Vector Addition Model</p></div>
+        <div class="description">
+          <p>在向量相加模型中，使用者可以練習在二維平面裡的向量加法。</p>
+          <p>翻譯:周柏毅</p>
         </div>
       </div>
     </a>
