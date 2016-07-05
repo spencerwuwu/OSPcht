@@ -43,63 +43,59 @@ function InstantSearchController($scope){
 
 	$scope.items = [
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/astronomy.html',
 			title: '天文'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/classical_mechanics.html',
 			title: '古典力學'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/education.html',
 			title: '教育'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/electricity_magnetism.html',
 			title: '電磁學'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/fluid_mech.html',
 			title: '流體力學'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/general_physics.html',
 			title: '普通物理'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/math_tools.html',
 			title: '數學'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/modern_physics.html',
 			title: '近代物理'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/optics.html',
 			title: '光學'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/oscillations_and_waves.html',
 			title: '振盪與波動'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/quantum_physics.html',
 			title: '量子物理'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
-			title: '電磁學'
-		},
-		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/relativity.html',
 			title: '相對論'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/thermo_and_stat_mech.html',
 			title: '熱力學與統計力學'
 		},
 		{
-			url: 'http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/',
+			url: 'subpage/other_sciences.html',
 			title: '其他科學'
 		},
 	];
